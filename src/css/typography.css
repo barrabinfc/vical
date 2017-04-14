@@ -1,0 +1,36 @@
+/*
+ * Typography futuristic themed.
+ *  code: Source Code Pro
+ *  Title: Orbitron
+ *  text: Play or Antic 
+ */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Orbitron|Source+Code+Pro');
+
+:root {
+  --line-height: 16px;
+  --linescale: calc(5/4);
+  --typoscale: calc(3/2);   /* perfect fifth */
+}
+
+
+/*
+h1,h2,h3,h4,h5,h6 {
+  line-height: calc( var(--line-height) * 2*var(--linescale));
+}*/
+
+h1 { font-size: calc(1rem * 2.33 * var(--typoscale));    padding: calc(1rem * 5 * var(--typoscale)) 0; }
+h2 { font-size: calc(1rem * 2 * var(--typoscale));    padding: calc(1rem * 4 * var(--typoscale))  0; }
+h3 { font-size: calc(1rem * 1.66 * var(--typoscale));    padding: calc(1rem * 3 * var(--typoscale))  0; }
+h4 { font-size: calc(1rem * 1.33 * var(--typoscale));    padding: calc(1rem * 2 * var(--typoscale))  0; }
+h5 { font-size: calc(1rem * 1 * var(--typoscale));    padding: calc(1rem * 1 * var(--typoscale))  0; }
+h6 { font-size: calc(1rem * .77 * var(--typoscale));  padding: calc(1rem * 0.77 * var(--typoscale))  0; }
+
+.fz.\-tiny { font-size: calc(1rem * 0.77 * var(--typoscale)) !important; }
+.fz.\-medium  { font-size: calc(1rem * 1.0 * var(--typoscale)) !important; }
+.fz.\-medium2 { font-size: calc(1rem * 1.33 * var(--typoscale)) !important; }
+.fz.\-tall { font-size: calc(1rem * 1.66 * var(--typoscale)); }
+.fz.\-big { font-size: calc(1rem * 2 * var(--typoscale))  !important;  }
+.fz.\-huge     { font-size: calc(1rem * 3 * var(--typoscale)) !important; }
+.fz.\-huge2 { font-size: calc(1rem * 4 * var(--typoscale)) !important; }
+
+p { margin: 0 0 1.5em;}

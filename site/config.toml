@@ -1,3 +1,34 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "« wity »"
+paginate = 5
+
+#theme = "after-dark"
+
+enableRobotsTXT=true
+googleAnalytis  = ""
+disqusShortname = ""
+SectionPagesMenu="main"
+footnoteReturnLinkContents = "↩"
+
+[params]
+  description = ""
+  author = ""
+  hide_author = false
+  show_menu = true
+  powered_by = false
+  images = []
+  theme_variant = ""
+
+
+[[menu.main]]
+  name = "About"
+  weight = 100
+  identifier = "about"
+  url = "/about/"
+  
+[[menu.main]]
+  name = "Projects"
+  weight = 100
+  identifier = "projects"
+  url = "/projects/"  

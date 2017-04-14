@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{ .Title }}</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{ with .Description }}
+      <meta name="description" content="{{ . }}">
+    {{ end }}
+  
+    {{ partial "_instyle" .}}
+    
+    <!-- Load css asynchronously  -->
+    <script type="text/javascript">
+        ['/css/main.css','/css/typography.css',
+         'https://cdn.jsdelivr.net/evil-icons/1.9.0/evil-icons.min.css'].map( function(url) {
+            var link = document.createElement('link');
+            link.rel = "stylesheet";
+            link.href = url;
+            document.head.appendChild(link);
+        });
+    </script>
+  </head>
+  {{ $theme_variant := .Site.Params.theme_variant | default "dark" }}
+  {{ $page := .Kind | default "home" }}
+  {{ $layout := .Layout | default "index" }}
+  <body class="{{ $theme_variant }} {{ $page }} {{ $layout }}">
+
+    <header role="top-header">
+      <div class="container-fluid grid -horizontal -middle -between">
+        {{ block "header" .}}{{ end }}
+      </div>
+    </header>
+    <main>{{ block "main" .}}{{ end }}</main>
+    <footer>{{ block "footer" .}}{{ end }}</footer>
+
+    <script src="/app.js" async></script>
+    <script src="https://cdn.jsdelivr.net/evil-icons/1.9.0/evil-icons.min.js" defer></script>
+  </body>
+</html>

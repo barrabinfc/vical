@@ -1,6 +1,7 @@
 import gulp from "gulp";
 import cp from "child_process";
 import gutil from "gulp-util";
+import sourcemaps from "gulp-sourcemaps";
 import postcss from "gulp-postcss";
 import cssImport from "postcss-import";
 import cssnext from "postcss-cssnext";
@@ -10,7 +11,9 @@ import webpackConfig from "./webpack.conf";
 
 const browserSync = BrowserSync.create();
 const hugoBin = "hugo";
-const defaultArgs = ["-d", "../dist", "-s", "site", "-v"];
+const defaultArgs = ["-d", "../dist",
+  "-s", "site",
+  "-v"];
 
 gulp.task("hugo", (cb) => buildSite(cb));
 gulp.task("hugo-preview", (cb) => buildSite(cb, ["--buildDrafts", "--buildFuture"]));
@@ -20,9 +23,11 @@ gulp.task("build-preview", ["css", "js", "hugo-preview"]);
 
 gulp.task("css", () => (
   gulp.src("./src/css/*.css")
-    .pipe(postcss([cssnext(), cssImport({from: "./src/css/main.css"})]))
+    .pipe(sourcemaps.init())
+    .pipe(postcss([cssImport({from: "./src/css/main.css"}), cssnext()]))
+    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("./dist/css"))
-    .pipe(browserSync.stream())
+    //.pipe(browserSync.stream())
 ));
 
 gulp.task("js", (cb) => {
@@ -34,17 +39,19 @@ gulp.task("js", (cb) => {
       colors: true,
       progress: true
     }));
-    browserSync.reload();
+    //browserSync.reload();
     cb();
   });
 });
 
 gulp.task("server", ["hugo", "css", "js"], () => {
+  /*
   browserSync.init({
     server: {
       baseDir: "./dist"
     }
   });
+  */
   gulp.watch("./src/js/**/*.js", ["js"]);
   gulp.watch("./src/css/**/*.css", ["css"]);
   gulp.watch("./site/**/*", ["hugo"]);
@@ -55,10 +62,10 @@ function buildSite(cb, options) {
 
   return cp.spawn(hugoBin, args, {stdio: "inherit"}).on("close", (code) => {
     if (code === 0) {
-      browserSync.reload();
+      //browserSync.reload();
       cb();
     } else {
-      browserSync.notify("Hugo build failed :(");
+      //browserSync.notify("Hugo build failed :(");
       cb("Hugo build failed");
     }
   });

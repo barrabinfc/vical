@@ -1,0 +1,20 @@
+{{ define "header" }}
+  {{ partial "logo" . }}
+  {{ partial "nav" . }}
+{{ end }}
+{{ define "main" }}
+  <div id="content-featured" class="featured">
+    <picture>
+      {{ with .Params.featured_image }}
+        <img src="{{ . }}">
+      {{ end }}
+    </picture>
+    <div class="headline">
+      <h1 class="title">{{ safeHTML .Title }}</h1>
+      <h3 class="subtitle">{{ .Params.subtitle }}</h3>
+    </div>
+  </div>
+  <div id="content-body" class="container">
+    {{ .Content }}
+  </div>
+{{ end }}

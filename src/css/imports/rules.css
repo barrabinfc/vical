@@ -1,0 +1,78 @@
+/*
+ * Apply rules
+ */
+:root {
+  --hero-font: {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+  };
+
+  --code-font: {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 100; 
+  };
+
+  --paragraph-font: {
+    font-family: 'Open Sans',Helvetica Neue,sans-serif;
+  };
+  
+  --grid-background {
+    position: absolute;
+    overflow: hidden;
+    top: 0; left: 0;
+    width: 100%;
+    min-height: 10%;
+    height: 100%;
+    opacity: 0.05;
+    z-index: -10;
+    background: var(--black) url("../images/grid-24x16.png") repeat fixed;
+  }
+  
+  /*
+   * Animation/transition
+   */
+  --transition {
+    transition: var(--trans-props) var(--trans-time) var(--trans-easing);
+  }
+  
+  /*
+   * Useful rules
+   */
+  --nostyle { all: unset; }
+  --abs {
+    position: absolute;
+    top: 0px; left: 0px;
+  }
+  --sticky {
+    position: absolute;
+    top: 0;
+  }
+  --empty {
+    content: ' ';
+    pointer-events: none;
+  }
+  --text-masked {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  --grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  --grid-horizontal { flex-direction: row; }
+  --grid-vertical   { flex-direction: column; }
+  --grid-top { align-items: flex-start; }
+  --grid-middle { align-items: center; }
+  --grid-bottom { align-items: flex-end; }
+  --grid-baseline { align-items: baseline; }
+
+  --grid-around { justify-content: space-around; }  
+  --grid-between { justify-content: space-between; }
+  
+  /* absolute center */
+  --abscenter {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
