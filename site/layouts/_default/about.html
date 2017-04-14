@@ -1,0 +1,19 @@
+{{ define "header" }}
+  {{ partial "logo" .}}
+  {{ partial "nav" . }}
+{{ end }}
+{{ define "main" }}
+  <section class="section">
+    <article class="content-body container grid -vertical -middle -around">
+      <header>
+        <blockquote class="featured-header">
+        {{ safeHTML .Title }}
+        </blockquote>
+      </header>
+      <article class="columns2" id="body">
+        {{ .Content }}
+      </article>
+    </article>
+  </section>
+  {{ partial "contact" .}}
+{{ end }}

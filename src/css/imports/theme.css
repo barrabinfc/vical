@@ -1,0 +1,247 @@
+@import "variables.css";
+@import "rules.css";
+
+pre {
+  padding: 2rem;
+  margin: 1.75rem 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  overflow: auto;
+}
+
+code[class*=language-], pre[class*=language-], pre code {
+  font-weight: 100;
+  text-shadow: none;
+  margin: 1.75rem 0;
+}
+
+a {  text-decoration: none; }
+a.default {
+  position: relative;
+  cursor: pointer;
+  color: #ff2e88;
+  text-decoration: none;
+  &:after {
+    @apply --abs;
+    bottom: 0;
+    content: ' ';
+    width: 100%;
+    height: 1px;
+    background-color: #ff2e88;
+  }
+  &:hover {
+    background-color: #ff2e88;
+    color: #fff;      
+  }
+}
+
+
+
+
+.container { max-width: 80%; }
+.container-fluid { max-width: 95%; }
+.container, .container-fluid {
+    margin: 0 auto;
+}
+
+.text-masked {
+  @apply --text-masked;
+}
+
+.inner { padding: var(--padding); }
+.inner2x { padding: calc( 2*var(--padding)); }
+
+.pull-left { float: left; }
+.pull-right { float: right; }
+
+.hero { font-size: 4rem; }
+
+/*
+ * General components
+ */
+.btn {
+  @apply --code-font;
+  @apply --transition;
+  
+  color: var(--white);
+  background-color: var(--black);
+
+  display: block;
+  padding: var(--padding) calc(2*var(--padding));
+  
+  &:hover {
+    background-color: var(--white);
+    color: var(--black);
+  }
+  &:after { all: unset; }
+  
+  &.txt {
+    display: inline-block;
+    margin: 0px auto;
+    text-transform: uppercase;
+  }
+  
+}
+
+
+
+/*
+ * Global Top Menu
+ */
+.menu {
+  display: flex;
+  width: 40%;
+  justify-content: space-around;
+
+  & .menu-item {
+  
+    position: relative;
+    color: var(--primary);
+    
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 100;
+    text-transform: uppercase;
+    
+    /* bg pattern */
+    &:after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 4px;
+      left: 4px;
+      z-index: -10;
+      
+      @apply --transition;
+      transform: scaleX(-1);
+      background-size: calc( 1.0 * var(--padding));
+      background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><rect width='10' height='10' fill='transparent'/><path d='M-1,1 l2,-2 M0,10 l10,-10 M9,11 l2,-2' stroke='#efefef' stroke-width='1'/></svg>");
+    }
+      
+    &:hover {
+      &:after {
+        top: 8px;
+        left: 8px;
+      } 
+    }
+  
+    /* active only have bg pattern */
+    &.active {
+      background-color: transparent;
+      color: var(--white);
+      &:after {
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+
+/*
+ * A block full page
+ */
+.section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  justify-content: center;
+    
+  /*
+   * Content of pages
+   */
+  & > article {
+    min-height: 100vh;
+    height: 100%;
+    padding: 0 calc( 4 * var(--padding));
+
+    & > h1:first-child, & > h2:first-child,
+    & > h3:first-child, & > h4:first-child,
+    & > h5:first-child, & > h6:first-child {
+      padding-top: 0;
+    }
+    
+    ul {
+      margin-left: calc(2*var(--padding));
+    }
+  }
+
+}
+
+
+/*
+ * Feature headlines
+ */
+.featured {
+  width: 100%;
+  max-height: 100vh;
+  overflow: hidden;
+  
+  & picture {
+    display: block;
+    position: relative;
+    
+    & img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  & .headline {
+    @apply --abs;
+    top: 25%;
+    width: 95%;
+    height: 50%;
+    @apply --grid;
+    flex-wrap: nowrap;
+    @apply --grid-vertical;
+    @apply --grid-middle;
+    @apply --grid-around;
+    text-align: center;
+    
+    & .title {
+      @apply --hero-font;
+      font-size: calc(1rem * 10 * var(--perfect-fifth));
+      text-transform: uppercase;
+      text-shadow: var(--shadow);
+    }
+    & .subtitle  {
+      @apply --hero-font;
+  
+      text-transform: none;  
+      margin: 0px auto;
+      text-shadow: var(--shadow);
+    }
+    
+    /* String is just outline with some pattern */
+    & strong {
+      -webkit-text-stroke-color: var(--white);
+      -webkit-text-stroke-width: 2px;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: none;
+      background-color: color( var(--black) alpha(50%));
+      background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='5' height='5'><rect width='5' height='5' fill='transparent'/> <rect width='1' height='1' fill='#ccc'/></svg>")
+    }
+
+  }
+  
+}
+
+
+
+/*
+ * Image with a text overlay
+ */
+.image-txtoverlay {
+  position: relative;
+  & .label {
+    @apply --hero-font;
+    @apply --abscenter;
+  }
+}
+

@@ -1,1 +1,107 @@
 @import "imports/reset.css";
+@import "imports/variables.css";
+@import "imports/rules.css";
+@import "imports/grid.css";
+@import "imports/form.css";
+@import "imports/theme.css";
+
+html {
+  font-size: var(--base-fontsize, 16px);
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -.02em; 
+  margin: 0;
+  overflow-wrap: break-word;
+  max-width: 100vw;
+  min-height: 100vh;
+}
+
+/* Top Header */
+body > header {
+  @apply --sticky;
+  width: 100%;
+  z-index: 10;
+  opacity: var(--scrolly);
+  will-change: opacity;
+    
+  & .logo {
+    @apply --hero-font;
+    color: var(--white);
+    padding: calc( 2*var(--padding) ) 0;
+    
+    margin: 0;  
+  }
+  
+  /* Background grid */  
+  &:after {
+    @apply --empty;
+    @apply --grid-background;
+    position: fixed;
+  }
+}
+
+
+/* Index page billboard */
+.billboard {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.billboard-item {
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: color( #fc0d5e alpha(90%));
+}
+  
+
+
+
+/*
+ * Contact section
+ */
+.section.contact {
+  background-color: color( var(--second) alpha(80%));
+  text-align: center;
+  
+  /* background */
+  &:before {
+    @apply --empty;
+    @apply --grid-background;
+    background-image: url("../images/checker22.png");
+  }
+  
+  /* Picture */
+  & .picture {
+    @apply --transition;
+    
+    cursor: pointer;
+    transform: scale(1.0);
+    mix-blend-mode: hard-light;
+    
+    & > img {
+      max-width: 50%;
+      box-shadow: var(--shadow-big);      
+    }
+  }
+  
+  /* Bottom social links */
+  & .social-links {
+    width: 20%;
+    
+    & .icon { fill: var(--white); }
+  }
+}
+
+
+:target {
+  border: 2px solid #f00;
+}
+
+
+@import "imports/animation.css";

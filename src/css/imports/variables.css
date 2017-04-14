@@ -1,0 +1,43 @@
+/*
+ * Variables using Custom properties
+ */
+:root {
+  
+  /* Colors */
+  --black: #161616;
+  --white: #f0f0f0;
+  --gray:  #efefef;
+  --dark-gray: color( var(--gray) b(50%));
+  --primary:     #f58021;
+  --second:      #ae509e;
+  --second-soft: #f68e2b;
+  --third:       #0bb14d;
+  --fourth:      #f05553;
+  
+  /* typography scale */
+  --base-fontsize: 16px;
+  --line-height:   16px;
+  --perfect-fifth: calc(3/2); 
+  --major-third:   calc(5/4);
+  --typoscale: var(--perfect-fifth);
+  --linescale: var(--major-third);
+    
+  /* Default margin/padding */
+  --padding:     0.5em;
+  
+  /* Header height */
+  --header-offset: calc(4em);
+  
+  /* Shadows */
+  --shadow: 0px 0px calc(var(--padding)*var(--perfect-fifth)) rgba(0,0,0,0.7);
+  --shadow-big: 0px 0px calc(4*var(--padding)*var(--perfect-fifth)) rgba(0,0,0,0.7);
+  --shadow-huge: 0px 0px calc(8*var(--padding)*var(--perfect-fifth)) rgba(0,0,0,0.7);
+  
+  /* Animations/transitions */
+  --trans-props:    transform;
+  --trans-time:     0.15s;
+  --trans-easing:   cubic-bezier(0.52, 0.01, 0.16, 1); /* Expo ease-out */
+  
+  /* Reactive variables */
+  --scrolly: 1;
+}
