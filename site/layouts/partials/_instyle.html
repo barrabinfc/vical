@@ -1,28 +1,54 @@
 <style>
+  *, *::after , *::before { box-sizing: border-box; }
+  html,body { margin: 0; }
   body { background-color: #161616; color: #f0f0f0; font-family: sans-serif; overflow-x: hidden; }
-  a,p { padding: 0.5em; color: #f0f0f0; }
-  h1,h2,h3,h4,h5,h6 { all: unset; }
-  iframe,img,video { max-width: 100%; }
+  iframe,embed,img,video { max-width: 100%; }
+  
+  a,p,button { margin: 1em; padding: 0.5em; color: #f0f0f0; }
+  blockquote { width: 100%; margin: 1em auto; font-size: 2em;  text-align: center; }
+  blockquote > p { margin: 0; }
   body>header{ position: absolute; top: 0; width: 100%; }
+  
   .container { max-width: 80%; }
   .container-fluid { max-width: 95%; }
   .container, .container-fluid { margin: 0 auto; }
   
-  .icon { fill: #f0f0f0; }
+  .icon {   position: relative; display: inline-block;
+            width: 1em; height: 1em; fill: #f0f0f0; }
+  .picture { position: relative; }
+  
+  .txt-center { text-align: center; }
+  .bg-primary{ background-color: #f58021; }      
+  .bg-second { background-color: #ae509e; }
+  
+  .btn { background-color: #f0f0f0; padding: 0.5em; color: #161616; }
+  .btn.invert { background-color: #161616; background-color: #f0f0f0; }
+  .btn.txt { display: inline-block; margin: 0 auto; text-transform: uppercase; }
+            
   .grid { display: flex; }
   .grid.\-vertical { flex-direction: column; }
   .grid.\-between { justify-content: space-between; }
   .grid.\-around { justify-content: space-around; }
   .grid.\-middle { align-items: center; }
   
+  .columns1 { columns: 1; column-gap: 0em; }
   .columns2 { columns: 2; column-gap: 2em; }
   .columns3 { columns: 3; column-gap: 1em; }
+  
+  .w50 { max-width: 50%; }
+  .w70 { max-width: 70%; }
+  .w90 { max-width: 90%; }
+  .abscenter {
+    margin: 0;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
   
   .section {  position: relative; width: 100%; min-height: 100vh; 
               display: flex; flex-direction: column; justify-content: center; }
   .section > article {
     min-height: 100vh;
-    height: 100%;
     padding: 0 2em;
   }
 </style>

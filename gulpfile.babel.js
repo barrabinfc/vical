@@ -5,6 +5,7 @@ import sourcemaps from "gulp-sourcemaps";
 import postcss from "gulp-postcss";
 import cssImport from "postcss-import";
 import cssnext from "postcss-cssnext";
+import svgInline from "postcss-inline-svg";
 import BrowserSync from "browser-sync";
 import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
@@ -18,17 +19,22 @@ const defaultArgs = ["-d", "../dist",
 gulp.task("hugo", (cb) => buildSite(cb));
 gulp.task("hugo-preview", (cb) => buildSite(cb, ["--buildDrafts", "--buildFuture"]));
 
-gulp.task("build", ["css", "js", "hugo"]);
-gulp.task("build-preview", ["css", "js", "hugo-preview"]);
+gulp.task("build", ["css", "vendor-js", "js", "hugo"]);
+gulp.task("build-preview", ["css", "vendor-js", "js", "hugo-preview"]);
 
 gulp.task("css", () => (
   gulp.src("./src/css/*.css")
     .pipe(sourcemaps.init())
-    .pipe(postcss([cssImport({from: "./src/css/main.css"}), cssnext()]))
+    .pipe(postcss([cssImport({from: "./src/css/main.css"}), cssnext(), svgInline()]))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("./dist/css"))
     //.pipe(browserSync.stream())
 ));
+
+gulp.task("vendor-js", () => {
+  gulp.src("./src/js/vendor/*.js")
+    .pipe(gulp.dest("./dist/js/vendor"))
+})
 
 gulp.task("js", (cb) => {
   const myConfig = Object.assign({}, webpackConfig);
@@ -44,7 +50,7 @@ gulp.task("js", (cb) => {
   });
 });
 
-gulp.task("server", ["hugo", "css", "js"], () => {
+gulp.task("server", ["hugo", "css", "vendor-js", "js"], () => {
   /*
   browserSync.init({
     server: {
@@ -52,8 +58,9 @@ gulp.task("server", ["hugo", "css", "js"], () => {
     }
   });
   */
-  gulp.watch("./src/js/**/*.js", ["js"]);
-  gulp.watch("./src/css/**/*.css", ["css"]);
+  gulp.watch("./src/js/vendor/*.js$", ["vendor-js"]);
+  gulp.watch("./src/js/**/*.js$", ["js"]);
+  gulp.watch("./src/css/**/*.css$", ["css"]);
   gulp.watch("./site/**/*", ["hugo"]);
 });
 

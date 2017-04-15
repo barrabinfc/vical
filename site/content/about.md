@@ -5,6 +5,7 @@ color = "#000"
 subtitle = "And some other ... text"
 description = ""
 layout = "about"
+columns = "1"
 +++
 
 2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists
@@ -18,7 +19,8 @@ Note that --- not considering the asterisk --- the actual text
 content starts at 4-columns in.
 
 > Block quotes are
-> written like so.
+> written like so. And can span multiple lines
+> and even paragraphs and other stuffs.
 >
 > They can span multiple paragraphs,
 > if you like.

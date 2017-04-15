@@ -4,14 +4,14 @@
 @import "imports/grid.css";
 @import "imports/form.css";
 @import "imports/theme.css";
-
+@import "imports/animation.css";
 html {
-  font-size: var(--base-fontsize, 16px);
+  font-size: var(--base-fontsize, 16px);  
 }
 
 body {
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: var(--base-fontsize, 16px);
+  line-height: 1.0rem;
   letter-spacing: -.02em; 
   margin: 0;
   overflow-wrap: break-word;
@@ -24,7 +24,6 @@ body > header {
   @apply --sticky;
   width: 100%;
   z-index: 10;
-  opacity: var(--scrolly);
   will-change: opacity;
     
   & .logo {
@@ -66,42 +65,26 @@ body > header {
  * Contact section
  */
 .section.contact {
-  background-color: color( var(--second) alpha(80%));
-  text-align: center;
+  background-color: color( var(--second) alpha(80%) );
   
-  /* background */
-  &:before {
-    @apply --empty;
-    @apply --grid-background;
-    background-image: url("../images/checker22.png");
-  }
   
   /* Picture */
   & .picture {
     @apply --transition;
     
     cursor: pointer;
+    will-change: transform;
     transform: scale(1.0);
     mix-blend-mode: hard-light;
     
     & > img {
-      max-width: 50%;
-      box-shadow: var(--shadow-big);      
+      box-shadow: var(--shadow-big);
+    }
+    & > .label {
+      @apply --hero-font;
     }
   }
-  
-  /* Bottom social links */
-  & .social-links {
-    width: 20%;
     
-    & .icon { fill: var(--white); }
-  }
 }
 
 
-:target {
-  border: 2px solid #f00;
-}
-
-
-@import "imports/animation.css";

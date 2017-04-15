@@ -15,7 +15,7 @@
     <!-- Load css asynchronously  -->
     <script type="text/javascript">
         ['/css/main.css','/css/typography.css',
-         'https://cdn.jsdelivr.net/evil-icons/1.9.0/evil-icons.min.css'].map( function(url) {
+         '/css/evil-icons.css'].map( function(url) {
             var link = document.createElement('link');
             link.rel = "stylesheet";
             link.href = url;
@@ -36,7 +36,7 @@
     <main>{{ block "main" .}}{{ end }}</main>
     <footer>{{ block "footer" .}}{{ end }}</footer>
 
-    <script src="/app.js" async></script>
-    <script src="https://cdn.jsdelivr.net/evil-icons/1.9.0/evil-icons.min.js" defer></script>
+    <script src="/js/app.js" async></script>
+    <script src="/js/vendor/evil-icons.js" defer></script>
   </body>
 </html>
