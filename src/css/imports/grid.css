@@ -130,12 +130,3 @@
         flex: 0 0 auto
     }
 }
-
-
-/*
- * Css grid
- */
-.columns2 {
-  columns: 2;
-  column-gap: 2em;
-}

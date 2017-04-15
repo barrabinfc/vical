@@ -3,14 +3,15 @@
   {{ partial "nav" . }}
 {{ end }}
 {{ define "main" }}
+  {{ $columns := .Params.Columns | default "1" }}
   <section class="section">
-    <article class="content-body container grid -vertical -middle -around">
+    <article class="container grid -vertical -middle -around">
       <header>
         <blockquote class="featured-header">
-        {{ safeHTML .Title }}
+          <h1>{{ safeHTML .Title }}</h1>
         </blockquote>
       </header>
-      <article class="columns2" id="body">
+      <article class="columns{{ $columns }}" id="body">
         {{ .Content }}
       </article>
     </article>
