@@ -5,7 +5,7 @@ color = "#000"
 subtitle = "And some other ... text"
 description = ""
 layout = "about"
-columns = "1"
+columns = "2"
 +++
 
 2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists

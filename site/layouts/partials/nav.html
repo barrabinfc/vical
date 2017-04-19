@@ -1,7 +1,9 @@
 <nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="menu">
   {{ $currentNode := . }}
   {{ range .Site.Menus.main }}
-    <a itemprop="url" class="menu-item btn {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}active{{end}}" href="{{ .URL }}">
+    {{ $is  := $currentNode.IsMenuCurrent "main" . }}
+    {{ $has := $currentNode.HasMenuCurrent "main" . }}
+    <a itemprop="url" class="menu-item btn {{if or ($is) ($has) }}active{{end}}" href="{{ .URL }}">
       {{ trim .Name " "}}
     </a>
   {{ end }}

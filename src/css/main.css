@@ -1,22 +1,32 @@
-@import "imports/reset.css";
+/*@import "imports/reset.css"; */
 @import "imports/variables.css";
 @import "imports/rules.css";
 @import "imports/grid.css";
 @import "imports/form.css";
 @import "imports/theme.css";
 @import "imports/animation.css";
+
 html {
-  font-size: var(--base-fontsize, 16px);  
+  font-size: var(--base-fontsize, 16px);
+  line-height: var(--line-height, 16px);
 }
+
 
 body {
   font-size: var(--base-fontsize, 16px);
-  line-height: 1.0rem;
   letter-spacing: -.02em; 
   margin: 0;
   overflow-wrap: break-word;
   max-width: 100vw;
   min-height: 100vh;
+  
+  /* Background grid */  
+  &:after {
+    will-change: transform;
+    @apply --empty;
+    @apply --grid-background;
+    position: fixed;
+  }
 }
 
 /* Top Header */
@@ -29,17 +39,10 @@ body > header {
   & .logo {
     @apply --hero-font;
     color: var(--white);
-    padding: calc( 2*var(--padding) ) 0;
+    padding: calc( 2*var(--gutter) ) 0;
     
     margin: 0;  
-  }
-  
-  /* Background grid */  
-  &:after {
-    @apply --empty;
-    @apply --grid-background;
-    position: fixed;
-  }
+  }  
 }
 
 
@@ -64,12 +67,11 @@ body > header {
 /*
  * Contact section
  */
-.section.contact {
-  background-color: color( var(--second) alpha(80%) );
-  
-  
+section.contact {
+    
   /* Picture */
   & .picture {
+    width: 50%;
     @apply --transition;
     
     cursor: pointer;
@@ -84,7 +86,6 @@ body > header {
       @apply --hero-font;
     }
   }
-    
 }
 
 

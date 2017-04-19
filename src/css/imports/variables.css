@@ -23,15 +23,15 @@
   --linescale: var(--major-third);
     
   /* Default margin/padding */
-  --padding:     0.5em;
+  --gutter:     0.5em;
   
   /* Header height */
   --header-offset: calc(4em);
   
   /* Shadows */
-  --shadow: 0px 0px calc(var(--padding)*var(--perfect-fifth)) rgba(0,0,0,0.7);
-  --shadow-big: 0px 0px calc(4*var(--padding)*var(--perfect-fifth)) rgba(0,0,0,0.7);
-  --shadow-huge: 0px 0px calc(8*var(--padding)*var(--perfect-fifth)) rgba(0,0,0,0.7);
+  --shadow: 0px 0px calc(var(--gutter)*var(--perfect-fifth)) rgba(0,0,0,0.7);
+  --shadow-big: 0px 0px calc(4*var(--gutter)*var(--perfect-fifth)) rgba(0,0,0,0.7);
+  --shadow-huge: 0px 0px calc(8*var(--gutter)*var(--perfect-fifth)) rgba(0,0,0,0.7);
   
   /* Animations/transitions */
   --trans-props:    transform;
