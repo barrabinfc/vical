@@ -12,7 +12,7 @@
   
     {{ partial "_instyle" .}}
     
-    <!-- Load css asynchronously  -->
+    <!-- Load css asynchronously -->
     <script type="text/javascript">
         ['/css/main.css','/css/typography.css',
          '/css/evil-icons.css'].map( function(url) {
@@ -22,14 +22,15 @@
             document.head.appendChild(link);
         });
     </script>
+    
   </head>
   {{ $theme_variant := .Site.Params.theme_variant | default "dark" }}
-  {{ $page := .Kind | default "home" }}
+  {{ $page := .Kind | default "page" }}
   {{ $layout := .Layout | default "index" }}
   <body class="{{ $theme_variant }} {{ $page }} {{ $layout }}">
 
     <header role="top-header">
-      <div class="container-fluid grid -horizontal -middle -between">
+      <div class="container-fluid grid :horizontal :middle :between">
         {{ block "header" .}}{{ end }}
       </div>
     </header>

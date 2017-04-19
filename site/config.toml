@@ -3,8 +3,8 @@ languageCode = "en-us"
 title = "« wity »"
 paginate = 5
 
-#theme = "after-dark"
 
+pluralizelisttitles =false
 enableRobotsTXT=true
 googleAnalytis  = ""
 disqusShortname = ""
@@ -31,4 +31,4 @@ footnoteReturnLinkContents = "↩"
   name = "Projects"
   weight = 100
   identifier = "projects"
-  url = "/projects/"  
+  url = "/projects/"

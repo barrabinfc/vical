@@ -15,6 +15,16 @@ code[class*=language-], pre[class*=language-], pre code {
   margin: 1.75rem 0;
 }
 
+blockquote { 
+  width: 100%; 
+  margin: 1em auto; 
+  font-size: 2em; 
+  line-height: calc(1rem * 1.33 ); 
+  text-align: center; 
+}
+blockquote > p { margin: 0; }
+
+
 a {  text-decoration: none; }
 a.default {
   position: relative;
@@ -38,14 +48,19 @@ a.default {
 
 
 
-.text-masked {
-  @apply --text-masked;
-}
+.pull\:left { float: left; }
+.pull\:right { float: right; }
 
-.pull-left { float: left; }
-.pull-right { float: right; }
+.w\:50 { max-width: 50%; }
+.w\:70 { max-width: 70%; }
+.w\:90 { max-width: 90%; }
 
-.hero { font-size: 4rem; }
+.txt\:mask { @apply --text-masked; }
+.txt\:big  { font-size: 2em; line-height: 1em; }
+.txt\:hero { font-size: 4rem; line-height: 2em; }
+
+.bg\:primary{ background-color: color( var(--primary) alpha(80%)); }      
+.bg\:second { background-color: color( var(--second) alpha(80%)); }
 
 /*
  * General components
@@ -58,7 +73,7 @@ a.default {
   background-color: var(--black);
 
   display: block;
-  padding: var(--padding) calc(2*var(--padding));
+  padding: var(--gutter) calc(2*var(--gutter));
   
   &:hover {
     background-color: var(--white);
@@ -66,7 +81,7 @@ a.default {
   }
   &:after { all: unset; }
   
-  &.txt {
+  &\:txt {
     display: inline-block;
     margin: 0px auto;
     text-transform: uppercase;
@@ -106,11 +121,8 @@ a.default {
       
       @apply --transition;
       transform: scaleX(-1);
-      background-size: calc( 1.0 * var(--padding));
+      background-size: calc( 1.0 * var(--gutter));
       background-image: svg-load("../inline-svg/oblique-stripe.svg",fill=transparent)
-      /*
-  background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><rect width='10' height='10' fill='transparent'/><path d='M-1,1 l2,-2 M0,10 l10,-10 M9,11 l2,-2' stroke='#efefef' stroke-width='1'/></svg>");
-       */
     }
       
     &:hover {
@@ -121,7 +133,7 @@ a.default {
     }
   
     /* active only have bg pattern */
-    &.active {
+    &\:active {
       background-color: transparent;
       color: var(--white);
       &:after {
@@ -136,10 +148,11 @@ a.default {
 /*
  * A block full page
  */
-.section {
+main > section {
   position: relative;
   width: 100%;
   min-height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   background-color: transparent;
@@ -151,7 +164,7 @@ a.default {
   & > article {
     min-height: 100vh;
     height: 100%;
-    padding: 0 calc( 4 * var(--padding));
+    padding: 2em calc( 4 * var(--gutter));
 
     & > h1:first-child, & > h2:first-child,
     & > h3:first-child, & > h4:first-child,
@@ -160,7 +173,7 @@ a.default {
     }
     
     ul {
-      margin-left: calc(2*var(--padding));
+      margin-left: calc(2*var(--gutter));
     }
   }
 

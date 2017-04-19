@@ -1,0 +1,12 @@
+{{ define "header" }}
+  {{ partial "logo" . }}
+  {{ partial "nav" . }}
+{{ end }}
+{{ define "main" }}
+  <div id="content-featured" class="featured">
+    {{- range first 10 .Data.Pages }}
+      <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+    {{- end }} 
+    
+  </div>
+{{ end }}

@@ -58,9 +58,9 @@ gulp.task("server", ["hugo", "css", "vendor-js", "js"], () => {
     }
   });
   */
-  gulp.watch("./src/js/vendor/*.js$", ["vendor-js"]);
-  gulp.watch("./src/js/**/*.js$", ["js"]);
-  gulp.watch("./src/css/**/*.css$", ["css"]);
+  gulp.watch("./src/js/vendor/*.js", ["vendor-js"]);
+  gulp.watch("./src/js/**/*.js", ["js"]);
+  gulp.watch("./src/css/**/*.css", ["css"]);
   gulp.watch("./site/**/*", ["hugo"]);
 });
 

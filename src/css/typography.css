@@ -7,22 +7,41 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Orbitron|Source+Code+Pro');
 
 :root {
-  --line-height: 16px;
   --linescale: calc(5/4);
   --typoscale: calc(3/2);   /* perfect fifth */
 }
 
 
-/*
-h1,h2,h3,h4,h5,h6 {
-  line-height: calc( var(--line-height) * 2*var(--linescale));
-}*/
-
-h1 { font-size: calc(1rem * 2.33 * var(--typoscale));    margin: calc(1rem * 5 * var(--typoscale)) 0; }
-h2 { font-size: calc(1rem * 2 * var(--typoscale));       margin: calc(1rem * 4 * var(--typoscale))  0; }
-h3 { font-size: calc(1rem * 1.66 * var(--typoscale));    margin: calc(1rem * 3 * var(--typoscale))  0; }
-h4 { font-size: calc(1rem * 1.33 * var(--typoscale));    margin: calc(1rem * 2 * var(--typoscale))  0; }
-h5 { font-size: calc(1rem * 1 * var(--typoscale));       margin: calc(1rem * 1 * var(--typoscale))  0; }
-h6 { font-size: calc(1rem * .77 * var(--typoscale));     margin: calc(1rem * 0.77 * var(--typoscale))  0; }
+h1 { 
+  font-size: calc(1rem * 2.33 * var(--typoscale));    
+  margin: calc(1rem * 5 * var(--typoscale)) 0;
+  line-height: calc(1rem * 2.33 * var(--typoscale));
+}
+h2 { 
+  font-size: calc(1rem * 2 * var(--typoscale));       
+  margin: calc(1rem * 4 * var(--typoscale))  0;
+  line-height: calc(1rem * 2 * var(--typoscale));
+}
+  
+h3 { 
+  font-size: calc(1rem * 1.66 * var(--typoscale));    
+  margin: calc(1rem * 3 * var(--typoscale))  0;
+  line-height: calc(1rem * 1.66 * var(--typoscale));
+}
+h4 {
+  font-size: calc(1rem * 1.33 * var(--typoscale));
+  margin: calc(1rem * 2 * var(--typoscale))  0; 
+  line-height: calc(1rem * 1.33 * var(--typoscale));  
+}
+h5 {
+  font-size: calc(1rem * 1 * var(--typoscale));
+  margin: calc(1rem * 1 * var(--typoscale))  0; 
+  line-height: calc(1rem * 1 * var(--typoscale));
+}
+h6 {
+  font-size: calc(1rem * .77 * var(--typoscale));
+  margin: calc(1rem * 0.77 * var(--typoscale))  0;
+  line-height: calc(1rem * .77 * var(--typoscale)); 
+}
 
 p { margin: 0 0 1.5em;}
