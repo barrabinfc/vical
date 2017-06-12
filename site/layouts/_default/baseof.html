@@ -14,26 +14,27 @@
     
     <!-- Load css asynchronously -->
     <script type="text/javascript">
-        ['/css/main.css','/css/typography.css',
-         '/css/evil-icons.css'].map( function(url) {
+        ['/css/evil-icons.css'].map( function(url) {
             var link = document.createElement('link');
             link.rel = "stylesheet";
             link.href = url;
             document.head.appendChild(link);
         });
     </script>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/typography.css">
+    
     
   </head>
-  {{ $theme_variant := .Site.Params.theme_variant | default "dark" }}
+  {{ $colorscheme := .Params.colorscheme | default "dark" }}
   {{ $page := .Kind | default "page" }}
   {{ $layout := .Layout | default "index" }}
-  <body class="{{ $theme_variant }} {{ $page }} {{ $layout }}">
+  <body class="{{ $colorscheme }} {{ $page }} {{ $layout }}">
 
-    <header role="top-header">
-      <div class="container-fluid grid :horizontal :middle :between">
-        {{ block "header" .}}{{ end }}
-      </div>
+    <header role="header" class="container">
+      {{ block "header" .}}{{ end }}
     </header>
+    
     <main>{{ block "main" .}}{{ end }}</main>
     <footer>{{ block "footer" .}}{{ end }}</footer>
 

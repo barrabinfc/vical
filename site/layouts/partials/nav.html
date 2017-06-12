@@ -3,8 +3,18 @@
   {{ range .Site.Menus.main }}
     {{ $is  := $currentNode.IsMenuCurrent "main" . }}
     {{ $has := $currentNode.HasMenuCurrent "main" . }}
-    <a itemprop="url" class="menu-item btn {{if or ($is) ($has) }}active{{end}}" href="{{ .URL }}">
+    <div class="menu-header" id="menu-{{ .Identifier}}"><a href="{{.URL}}">{{trim .Name " "}}</a></div>
+    {{ if .HasChildren }}
+      <ul class="sub-menu">
+      {{ range .Children }}
+          <li> <a href="{{.URL}}"> {{ .Name }} </a> </li>
+      {{ end }}
+      </ul>
+    {{ end }}
+    <!--
+    <a itemprop="url" class="default menu-item {{if or ($is) ($has) }}active{{end}}" href="{{ .URL }}">
       {{ trim .Name " "}}
     </a>
+    -->
   {{ end }}
 </nav>

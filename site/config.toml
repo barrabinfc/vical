@@ -19,16 +19,83 @@ footnoteReturnLinkContents = "↩"
   powered_by = false
   images = []
   theme_variant = ""
+  
+[[menu.main]]
+  name = "work"
+  weight = 1
+  identifier = "work"
+  url = "/work/"
 
+[[menu.main]]
+  name = "Astrorunners"
+  parent = "work"
+  identifier = "work/astrorunners"
+  url = "/work/astrorunners"
 
+[[menu.main]]
+  name = "Luiza Lian"
+  parent = "work"
+  identifier = "work/luizalian"
+  url = "/work/luizalian"
+
+[[menu.main]]
+  name = "Bigud"
+  parent = "work"
+  identifier = "work/bigud"
+  url = "/work/bigud"
+
+[[menu.main]]
+  name = "BMG"
+  parent = "work"
+  identifier = "work/bmg"
+  url = "/work/bmg"
+
+  
+[[menu.main]]
+  name = "software"
+  weight = 2
+  identifier = "software"
+  url = "/software/"
+  
+[[menu.main]]
+  name = "I Ching"
+  parent = "software"
+  identifier = "software/iching"
+  url = "/software/iching"
+  
+[[menu.main]]
+  name = "Music Coach"
+  parent = "software"
+  identifier = "software/musicoach"
+  url = "/software/music-coach"
+
+[[menu.main]]
+  name = "Music bx"
+  parent = "software"
+  identifier = "software/bx"
+  url = "/software/music-bx"
+
+[[menu.main]]
+  name = "Music ax"
+  parent = "software"
+  identifier = "software/ax"
+  url = "/software/music-ax"
+
+[[menu.main]]
+  name = "Music dx"
+  parent = "software"
+  identifier = "software/dx"
+  url = "/software/music-dx"
+
+[[menu.main]]
+  name = "Blog"
+  identifier = "blog"
+  url = "/blog/"
+  weight = 10
+  
 [[menu.main]]
   name = "About"
   weight = 100
   identifier = "about"
   url = "/about/"
-  
-[[menu.main]]
-  name = "Projects"
-  weight = 100
-  identifier = "projects"
-  url = "/projects/"
+  klass = "self-bottom"
