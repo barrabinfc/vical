@@ -29,20 +29,16 @@ a {  text-decoration: none; }
 a.default {
   position: relative;
   cursor: pointer;
-  color: #ff2e88;
+  color: var(--white);
   text-decoration: none;
-  &:after {
-    @apply --abs;
-    bottom: 0;
-    content: ' ';
-    width: 100%;
-    height: 1px;
-    background-color: #ff2e88;
-  }
-  &:hover {
-    background-color: #ff2e88;
-    color: #fff;      
-  }
+}
+
+/** 
+ * A links without default style
+ */
+a.clean {
+  margin: inherit;
+  padding: inherit;
 }
 
 
@@ -61,6 +57,12 @@ a.default {
 
 .bg\:primary{ background-color: color( var(--primary) alpha(80%)); }      
 .bg\:second { background-color: color( var(--second) alpha(80%)); }
+
+
+/* Apply margin-top iof header size */
+.\:header-margin {
+  margin-top: var(--header-height);
+}
 
 /*
  * General components
@@ -96,42 +98,43 @@ a.default {
  */
 .menu {
   display: flex;
-  width: 40%;
-  justify-content: space-around;
+  flex-direction: column;
+  align-content: stretch;
+  height: 80%;
 
+  & .menu-header {
+    @apply --code-font;
+    letter-spacing: 3px;
+    color: var(--black);
+    font-weight: bold;
+    margin: 0;
+    & a {
+      color: inherit;
+      margin: 0; padding: 0;
+      text-transform: uppercase;
+    }
+  }
+  
+  & .sub-menu {
+    list-style: none;
+    padding-left: 0;
+    
+    & li { float: left; display: inline; width: 46%; }
+    & a {
+      @apply --code-font;
+      font-weight: 300;
+      color: inherit;
+      margin: 0; padding: 0;
+    }
+  }
+  
   & .menu-item {
-  
     position: relative;
-    color: var(--primary);
+    color: var(--black);
+    margin: 0;
     
-    letter-spacing: 0.15em;
     text-transform: uppercase;
-    font-weight: 100;
-    text-transform: uppercase;
-    
-    /* bg pattern */
-    &:after {
-      content: "";
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      top: 4px;
-      left: 4px;
-      z-index: -10;
       
-      @apply --transition;
-      transform: scaleX(-1);
-      background-size: calc( 1.0 * var(--gutter));
-      background-image: svg-load("../inline-svg/oblique-stripe.svg",fill=transparent)
-    }
-      
-    &:hover {
-      &:after {
-        top: 8px;
-        left: 8px;
-      } 
-    }
-  
     /* active only have bg pattern */
     &\:active {
       background-color: transparent;

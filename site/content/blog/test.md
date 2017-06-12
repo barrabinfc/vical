@@ -1,8 +1,7 @@
 +++
 description = "Hello Post"
 draft = false
-Title = "Hello"
-parent = "blog"
+title = "Test"
 +++
 
 An h1 header

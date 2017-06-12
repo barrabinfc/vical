@@ -1,0 +1,59 @@
+{{ define "header" }}
+  {{ partial "logo" . }}
+  {{ partial "nav" . }}
+{{ end }}
+{{ define "main" }}
+  <section class="project">
+    <article class="container grid :vertical :middle :around :header-margin">
+      <picture class="project__logo">
+        {{ with .Params.logo }}
+          <img src="{{ . }}">
+        {{ end }}
+        {{ if eq .Params.logo nil }}
+          <span>{{ safeHTML .Title }}</span>
+        {{ end }}
+      </picture>
+      
+      <ul class="project__meta">
+        <li>
+          <strong class="label">Visit</strong>
+          <a href="http://{{ .Params.website }}" class="clean value color-high">{{ .Params.website }}</a>
+        </li>
+        <li>
+          <strong class="label">Created at</strong>
+          <span class="value color-high">{{ .Params.created_at}}</span>
+        </li>
+        <li>
+          <strong class="label">Technology</strong>
+          <span href="" class="value color-high">{{ .Params.tech }}</span>
+        </li>
+        <li>
+          <strong class="label">License</strong>
+          <span href="" class="value color-high">{{ .Params.license }}</span>          
+        </li>
+      </ul>
+      
+      <div class="project__info font-big">
+        <p>{{ .Params.description }}</p>
+      </div>
+    </article>
+  </section>
+  <section>
+    <article id="content-body" class="container">
+      {{ .Content }}
+    </article>
+  </section>
+{{ end }}
+
+
+{{ define "footer"}}
+<style>
+  main { 
+    background-color: {{ safeCSS .Params.bg_color }};
+    color: {{ safeCSS .Params.color }};
+  }
+  .color-high {
+    color: {{ safeCSS .Params.high_color }} !important;
+  }
+</style>
+{{ end }}

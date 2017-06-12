@@ -15,8 +15,8 @@
   --fourth:      #f05553;
   
   /* typography scale */
-  --base-fontsize: 16px;
-  --line-height:   16px;
+  --base-fontsize: 14px;
+  --line-height:   14px;
   --perfect-fifth: calc(3/2); 
   --major-third:   calc(5/4);
   --typoscale: var(--perfect-fifth);
@@ -26,7 +26,7 @@
   --gutter:     0.5em;
   
   /* Header height */
-  --header-offset: calc(4em);
+  --header-height: 64px;
   
   /* Shadows */
   --shadow: 0px 0px calc(var(--gutter)*var(--perfect-fifth)) rgba(0,0,0,0.7);
@@ -34,7 +34,7 @@
   --shadow-huge: 0px 0px calc(8*var(--gutter)*var(--perfect-fifth)) rgba(0,0,0,0.7);
   
   /* Animations/transitions */
-  --trans-props:    transform;
+  --trans-props:    all;
   --trans-time:     0.15s;
   --trans-easing:   cubic-bezier(0.52, 0.01, 0.16, 1); /* Expo ease-out */
   

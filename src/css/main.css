@@ -1,5 +1,6 @@
 /*@import "imports/reset.css"; */
 @import "imports/variables.css";
+@import "imports/colors.css";
 @import "imports/rules.css";
 @import "imports/grid.css";
 @import "imports/form.css";
@@ -14,6 +15,7 @@ html {
 
 body {
   font-size: var(--base-fontsize, 16px);
+  font-family: 'Open Sans';
   letter-spacing: -.02em; 
   margin: 0;
   overflow-wrap: break-word;
@@ -31,18 +33,42 @@ body {
 
 /* Top Header */
 body > header {
-  @apply --sticky;
-  width: 100%;
+  position: absolute;
+  width: 400px;
+  height: 80%;
+  height: 80%;
+  top: 48px;
+  left: 48px;
+  background-color: #fff;
+  
   z-index: 10;
   will-change: opacity;
-    
+  color: var(--black);
+  padding: 1em 3em;
+
+  text-align: left;
+  
   & .logo {
+    display: block;
+    width: 100%;
     @apply --hero-font;
-    color: var(--white);
+    color: inherit;
     padding: calc( 2*var(--gutter) ) 0;
     
+    font-size: 2.0rem;
+    letter-spacing: 3px;
+    
     margin: 0;  
-  }  
+  }
+  
+  & #menu-software + .sub-menu , 
+  & #menu-work + .sub-menu {
+    padding-bottom: 3rem;
+  }
+  
+  & #menu-about {
+    margin-top: auto;
+  }
 }
 
 
@@ -62,7 +88,58 @@ body > header {
 }
   
 
+/**
+ * Project
+ */
+section.project {
+  text-align: center;
+  
+  & .project__logo {
+    margin: 0 auto;
+    width: 20%;
+    & > img { width: 100%; }
+  }
+  
+  & .project__meta {
+    list-style: none;
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    & li {
+      display: table-cell;
+      border: 1px solid;
 
+      & .value , & .label {
+        padding: 0 2em;
+        display: block;
+        width: 100%;
+        line-height: 2em;
+        text-transform: uppercase;
+        @apply --code-font;
+        font-size: 1.0rem;
+        font-weight: 700;
+      }
+      
+      & .label {
+        font-weight: 700;
+        font-size: 0.8rem; 
+        border-bottom: 1px solid var(--dark-gray);
+      }
+      & .value {
+        color: var(--fourth);
+      }
+    }
+    
+  }
+  & .project__meta, & .project__meta li , &.project__meta .label {
+    border-color: var(--dark-gray);
+  }
+  
+  & .project__info {
+    font-size: 1rem;
+  }
+}
 
 /*
  * Contact section
