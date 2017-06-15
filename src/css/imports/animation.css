@@ -17,6 +17,16 @@
 }
 
 
+/** 
+ * Transition
+ **/
+:root {
+  --transition-shrinkTooltip {
+    height: 2px;
+    width: 150%;
+    opacity: 0;
+  }
+}
 @keyframes shrinkTooltip {
   from { height: 150px; width: 150%; }
   to { height: 2px; width: 150%; opacity: 0; }
@@ -62,6 +72,8 @@ body.software {
   
   /* Grow a underscore */
   & .header-anim-growTooltip {
+    
+    /* left */
     &:before {
       content: ' ';
       background-color: var(--black);
@@ -72,45 +84,47 @@ body.software {
       position: absolute;
       
       z-index: 0;
-      animation-play-state: paused;
+      transition: width 0.5s var(--trans-easing);
     }
     
+    /* right */
     &:after {
       content: ' ';
       background-color: var(--black);
       width: 0%;
       left: 50%;
       top: 1.7em;
-      height: 150px;
+      height: 2px;
       position: absolute;
 
       z-index: 0;
-      animation-play-state: paused;
+      transition: width 0.5s var(--trans-easing);
+    }
+    
+    & .sub-menu {
+      max-height: 0px;
+      opacity: 0;
+      visibility: hidden;
+      overflow: hidden;
+
+      transition: max-height 0.5s 0.5s var(--trans-easing), 
+                  opacity 0.25s 0.5s var(--trans-easing);
     }
     
     /* States of animation */
-    &.in {
+    &:hover {
       &:before {
-        animation: growTooltipLeft 1.0s var(--trans-easing);
-        animation-play-state: running;
-        animation-fill-mode: both;
+        width: 150%;
       }
       &:after {
-        animation: growTooltipRight 1.0s var(--trans-easing);
-        animation-play-state: running;
-        animation-fill-mode: both;
+        width: 150%;
+      }
+      & .sub-menu {
+        visibility: visible;
+        opacity: 1;
+        max-height: 500px;
       }
     }
     
-    &.out {
-      &:before {
-        animation: shrinkTooltip 0.5s var(--trans-easing);
-        animation-play-state: running;
-      }
-      &:after {
-        animation: shrinkTooltip 0.5s var(--trans-easing);
-        animation-play-state: running;      
-      }
-    }
   }
 }

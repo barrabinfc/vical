@@ -4,8 +4,8 @@
   {{ range .Site.Menus.main }}
     {{ $is  := $currentNode.IsMenuCurrent "main" . }}
     {{ $has := $currentNode.HasMenuCurrent "main" . }}
-    <div class="menu-header header-anim-growTooltip hoverable 
-                {{ if .HasChildren }}has-submenu{{else}}is-link{{end}}" 
+    <div class="menu-header hoverable 
+                {{ if .HasChildren }}has-submenu header-anim-growTooltip {{else}}is-link{{end}}" 
                 id="menu-{{ .Identifier }}">
       <a href="{{.URL}}">{{trim .Name " "}}</a>
       {{ if .HasChildren }}
