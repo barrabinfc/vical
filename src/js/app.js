@@ -6,7 +6,7 @@ function start() {
   scrollListener()
   fixHrefTarget(document)
   
-  hoverInOut(document, '.menu-header.has-submenu.hoverable' )
+  /*hoverInOut(document, '.menu-header.has-submenu.hoverable' )*/
 }
 
 

@@ -65,12 +65,13 @@
   .menu-header::before , .menu-header::after {
     background-color: {{ safeCSS .Params.color }} !important;
   }
-  .menu-header.has-submenu.in > a,
+  .menu-header.has-submenu:hover > a,
   .menu-header.is-link:hover > a {  
     background-color: {{ safeCSS .Params.color}} !important; 
     color: {{ safeCSS .Params.bg_color }} !important;
   }
   .menu-header .sub-menu {
+    background-color: {{ safeCSS .Params.color }} !important;
     color: {{ safeCSS .Params.bg_color }} !important;
   }
 

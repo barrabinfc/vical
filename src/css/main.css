@@ -199,21 +199,20 @@ body.software {
         padding-bottom: 0;
         letter-spacing: 0px;
         
-        & > a { 
+        & > a {
+          vertical-align: baseline;
+          padding: var(--gutter); 
+          
           @apply --transition;
           transition-timing-function: var(--trans-easing);
           transition-duration: 0.5s;
-          padding: var(--gutter); 
         }
-        &.has-submenu.in ,
+        
+        &.has-submenu:hover ,
         &.is-link:hover {
           & > a { background-color: var(--black, #000); color: var(--white, #fff);  } 
         }
-        
-        /* Delay from submenus */
-        &.has-submenu.in { & > a { transition-delay: 0.0s; } }
-        &.has-submenu.out { & > a { transition-delay: 0s; } }
-        
+                
       }
             
       /* submenus appear as bottom children  */
@@ -222,36 +221,50 @@ body.software {
         position: absolute;
         left: -100%;
         width: 300%;
-        height: 150px;
         top: 1.7rem;
         padding: 1em;
-
-        visibility: hidden;
-        opacity: 0;
+        
         z-index: 10;
         background-color: transparent;
         color: inherit;
 
         /** Single line items */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        text-transform: lowercase;
-        & li { float: none; width: 100%; display: block; }
+        display: block;
+        text-transform: capitalize;
         
-        transition: all 0.15s ease-out;
+        & li {
+          visibility: hidden; 
+          opacity: 0;
+          float: none; 
+          width: 100%;
+          padding: 0.5em 0em;
+
+          
+          & > a { 
+            width: 100%; 
+            display: block; 
+            vertical-align: baseline; 
+            &:hover {
+              font-weight: bold;
+              text-decoration: underline;
+            }
+          }
+            
+          
+          transition: all 0.25s 0.75s;
+        }
       }
       
       
-      /* Show submenus on hover */
-      & .menu-header.in > .sub-menu {
-        visibility: visible;
-        opacity: 1; 
+      /* Show submenus on hover */ 
+      & .menu-header:hover .sub-menu {
+        & li {
+          visibility: visible;
+          opacity: 1;
+          display: block;
+        }
       }
       
-      /* Remove delay when hoverOUt */
-      & .menu-header.in > .sub-menu { transition-delay: 1.0s; }      
-      & .menu-header.out > .sub-menu { transition-delay: 0s; }
     }
   }
 }
