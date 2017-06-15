@@ -42,14 +42,46 @@ a.clean {
 }
 
 
+/*
+ * Lists
+ */
+ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  & li { 
+   padding: 0;
+  }
+}
+
+ul.horizontal {
+  display: table;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  
+  & li {
+    display: table-cell;
+    border-color: inherit;
+  }
+}
+
+
 
 
 .pull\:left { float: left; }
 .pull\:right { float: right; }
 
-.w\:50 { max-width: 50%; }
-.w\:70 { max-width: 70%; }
-.w\:90 { max-width: 90%; }
+.w5  { max-width: 5%; }
+.w10 { max-width: 10%; }
+.w33 { max-width: 33%; }
+.w25 { max-width: 25%; }
+.w40 { max-width: 40%; }
+.w45 { max-width: 45%; }
+.w50 { max-width: 50%; }
+.w70 { max-width: 70%; }
+.w90 { max-width: 90%; }
+.w100 { max-width: 100%; }
 
 .txt\:mask { @apply --text-masked; }
 .txt\:big  { font-size: 2em; line-height: 1em; }
@@ -64,21 +96,19 @@ a.clean {
   margin-top: var(--header-height);
 }
 
+
 /*
  * General components
  */
 .btn {
-  @apply --code-font;
   @apply --transition;
   
   color: var(--white);
-  background-color: var(--black);
 
   display: block;
   padding: var(--gutter) calc(2*var(--gutter));
   
   &:hover {
-    background-color: var(--white);
     color: var(--black);
   }
   &:after { all: unset; }
@@ -104,47 +134,30 @@ a.clean {
 
   & .menu-header {
     @apply --code-font;
-    letter-spacing: 3px;
-    color: var(--black);
+    color: inherit;
+    /*color: var(--black);*/
     font-weight: bold;
     margin: 0;
-    & a {
+    & > a {
       color: inherit;
       margin: 0; padding: 0;
       text-transform: uppercase;
     }
-  }
-  
-  & .sub-menu {
-    list-style: none;
-    padding-left: 0;
-    
-    & li { float: left; display: inline; width: 46%; }
-    & a {
-      @apply --code-font;
-      font-weight: 300;
-      color: inherit;
-      margin: 0; padding: 0;
-    }
-  }
-  
-  & .menu-item {
-    position: relative;
-    color: var(--black);
-    margin: 0;
-    
-    text-transform: uppercase;
+
+    & .sub-menu {
+      list-style: none;
+      padding-left: 0;
       
-    /* active only have bg pattern */
-    &\:active {
-      background-color: transparent;
-      color: var(--white);
-      &:after {
-        top: 0;
-        left: 0;
+      & li { float: left; display: inline; width: 46%; }
+      & a {
+        @apply --code-font;
+        font-weight: 300;
+        color: inherit;
+        margin: 0; padding: 0;
       }
     }
   }
+  
 }
 
 

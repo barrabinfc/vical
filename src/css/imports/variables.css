@@ -15,8 +15,8 @@
   --fourth:      #f05553;
   
   /* typography scale */
-  --base-fontsize: 14px;
-  --line-height:   14px;
+  --base-fontsize: 12px;
+  --line-height:   16px;
   --perfect-fifth: calc(3/2); 
   --major-third:   calc(5/4);
   --typoscale: var(--perfect-fifth);
@@ -37,6 +37,8 @@
   --trans-props:    all;
   --trans-time:     0.15s;
   --trans-easing:   cubic-bezier(0.52, 0.01, 0.16, 1); /* Expo ease-out */
+  
+  --trans-time-slow: 0.85s;
   
   /* Reactive variables */
   --scrolly: 1;

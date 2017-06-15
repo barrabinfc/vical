@@ -28,17 +28,17 @@
   </head>
   {{ $colorscheme := .Params.colorscheme | default "dark" }}
   {{ $page := .Kind | default "page" }}
-  {{ $layout := .Layout | default "index" }}
-  <body class="{{ $colorscheme }} {{ $page }} {{ $layout }}">
+  {{ $section := .Section | default "index" }}
+  <body class="{{ $colorscheme }} {{ $page }} {{ $section }}">
 
-    <header role="header" class="container">
+    <header role="header" class="container" id="menu">
       {{ block "header" .}}{{ end }}
     </header>
     
     <main>{{ block "main" .}}{{ end }}</main>
     <footer>{{ block "footer" .}}{{ end }}</footer>
 
-    <script src="/js/app.js" async></script>
+    <script src="/js/app.js" defer></script>
     <script src="/js/vendor/evil-icons.js" defer></script>
   </body>
 </html>
