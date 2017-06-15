@@ -1,0 +1,69 @@
+{{ define "header" }}
+  {{ partial "logo" . }}
+  {{ partial "nav" . }}
+{{ end }}
+{{ define "main" }}
+  <section class="work">
+    <article class="showcase">
+      {{ .Content }}
+    </article>
+    <article id="content-body" class="info grid :vertical">
+      
+      <picture class="logo">
+        {{ with .Params.logo }}
+          <img src="{{ . }}">
+        {{ end }}
+        {{ if eq .Params.logo nil }}
+          <h2>{{ safeHTML .Title }}</h2>
+        {{ end }}
+      </picture>
+
+      <div class="description">
+        {{ safeHTML .Params.description }}
+      </div>
+      
+      <footer>
+        <ul role="nav" class="horizontal">
+          {{if .PrevInSection}}
+            <li class="w5"><a href="{{.PrevInSection.Permalink}}" class="default btn">◂</a></li>
+          {{end}}
+          <li class="w45"><a href="#menu" class="default btn">Menu</a></li>
+          <li class="w45"><a href="#" class="default btn">Visit</a></li>
+          {{if .NextInSection}}
+            <li class="w5"><a href="{{.NextInSection.Permalink}}" class="default btn">▸</a></li>
+          {{end}}
+        </ul>
+      </footer>
+    </article>    
+  </section>
+{{ end }}
+
+
+{{ define "footer"}}
+<style>
+  :root {
+    --black: {{ safeCSS .Params.color }};
+    --white: {{ safeCSS .Params.bg_color }};
+  }
+  
+  main { 
+    background-color: {{ safeCSS .Params.bg_color }};
+    color: {{ safeCSS .Params.color }};
+  }
+  .color-high {
+    color: {{ safeCSS .Params.high_color }} !important;
+  }
+  
+  /* Footer navigation */
+  ul[role="nav"] {
+    border-color: {{ safeCSS .Params.color }}
+  }
+  ul[role="nav"] a {
+    color: {{ safeCSS .Params.color }};
+  }
+  ul[role="nav"] a:hover {
+    background-color: {{ safeCSS .Params.color }} !important;
+    color: {{ safeCSS .Params.bg_color }} !important;
+  }
+</style>
+{{ end }}

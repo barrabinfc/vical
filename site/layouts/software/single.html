@@ -48,6 +48,11 @@
 
 {{ define "footer"}}
 <style>
+  :root {
+    --black: {{ safeCSS .Params.color }};
+    --white: {{ safeCSS .Params.bg_color }};
+  }
+
   main { 
     background-color: {{ safeCSS .Params.bg_color }};
     color: {{ safeCSS .Params.color }};
@@ -55,5 +60,19 @@
   .color-high {
     color: {{ safeCSS .Params.high_color }} !important;
   }
+  
+  /* Menu hover invert */
+  .menu-header::before , .menu-header::after {
+    background-color: {{ safeCSS .Params.color }} !important;
+  }
+  .menu-header.has-submenu.in > a,
+  .menu-header.is-link:hover > a {  
+    background-color: {{ safeCSS .Params.color}} !important; 
+    color: {{ safeCSS .Params.bg_color }} !important;
+  }
+  .menu-header .sub-menu {
+    color: {{ safeCSS .Params.bg_color }} !important;
+  }
+
 </style>
 {{ end }}
