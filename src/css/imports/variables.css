@@ -15,7 +15,7 @@
   --fourth:      #f05553;
   
   /* typography scale */
-  --base-fontsize: 12px;
+  --base-fontsize: 14px;
   --line-height:   16px;
   --perfect-fifth: calc(3/2); 
   --major-third:   calc(5/4);

@@ -17,52 +17,6 @@
 }
 
 
-/** 
- * Transition
- **/
-:root {
-  --transition-shrinkTooltip {
-    height: 2px;
-    width: 150%;
-    opacity: 0;
-  }
-}
-@keyframes shrinkTooltip {
-  from { height: 150px; width: 150%; }
-  to { height: 2px; width: 150%; opacity: 0; }
-}
-
-@keyframes growTooltipLeft {
-  0% {
-    width: 0%;
-    height: 2px;
-  }
-  50% {
-    width: 150%;
-    height: 2px;
-  }
-  100% {
-    right: 50%;
-    width: 150%;
-    height: 150px;
-  }
-}
-@keyframes growTooltipRight {
-  0% {
-    width: 0%;
-    left: 50%;
-    height: 2px;
-  }
-  50% {
-    width: 150%;
-    height: 2px;
-  }
-  100% {
-    left: 50%;
-    width: 150%;
-    height: 150px;
-  }  
-}
 
 
 /** 
@@ -128,3 +82,5 @@ body.software {
     
   }
 }
+
+

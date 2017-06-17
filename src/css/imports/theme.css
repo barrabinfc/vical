@@ -263,3 +263,45 @@ main > section {
 .picture {
   position: relative;
 }
+
+
+/*
+ * Cellphone mask
+ */
+.cellphone-mask {
+  position: relative;
+  overflow: hidden;
+  margin: 5em auto;
+  max-width: 568px;
+  min-width: 320px;
+  min-height: 440px;
+  zoom: 1.5;
+  
+  &:after {
+    content: ' ';
+    z-index: 10;
+    position: absolute;
+    top: 0; left: 25%;
+    background-size: contain;
+    background-image: url(../images/cellphone-mask.png);
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%
+  }
+  
+  & > .cellphone-screen {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 420px;
+    z-index: 5;
+    margin-top: 10px;
+    
+    & > img {
+      position: absolute;
+      top: 56px;
+      left: calc(25% + 42px);
+      width: 200px;
+    }
+  }
+}
