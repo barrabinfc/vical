@@ -28,7 +28,7 @@
             <li class="w5"><a href="{{.PrevInSection.Permalink}}" class="default btn">◂</a></li>
           {{end}}
           <li class="w45"><a href="#menu" class="default btn">Menu</a></li>
-          <li class="w45"><a href="#" class="default btn">Visit</a></li>
+          <li class="w45"><a href="{{.Params.website}}" class="default btn">Visit</a></li>
           {{if .NextInSection}}
             <li class="w5"><a href="{{.NextInSection.Permalink}}" class="default btn">▸</a></li>
           {{end}}
@@ -52,6 +52,19 @@
   }
   .color-high {
     color: {{ safeCSS .Params.high_color }} !important;
+  }
+  
+  /* Menu color */
+  #menu {
+    background-color: {{ safeCSS .Params.color }};
+    color: {{ safeCSS .Params.bg_color }};
+  }
+  #menu .menu-close {
+    border-color: {{ safeCSS .Params.bg_color }};
+  }
+  #menu .menu-close:hover {
+    background-color: {{ safeCSS .Params.bg_color }};
+    color: {{ safeCSS .Params.color }};
   }
   
   /* Footer navigation */
