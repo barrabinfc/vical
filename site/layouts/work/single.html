@@ -25,12 +25,12 @@
       <footer>
         <ul role="nav" class="horizontal">
           {{if .PrevInSection}}
-            <li class="w5"><a href="{{.PrevInSection.Permalink}}" class="default btn">◂</a></li>
+            <li class="w5"><a href="{{.PrevInSection.Permalink}}" class="default btn no-underline">◂</a></li>
           {{end}}
-          <li class="w45"><a href="#menu" class="default btn">Menu</a></li>
-          <li class="w45"><a href="{{.Params.website}}" class="default btn">Visit</a></li>
+          <li class="w45"><a href="#menu" class="default btn no-underline">Menu</a></li>
+          <li class="w45"><a href="{{.Params.website}}" class="default btn no-underline">Visit</a></li>
           {{if .NextInSection}}
-            <li class="w5"><a href="{{.NextInSection.Permalink}}" class="default btn">▸</a></li>
+            <li class="w5"><a href="{{.NextInSection.Permalink}}" class="default btn no-underline">▸</a></li>
           {{end}}
         </ul>
       </footer>
@@ -40,43 +40,5 @@
 
 
 {{ define "footer"}}
-<style>
-  :root {
-    --black: {{ safeCSS .Params.color }};
-    --white: {{ safeCSS .Params.bg_color }};
-  }
-  
-  main { 
-    background-color: {{ safeCSS .Params.bg_color }};
-    color: {{ safeCSS .Params.color }};
-  }
-  .color-high {
-    color: {{ safeCSS .Params.high_color }} !important;
-  }
-  
-  /* Menu color */
-  #menu {
-    background-color: {{ safeCSS .Params.color }};
-    color: {{ safeCSS .Params.bg_color }};
-  }
-  #menu .menu-close {
-    border-color: {{ safeCSS .Params.bg_color }};
-  }
-  #menu .menu-close:hover {
-    background-color: {{ safeCSS .Params.bg_color }};
-    color: {{ safeCSS .Params.color }};
-  }
-  
-  /* Footer navigation */
-  ul[role="nav"] {
-    border-color: {{ safeCSS .Params.color }}
-  }
-  ul[role="nav"] a {
-    color: {{ safeCSS .Params.color }};
-  }
-  ul[role="nav"] a:hover {
-    background-color: {{ safeCSS .Params.color }} !important;
-    color: {{ safeCSS .Params.bg_color }} !important;
-  }
-</style>
+  {{ partial "style_invert" .}}
 {{ end }}

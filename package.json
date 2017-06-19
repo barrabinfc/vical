@@ -38,6 +38,7 @@
     "postcss-import": "^8.1.2",
     "postcss-inline-svg": "^2.3.0",
     "postcss-loader": "^0.9.1",
+    "rot": "^0.1.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
     "whatwg-fetch": "^1.0.0"

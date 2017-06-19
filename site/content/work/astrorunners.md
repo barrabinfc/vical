@@ -12,7 +12,7 @@ logo = "/images/astrorunners/logo-black-final.png"
 +++
 
 <div class="gallery">
-  <img src="/images/astrorunners/showcase.png" alt="Showcase" />
+  <img src="/images/astrorunners/showcase.jpg" alt="Showcase" />
   <img src="/images/astrorunners/first-page.png" alt="Show case" />  
   <img src="/images/astrorunners/produto.jpg" alt="Product page" />  
   <img src="/images/astrorunners/frete.png" alt="Shipping page" />

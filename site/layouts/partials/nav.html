@@ -5,15 +5,18 @@
     {{ $is  := $currentNode.IsMenuCurrent "main" . }}
     {{ $has := $currentNode.HasMenuCurrent "main" . }}
     <div class="menu-header hoverable 
-                {{ if .HasChildren }}has-submenu header-anim-growTooltip {{else}}is-link{{end}}" 
+                {{ if $has }}selected{{end}}
+                {{ if .HasChildren }}has-submenu header-anim-growTooltip {{else}}is-link{{end}}"
                 id="menu-{{ .Identifier }}">
-      <a href="{{.URL}}">{{trim .Name " "}}</a>
       {{ if .HasChildren }}
+        <a>{{trim .Name " "}}</a>
         <ul class="sub-menu">
         {{ range .Children }}
-            <li> <a href="{{.URL}}"> {{ .Name }} </a> </li>
+            <li> <a href="{{.URL}}" class="default"> {{ .Name }} </a> </li>
         {{ end }}
         </ul>
+      {{ else }}
+        <a href="{{ .URL }}">{{trim .Name " "}}</a>
       {{ end }}
     </div>
   {{ end }}

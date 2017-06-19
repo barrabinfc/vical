@@ -3,18 +3,28 @@
   {{ partial "nav" . }}
 {{ end }}
 {{ define "main" }}
-  <div id="content-featured" class="project">
-    <picture>
-      {{ with .Params.featured_image }}
-        <img src="{{ . }}">
-      {{ end }}
-    </picture>
-    <div class="headline">
-      <h1 class="title">{{ safeHTML .Title }}</h1>
-      <h3 class="subtitle">{{ .Params.subtitle }}</h3>
-    </div>
-  </div>
-  <div id="content-body" class="container">
-    {{ .Content }}
-  </div>
+  <section class="post">
+    {{ $has_feature_klass  := .Params.featured_image | default ":header-margin" }}
+    {{ if .Params.featured_image }}
+      <article id="post__showcase" class="container grid :vertical :middle :around">
+        <picture>
+          {{ with .Params.featured_image }}
+            <img src="{{ . }}">
+          {{ end }}
+        </picture>
+        <div class="headline">
+          <h1 class="title">{{ safeHTML .Title }}</h1>
+          <h3 class="subtitle">{{ .Params.subtitle }}</h3>
+        </div>
+      </article>
+    {{ end }}
+    <article id="post__body" class="container grid :vertical :around {{$has_feature_klass}}">
+      {{ .Content }}
+    </article>
+  </section>
+{{ end }}
+
+
+{{ define "footer"}}
+  {{ partial "style_invert" .}}
 {{ end }}

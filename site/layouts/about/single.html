@@ -1,0 +1,21 @@
+{{ define "header" }}
+  {{ partial "logo" .}}
+  {{ partial "nav" . }}
+{{ end }}
+{{ define "main" }}
+<section class="work">
+  <article class="showcase">
+    <section class="about">{{ .Content }}</section>
+  </article>
+  <article id="content-body" class="info grid :vertical"></article>
+</section>
+{{ end }}
+
+{{ define "footer" }}
+  {{ partial "style_invert" .}}
+  <script type="text/javascript" defer>
+    document.addEventListener('DOMContentLoaded', function(){
+      window.unlockMail();
+    } );
+  </script>
+{{ end }}

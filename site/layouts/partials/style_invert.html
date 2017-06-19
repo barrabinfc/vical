@@ -1,0 +1,85 @@
+<style>
+  /**
+   * Global style
+   */
+  :root {
+    --black: {{ safeCSS .Params.color }};
+    --white: {{ safeCSS .Params.bg_color }};
+  }
+
+  main { 
+    background-color: {{ safeCSS .Params.bg_color }};
+    color: {{ safeCSS .Params.color }};
+  }
+  .color-high {
+    color: {{ safeCSS .Params.high_color }} !important;
+  }
+  
+  /**
+   * Software/Blog pages 
+   **/
+  
+  /* Menu hover invert */
+  body.blog .menu-header::before,
+  body.blog .menu-header::after,
+  body.software .menu-header::before , 
+  body.software .menu-header::after {
+    background-color: {{ safeCSS .Params.color }} !important;
+  }
+  
+  body.blog #menu .selected > a ,
+  body.software #menu .selected > a {
+    background-color: {{ safeCSS .Params.color}} !important; 
+    color: {{ safeCSS .Params.bg_color }} !important;    
+  }
+
+  body.blog .menu-header.has-submenu:hover > a,
+  body.blog .menu-header.is-link:hover > a,
+  body.software .menu-header.has-submenu:hover > a,
+  body.software .menu-header.is-link:hover > a {  
+    background-color: {{ safeCSS .Params.color}} !important; 
+    color: {{ safeCSS .Params.bg_color }} !important;
+  }
+
+  body.blog #menu .menu-header .sub-menu,
+  body.software #menu .menu-header .sub-menu {
+    background-color: {{ safeCSS .Params.color }} !important;
+    color: {{ safeCSS .Params.bg_color }} !important;
+  }
+  
+  /**
+   * Work&About pages 
+   **/
+   body.work #menu , 
+   body.about #menu {
+     background-color: {{ safeCSS .Params.color }};
+     color: {{ safeCSS .Params.bg_color }};
+   }
+   body.work #menu .menu-close, 
+   body.about #menu .menu-close,  {
+     border-color: {{ safeCSS .Params.bg_color }};
+   }
+   body.work #menu .menu-close:hover ,
+   body.about #menu .menu-close {
+     background-color: {{ safeCSS .Params.bg_color }};
+     color: {{ safeCSS .Params.color }};
+   }
+   body.work #menu .selected > a ,
+   body.about #menu .selected > a {
+     background-color: transparent;
+     color: inherit;
+   }
+   
+   
+   /* Footer navigation */
+   body.work #content-body ul[role="nav"] {
+     border-color: {{ safeCSS .Params.color }}
+   }
+   body.work #content-body ul[role="nav"] a {
+     color: {{ safeCSS .Params.color }};
+   }
+   body.work #content-body ul[role="nav"] a:hover {
+     background-color: {{ safeCSS .Params.color }} !important;
+     color: {{ safeCSS .Params.bg_color }} !important;
+   }
+</style>

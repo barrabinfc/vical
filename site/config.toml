@@ -3,7 +3,6 @@ languageCode = "en-us"
 title = "« wity »"
 paginate = 5
 
-
 pluralizelisttitles =false
 enableRobotsTXT=true
 googleAnalytis  = ""
@@ -97,5 +96,4 @@ footnoteReturnLinkContents = "↩"
   name = "About"
   weight = 100
   identifier = "about"
-  url = "/about/"
-  klass = "self-bottom"
+  url = "/about/me"
