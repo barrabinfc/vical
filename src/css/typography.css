@@ -4,7 +4,7 @@
  *  Title: Orbitron
  *  text: Play or Antic 
  */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Abril+Fatface|Montserrat:700|Source+Code+Pro:300,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Abril+Fatface|Montserrat:700|Source+Code+Pro:400,700');
 
 :root {
   --linescale: calc(5/4);
@@ -14,33 +14,33 @@
 
 h1 { 
   font-size: calc(1rem * 2.33 * var(--typoscale));    
-  margin: calc(1rem * 5 * var(--typoscale)) 0;
   line-height: calc(1rem * 2.33 * var(--typoscale));
+  margin: 0;
 }
 h2 { 
   font-size: calc(1rem * 2 * var(--typoscale));       
-  margin: calc(1rem * 4 * var(--typoscale))  0;
   line-height: calc(1rem * 2 * var(--typoscale));
+  margin: 0;
 }
   
 h3 { 
   font-size: calc(1rem * 1.66 * var(--typoscale));    
-  margin: calc(1rem * 3 * var(--typoscale))  0;
   line-height: calc(1rem * 1.66 * var(--typoscale));
+  margin: 0;
 }
 h4 {
   font-size: calc(1rem * 1.33 * var(--typoscale));
-  margin: calc(1rem * 2 * var(--typoscale))  0; 
   line-height: calc(1rem * 1.33 * var(--typoscale));  
+  margin: 0;
+
 }
 h5 {
   font-size: calc(1rem * 1 * var(--typoscale));
-  margin: calc(1rem * 1 * var(--typoscale))  0; 
   line-height: calc(1rem * 1 * var(--typoscale));
+  margin: 0;
 }
 h6 {
   font-size: calc(1rem * .77 * var(--typoscale));
-  margin: calc(1rem * 0.77 * var(--typoscale))  0;
   line-height: calc(1rem * .77 * var(--typoscale)); 
 }
 

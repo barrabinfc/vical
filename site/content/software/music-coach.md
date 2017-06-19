@@ -1,7 +1,7 @@
 +++
 draft = false
 colorscheme = "dark"
-color = "#efefef"
+color = "#fff"
 bg_color = "rgba(0,175,134, 0.90)"
 high_color = "#ffffff"
 title = "Music Coach"

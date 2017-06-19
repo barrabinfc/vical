@@ -1,8 +1,14 @@
 +++
-description = "Hello Post"
 draft = false
+description = "Hello Post"
 Title = "Hello"
 parent = "blog"
+
+colorscheme = "light"
+color = "#0f0f0f"
+bg_color = "rgba(255,255,255, 0.90)"
+high_color = "#f05553"
+txt_color = "#4b4748"
 +++
 
 An h1 header

@@ -27,9 +27,10 @@
     
   </head>
   {{ $colorscheme := .Params.colorscheme | default "dark" }}
+  {{ $layout := .Params.layout | default "" }}
   {{ $page := .Kind | default "page" }}
-  {{ $section := .Section | default "index" }}
-  <body class="{{ $colorscheme }} {{ $page }} {{ $section }}">
+  {{ $section := .Section | default "" }}
+  <body class="{{ $colorscheme }} {{ $page }} {{ $section }} {{ $layout }}">
 
     <header role="header" class="container" id="menu">
       {{ block "header" .}}{{ end }}

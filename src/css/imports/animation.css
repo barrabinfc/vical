@@ -6,23 +6,26 @@
     opacity: 1;
   }
 }
+.intro-anim {
+  animation: intro 1s;
+}
 
-@keyframes a {
-    0% {
-        transform: rotate(0deg)
-    }
-    to {
-        transform: rotate(1turn)
-    }
+
+@keyframes appearFromBottom {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+.appearFromBottom-anim {
+  animation: appearFromBottom 1s var(--trans-easing);
 }
 
 
 
-
 /** 
- *  Enable header-anim-growTooltip only in project pages
+ *  Enable header-anim-growTooltip only in project&blog pages
  */
-body.software {
+body.software ,
+body.blog {
   
   /* Grow a underscore */
   & .header-anim-growTooltip {

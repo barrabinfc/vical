@@ -113,62 +113,69 @@ body > header {
 /**
  * Software Page
  */
-section.project {
-  text-align: center;
-  
-  & .project__logo {
-    margin: 0 auto;
-    width: 20%;
-    & > img { width: 100%; }
-  }
-  
-  & .project__meta {
-    list-style: none;
-    display: table;
-    margin: 0 auto;
+body.software {
+  & .project__info {
     text-align: center;
-    border-collapse: collapse;
-    & li {
-      display: table-cell;
-      border: 1px solid;
+    
+    & .project__logo {
+      margin: 0 auto;
+      width: 20%;
+      & > img { width: 100%; }
+    }
+      
+    & .project__meta {
+      list-style: none;
+      display: table;
+      margin: 0 auto;
+      text-align: center;
+      border-collapse: collapse;
+      & li {
+        display: table-cell;
+        border: 1px solid;
 
-      & .value , & .label {
-        padding: 0 2em;
-        display: block;
-        width: 100%;
-        line-height: 2em;
-        text-transform: uppercase;
-        @apply --code-font;
-        font-size: 1.0rem;
-        font-weight: 700;
+        & .value , & .label {
+          padding: 0 2em;
+          display: block;
+          width: 100%;
+          line-height: 2em;
+          text-transform: uppercase;
+          @apply --code-font;
+          font-size: 1.0rem;
+          font-weight: 700;
+        }
+        
+        & .label {
+          font-weight: 700;
+          font-size: 0.8rem; 
+          border-bottom: 1px solid var(--dark-gray);
+        }
+        & .value {
+          color: var(--fourth);
+        }
       }
       
-      & .label {
-        font-weight: 700;
-        font-size: 0.8rem; 
-        border-bottom: 1px solid var(--dark-gray);
-      }
-      & .value {
-        color: var(--fourth);
-      }
+    }
+    & .project__meta, & .project__meta li , &.project__meta .label {
+      border-color: var(--dark-gray);
     }
     
-  }
-  & .project__meta, & .project__meta li , &.project__meta .label {
-    border-color: var(--dark-gray);
+    & .project__description {
+      font-size: 1rem;
+    }
   }
   
-  & .project__info {
-    font-size: 1rem;
+  & .project__body {
+      
   }
 }
 
 /**
- * Software Menu 
+ * Software/Blog Menu 
  */
-body.software {
+body.software,
+body.blog {
   /* Menu is horizontal */
-  & header[role="header"] {
+  & #menu {
     background-color: transparent;
     width: 80%;
     height: var(--header-height);
@@ -184,87 +191,86 @@ body.software {
 
     & .menu-close { display: none; }
     
-    /* Links */    
+    /* Navigation spacing */    
     & nav {
       width: 80%;
       margin-right: auto;
       flex-direction: row;
       justify-content: space-around;
-      
-      /* Menu */
-      & .menu-header {
-        position: relative;
-        padding-bottom: 0;
-        letter-spacing: 0px;
-        
-        & > a {
-          vertical-align: baseline;
-          padding: var(--gutter); 
-          z-index: 10;
-
-          @apply --transition;
-          transition-timing-function: var(--trans-easing);
-          transition-duration: 0.5s;
-        }
-        
-        &.has-submenu:hover ,
-        &.is-link:hover {
-          & > a { background-color: var(--black, #000); color: var(--white, #fff);  } 
-        }
-                
-      }
-            
-      /* submenus appear as bottom children  */
-      & #menu-about { margin-top: initial; }
-      & .sub-menu { 
-        position: absolute;
-        left: -100%;
-        width: 300%;
-        top: 1.7rem;
-        padding: 1em;
-        
-        z-index: 10;
-        background-color: transparent;
-        color: inherit;
-
-        /** Single line items */
-        display: block;
-        text-transform: capitalize;
-        
-        & li {
-          visibility: hidden; 
-          opacity: 0;
-          float: none; 
-          width: 100%;
-          padding: 0.5em 0em;
-
-          
-          & > a { 
-            width: 100%; 
-            display: block; 
-            vertical-align: baseline; 
-            &:hover {
-              font-weight: bold;
-              text-decoration: underline;
-            }
-          }
-            
-          
-          transition: all 0.25s 0.75s;
-        }
-      }
-      
-      
-      /* Show submenus on hover */ 
-      & .menu-header:hover .sub-menu {
-        & li {
-          visibility: visible;
-          opacity: 1;
-          display: block;
-        }
-      }
-      
     }
+    
+    /* Menu */
+    & .menu-header {
+      position: relative;
+      padding-bottom: 0;
+      letter-spacing: 0px;
+      
+      & > a {
+        vertical-align: baseline;
+        padding: var(--gutter); 
+        z-index: 10;
+
+        @apply --transition;
+        transition-timing-function: var(--trans-easing);
+        transition-duration: 0.5s;
+      }
+      
+      &.has-submenu:hover ,
+      &.is-link:hover {
+        & > a { background-color: var(--black, #000); color: var(--white, #fff);  } 
+      }
+    }
+            
+    /* submenus appear as bottom children  */
+    & #menu-about { margin-top: initial; }
+    & .sub-menu { 
+      position: absolute;
+      left: -100%;
+      width: 300%;
+      top: 1.7rem;
+      padding: 1em;
+      
+      z-index: 10;
+      background-color: transparent;
+      color: inherit;
+
+      /** Single line items */
+      display: block;
+      text-transform: capitalize;
+      
+      & li {
+        visibility: hidden; 
+        opacity: 0;
+        float: none; 
+        width: 100%;
+        padding: 0.5em 0em;
+
+        
+        & > a { 
+          width: 100%; 
+          display: block; 
+          vertical-align: baseline; 
+          &:hover {
+            font-weight: bold;
+            text-decoration: underline;
+          }
+        }
+          
+        
+        transition: all 0.25s 0.75s;
+      }
+    }
+      
+      
+    /* Show submenus on hover */ 
+    & .menu-header:hover .sub-menu {
+      & li {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+      }
+    }
+      
   }
 }
 
@@ -273,13 +279,12 @@ body.software {
 /**
  * Work pages
  */
-section.work {
+body.work {
   /* Image showcase */
   & .showcase {
     display: block;
     width: calc(100% - 392px);
     margin: 0; padding: 0;
-    float: left;
     overflow: hidden;
     
     & .gallery {
@@ -287,6 +292,8 @@ section.work {
       & > img {
         display: block;
         width: 100%;
+        
+        animation: intro 1s;
       }
     }
   }
@@ -352,10 +359,12 @@ section.work {
   }
 }
 
+
 /**
- * Work Menu 
+ * Work & about Menu 
  */
- body.work {
+ body.work,
+ body.about {
    & #menu {
      /* Occupy full .info position */
      position: fixed;
@@ -382,34 +391,92 @@ section.work {
        visibility: visible;
      }
    }
-
  }
-
-
-
-
-/*
- * Contact section
- */
-section.contact {
+ 
+ 
+ /**
+  * About Page
+  */
+body.about {
+  & section.about {
+    @apply --code-font;
     
-  /* Picture */
-  & .picture {
-    width: 50%;
-    @apply --transition;
+    display: flex;
+    flex-direction: column;
     
-    cursor: pointer;
-    will-change: transform;
-    transform: scale(1.0);
-    mix-blend-mode: hard-light;
+    height: 100%;
+    margin: 1em 3.4em;
+    margin-bottom: 0;
     
-    & > img {
-      box-shadow: var(--shadow-big);
-    }
-    & > .label {
+    /* Text */
+    & > h3:first-child { 
+      text-transform: uppercase;
       @apply --hero-font;
+      color: inherit;
+      padding: calc( 2*var(--gutter) ) 0;
+      
+      font-size: 2.0rem; 
+    }
+    & p { font-family: inherit; padding-left: 0; }
+
+
+    
+    & .summary {
+      margin-top: 3rem;
+      
+      & .title { 
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+      }
+      & .txt { margin-bottom: 2rem; }
+      
+      & .first-column {
+        width: 40%;
+        margin-right: 5em;
+      }
+      & .second-column { width: 50%; }
+    }
+    
+    /* Contact */
+    & .contact {      
+      cursor: pointer;
+      
+      & > a { 
+        display: block; 
+        height: 288px;
+        box-shadow: var(--shadow-big);
+        background-color: #000;
+        background-image: url(../images/old-computer.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+            
+      & .label {
+        @apply --hero-font;
+        text-align: center;
+
+        color: #fff;
+        
+        /* center */
+        height: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: stretch;
+      }
     }
   }
 }
-
-
+ 
+ /*
+  * About menu always visible 
+  */
+body.about {
+  & #menu {
+    visibility: visible;
+    transform: translateY(0);
+    
+    & .menu-close { visibility: hidden; }
+  }
+}

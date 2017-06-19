@@ -29,9 +29,9 @@
   --header-height: 64px;
   
   /* Shadows */
-  --shadow: 0px 0px calc(var(--gutter)*var(--perfect-fifth)) rgba(0,0,0,0.7);
-  --shadow-big: 0px 0px calc(4*var(--gutter)*var(--perfect-fifth)) rgba(0,0,0,0.7);
-  --shadow-huge: 0px 0px calc(8*var(--gutter)*var(--perfect-fifth)) rgba(0,0,0,0.7);
+  --shadow: 0px 0px calc(var(--gutter)*var(--perfect-fifth)) rgba(0,0,0,0.5);
+  --shadow-big: 5px 5px calc(4*var(--gutter)*var(--perfect-fifth)) rgba(0,0,0,0.5);
+  --shadow-huge: 10px 10px calc(8*var(--gutter)*var(--perfect-fifth)) rgba(0,0,0,0.5);
   
   /* Animations/transitions */
   --trans-props:    all;

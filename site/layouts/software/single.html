@@ -3,7 +3,7 @@
   {{ partial "nav" . }}
 {{ end }}
 {{ define "main" }}
-  <section class="project">
+  <section class="project__info">
     <article class="container grid :vertical :middle :around :header-margin">
       <picture class="project__logo">
         {{ with .Params.logo }}
@@ -33,13 +33,13 @@
         </li>
       </ul>
       
-      <div class="project__info font-big">
+      <div class="project__description font-big">
         <p>{{ .Params.description }}</p>
       </div>
     </article>
   </section>
-  <section>
-    <article id="content-body" class="container">
+  <section class="project__body">
+    <article class="container grid">
       {{ .Content }}
     </article>
   </section>
@@ -47,33 +47,5 @@
 
 
 {{ define "footer"}}
-<style>
-  :root {
-    --black: {{ safeCSS .Params.color }};
-    --white: {{ safeCSS .Params.bg_color }};
-  }
-
-  main { 
-    background-color: {{ safeCSS .Params.bg_color }};
-    color: {{ safeCSS .Params.color }};
-  }
-  .color-high {
-    color: {{ safeCSS .Params.high_color }} !important;
-  }
-  
-  /* Menu hover invert */
-  .menu-header::before , .menu-header::after {
-    background-color: {{ safeCSS .Params.color }} !important;
-  }
-  .menu-header.has-submenu:hover > a,
-  .menu-header.is-link:hover > a {  
-    background-color: {{ safeCSS .Params.color}} !important; 
-    color: {{ safeCSS .Params.bg_color }} !important;
-  }
-  #menu .menu-header .sub-menu {
-    background-color: {{ safeCSS .Params.color }} !important;
-    color: {{ safeCSS .Params.bg_color }} !important;
-  }
-
-</style>
+  {{ partial "style_invert" .}}
 {{ end }}
