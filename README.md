@@ -1,3 +1,3 @@
 # witty broccoli
 
-Witty broccoli is website of vitor calejuri.
+Witty broccoli is the portfolio of vitor calejuri.
