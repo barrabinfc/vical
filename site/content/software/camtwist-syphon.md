@@ -1,13 +1,12 @@
 +++
 draft = false
-colorscheme = "dark"
+colorscheme = "light"
 color = "#fff"
 bg_color = "rgba(0,175,134, 0.90)"
 high_color = "#ffffff"
-title = "Music Coach"
-website = "piano-coach.xyz"
-subtitle = "The chinese book of changes"
-description = "A web tool to help practice piano"
+title = "CAMTwist-Syphon"
+website = "https://github.com/barrabinfc/camtwist-syphon"
+description = "Syphon Inputs & output for CAMTwist"
 logo = "/images/icons/piano-roll.svg"
 tech = "Web"
 license = "GPL v3"

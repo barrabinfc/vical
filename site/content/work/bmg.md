@@ -12,7 +12,7 @@ description = "<p>O <a href='http://genitalia.me' class='default nomargin black 
 
 
 <div class="gallery">
-  <div class="browser-mask">
+  <div class="browser-mask" style="background-color: #ffcc8c">
     <div class="browser-screen appearFromBottom-anim">
       <img src="/images/bmg/mosaic.jpg" alt="Mosaico" />
     </div>
@@ -21,6 +21,10 @@ description = "<p>O <a href='http://genitalia.me' class='default nomargin black 
   <img src="/images/bmg/upload.png" alt="Enviar" />  
 </div>
 <div class="gallery">
-  <img src="/images/bmg/admin-login.png" alt="CMS" />  
-  <img src="/images/bmg/admin-aprovacao.jpg" alt="Aprovação" />  
+  <div class="browser-mask pull :left">
+    <div class="browser-screen">
+      <img src="/images/bmg/admin-login.png" alt="CMS" /> 
+    </div>
+  </div>
+  <img class="pull :right" src="/images/bmg/admin-aprovacao.jpg" alt="Aprovação" />  
 </div>

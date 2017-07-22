@@ -63,34 +63,17 @@ footnoteReturnLinkContents = "↩"
   url = "/software/iching"
   
 [[menu.main]]
-  name = "Music Coach"
+  name = "Piano Coach"
   parent = "software"
-  identifier = "software/musicoach"
-  url = "/software/music-coach"
+  identifier = "software/pianocoach"
+  url = "/software/piano-coach"
 
-[[menu.main]]
-  name = "Music bx"
-  parent = "software"
-  identifier = "software/bx"
-  url = "/software/music-bx"
 
-[[menu.main]]
-  name = "Music ax"
-  parent = "software"
-  identifier = "software/ax"
-  url = "/software/music-ax"
-
-[[menu.main]]
-  name = "Music dx"
-  parent = "software"
-  identifier = "software/dx"
-  url = "/software/music-dx"
-
-[[menu.main]]
-  name = "Blog"
-  identifier = "blog"
-  url = "/blog/"
-  weight = 10
+#[[menu.main]]
+#  name = "Blog"
+#  identifier = "blog"
+#  url = "/blog/"
+#  weight = 10
   
 [[menu.main]]
   name = "About"

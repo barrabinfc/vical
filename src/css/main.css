@@ -8,8 +8,8 @@
 @import "imports/animation.css";
 
 html {
-  font-size: var(--base-fontsize, 14px);
-  line-height: var(--line-height, 16px);
+  font-size: var(--base-fontsize, 16px);
+  line-height: var(--line-height, 18px);
   
   -webkit-font-smoothing: subpixel-antialiased;
   text-rendering: optimizeLegibility;

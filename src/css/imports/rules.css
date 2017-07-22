@@ -3,14 +3,15 @@
  */
 :root {
   --hero-font: {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 900;
   };
 
   --code-font: {
-    font-family: 'Source Code Pro', monospace;
-    font-weight: 400; 
+    font-family: 'Cutive Mono', monospace;
+    font-weight: normal;
+    letter-spacing: -1px;
   };
 
   --paragraph-font: {
