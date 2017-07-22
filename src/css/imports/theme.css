@@ -90,8 +90,6 @@ ul.as-table {
 }
 
 
-
-
 .pull\:left { float: left; }
 .pull\:right { float: right; }
 
@@ -347,8 +345,8 @@ main > section {
    align-items: center;
    position: relative;
    overflow: hidden;
-   margin: 2em auto;
-   height: calc( 100vh - 4em);
+   padding: 2em;
+   height: 100vh;
       
    & > .browser-screen {
      position: relative;
@@ -382,3 +380,4 @@ main > section {
      }
    }
  }
+
