@@ -298,9 +298,9 @@ main > section {
     height: 100%;
     padding: 2em calc( 4 * var(--gutter));
 
-    & > h1:first-child, & > h2:first-child,
-    & > h3:first-child, & > h4:first-child,
-    & > h5:first-child, & > h6:first-child {
+    & > h1:first-child , & > h2:first-child, \
+    & > h3:first-child , & > h4:first-child, \
+    & > h5:first-child , & > h6:first-child {
       padding-top: 0;
     }
     
