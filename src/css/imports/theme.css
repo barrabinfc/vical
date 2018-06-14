@@ -86,6 +86,73 @@ ul.as-table {
   & li {
     display: table-cell;
     border-color: inherit;
+    border: 1px solid;
+  }
+}
+
+ul.as-flex-table {
+  display: flex;
+  flex-wrap: wrap;
+
+  &\:bordered {
+    & li {
+      border: 1px solid;
+    }
+  }
+
+  & li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    &:first-child { border-bottom: 0; }
+    &:last-child { border-top: 0; }  
+  }
+
+  & .value , & .label {
+      padding: 0 2em;
+      display: block;
+      width: 100%;
+      line-height: 2em;
+      text-transform: uppercase;
+      @apply --code-font;
+
+      font-size: 1.0rem;
+      font-weight: 700;
+  }
+    
+  & .label {
+      font-weight: 700;
+      font-size: 0.8rem; 
+      border-bottom: 1px solid var(--dark-gray);
+  }
+}
+
+
+
+/**
+ * Bordered featured list, with first/last without padding
+ */
+ul.featured.bordered {
+  & li {
+    border: 1px solid;
+    
+    /* Links of menu */
+    & a { 
+      display: block;
+      margin: 0em;
+      padding: 1rem;
+      @apply --hero-font;
+       
+      &:hover {
+        background-color: #fff;
+        color: #000;
+      }
+
+      /* First&Last are next/previous */
+      &:first-child ,
+      &:last-child { padding: 1em 0em; }
+    }
   }
 }
 
@@ -111,7 +178,14 @@ ul.as-table {
 .bg\:primary{ background-color: color( var(--primary) alpha(80%)); }      
 .bg\:second { background-color: color( var(--second) alpha(80%)); }
 
+.color-high { color: var(--fourth); }
+.color-low { color: var(--third); }
+
 .nomargin { margin: 0; padding: 0; }
+.rounded { border-radius: 2em; }
+
+.bordered { border: 1px solid;  }
+.hero { @apply --hero-font; }
 
 
 /* Apply margin-top iof header size */
@@ -127,19 +201,21 @@ ul.as-table {
   @apply --transition;
   
   color: var(--white);
-
-  display: block;
   padding: var(--gutter) calc(2*var(--gutter));
   
-  &:hover {
-    color: var(--black);
-  }
+  &:hover { color: var(--black); }
   &:after { all: unset; }
   
   &\:txt {
     display: inline-block;
     margin: 0px auto;
     text-transform: uppercase;
+  }
+  
+  &.\:primary {
+    background-color: var(--primary);
+    color: var(--white);
+    fill: var(--white);
   }
   
 }
@@ -153,31 +229,41 @@ ul.as-table {
   display: flex;
   flex-direction: column;
   align-content: stretch;
-  height: 80%;
+/*  height: 80%; */
 
   & .menu-header {
     @apply --code-font;
     color: inherit;
     font-weight: bold;
     margin: 0;
-    & > a {
+
+    & > .title {
+      text-transform: lowercase;
       color: inherit;
       margin: 0; padding: 0;
-      text-transform: uppercase;
       cursor: pointer;
+      
+      & > a { 
+        color: inherit;
+        margin: 0; padding: 0; 
+      }
     }
     
     &.selected {
-      & > a {
-        background-color: var(--white);
-        color: var(--black);
+      & > .title {
+        text-decoration: underline;
+
+        text-decoration-style: double;
+        /*background-color: var(--white);
+        color: var(--black); */
       }
     }
 
     & .sub-menu {
       list-style: none;
-      padding-left: 0;
-      
+      padding-left: 0.5rem;
+      margin-top: 1rem;
+
       & li { float: left; display: inline; width: 46%; }
       & a {
         @apply --code-font;

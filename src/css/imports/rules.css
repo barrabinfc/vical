@@ -2,23 +2,23 @@
  * Apply rules
  */
 :root {
+
   --hero-font: {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
-    font-weight: 900;
+    font-weight: 300;
   };
 
   --code-font: {
-    font-family: 'Cutive Mono', monospace;
-    font-weight: normal;
-    letter-spacing: -1px;
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: 400;
   };
 
   --paragraph-font: {
-    font-family: 'Open Sans',Helvetica Neue,sans-serif;
+    font-family: 'Source Sans Pro', Helvetica Neue, sans-serif;
   };
   
-  --grid-background {
+  --grid-background: {
     position: absolute;
     overflow: hidden;
     top: 0; left: 0;
@@ -28,12 +28,12 @@
     opacity: 0.05;
     z-index: -10;
     background: var(--black) url("../images/grid-24x16.png") repeat;
-  }
+  };
   
   /*
    * Animation/transition
    */
-  --transition {
+  --transition: {
     transition: var(--trans-props) var(--trans-time) var(--trans-easing);
   }
   
