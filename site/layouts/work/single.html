@@ -10,6 +10,13 @@
 {{ define "main" }}
   <section class="work">
     <article class="showcase">
+      <div class="overlay">
+        <div class="see-more">
+          <div>Scroll to see more</div>
+          <svg class="icon"><use xlink:href="#ei-chevron-down-icon"></use></svg>
+          
+        </div>
+      </div>
       {{ .Content }}
     </article>
     <article id="content-body" class="info grid :vertical">
@@ -31,21 +38,8 @@
           <ul class="as-flex-table">
               <li>
                 <strong class="label">Visit</strong>
-                <a href="http://iching.xyz" class="clean value">iching.xyz</a>      
+                <a href="{{.Params.website}}" class="clean value color-high">{{.Params.website}}</a>      
               </li>
-              <li>
-                <strong class="label">Created at</strong>
-                <span class="value color-high">06/2016</span>
-              </li>
-              <li>
-                <strong class="label">Technology</strong>
-                <span href="" class="value color-high">React</span>
-              </li>
-              <li>
-                <strong class="label">License</strong>
-                <span href="" class="value color-high">GPL v3</span>          
-              </li>
-            </ul>        
       </div>
 
       
