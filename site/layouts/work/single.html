@@ -1,5 +1,10 @@
 {{ define "header" }}
-  {{ partial "logo" . }}
+  <div class="logo-container">
+    {{ partial "logo" . }}
+    <a href="#" class="menu-close">
+      <svg class="icon__cnt"><use xlink:href="#ei-close-icon"></use></svg>
+    </a>
+  </div>
   {{ partial "nav" . }}
 {{ end }}
 {{ define "main" }}
@@ -19,16 +24,37 @@
       </picture>
 
       <div class="description">
-        {{ safeHTML .Params.description }}
+        {{ safeHTML .Params.description }}  
       </div>
+
+      <div class="more">
+          <ul class="as-flex-table">
+              <li>
+                <strong class="label">Visit</strong>
+                <a href="http://iching.xyz" class="clean value">iching.xyz</a>      
+              </li>
+              <li>
+                <strong class="label">Created at</strong>
+                <span class="value color-high">06/2016</span>
+              </li>
+              <li>
+                <strong class="label">Technology</strong>
+                <span href="" class="value color-high">React</span>
+              </li>
+              <li>
+                <strong class="label">License</strong>
+                <span href="" class="value color-high">GPL v3</span>          
+              </li>
+            </ul>        
+      </div>
+
       
       <footer>
-        <ul role="nav" class="horizontal">
+        <ul role="nav" class="horizontal featured bordered">
           {{if .PrevInSection}}
             <li class="w5"><a href="{{.PrevInSection.Permalink}}" class="default btn no-underline">◂</a></li>
           {{end}}
-          <li class="w45"><a href="#menu" class="default btn no-underline">Menu</a></li>
-          <li class="w45"><a href="{{.Params.website}}" class="default btn no-underline">Visit</a></li>
+          <li class="w90"><a href="#menu" class="default btn no-underline">Menu</a></li>
           {{if .NextInSection}}
             <li class="w5"><a href="{{.NextInSection.Permalink}}" class="default btn no-underline">▸</a></li>
           {{end}}

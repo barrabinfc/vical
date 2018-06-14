@@ -14,6 +14,20 @@
   .color-high {
     color: {{ safeCSS .Params.high_color }} !important;
   }
+
+  a.btn {
+    color: var(--black);
+    fill: var(--black);
+    /*
+    color: {{ safeCSS .Params.color }};
+    fill: {{ safeCSS .Params.color }};
+    */
+   }
+   a.btn:hover {
+     background-color: var(--black) !important;
+     color: var(--white) !important;
+   }
+
   
   /**
    * Software/Blog pages 
@@ -54,6 +68,7 @@
    body.about #menu {
      background-color: {{ safeCSS .Params.color }};
      color: {{ safeCSS .Params.bg_color }};
+     fill: {{ safeCSS .Params.bg_color }};
    }
    body.work #menu .menu-close, 
    body.about #menu .menu-close  {
@@ -63,6 +78,7 @@
    body.about #menu .menu-close:hover {
      background-color: {{ safeCSS .Params.bg_color }};
      color: {{ safeCSS .Params.color }};
+     fill: {{ safeCSS .Params.color }};
    }
    body.work #menu .selected > a ,
    body.about #menu .selected > a {
@@ -72,6 +88,19 @@
    
    
    /* Footer navigation */
+   ul.featured.bordered {
+    border-color: {{ safeCSS .Params.color }}     
+   }
+   ul.featured.bordered a {
+    color: {{ safeCSS .Params.color }};
+    fill: {{ safeCSS .Params.color }};
+   }
+   ul.featured.bordered a:hover {
+     background-color: {{ safeCSS .Params.color }} !important;
+     color: {{ safeCSS .Params.bg_color }} !important;
+   }
+   
+   /*
    body.work #content-body ul[role="nav"] {
      border-color: {{ safeCSS .Params.color }}
    }
@@ -82,4 +111,5 @@
      background-color: {{ safeCSS .Params.color }} !important;
      color: {{ safeCSS .Params.bg_color }} !important;
    }
+   */
 </style>

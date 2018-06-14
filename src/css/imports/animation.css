@@ -31,11 +31,10 @@ body.blog {
   & .header-anim-growTooltip {
     
     /* left */
-    &:before {
+    &:before , &:after {
       content: ' ';
       background-color: var(--black);
       width: 0%;
-      right: 50%;
       top: 1.7em;
       height: 2px;
       position: absolute;
@@ -43,8 +42,10 @@ body.blog {
       z-index: 0;
       transition: width 0.5s var(--trans-easing);
     }
+    &:before { right: 50%; }
+    &:after { left: 50%; }
     
-    /* right */
+    /* right 
     &:after {
       content: ' ';
       background-color: var(--black);
@@ -57,6 +58,7 @@ body.blog {
       z-index: 0;
       transition: width 0.5s var(--trans-easing);
     }
+    */
     
     & .sub-menu {
       max-height: 0px;

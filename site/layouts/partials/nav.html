@@ -1,4 +1,3 @@
-<a href="#" class="menu-close"></a>
 <nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="menu">
   {{ $currentNode := . }}
   {{ range .Site.Menus.main }}
@@ -9,14 +8,14 @@
                 {{ if .HasChildren }}has-submenu header-anim-growTooltip {{else}}is-link{{end}}"
                 id="menu-{{ .Identifier }}">
       {{ if .HasChildren }}
-        <a>{{trim .Name " "}}</a>
+        <h5 class="title"><a href="{{ .URL }}">{{trim .Name " "}}</a></h5>
         <ul class="sub-menu">
         {{ range .Children }}
             <li> <a href="{{.URL}}" class="default"> {{ .Name }} </a> </li>
         {{ end }}
         </ul>
       {{ else }}
-        <a href="{{ .URL }}">{{trim .Name " "}}</a>
+        <h5 class="title"> <a href="{{ .URL }}">{{trim .Name " "}}</a></h5>
       {{ end }}
     </div>
   {{ end }}

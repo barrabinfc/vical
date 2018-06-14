@@ -4,10 +4,11 @@
  *  Title: Orbitron
  *  text: Play or Antic 
  */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Abril+Fatface|Montserrat:700|Source+Code+Pro:400,700|Share+Tech+Mono|Source+Sans+Pro');
 /*
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Abril+Fatface|Montserrat:700|Source+Code+Pro:400,700');
-*/
 @import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Roboto:900|Open+Sans');
+*/
 
 :root {
   --linescale: calc(5/4);
@@ -48,7 +49,6 @@ h6 {
 }
 
 p { 
-  font-family: 'Open Sans';
   margin: 0 0 1.5em;
 }
 
