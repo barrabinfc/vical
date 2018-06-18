@@ -31,6 +31,12 @@
     align-items: flex-end
 }
 
+.grid.\:baseline {
+    -ms-flex-align: baseline;
+    -ms-grid-row-align: baseline;
+    align-items: baseline;
+}
+
 .grid.\:stretch {
     -ms-flex-align: stretch;
     -ms-grid-row-align: stretch;

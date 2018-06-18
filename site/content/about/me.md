@@ -14,7 +14,7 @@ aliases = [
 ]
 +++
 
-### Vitor Calejuri, Developer
+### Vitor Calejuri, Software Developer
 
 Eu trabalho com uma simples filosofia: tecnologia para ajudar humanos. Eu ajudo pessoas a se articularem melhor 
 usando um vocabulário disciplinado de computação, matemática e design.
@@ -25,18 +25,19 @@ disciplinas expandem minhas técnicas e enriquecem meu entendimento da computaç
 
 
 
-<div class="summary two-columns grid :horizontal :top">
+<div class="summary two-columns grid :horizontal :baseline">
   <div class="first-column">
-    <h5 class="title">Serviços</h5>
+    <h5 class="title">Especialidades</h5>
+    <hr>
     <div class="txt">
       <ul>
-        <li>Desenvolvimento Web (frontend & backend)</li>
-        <li>Desenvolvimento de aplicativos mobile</li>
-        <li>Programas audiovisual interativas</li>
-        <li>Visualização de dados</li>
+        <li>- Audiovisual and interactive software</li>
+        <li>- Frontend web development</li>
+        <li>- Data visualization</li>
       </ul>
     </div>
     <h5 class="title">+ trabalhos</h5>
+    <hr>
     <div class="txt">
       <ul>
         <li>
@@ -51,7 +52,7 @@ disciplinas expandem minhas técnicas e enriquecem meu entendimento da computaç
   <div class="second-column">
     <!-- <h5 class="title">Contact</h5> -->
     <div class="contact">
-      <a href="" class="picture nomargin no-underline" target="_blank" role="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">
+      <a href="" class="picture nomargin no-underline" data-tilt data-tilt-max="30" data-tilt-speed="300" target="_blank" role="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">
         <h3 class="label">
           <div class="ceasar says">hufad.omvgxqdu</div>
           <div>at</div>

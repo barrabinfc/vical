@@ -1,6 +1,11 @@
 @import "variables.css";
 @import "rules.css";
 
+hr {
+  border: 1px solid #aaa;
+  border-top: 0;
+}
+
 pre {
   padding: 2rem;
   margin: 1.75rem 0;
