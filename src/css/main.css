@@ -470,9 +470,10 @@ section.about {
       
       & .title { 
         text-transform: uppercase;
-        margin-bottom: 2rem;
+        margin-left: 0.5rem;
+        /*margin-bottom: 2rem;*/
       }
-      & .txt { margin-bottom: 2rem; }
+      & .txt { margin-bottom: 2rem; margin-left: 1rem; }
       
       & .first-column {
         width: 40%;
@@ -483,17 +484,30 @@ section.about {
     
     /* Contact */
     & .contact {      
-      cursor: pointer;
-      
+      perspective: 400px;
+
       & > a { 
         display: block; 
         height: 288px;
         box-shadow: var(--shadow-big);
-        background-color: #000;
         background-image: url(../images/old-computer.jpg);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+
+        border-radius: 15px;
+        cursor: pointer;
+
+        /*
+        @apply --transition;
+        transition-timing-function: var(--trans-easing);
+        transition-duration: 0.5s;
+
+        &:hover {
+          transform: translate3d(0px, 0px , 15px);
+          box-shadow: var(--shadow-huge);  
+        }
+        */
       }
             
       & .label {
