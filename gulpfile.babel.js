@@ -51,13 +51,11 @@ gulp.task("js", (cb) => {
 });
 
 gulp.task("server", ["hugo", "css", "vendor-js", "js"], () => {
-  /*
   browserSync.init({
     server: {
       baseDir: "./dist"
     }
   });
-  */
   gulp.watch("./src/js/vendor/*.js", ["vendor-js"]);
   gulp.watch("./src/js/**/*.js", ["js"]);
   gulp.watch("./src/css/**/*.css", ["css"]);
