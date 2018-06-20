@@ -84,20 +84,22 @@ body > header {
   }  
 
   
-  /** 3em of space between submenus*/
+  /** 3em of space between submenus
   & .menu-header  {
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
   }
   & .menu-header:first-child {
-    margin-top: 1rem;
+    margin-top: 3rem;
   }
+  */
   
 
-  /** About aligned at bottom */
+  /** About aligned at bottom 
   & .menu-header:last-child {
     margin-top: auto;
     margin-bottom: 3rem;
   }
+  */
 }
 
 
@@ -120,9 +122,9 @@ body > header {
 
 
 /**
- * Software Page
+ * Apps Page
  */
-body.software {
+body.apps {
   & .project__info {
     text-align: center;
     
@@ -179,9 +181,9 @@ body.software {
 }
 
 /**
- * Software/Blog Menu 
+ * Apps/Blog Menu 
  */
-body.software,
+body.apps,
 body.blog {
 
   /* Menu is horizontal */
@@ -298,6 +300,16 @@ body.blog {
  */
 body.work ,
 body.about {
+
+  & .menu-header {
+    &:first-child {
+      padding-top: 2rem;
+    }
+    
+    & .title {
+    color: var(--primary);
+    }
+  }
 
   /* Image showcase */
   & .showcase {
@@ -484,7 +496,7 @@ section.about {
     
     /* Contact */
     & .contact {      
-      perspective: 400px;
+      perspective: 800px;
 
       & > a { 
         display: block; 

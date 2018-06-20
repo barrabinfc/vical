@@ -1,6 +1,6 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "« wity »"
+title = "« vicale »"
 paginate = 5
 
 pluralizelisttitles =false
@@ -13,14 +13,14 @@ footnoteReturnLinkContents = "↩"
 [params]
   description = ""
   author = ""
-  hide_author = false
+  hide_author = true
   show_menu = true
   powered_by = false
   images = []
   theme_variant = ""
   
 [[menu.main]]
-  name = "work"
+  name = "💼 work"
   weight = 1
   identifier = "work"
   url = "/work/"
@@ -49,31 +49,29 @@ footnoteReturnLinkContents = "↩"
   identifier = "work/bmg"
   url = "/work/bmg"
 
-  
 [[menu.main]]
-  name = "software"
+  name = "📱 apps"
   weight = 2
-  identifier = "software"
-  url = "/software/"
+  identifier = "apps"
+  url = "/apps/"
   
 [[menu.main]]
   name = "I Ching"
-  parent = "software"
-  identifier = "software/iching"
-  url = "/software/iching"
+  parent = "apps"
+  identifier = "apps/iching"
+  url = "/apps/iching"
   
 [[menu.main]]
   name = "Piano Coach"
-  parent = "software"
-  identifier = "software/pianocoach"
-  url = "/software/piano-coach"
+  parent = "apps"
+  identifier = "apps/pianocoach"
+  url = "/apps/piano-coach"
 
-
-#[[menu.main]]
-#  name = "Blog"
-#  identifier = "blog"
-#  url = "/blog/"
-#  weight = 10
+[[menu.main]]
+  name = "Blog"
+  identifier = "blog"
+  url = "/blog/"
+  weight = 10
   
 [[menu.main]]
   name = "About"
