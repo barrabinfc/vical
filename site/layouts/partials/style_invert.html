@@ -30,33 +30,33 @@
 
   
   /**
-   * Software/Blog pages 
+   * apps/Blog pages 
    **/
   
   /* Menu hover invert */
   body.blog .menu-header::before,
   body.blog .menu-header::after,
-  body.software .menu-header::before , 
-  body.software .menu-header::after {
+  body.apps .menu-header::before , 
+  body.apps .menu-header::after {
     background-color: {{ safeCSS .Params.color }} !important;
   }
   
   body.blog #menu .selected > a ,
-  body.software #menu .selected > a {
+  body.apps #menu .selected > a {
     background-color: {{ safeCSS .Params.color}} !important; 
     color: {{ safeCSS .Params.bg_color }} !important;    
   }
 
   body.blog .menu-header.has-submenu:hover > a,
   body.blog .menu-header.is-link:hover > a,
-  body.software .menu-header.has-submenu:hover > a,
-  body.software .menu-header.is-link:hover > a {  
+  body.apps .menu-header.has-submenu:hover > a,
+  body.apps .menu-header.is-link:hover > a {  
     background-color: {{ safeCSS .Params.color}} !important; 
     color: {{ safeCSS .Params.bg_color }} !important;
   }
 
   body.blog #menu .menu-header .sub-menu,
-  body.software #menu .menu-header .sub-menu {
+  body.apps #menu .menu-header .sub-menu {
     background-color: {{ safeCSS .Params.color }} !important;
     color: {{ safeCSS .Params.bg_color }} !important;
   }
@@ -69,6 +69,10 @@
      background-color: {{ safeCSS .Params.color }};
      color: {{ safeCSS .Params.bg_color }};
      fill: {{ safeCSS .Params.bg_color }};
+   }
+   body.work #menu .menu-header > .title, 
+   body.about #menu .menu-header > .title  {
+     margin-bottom: 1px solid {{ safeCSS .Params.color }};
    }
    body.work #menu .menu-close, 
    body.about #menu .menu-close  {

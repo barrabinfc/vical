@@ -242,11 +242,17 @@ ul.featured.bordered {
     font-weight: bold;
     margin: 0;
 
+    display: flex;
+    flex-direction: column;
+
     & > .title {
-      text-transform: lowercase;
+      text-align: center;
+      text-transform: uppercase;
       color: inherit;
-      margin: 0; padding: 0;
+      margin: 0; padding: 1rem;
       cursor: pointer;
+
+      border-bottom: 1px solid var(--white);
       
       & > a { 
         color: inherit;
@@ -254,20 +260,24 @@ ul.featured.bordered {
       }
     }
     
+    &:last-child > .title {
+      border-bottom: 0;  
+    }
+    
     &.selected {
-      & > .title {
-        text-decoration: underline;
-
-        text-decoration-style: double;
+      & > .sub-menu {
+        display: block;
         /*background-color: var(--white);
         color: var(--black); */
       }
     }
 
     & .sub-menu {
+      display: none;
       list-style: none;
       padding-left: 0.5rem;
       margin-top: 1rem;
+      margin-bottom: 1rem;
 
       & li { float: left; display: inline; width: 46%; }
       & a {
