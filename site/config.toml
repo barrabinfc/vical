@@ -68,13 +68,13 @@ footnoteReturnLinkContents = "↩"
   url = "/apps/piano-coach"
 
 [[menu.main]]
-  name = "Blog"
+  name = "📓 Blog"
   identifier = "blog"
   url = "/blog/"
-  weight = 10
+  weight = 100
   
 [[menu.main]]
-  name = "About"
-  weight = 100
+  name = "👨‍💻 About"
+  weight = 10
   identifier = "about"
   url = "/about/me"
