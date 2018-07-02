@@ -2,7 +2,7 @@
 draft = false
 colorscheme = "dark"
 color = "#fbfbfb"
-bg_color = "rgba(0,0,0, 0.80)"
+bg_color = "rgba(0,0,0, 1.0)"
 high_color = "#f05553"
 title = "Luiza Lian"
 website = "lui.xyz"

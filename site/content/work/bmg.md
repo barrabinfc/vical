@@ -2,7 +2,7 @@
 draft = false
 colorscheme = "light"
 color = "#000"
-bg_color = "rgba(255,255,255, 0.90)"
+bg_color = "rgba(255,255,255, 1.0)"
 high_color = "#f05553"
 title = "BMG"
 website = "genitalia.me"

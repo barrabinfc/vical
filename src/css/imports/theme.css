@@ -244,15 +244,33 @@ ul.featured.bordered {
 
     display: flex;
     flex-direction: column;
+    
+    margin-bottom: 1rem;
+    background-color: #fff;
+  
+    /** Icons **/
+    & .title::before {
+      position: absolute;
+      top: 1rem;
+      left: 0.5rem;
+      font-size: 2rem;
+    }
+ 
+    &:first-child {
+      margin-top: 2rem;
+    }
+
 
     & > .title {
+      position: relative;
+      font-size: 2rem;
       text-align: center;
       text-transform: uppercase;
       color: inherit;
       margin: 0; padding: 1rem;
       cursor: pointer;
 
-      border-bottom: 1px solid var(--white);
+      border: 1px solid transparent;
       
       & > a { 
         color: inherit;
@@ -265,6 +283,8 @@ ul.featured.bordered {
     }
     
     &.selected {
+      border-bottom: 1px solid var(--white);
+
       & > .sub-menu {
         display: block;
         /*background-color: var(--white);
@@ -402,37 +422,39 @@ main > section {
 .cellphone-mask {
   position: relative;
   overflow: hidden;
-  margin: 2em auto;
-  max-width: 568px;
-  min-width: 320px;
+  min-width: 280px;
   min-height: 440px;
-  zoom: 1.4;
-  
+  max-width: 568px;
+  max-height: 880px;
+  zoom: 1.0;
+
   &:after {
     content: ' ';
     z-index: 10;
     position: absolute;
-    top: 0; left: 25%;
+    top: 0; left: 0;
+    
     background-size: contain;
     background-image: url(../images/cellphone-mask.png);
     background-repeat: no-repeat;
     height: 100%;
-    width: 100%
+    width: 100%;
+    
   }
   
   & > .cellphone-screen {
     position: relative;
     overflow: hidden;
     width: 100%;
-    min-height: 420px;
+    min-height: 380px;
     z-index: 5;
-    margin-top: 10px;
     
-    & > img {
+    & > * {
       position: absolute;
-      top: 56px;
-      left: calc(25% + 42px);
-      width: 200px;
+      top: 66px;
+      left: calc(42px);
+      width: 196px;
+      border: 0;
     }
   }
 }

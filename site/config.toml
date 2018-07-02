@@ -20,7 +20,7 @@ footnoteReturnLinkContents = "↩"
   theme_variant = ""
   
 [[menu.main]]
-  name = "💼 work"
+  name = "work"
   weight = 1
   identifier = "work"
   url = "/work/"
@@ -50,7 +50,7 @@ footnoteReturnLinkContents = "↩"
   url = "/work/bmg"
 
 [[menu.main]]
-  name = "📱 apps"
+  name = "apps"
   weight = 2
   identifier = "apps"
   url = "/apps/"
@@ -68,13 +68,13 @@ footnoteReturnLinkContents = "↩"
   url = "/apps/piano-coach"
 
 [[menu.main]]
-  name = "📓 Blog"
+  name = "Blog"
   identifier = "blog"
   url = "/blog/"
   weight = 100
   
 [[menu.main]]
-  name = "👨‍💻 About"
+  name = "About"
   weight = 10
   identifier = "about"
   url = "/about/me"
