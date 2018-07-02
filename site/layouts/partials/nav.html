@@ -11,7 +11,7 @@
         <h5 class="title"><a href="{{ .URL }}">{{trim .Name " "}}</a></h5>
         <ul class="sub-menu">
         {{ range .Children }}
-            <li> <a href="{{.URL}}" class="default"> {{ .Name }} </a> </li>
+            <li>→ <a href="{{.URL}}" class="default"> {{ .Name }} </a> </li>
         {{ end }}
         </ul>
       {{ else }}

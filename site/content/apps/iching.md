@@ -16,4 +16,11 @@ license = "GPL v3"
 created_at = "06/2016"
 +++
 
-![Screenshot](/images/cellphone.png "Cellphone")
+<div class="cellphone">
+    <div class="cellphone-mask">
+        <div class="cellphone-screen">
+            <iframe src="http://barrabinfc.github.io/react-iching/#/?_k=yo6w0u" width="320" height="440">
+            </iframe>
+        </div>
+    </div>
+</div>

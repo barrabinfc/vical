@@ -301,16 +301,6 @@ body.blog {
 body.work ,
 body.about {
 
-  & .menu-header {
-    &:first-child {
-      padding-top: 2rem;
-    }
-    
-    & .title {
-    color: var(--primary);
-    }
-  }
-
   /* Image showcase */
   & .showcase {
     position: relative;
@@ -419,7 +409,6 @@ body.about {
  */
  body.work,
  body.about {
-
 
    & #menu {
      /* Occupy full .info position */
@@ -549,3 +538,21 @@ body.about {
     & .menu-close { visibility: hidden; }
   }
 }
+
+
+
+/**
+ * Icons for menu
+ */
+#menu-work .title::before {
+  content: '💼';
+}
+#menu-apps .title::before {
+  content: '📱';
+}
+/*
+#menu-about .title::before {
+  content: '👨‍💻';  
+}
+*/
+
