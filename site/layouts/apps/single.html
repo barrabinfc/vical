@@ -2,6 +2,8 @@
   <div class="logo-container">
     {{ partial "logo" . }}
   </div>
+
+  {{ .Scratch.Set "menuModifier" "top" }}
   {{ partial "nav" . }}
 {{ end }}
 {{ define "main" }}

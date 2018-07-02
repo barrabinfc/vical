@@ -70,21 +70,26 @@
      color: {{ safeCSS .Params.bg_color }};
      fill: {{ safeCSS .Params.bg_color }};
    }
-   body.work #menu .menu-header,
-   body.about #menu .menu-header {
+   body.work .menu-header,
+   body.about .menu-header {
      background-color: {{ safeCSS .Params.bg_color }};
      color: {{ safeCSS .Params.color }};
    }
-   body.work #menu .menu-header.selected .title,
-   body.about #menu .menu-header.selected .title {
-     border-bottom-color: {{ safeCSS .Params.color }};
+   body.work .menu-header.selected ,
+   body.about .menu-header.selected {
+     transform: translate3d(0,0,50px);
+     border-color: {{ safeCSS .Params.bg_color }};
+     background-color: {{ safeCSS .Params.color }};
+     color: {{ safeCSS .Params.bg_color }};
    }
 
    /** Hover **/
-   body.work #menu .menu-header .title:hover,
-   body.about #menu .menu-header .title:hover {
+   body.work #menu .menu-header:hover,
+   body.about #menu .menu-header:hover {
+     transform: translate3d(0,0,50px);
      border: 1px solid {{ safeCSS .Params.bg_color }};
      background-color: {{ safeCSS .Params.color }};
+
      color: {{ safeCSS .Params.bg_color }};
    }
 
