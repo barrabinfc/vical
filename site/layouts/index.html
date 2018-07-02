@@ -5,6 +5,7 @@
       <svg class="icon__cnt"><use xlink:href="#ei-close-icon"></use></svg>
     </a>
   </div>
+  {{ .Scratch.Set "menuModifier" "" }}
   {{ partial "nav" . }}
 {{ end }}
 {{ define "main" }}

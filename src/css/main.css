@@ -219,6 +219,9 @@ body.blog {
       position: relative;
       padding-bottom: 0;
       letter-spacing: 0px;
+      background-color: transparent;
+
+      &:first-child { margin-top: 0; }  
       
       & > .title {
         vertical-align: baseline;
@@ -226,68 +229,61 @@ body.blog {
         z-index: 10;
 
         & > a {
-          margin: 1em; padding: 0.5em; 
+          margin: 1em; 
+          padding: 0; 
         }        
-
-        @apply --transition;
-        transition-timing-function: var(--trans-easing);
-        transition-duration: 0.5s;
       }
       
-      &.has-submenu:hover ,
-      &.is-link:hover {
-        & > a { background-color: var(--black, #000); color: var(--white, #fff);  } 
-      }
     }
             
     /* submenus appear as bottom children  */
-    & #menu-about { margin-top: initial; }
-    & .sub-menu { 
+    & .sub-menu {
       position: absolute;
       left: -100%;
-      width: 300%;
-      top: 1.7rem;
+      width: 200%;
+      top: 2rem;
+
+      display: block;
       padding: 1em;
+
+      border-radius: 5px;
+      box-shadow: var(--shadow-huge);
       
       z-index: 10;
       background-color: transparent;
       color: inherit;
-
-      /** Single line items */
-      display: block;
       text-transform: capitalize;
+
+      /* hidden by default */
+      visibility: hidden;
+      opacity: 0;
+
+      @apply --transition;
+      transition-timing-function: var(--trans-easing);
+      transition-duration: 0.5s;
       
       & li {
-        visibility: hidden; 
-        opacity: 0;
-        float: none; 
         width: 100%;
         padding: 0.5em 0em;
-
         
         & > a { 
           width: 100%; 
-          display: block; 
+          display: inline; 
           vertical-align: baseline; 
+          
           &:hover {
             font-weight: bold;
             text-decoration: underline;
           }
-        }
-          
-        
-        transition: all 0.25s 0.75s;
+        }        
       }
     }
       
       
     /* Show submenus on hover */ 
-    & .menu-header:hover .sub-menu {
-      & li {
-        visibility: visible;
-        opacity: 1;
-        display: block;
-      }
+    & .menu-header.has-submenu:hover .sub-menu {
+      visibility: visible;
+      opacity: 1;
     }
       
   }
