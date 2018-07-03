@@ -1,0 +1,490 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Como criar um pacote para archlinux</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+      <meta name="description" content="Criando pacotes para gerenciador pacman">
+    
+  
+    <style>
+  *, *::after , *::before { box-sizing: border-box; }
+  html,body { margin: 0; }
+  body { 
+    background-color: #161616; 
+    color: #f0f0f0; 
+    font-family: sans-serif; 
+    overflow-x: hidden;
+  }
+  iframe,embed,img,video { max-width: 100%; }
+  
+  a,p,button { margin: 1em; padding: 0.5em; }
+  blockquote { width: 100%; margin: 1em auto; font-size: 2em; line-height: 1.0em; text-align: center; }
+  blockquote > p { margin: 0; }
+  
+  body>header { position: absolute; top: 0; width: 100%; }
+  main > section {  position: relative; width: 100%; min-height: 100vh; 
+                    display: flex; flex-direction: column; justify-content: center; }
+  main > section > article {
+    min-height: 100vh;
+    padding: 2em 2em;
+  }
+  
+  
+  .container { max-width: 80%; }
+  .container-fluid { max-width: 95%; }
+  .container, .container-fluid { margin: 0 auto; }
+  
+  .icon {   position: relative; display: inline-block;
+            width: 1em; height: 1em; fill: #f0f0f0; }
+  .picture { position: relative; }
+  
+  .txt-center { text-align: center; }
+  .bg\:primary{ background-color: #f58021; }      
+  .bg\:second { background-color: #ae509e; }
+              
+  .grid { display: flex; flex-wrap: wrap; }
+  .grid.\:vertical { flex-direction: column; }
+  .grid.\:between { justify-content: space-between; }
+  .grid.\:around { justify-content: space-around; }
+  .grid.\:middle { align-items: center; }
+  
+  .columns1 { columns: 1; column-gap: 0em; }
+  .columns2 { columns: 2; column-gap: 2em; }
+  .columns3 { columns: 3; column-gap: 1em; }
+  
+  .w10 { max-width: 10%; }
+  .w33 { max-width: 33%; }
+  .w25 { max-width: 25%; }
+  .w40 { max-width: 40%; }
+  .w50 { max-width: 50%; }
+  .w70 { max-width: 70%; }
+  .w90 { max-width: 90%; }
+  .w100 { max-width: 100%; }
+
+  
+  .abscenter {
+    margin: 0;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+    
+    
+    <script type="text/javascript">
+        ['/css/evil-icons.css'].map( function(url) {
+            var link = document.createElement('link');
+            link.rel = "stylesheet";
+            link.href = url;
+            document.head.appendChild(link);
+        });
+    </script>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/typography.css">
+    
+    
+  </head>
+  
+  
+  
+  
+  
+  <body class="light page blog ">
+
+    <header role="header" class="container " id="menu">
+      
+  <a href="/" class="logo" id="logo">
+  Vicale
+</a>
+  
+
+<nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="menu ">
+
+  
+    
+    
+
+    <div class="menu-header hoverable 
+                
+                has-submenu header-anim-growTooltip "
+                id="menu-work">
+      
+        <a href="#submenu-work" class="title">work</a>
+        <ul class="sub-menu" id="submenu-work">
+        
+            <li>→ <a href="/work/astrorunners" class="default"> Astrorunners </a> </li>
+        
+            <li>→ <a href="/work/bmg" class="default"> BMG </a> </li>
+        
+            <li>→ <a href="/work/bigud" class="default"> Bigud </a> </li>
+        
+            <li>→ <a href="/work/luizalian" class="default"> Luiza Lian </a> </li>
+        
+        </ul>
+      
+    </div>
+  
+    
+    
+
+    <div class="menu-header hoverable 
+                
+                has-submenu header-anim-growTooltip "
+                id="menu-apps">
+      
+        <a href="#submenu-apps" class="title">apps</a>
+        <ul class="sub-menu" id="submenu-apps">
+        
+            <li>→ <a href="/apps/iching" class="default"> I Ching </a> </li>
+        
+            <li>→ <a href="/apps/piano-coach" class="default"> Piano Coach </a> </li>
+        
+        </ul>
+      
+    </div>
+  
+    
+    
+
+    <div class="menu-header hoverable 
+                
+                is-link"
+                id="menu-about">
+      
+        <a href="/about/me" class="title">About</a>
+      
+    </div>
+  
+    
+    
+
+    <div class="menu-header hoverable 
+                selected
+                is-link"
+                id="menu-blog">
+      
+        <a href="/blog/" class="title">Blog</a>
+      
+    </div>
+  
+
+</nav>
+
+
+    </header>
+    
+    <main>
+  <section class="post">
+    
+    
+    <article id="post__body" class="container grid :vertical :around :header-margin">
+      
+
+<h1 id="como-criar-um-pacote-archlinux">Como criar um pacote archlinux</h1>
+
+<p>Como muitas pessoas, eu adoro archlinux e seu gerenciador de pacotes.
+Porém , a quantidade de software no catálogo ainda é inferior ao ubuntu ou Mac,
+e eventualmente você vai ter que instalar software manualmente.</p>
+
+<p>Nesses casos, é muito útil saber como empacotar software para archlinux. Dessa forma,
+ainda podemos gerênciar instalação/atualizações/remoção usando o <code>pacman</code>, sem termos
+software zumbi no sistema operacional.</p>
+
+<p>Nesse artigo, vou mostrar como empacotar o software <code>Giflossy</code>, um otimizador lossy de gifs.</p>
+
+<h1 id="instalando-o-giflossy-manualmente">Instalando o <code>giflossy</code> manualmente</h1>
+
+<p>O primeiro passo, é compilar e instalar o software manualmente. Em sistemas unix, quase todos os softwares
+vem com um ciclo de 3 passos:</p>
+
+<pre><code>$ ./configure
+$ make
+$ make install
+</code></pre>
+
+<p>Estes passos garantem que o software compile e funciona corretamente na sua máquina.
+Antes de criar o pacote, é sempre necessário testar localmente.</p>
+
+<p>No nosso caso, vamos baixar o Giflossy diretamente do <code>git</code> e instalar.
+Como o software foi baixado através do git, não existe o arquivo &lsquo;configure&rsquo;.
+Nestes casos, basta rodar o <code>autoconf</code> com o comando <code>autoreconf -i</code> e prosseguir.</p>
+
+<pre><code>$ git clone https://github.com/pornel/giflossy
+$ cd giflossy
+$ autoreconf -i
+$ ./configure
+$ make
+$ make install
+</code></pre>
+
+<p>O software compilou e instalou sem problemas. Podemos prosseguir e criar o pacote!</p>
+
+<h1 id="criando-o-pacote">Criando o pacote</h1>
+
+<p>Para criar o pacote, criamos um arquivo de receita chamado <code>PKGBUILD</code> . Cada gerenciador
+de pacotes tem seu proprio formato de receita, alguns bastante burocráticos. Felizmente,
+o do <code>pacman</code> é simples, conciso e direto ao ponto.</p>
+
+<p>Após a receita descrita, preparamos o pacote usando o programa <code>makepkg</code>, gerando um <code>zip</code> no formato <code>tar.xz</code>.
+Este zip é o pacote final que é distribuido e instalado diretamente através do pacman: <code>pacman -U &lt;pacote&gt;</code></p>
+
+<p>Para criar o nosso pacote, vamos criar uma nova pasta e copiar o esqueleto padrão do PKGBUILD</p>
+
+<pre><code>mkdir -o ~/Desktop/giflossy-pkg
+cd ~/Desktop/giflossy-pkg
+cp /usr/share/pacman/PKGBUILD.proto PKGBUILD
+</code></pre>
+
+<p>Agora precisamos preencher a receita com as informações do software.
+Os campos devem ser as descrições do software, como nome, licensa e versão.</p>
+
+<p>No nosso caso, nosso arquivo ficou assim</p>
+
+<pre><code># Maintainer: vical &lt;barrabin.fc@gmail.com&gt;
+pkgname=giflossy
+pkgver=1.89
+pkgrel=1
+epoch=
+pkgdesc=&quot;Lossy GIF compressor ( fork of gifsicle)&quot;
+arch=('x86_64')
+url=&quot;https://github.com/pornel/giflossy&quot;
+license=('GPL')
+groups=()
+depends=()
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=(&quot;https://github.com/pornel/giflossy/archive/master.zip&quot;)
+noextract=()
+md5sums=(&quot;f37da4b0730a38778fa5901a80aa9636&quot;)
+validpgpkeys=()
+
+prepare() {
+    cd &quot;$pkgname-master&quot;
+    autoreconf -i
+}
+
+build() {
+    cd &quot;$pkgname-master&quot;
+    ./configure --prefix=/usr
+    make
+}
+
+check() {
+    cd &quot;$pkgname-master&quot;
+    make -k check
+}
+
+package() {
+    cd &quot;$pkgname-master&quot;
+    make DESTDIR=&quot;$pkgdir/&quot; install
+}
+</code></pre>
+
+<p>Tome atenção com os campos <code>source</code> e <code>md5sum</code>. Assim como as funções <code>prepare()</code>, <code>build()</code> e <code>package()</code>,
+elas são a <code>crux</code> e o segredo do processo.</p>
+
+<pre><code>Atenção: Por razões de integridade e segurança, é sempre necessário colocar o md5sum do pacote
+</code></pre>
+
+<pre><code>$ md5sum master.zip
+f37da4b0730a38778fa5901a80aa9636  master.zip
+$
+</code></pre>
+
+<p>Agora vamos preparar o prato!</p>
+
+<pre><code>$ makepkg
+</code></pre>
+
+<p>Podemos preparar a receita quantas vezes for necessário, até ela dar certo. Vamos adaptando o PKGBUILD e repetindo o processo.
+No final, teremos nosso pacote <code>giflossy-1.89-1-x86_64.pkg.tar</code></p>
+
+<h1 id="validando-o-pacote">Validando o pacote</h1>
+
+<p>Embora o pacote esteja pronto, pode ainda conter alguns erros. Um deles, no nosso caso, é que esquecemos de
+declarar uma dependencia. A ferramenta <code>namcap</code> ajuda nesse processo de encontrar erros:</p>
+
+<pre><code>$ namcap PKGBUILD
+$ namcap &lt;pacote&gt;.tar.xz
+giflossy E: Dependency libx11 detected and not included (libraries ['usr/lib/libX11.so.6'] needed in files ['usr/bin/gifview'])
+</code></pre>
+
+<p>Ótimo! Podemos voltar ao nosso PKGBUILD e corrigir , declarando as dependencias:</p>
+
+<pre><code>depends=(&quot;libx11&quot;)
+</code></pre>
+
+<p>Repetindo o processo do <code>namcap</code>, nosso pacote está 100% correto!</p>
+
+<h1 id="instalando">Instalando</h1>
+
+<p>Para instalar o pacote:</p>
+
+<p><code>pacman -U &lt;pacote&gt;.tar.xz</code></p>
+
+<p>e para apagar:</p>
+
+<p><code>pacman -R giflossy</code></p>
+
+<h1 id="notas-p-pacotes-baixados-através-do-git">Notas p/ pacotes baixados através do git</h1>
+
+<p>Como nosso pacote é baixado através do git, a versão descrita do pacote
+pode não ser a versão que é baixada do git. O archlinux recomenda que nesses
+casos fazemos um autobump de versão (<a href="https://wiki.archlinux.org/index.php/VCS_package_guidelines#The_pkgver.28.29_function">https://wiki.archlinux.org/index.php/VCS_package_guidelines#The_pkgver.28.29_function</a>)</p>
+
+<p>Para isso, sobrescrevemos a função <code>pkgver()</code>, que deve retornar a versão do software.
+No nosso caso, vamos ler a versão do arquivo NEWS</p>
+
+<p><code>pkgver() {
+    cd &quot;$pkgname-master`
+    head NEWS | grep Version | awk '{print $2}'
+}</code></p>
+
+<p>Pronto! Agora não precisamos atualizar a mão toda vez que ocorrer uma atualização do <code>giflossy</code>.</p>
+
+    </article>
+  </section>
+</main>
+    <footer>
+  <style>
+   
+  :root {
+    --black: #0f0f0f;
+    --white: rgba(255,255,255, 0.90);
+  }
+
+  main { 
+    background-color: rgba(255,255,255, 0.90);
+    color: #0f0f0f;
+  }
+  .color-high {
+    color: #f05553 !important;
+  }
+
+  a.btn {
+    color: var(--black);
+    fill: var(--black);
+   }
+   a.btn:hover {
+     background-color: var(--black) !important;
+     color: var(--white) !important;
+   }
+
+  
+   
+  
+   
+  body.blog .menu-header::before,
+  body.blog .menu-header::after,
+  body.apps .menu-header::before , 
+  body.apps .menu-header::after {
+    background-color: #0f0f0f !important;
+  }
+  
+  body.blog #menu .selected > a ,
+  body.apps #menu .selected > a {
+    background-color: #0f0f0f !important; 
+    color: rgba(255,255,255, 0.90) !important;    
+  }
+
+  body.blog .menu-header.has-submenu:hover > a,
+  body.blog .menu-header.is-link:hover > a,
+  body.apps .menu-header.has-submenu:hover > a,
+  body.apps .menu-header.is-link:hover > a {  
+    background-color: #0f0f0f !important; 
+    color: rgba(255,255,255, 0.90) !important;
+  }
+
+  body.blog #menu .menu-header .sub-menu,
+  body.apps #menu .menu-header .sub-menu {
+    background-color: #0f0f0f !important;
+    color: rgba(255,255,255, 0.90) !important;
+  }
+  
+   
+   body.work #menu , 
+   body.about #menu ,
+   body.home #menu{
+     background-color: #0f0f0f;
+     color: rgba(255,255,255, 0.90);
+     fill: rgba(255,255,255, 0.90);
+   }
+   body.home .menu-header,
+   body.work .menu-header,
+   body.about .menu-header {
+     background-color: rgba(255,255,255, 0.90);
+     color: #0f0f0f;
+   }
+
+   body.home .menu-header.selected,   
+   body.work .menu-header.selected ,
+   body.about .menu-header.selected {
+     transform: translate3d(0,0,50px);
+     border-color: rgba(255,255,255, 0.90);
+     background-color: #0f0f0f;
+     color: rgba(255,255,255, 0.90);
+   }
+
+    
+   body.work .menu-header:hover,   
+   body.work #menu .menu-header:hover,
+   body.about #menu .menu-header:hover {
+     transform: translate3d(0,0,50px);
+     border: 1px solid rgba(255,255,255, 0.90);
+     background-color: #0f0f0f;
+
+     color: rgba(255,255,255, 0.90);
+   }
+
+
+   body.work #menu .menu-close, 
+   body.about #menu .menu-close  {
+     border-color: rgba(255,255,255, 0.90);
+   }
+   body.work #menu .menu-close:hover ,
+   body.about #menu .menu-close:hover {
+     background-color: rgba(255,255,255, 0.90);
+     color: #0f0f0f;
+     fill: #0f0f0f;
+   }
+   body.work #menu .selected > a ,
+   body.about #menu .selected > a {
+     background-color: transparent;
+     color: inherit;
+   }
+   
+   
+    
+   ul.featured.bordered {
+    border-color: #0f0f0f     
+   }
+   ul.featured.bordered a {
+    color: #0f0f0f;
+    fill: #0f0f0f;
+   }
+   ul.featured.bordered a:hover {
+     background-color: #0f0f0f !important;
+     color: rgba(255,255,255, 0.90) !important;
+   }
+   
+        
+</style>
+
+</footer>
+
+    <script src="/js/app.js" defer></script>
+    <script src="/js/vendor/evil-icons.js" defer></script>
+  </body>
+</html>

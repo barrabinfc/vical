@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Apps</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+  
+    <style>
+  *, *::after , *::before { box-sizing: border-box; }
+  html,body { margin: 0; }
+  body { 
+    background-color: #161616; 
+    color: #f0f0f0; 
+    font-family: sans-serif; 
+    overflow-x: hidden;
+  }
+  iframe,embed,img,video { max-width: 100%; }
+  
+  a,p,button { margin: 1em; padding: 0.5em; }
+  blockquote { width: 100%; margin: 1em auto; font-size: 2em; line-height: 1.0em; text-align: center; }
+  blockquote > p { margin: 0; }
+  
+  body>header { position: absolute; top: 0; width: 100%; }
+  main > section {  position: relative; width: 100%; min-height: 100vh; 
+                    display: flex; flex-direction: column; justify-content: center; }
+  main > section > article {
+    min-height: 100vh;
+    padding: 2em 2em;
+  }
+  
+  
+  .container { max-width: 80%; }
+  .container-fluid { max-width: 95%; }
+  .container, .container-fluid { margin: 0 auto; }
+  
+  .icon {   position: relative; display: inline-block;
+            width: 1em; height: 1em; fill: #f0f0f0; }
+  .picture { position: relative; }
+  
+  .txt-center { text-align: center; }
+  .bg\:primary{ background-color: #f58021; }      
+  .bg\:second { background-color: #ae509e; }
+              
+  .grid { display: flex; flex-wrap: wrap; }
+  .grid.\:vertical { flex-direction: column; }
+  .grid.\:between { justify-content: space-between; }
+  .grid.\:around { justify-content: space-around; }
+  .grid.\:middle { align-items: center; }
+  
+  .columns1 { columns: 1; column-gap: 0em; }
+  .columns2 { columns: 2; column-gap: 2em; }
+  .columns3 { columns: 3; column-gap: 1em; }
+  
+  .w10 { max-width: 10%; }
+  .w33 { max-width: 33%; }
+  .w25 { max-width: 25%; }
+  .w40 { max-width: 40%; }
+  .w50 { max-width: 50%; }
+  .w70 { max-width: 70%; }
+  .w90 { max-width: 90%; }
+  .w100 { max-width: 100%; }
+
+  
+  .abscenter {
+    margin: 0;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+    
+    
+    <script type="text/javascript">
+        ['/css/evil-icons.css'].map( function(url) {
+            var link = document.createElement('link');
+            link.rel = "stylesheet";
+            link.href = url;
+            document.head.appendChild(link);
+        });
+    </script>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/typography.css">
+    
+    
+  </head>
+  
+  
+  
+  
+  
+  <body class="dark section apps ">
+
+    <header role="header" class="container " id="menu">
+      
+  <a href="/" class="logo" id="logo">
+  Vicale
+</a>
+  
+
+<nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="menu ">
+
+  
+    
+    
+
+    <div class="menu-header hoverable 
+                
+                has-submenu header-anim-growTooltip "
+                id="menu-work">
+      
+        <a href="#submenu-work" class="title">work</a>
+        <ul class="sub-menu" id="submenu-work">
+        
+            <li>→ <a href="/work/astrorunners" class="default"> Astrorunners </a> </li>
+        
+            <li>→ <a href="/work/bmg" class="default"> BMG </a> </li>
+        
+            <li>→ <a href="/work/bigud" class="default"> Bigud </a> </li>
+        
+            <li>→ <a href="/work/luizalian" class="default"> Luiza Lian </a> </li>
+        
+        </ul>
+      
+    </div>
+  
+    
+    
+
+    <div class="menu-header hoverable 
+                selected
+                has-submenu header-anim-growTooltip "
+                id="menu-apps">
+      
+        <a href="#submenu-apps" class="title">apps</a>
+        <ul class="sub-menu" id="submenu-apps">
+        
+            <li>→ <a href="/apps/iching" class="default"> I Ching </a> </li>
+        
+            <li>→ <a href="/apps/piano-coach" class="default"> Piano Coach </a> </li>
+        
+        </ul>
+      
+    </div>
+  
+    
+    
+
+    <div class="menu-header hoverable 
+                
+                is-link"
+                id="menu-about">
+      
+        <a href="/about/me" class="title">About</a>
+      
+    </div>
+  
+    
+    
+
+    <div class="menu-header hoverable 
+                
+                is-link"
+                id="menu-blog">
+      
+        <a href="/blog/" class="title">Blog</a>
+      
+    </div>
+  
+
+</nav>
+
+
+    </header>
+    
+    <main>
+<section class="project-list">
+  <article class="container grid :vertical :middle :around">
+      <h4><a href="/apps/camtwist-syphon/">CAMTwist-Syphon</a></h4>
+      <h4><a href="/apps/iching/">I Ching</a></h4>
+      <h4><a href="/apps/piano-coach/">Piano Coach</a></h4> 
+  
+  </article>
+</section>
+
+</main>
+    <footer></footer>
+
+    <script src="/js/app.js" defer></script>
+    <script src="/js/vendor/evil-icons.js" defer></script>
+  </body>
+</html>

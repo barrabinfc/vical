@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on « vicale »</title>
+    <link>/blog/</link>
+    <description>Recent content in Blog on « vicale »</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Como criar um pacote para archlinux</title>
+      <link>/blog/criar-pacote-para-archlinux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/criar-pacote-para-archlinux/</guid>
+      <description>Como criar um pacote archlinux Como muitas pessoas, eu adoro archlinux e seu gerenciador de pacotes. Porém , a quantidade de software no catálogo ainda é inferior ao ubuntu ou Mac, e eventualmente você vai ter que instalar software manualmente.
+Nesses casos, é muito útil saber como empacotar software para archlinux. Dessa forma, ainda podemos gerênciar instalação/atualizações/remoção usando o pacman, sem termos software zumbi no sistema operacional.
+Nesse artigo, vou mostrar como empacotar o software Giflossy, um otimizador lossy de gifs.</description>
+    </item>
+    
+    <item>
+      <title>Hello</title>
+      <link>/blog/hello/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/hello/</guid>
+      <description>An h1 header Paragraphs are separated by a blank line.
+2nd paragraph. Italic, bold, and monospace. Itemized lists look like:
+ this one that one the other one  Note that &amp;mdash; not considering the asterisk &amp;mdash; the actual text content starts at 4-columns in.
+ Block quotes are written like so.
+They can span multiple paragraphs, if you like.
+ Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex.</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/blog/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/test/</guid>
+      <description>An h1 header Paragraphs are separated by a blank line.
+2nd paragraph. Italic, bold, and monospace. Itemized lists look like:
+ this one that one the other one  Note that &amp;mdash; not considering the asterisk &amp;mdash; the actual text content starts at 4-columns in.
+ Block quotes are written like so.
+They can span multiple paragraphs, if you like.
+ Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex.</description>
+    </item>
+    
+  </channel>
+</rss>
