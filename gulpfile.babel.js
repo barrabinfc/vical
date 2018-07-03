@@ -12,7 +12,7 @@ import webpackConfig from "./webpack.conf";
 
 const browserSync = BrowserSync.create();
 const hugoBin = "hugo";
-const defaultArgs = ["-d", "../dist",
+const defaultArgs = ["-d", "../docs",
   "-s", "site",
   "-v"];
 
@@ -27,13 +27,13 @@ gulp.task("css", () => (
     .pipe(sourcemaps.init())
     .pipe(postcss([cssImport({from: "./src/css/main.css"}), cssnext(), svgInline()]))
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest("./dist/css"))
+    .pipe(gulp.dest("./docs/css"))
     //.pipe(browserSync.stream())
 ));
 
 gulp.task("vendor-js", () => {
   gulp.src("./src/js/vendor/*.js")
-    .pipe(gulp.dest("./dist/js/vendor"))
+    .pipe(gulp.dest("./docs/js/vendor"))
 })
 
 gulp.task("js", (cb) => {
@@ -53,7 +53,7 @@ gulp.task("js", (cb) => {
 gulp.task("server", ["hugo", "css", "vendor-js", "js"], () => {
   browserSync.init({
     server: {
-      baseDir: "./dist"
+      baseDir: "./docs"
     }
   });
   gulp.watch("./src/js/vendor/*.js", ["vendor-js"]);
