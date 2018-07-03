@@ -1,0 +1,67 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Abril+Fatface|Montserrat:700|Source+Code+Pro:400,700|Share+Tech+Mono|Source+Sans+Pro');
+/*
+ * Typography futuristic themed.
+ *  code: Source Code Pro
+ *  Title: Orbitron
+ *  text: Play or Antic 
+ */
+/*
+@import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Roboto:900|Open+Sans');
+*/
+:root {   /* perfect fifth */
+}
+h1 { 
+  font-size: 55.92px; 
+  font-size: 3.495rem;    
+  line-height: 55.92px;    
+  line-height: 3.495rem;
+  margin: 0;
+}
+h2 { 
+  font-size: 48px; 
+  font-size: 3rem;       
+  line-height: 48px;       
+  line-height: 3rem;
+  margin: 0;
+}
+h3 { 
+  font-size: 39.84px; 
+  font-size: 2.49rem;    
+  line-height: 39.84px;    
+  line-height: 2.49rem;
+  margin: 0;
+}
+h4 {
+  font-size: 31.92px;
+  font-size: 1.995rem;
+  line-height: 31.92px;
+  line-height: 1.995rem;  
+  margin: 0;
+
+}
+h5 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  margin: 0;
+}
+h6 {
+  font-size: 18.48px;
+  font-size: 1.155rem;
+  line-height: 18.48px;
+  line-height: 1.155rem; 
+}
+p { 
+  margin: 0 0 1.5em;
+}
+.font-big {
+  font-size: 39.84px;
+  font-size: 2.49rem;    
+  line-height: 39.84px;    
+  line-height: 2.49rem;
+}
+
+/*# sourceMappingURL=typography.css.map */

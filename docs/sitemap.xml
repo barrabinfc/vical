@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2017-04-08T18:58:42-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/about/me/</loc>
+  </url>
+  
+  <url>
+    <loc>/apps/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/work/astrorunners/</loc>
+  </url>
+  
+  <url>
+    <loc>/work/bmg/</loc>
+  </url>
+  
+  <url>
+    <loc>/blog/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/apps/camtwist-syphon/</loc>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/criar-pacote-para-archlinux/</loc>
+  </url>
+  
+  <url>
+    <loc>/blog/hello/</loc>
+  </url>
+  
+  <url>
+    <loc>/apps/iching/</loc>
+  </url>
+  
+  <url>
+    <loc>/work/luizalian/</loc>
+  </url>
+  
+  <url>
+    <loc>/apps/piano-coach/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/test/</loc>
+  </url>
+  
+  <url>
+    <loc>/work/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

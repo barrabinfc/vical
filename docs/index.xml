@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Index on « vicale »</title>
+    <link>/</link>
+    <description>Recent content in Index on « vicale »</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 08 Apr 2017 18:58:42 -0300</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About vitor</title>
+      <link>/about/me/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/me/</guid>
+      <description>Vitor Calejuri, Software Developer Meus interesses são em ferramentas digitais para música, audiovisual e web. Eu desenvolvo ferramentas interativas, para facilitar o trabalho criativo e o aprendizado, usando um vocabulário disciplinado de computação, matemática e design.
+Anos de trabalho desenvolvendo software open-source, em casas de software, agências de publicidade e institutos de arte, me deram uma compreensão intuitiva entre computação, arte e design.
+Especialidades   - Full stack Web Development and Data visualization - Audiovisual and interactive Software - Tangible interfaces   + trabalhos    http://github.</description>
+    </item>
+    
+    <item>
+      <title>Astrorunners</title>
+      <link>/work/astrorunners/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/work/astrorunners/</guid>
+      <description>   </description>
+    </item>
+    
+    <item>
+      <title>BMG</title>
+      <link>/work/bmg/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/work/bmg/</guid>
+      <description>      </description>
+    </item>
+    
+    <item>
+      <title>CAMTwist-Syphon</title>
+      <link>/apps/camtwist-syphon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/apps/camtwist-syphon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Como criar um pacote para archlinux</title>
+      <link>/blog/criar-pacote-para-archlinux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/criar-pacote-para-archlinux/</guid>
+      <description>Como criar um pacote archlinux Como muitas pessoas, eu adoro archlinux e seu gerenciador de pacotes. Porém , a quantidade de software no catálogo ainda é inferior ao ubuntu ou Mac, e eventualmente você vai ter que instalar software manualmente.
+Nesses casos, é muito útil saber como empacotar software para archlinux. Dessa forma, ainda podemos gerênciar instalação/atualizações/remoção usando o pacman, sem termos software zumbi no sistema operacional.
+Nesse artigo, vou mostrar como empacotar o software Giflossy, um otimizador lossy de gifs.</description>
+    </item>
+    
+    <item>
+      <title>Hello</title>
+      <link>/blog/hello/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/hello/</guid>
+      <description>An h1 header Paragraphs are separated by a blank line.
+2nd paragraph. Italic, bold, and monospace. Itemized lists look like:
+ this one that one the other one  Note that &amp;mdash; not considering the asterisk &amp;mdash; the actual text content starts at 4-columns in.
+ Block quotes are written like so.
+They can span multiple paragraphs, if you like.
+ Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex.</description>
+    </item>
+    
+    <item>
+      <title>I Ching</title>
+      <link>/apps/iching/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/apps/iching/</guid>
+      <description>    </description>
+    </item>
+    
+    <item>
+      <title>Luiza Lian</title>
+      <link>/work/luizalian/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/work/luizalian/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>Piano Coach</title>
+      <link>/apps/piano-coach/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/apps/piano-coach/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/blog/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/test/</guid>
+      <description>An h1 header Paragraphs are separated by a blank line.
+2nd paragraph. Italic, bold, and monospace. Itemized lists look like:
+ this one that one the other one  Note that &amp;mdash; not considering the asterisk &amp;mdash; the actual text content starts at 4-columns in.
+ Block quotes are written like so.
+They can span multiple paragraphs, if you like.
+ Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex.</description>
+    </item>
+    
+  </channel>
+</rss>

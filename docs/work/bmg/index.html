@@ -1,0 +1,380 @@
+<!doctype html>
+<html>
+  <head>
+    <title>BMG</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+      <meta name="description" content="&lt;p&gt;O &lt;a href=&#39;http://genitalia.me&#39; class=&#39;default nomargin black underline&#39; target=&#39;_blank&#39;&gt;genitalia.me&lt;/a&gt; é um projeto artístico, uma galeria infinita de genitálias doadas por anônimos do mundo todo através do site.&lt;/p&gt;&lt;p&gt;Desenvolvi o mosaico infinito utilizando &lt;strong&gt;HTML&lt;/strong&gt; e &lt;strong&gt;Javascript&lt;/strong&gt; e a área administração em &lt;strong&gt;Python&lt;/strong&gt; com o framework &lt;strong&gt;Django&lt;/strong&gt;.&lt;/p&gt;">
+    
+  
+    <style>
+  *, *::after , *::before { box-sizing: border-box; }
+  html,body { margin: 0; }
+  body { 
+    background-color: #161616; 
+    color: #f0f0f0; 
+    font-family: sans-serif; 
+    overflow-x: hidden;
+  }
+  iframe,embed,img,video { max-width: 100%; }
+  
+  a,p,button { margin: 1em; padding: 0.5em; }
+  blockquote { width: 100%; margin: 1em auto; font-size: 2em; line-height: 1.0em; text-align: center; }
+  blockquote > p { margin: 0; }
+  
+  body>header { position: absolute; top: 0; width: 100%; }
+  main > section {  position: relative; width: 100%; min-height: 100vh; 
+                    display: flex; flex-direction: column; justify-content: center; }
+  main > section > article {
+    min-height: 100vh;
+    padding: 2em 2em;
+  }
+  
+  
+  .container { max-width: 80%; }
+  .container-fluid { max-width: 95%; }
+  .container, .container-fluid { margin: 0 auto; }
+  
+  .icon {   position: relative; display: inline-block;
+            width: 1em; height: 1em; fill: #f0f0f0; }
+  .picture { position: relative; }
+  
+  .txt-center { text-align: center; }
+  .bg\:primary{ background-color: #f58021; }      
+  .bg\:second { background-color: #ae509e; }
+              
+  .grid { display: flex; flex-wrap: wrap; }
+  .grid.\:vertical { flex-direction: column; }
+  .grid.\:between { justify-content: space-between; }
+  .grid.\:around { justify-content: space-around; }
+  .grid.\:middle { align-items: center; }
+  
+  .columns1 { columns: 1; column-gap: 0em; }
+  .columns2 { columns: 2; column-gap: 2em; }
+  .columns3 { columns: 3; column-gap: 1em; }
+  
+  .w10 { max-width: 10%; }
+  .w33 { max-width: 33%; }
+  .w25 { max-width: 25%; }
+  .w40 { max-width: 40%; }
+  .w50 { max-width: 50%; }
+  .w70 { max-width: 70%; }
+  .w90 { max-width: 90%; }
+  .w100 { max-width: 100%; }
+
+  
+  .abscenter {
+    margin: 0;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+    
+    
+    <script type="text/javascript">
+        ['/css/evil-icons.css'].map( function(url) {
+            var link = document.createElement('link');
+            link.rel = "stylesheet";
+            link.href = url;
+            document.head.appendChild(link);
+        });
+    </script>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/typography.css">
+    
+    
+  </head>
+  
+  
+  
+  
+  
+  <body class="light page work ">
+
+    <header role="header" class="container " id="menu">
+      
+  <div class="logo-container">
+    <a href="/" class="logo" id="logo">
+  Vicale
+</a>
+    <a href="#menu" class="menu-close">
+      <svg class="icon__cnt"><use xlink:href="#ei-close-icon"></use></svg>
+    </a>
+  </div>
+  
+
+<nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="menu ">
+
+  
+    
+    
+
+    <div class="menu-header hoverable 
+                selected
+                has-submenu header-anim-growTooltip "
+                id="menu-work">
+      
+        <a href="#submenu-work" class="title">work</a>
+        <ul class="sub-menu" id="submenu-work">
+        
+            <li>→ <a href="/work/astrorunners" class="default"> Astrorunners </a> </li>
+        
+            <li>→ <a href="/work/bmg" class="default"> BMG </a> </li>
+        
+            <li>→ <a href="/work/bigud" class="default"> Bigud </a> </li>
+        
+            <li>→ <a href="/work/luizalian" class="default"> Luiza Lian </a> </li>
+        
+        </ul>
+      
+    </div>
+  
+    
+    
+
+    <div class="menu-header hoverable 
+                
+                has-submenu header-anim-growTooltip "
+                id="menu-apps">
+      
+        <a href="#submenu-apps" class="title">apps</a>
+        <ul class="sub-menu" id="submenu-apps">
+        
+            <li>→ <a href="/apps/iching" class="default"> I Ching </a> </li>
+        
+            <li>→ <a href="/apps/piano-coach" class="default"> Piano Coach </a> </li>
+        
+        </ul>
+      
+    </div>
+  
+    
+    
+
+    <div class="menu-header hoverable 
+                
+                is-link"
+                id="menu-about">
+      
+        <a href="/about/me" class="title">About</a>
+      
+    </div>
+  
+    
+    
+
+    <div class="menu-header hoverable 
+                
+                is-link"
+                id="menu-blog">
+      
+        <a href="/blog/" class="title">Blog</a>
+      
+    </div>
+  
+
+</nav>
+
+
+    </header>
+    
+    <main>
+  <section class="work">
+    <article class="showcase">
+      <div class="overlay">
+        <div class="see-more">
+          <div>Scroll to see more</div>
+          <svg class="icon"><use xlink:href="#ei-chevron-down-icon"></use></svg>
+          
+        </div>
+      </div>
+      <div class="gallery">
+  <div class="browser-mask" style="background-color: #ffcc8c">
+    <div class="browser-screen appearFromBottom-anim">
+      <img src="/images/bmg/mosaic.jpg" alt="Mosaico" />
+    </div>
+  </div>
+  <img src="/images/bmg/detail3.png" alt="Detalhe" />  
+  <img src="/images/bmg/upload.png" alt="Enviar" />  
+</div>
+<div class="gallery">
+  <div class="browser-mask pull :left">
+    <div class="browser-screen">
+      <img src="/images/bmg/admin-login.png" alt="CMS" /> 
+    </div>
+  </div>
+  <img class="pull :right" src="/images/bmg/admin-aprovacao.jpg" alt="Aprovação" />  
+</div>
+
+    </article>
+    <article id="content-body" class="info grid :vertical">
+      
+      <picture class="logo">
+        
+        
+          <h2>BMG</h2>
+        
+      </picture>
+
+      <div class="description">
+        <p>O <a href='http://genitalia.me' class='default nomargin black underline' target='_blank'>genitalia.me</a> é um projeto artístico, uma galeria infinita de genitálias doadas por anônimos do mundo todo através do site.</p><p>Desenvolvi o mosaico infinito utilizando <strong>HTML</strong> e <strong>Javascript</strong> e a área administração em <strong>Python</strong> com o framework <strong>Django</strong>.</p>  
+      </div>
+
+      <div class="more">
+          <ul class="as-flex-table">
+              <li>
+                <strong class="label">Visit</strong>
+                <a href="genitalia.me" class="clean value color-high">genitalia.me</a>      
+              </li>
+      </div>
+
+      
+      <footer>
+        <ul role="nav" class="horizontal featured bordered">
+          
+            <li class="w5"><a href="/work/luizalian/" class="default btn no-underline">◂</a></li>
+          
+          <li class="w90"><a href="#menu" class="default btn no-underline">Menu</a></li>
+          
+            <li class="w5"><a href="/work/astrorunners/" class="default btn no-underline">▸</a></li>
+          
+        </ul>
+      </footer>
+    </article>    
+  </section>
+</main>
+    <footer>
+  <style>
+   
+  :root {
+    --black: #000;
+    --white: rgba(255,255,255, 1.0);
+  }
+
+  main { 
+    background-color: rgba(255,255,255, 1.0);
+    color: #000;
+  }
+  .color-high {
+    color: #f05553 !important;
+  }
+
+  a.btn {
+    color: var(--black);
+    fill: var(--black);
+   }
+   a.btn:hover {
+     background-color: var(--black) !important;
+     color: var(--white) !important;
+   }
+
+  
+   
+  
+   
+  body.blog .menu-header::before,
+  body.blog .menu-header::after,
+  body.apps .menu-header::before , 
+  body.apps .menu-header::after {
+    background-color: #000 !important;
+  }
+  
+  body.blog #menu .selected > a ,
+  body.apps #menu .selected > a {
+    background-color: #000 !important; 
+    color: rgba(255,255,255, 1.0) !important;    
+  }
+
+  body.blog .menu-header.has-submenu:hover > a,
+  body.blog .menu-header.is-link:hover > a,
+  body.apps .menu-header.has-submenu:hover > a,
+  body.apps .menu-header.is-link:hover > a {  
+    background-color: #000 !important; 
+    color: rgba(255,255,255, 1.0) !important;
+  }
+
+  body.blog #menu .menu-header .sub-menu,
+  body.apps #menu .menu-header .sub-menu {
+    background-color: #000 !important;
+    color: rgba(255,255,255, 1.0) !important;
+  }
+  
+   
+   body.work #menu , 
+   body.about #menu ,
+   body.home #menu{
+     background-color: #000;
+     color: rgba(255,255,255, 1.0);
+     fill: rgba(255,255,255, 1.0);
+   }
+   body.home .menu-header,
+   body.work .menu-header,
+   body.about .menu-header {
+     background-color: rgba(255,255,255, 1.0);
+     color: #000;
+   }
+
+   body.home .menu-header.selected,   
+   body.work .menu-header.selected ,
+   body.about .menu-header.selected {
+     transform: translate3d(0,0,50px);
+     border-color: rgba(255,255,255, 1.0);
+     background-color: #000;
+     color: rgba(255,255,255, 1.0);
+   }
+
+    
+   body.work .menu-header:hover,   
+   body.work #menu .menu-header:hover,
+   body.about #menu .menu-header:hover {
+     transform: translate3d(0,0,50px);
+     border: 1px solid rgba(255,255,255, 1.0);
+     background-color: #000;
+
+     color: rgba(255,255,255, 1.0);
+   }
+
+
+   body.work #menu .menu-close, 
+   body.about #menu .menu-close  {
+     border-color: rgba(255,255,255, 1.0);
+   }
+   body.work #menu .menu-close:hover ,
+   body.about #menu .menu-close:hover {
+     background-color: rgba(255,255,255, 1.0);
+     color: #000;
+     fill: #000;
+   }
+   body.work #menu .selected > a ,
+   body.about #menu .selected > a {
+     background-color: transparent;
+     color: inherit;
+   }
+   
+   
+    
+   ul.featured.bordered {
+    border-color: #000     
+   }
+   ul.featured.bordered a {
+    color: #000;
+    fill: #000;
+   }
+   ul.featured.bordered a:hover {
+     background-color: #000 !important;
+     color: rgba(255,255,255, 1.0) !important;
+   }
+   
+        
+</style>
+
+</footer>
+
+    <script src="/js/app.js" defer></script>
+    <script src="/js/vendor/evil-icons.js" defer></script>
+  </body>
+</html>
