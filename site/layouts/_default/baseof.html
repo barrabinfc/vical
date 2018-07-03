@@ -30,9 +30,10 @@
   {{ $layout := .Params.layout | default "" }}
   {{ $page := .Kind | default "page" }}
   {{ $section := .Section | default "" }}
+  {{ $menuModifier := .Params.menuModifier | default "" }}
   <body class="{{ $colorscheme }} {{ $page }} {{ $section }} {{ $layout }}">
 
-    <header role="header" class="container" id="menu">
+    <header role="header" class="container {{ $menuModifier }}" id="menu">
       {{ block "header" .}}{{ end }}
     </header>
     
