@@ -11,14 +11,14 @@
                 {{ if .HasChildren }}has-submenu header-anim-growTooltip {{else}}is-link{{end}}"
                 id="menu-{{ .Identifier }}">
       {{ if .HasChildren }}
-        <h5 class="title"><a href="{{ .URL }}">{{trim .Name " "}}</a></h5>
-        <ul class="sub-menu">
+        <a href="#submenu-{{ trim .Name " "}}" class="title">{{trim .Name " "}}</a>
+        <ul class="sub-menu" id="submenu-{{ trim .Name " " }}">
         {{ range .Children }}
             <li>→ <a href="{{.URL}}" class="default"> {{ .Name }} </a> </li>
         {{ end }}
         </ul>
       {{ else }}
-        <h5 class="title"> <a href="{{ .URL }}">{{trim .Name " "}}</a></h5>
+        <a href="{{ .URL }}" class="title">{{trim .Name " "}}</a>
       {{ end }}
     </div>
   {{ end }}

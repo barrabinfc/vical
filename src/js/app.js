@@ -36,18 +36,21 @@ function fixHrefTarget(container, tgtClass = ":is-target") {
   const linksWithHash = container.querySelectorAll('a[href^="#"]')
   let target = undefined
 
+  function add(tgt, klass) { tgt.classList.add(klass) }
+  function rm(tgt, klass) { tgt.classList.remove(klass) }
+
   linksWithHash.forEach((link) => {
     link.addEventListener(pointerClick, function(e) {
       e.preventDefault()
-
-      // remove old target
-      if (target) { target.classList.remove(":is-target") }
 
       // set new target
       var newTgt = this.getAttribute("href")
       if (newTgt != "#") {
         target = container.querySelector(newTgt)
-        target.classList.add(":is-target")
+
+        // remove or add new class
+        if(target.classList.contains(tgtClass)) rm(target, tgtClass)
+        else add(target, tgtClass)
       }
     })
   })

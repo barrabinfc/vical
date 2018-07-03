@@ -270,8 +270,9 @@ ul.featured.bordered {
       text-align: center;
       text-transform: uppercase;
       color: inherit;
-      margin: 0; padding: 1rem;
+      margin: 0.5rem 0em; padding: 1rem;
       cursor: pointer;
+      color: inherit;
       
       & > a { 
         color: inherit;
@@ -281,7 +282,6 @@ ul.featured.bordered {
     
     
     &.selected {
-      
       & > .sub-menu {
         display: block;
       }
@@ -300,6 +300,11 @@ ul.featured.bordered {
         font-weight: 300;
         color: inherit;
         margin: 0; padding: 0;
+      }
+
+      /* toggle */
+      &.\:is-target {
+        display: block;
       }
     }
   }
