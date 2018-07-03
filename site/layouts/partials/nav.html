@@ -1,6 +1,6 @@
 {{ $currentNode := . }}
-{{ $menuModifier := .Scratch.Get "menuModifier" }}
-<nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="menu {{ $menuModifier }}">
+{{ $navModifier := .Scratch.Get "navModifier" }}
+<nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="menu {{ $navModifier }}">
 
   {{ range .Site.Menus.main }}
     {{ $is  := $currentNode.IsMenuCurrent "main" . }}

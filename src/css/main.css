@@ -295,7 +295,8 @@ body.blog {
  * Work pages
  */
 body.work ,
-body.about {
+body.about,
+body.home {
 
   /* Image showcase */
   & .showcase {
@@ -404,7 +405,8 @@ body.about {
  * Work & about Menu 
  */
  body.work,
- body.about {
+ body.about,
+ body.home {
 
    & #menu {
      /* Occupy full .info position */
@@ -522,20 +524,6 @@ section.about {
       }
     }
   }
- 
- /*
-  * About menu always visible 
-  */
-body.about {
-  & #menu {
-    visibility: visible;
-    transform: translateY(0);
-    
-    & .menu-close { visibility: hidden; }
-  }
-}
-
-
 
 /**
  * Icons for menu

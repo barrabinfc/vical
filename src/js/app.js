@@ -59,7 +59,6 @@ function fixHrefTarget(container, tgtClass = ":is-target") {
 function hoverInOut(container, selector = "hoverable", timeout = 5000) {
   var hoveredEls = container.querySelectorAll(selector)
   hoveredEls.forEach((el) => {
-    console.log("Adding hover behaviour to -> ", el)
     let is_hovered = false;
     el.addEventListener("mouseover", (ev) => {
       is_hovered = true;
