@@ -12,8 +12,3 @@ menuModifier = ":is-target"
 +++
 
 
-Index 
-
-Meus interesses são em ferramentas digitais para música, audiovisual e web. Eu desenvolvo ferramentas interativas, para facilitar o trabalho criativo e o aprendizado, usando um vocabulário disciplinado de computação, matemática e design.
-
-Anos de trabalho desenvolvendo software open-source, em casas de software, agências de publicidade e institutos de arte, me deram uma compreensão intuitiva entre computação, arte e design. 
