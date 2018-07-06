@@ -1,12 +1,24 @@
 
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Abril+Fatface|Montserrat:700|Source+Code+Pro:400,700|Share+Tech+Mono|Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono|Source+Sans+Pro');
 /*
  * Typography futuristic themed.
  *  code: Source Code Pro
  *  Title: Orbitron
  *  text: Play or Antic 
  */
+@font-face {
+  font-family: 'FuturaStd';
+  font-weight: 300;
+  src: 
+       url('/fonts/FuturaStd-Book.woff2') format('woff2'); /* Super Modern Browsers */
+}
+@font-face {
+  font-family: 'FuturaStd';
+  font-weight: 600;
+  src: 
+       url('/fonts/FuturaStd-Bold.woff2') format('woff2'); /* Super Modern Browsers */
+}
 /*
 @import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Roboto:900|Open+Sans');
 */

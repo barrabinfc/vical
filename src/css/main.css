@@ -1,4 +1,4 @@
-/*@import "imports/reset.css"; */
+@import "imports/reset.css"; 
 @import "imports/variables.css";
 @import "imports/colors.css";
 @import "imports/rules.css";
@@ -8,8 +8,8 @@
 @import "imports/animation.css";
 
 html {
-  font-size: var(--base-fontsize, 16px);
-  line-height: var(--line-height, 18px);
+  font-size: var(--base-fontsize, 14px);
+  line-height: var(--line-height, 14px);
   
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern" 1;

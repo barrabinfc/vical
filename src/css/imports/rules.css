@@ -4,9 +4,9 @@
 :root {
 
   --hero-font: {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'FuturaStd', sans-serif;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 600;
   };
 
   --code-font: {
@@ -16,7 +16,8 @@
   };
 
   --paragraph-font: {
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial, sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
+    /*font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial, sans-serif;*/
     /*font-family: 'Source Sans Pro', Helvetica Neue, sans-serif;*/
   };
   
