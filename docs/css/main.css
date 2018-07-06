@@ -1,4 +1,46 @@
-/*@import "imports/reset.css"; */
+/* Resets margins and paddings for headers, ul, ol and p */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+{
+  margin: 0;
+  padding: 0;
+}
+/*
+ Completely resets form items
+ ----------------------------
+ Super hard reset that removes all borders
+ and radius of all form items.
+ ============================
+*/
+input,
+textarea,
+button {
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none
+}
+input:hover,
+  input:active,
+  input:focus,
+  textarea:hover,
+  textarea:active,
+  textarea:focus,
+  button:hover,
+  button:active,
+  button:focus
+{
+  outline: none;
+}
+.nostyle { all: unset; }
 /*
  * Variables using Custom properties
  */
@@ -29,11 +71,13 @@
   background-color: #f0f0f0;
   color: #000
 }
-.light:after {
+.light:after
+{
   background: #f0f0f0 url("../images/grid-24x16-black.png") repeat;
   opacity: 0.4;
 }
-.light .menu .menu-item:after {
+.light .menu .menu-item:after
+{
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='transparent'%3E %3Crect width='10' height='10' fill='transparent'/%3E %3Cpath d='M-1,1 l2,-2 M0,10 l10,-10 M9,11 l2,-2' stroke='%231f1f1f' stroke-width='1'/%3E %3C/svg%3E");
 }
 /*
@@ -323,7 +367,8 @@ a.default {
   color: #cfcfcf;
   text-decoration: none
 }
-a.default:hover {
+a.default:hover
+{
   text-decoration: underline;
 }
 a.black {
@@ -331,7 +376,8 @@ a.black {
 }
 a.no-underline {
 }
-a.no-underline:hover {
+a.no-underline:hover
+{
   text-decoration: none !important;
 }
 a.underline {
@@ -352,7 +398,8 @@ ul {
   list-style: none;
   padding: 0
 }
-ul li {
+ul li
+{
   padding: 0;
 }
 ul.horizontal {
@@ -361,7 +408,8 @@ ul.horizontal {
   width: 100%;
   text-align: center
 }
-ul.horizontal li {
+ul.horizontal li
+{
   display: table-cell;
   border-color: inherit;
 }
@@ -370,7 +418,8 @@ ul.as-table {
   border-collapse: collapse;
   text-align: left
 }
-ul.as-table li {
+ul.as-table li
+{
   display: table-cell;
   border-color: inherit;
   border: 1px solid;
@@ -381,25 +430,31 @@ ul.as-flex-table {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap
 }
-ul.as-flex-table\:bordered {
+ul.as-flex-table\:bordered
+{
 }
-ul.as-flex-table\:bordered li {
+ul.as-flex-table\:bordered li
+{
   border: 1px solid;
 }
-ul.as-flex-table li {
+ul.as-flex-table li
+{
   width: 100%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
       align-items: center;
 }
-ul.as-flex-table li:first-child {
+ul.as-flex-table li:first-child
+{
   border-bottom: 0;
 }
-ul.as-flex-table li:last-child {
+ul.as-flex-table li:last-child
+{
   border-top: 0;
 }
-ul.as-flex-table .value, ul.as-flex-table .label {
+ul.as-flex-table .value, ul.as-flex-table .label
+{
   padding: 0 2em;
   display: block;
   width: 100%;
@@ -411,7 +466,8 @@ ul.as-flex-table .value, ul.as-flex-table .label {
   font-size: 1.0rem;
   font-weight: 700;
 }
-ul.as-flex-table .label {
+ul.as-flex-table .label
+{
   font-weight: 700;
   font-size: 12.8px;
   font-size: 0.8rem;
@@ -422,24 +478,28 @@ ul.as-flex-table .label {
  */
 ul.featured.bordered {
 }
-ul.featured.bordered li {
+ul.featured.bordered li
+{
   border: 1px solid;/* Links of menu */
 }
-ul.featured.bordered li a {
+ul.featured.bordered li a
+{
   display: block;
   margin: 0em;
   padding: 16px;
   padding: 1rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'FuturaStd', sans-serif;
   text-transform: uppercase;
-  font-weight: 300;/* First&Last are next/previous */
+  font-weight: 600;/* First&Last are next/previous */
 }
-ul.featured.bordered li a:hover {
+ul.featured.bordered li a:hover
+{
   background-color: #fff;
   color: #000;
 }
 ul.featured.bordered li a:first-child,
-      ul.featured.bordered li a:last-child {
+      ul.featured.bordered li a:last-child
+{
   padding: 1em 0em;
 }
 .pull\:left { float: left; }
@@ -457,14 +517,14 @@ ul.featured.bordered li a:first-child,
 .txt\:mask { -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .txt\:big  { font-size: 2em; line-height: 1em; }
 .txt\:hero { font-size: 64px; font-size: 4rem; line-height: 2em; }
-.bg\:primary{ background-color: rgba(246, 142, 43, 0.8); }
-.bg\:second { background-color: rgba(174, 80, 158, 0.8); }
+.bg\:primary{ background-color: rgba(240, 85, 83, 0.8); }
+.bg\:second { background-color: rgba(246, 142, 43, 0.8); }
 .color-high { color: #f05553; }
 .color-low { color: #0bb14d; }
 .nomargin { margin: 0; padding: 0; }
 .rounded { border-radius: 2em; }
 .bordered { border: 1px solid;  }
-.hero { font-family: 'Open Sans', sans-serif; text-transform: uppercase; font-weight: 300; }
+.hero { font-family: 'FuturaStd', sans-serif; text-transform: uppercase; font-weight: 600; }
 /* Apply margin-top iof header size */
 .\:header-margin {
   margin-top: 64px;
@@ -479,19 +539,23 @@ ul.featured.bordered li a:first-child,
   padding: 0.5em 1em
   
 }
-.btn:hover {
+.btn:hover
+{
   color: #161616;
 }
-.btn:after {
+.btn:after
+{
   all: unset;
 }
-.btn\:txt {
+.btn\:txt
+{
   display: inline-block;
   margin: 0px auto;
   text-transform: uppercase;
 }
-.btn.\:primary {
-  background-color: #f68e2b;
+.btn.\:primary
+{
+  background-color: #f05553;
   color: #cfcfcf;
   fill: #cfcfcf;
 }
@@ -508,7 +572,8 @@ ul.featured.bordered li a:first-child,
 
   perspective: 800px
 }
-.menu .menu-header {
+.menu .menu-header
+{
   font-family: 'Share Tech Mono', monospace;/*font-family: SFMono-Regular, source-code-pro, Menlo, Monaco, Consolas, Roboto Mono, Droid Sans Mono, Liberation Mono, Courier New, Courier, monospace; */
   font-weight: 400;
   color: inherit;
@@ -524,7 +589,8 @@ ul.featured.bordered li a:first-child,
   border: 1px solid transparent;
   transition: all 0.15s cubic-bezier(0.52, 0.01, 0.16, 1);/** Icons **/
 }
-.menu .menu-header .title::before {
+.menu .menu-header .title::before
+{
   position: absolute;
   top: 16px;
   top: 1rem;
@@ -533,11 +599,13 @@ ul.featured.bordered li a:first-child,
   font-size: 32px;
   font-size: 2rem;
 }
-.menu .menu-header:first-child {
+.menu .menu-header:first-child
+{
   margin-top: 32px;
   margin-top: 2rem;
 }
-.menu .menu-header > .title {
+.menu .menu-header > .title
+{
   position: relative;
   font-size: 32px;
   font-size: 2rem;
@@ -551,17 +619,21 @@ ul.featured.bordered li a:first-child,
   cursor: pointer;
   color: inherit;
 }
-.menu .menu-header > .title > a {
+.menu .menu-header > .title > a
+{
   color: inherit;
   margin: 0;
   padding: 0;
 }
-.menu .menu-header.selected {
+.menu .menu-header.selected
+{
 }
-.menu .menu-header.selected > .sub-menu {
+.menu .menu-header.selected > .sub-menu
+{
   display: block;
 }
-.menu .menu-header .sub-menu {
+.menu .menu-header .sub-menu
+{
   display: none;
   list-style: none;
   padding-left: 8px;
@@ -571,12 +643,14 @@ ul.featured.bordered li a:first-child,
   margin-bottom: 16px;
   margin-bottom: 1rem;/* toggle */
 }
-.menu .menu-header .sub-menu li {
+.menu .menu-header .sub-menu li
+{
   float: left;
   display: inline;
   width: 46%;
 }
-.menu .menu-header .sub-menu a {
+.menu .menu-header .sub-menu a
+{
   font-family: 'Share Tech Mono', monospace;/*font-family: SFMono-Regular, source-code-pro, Menlo, Monaco, Consolas, Roboto Mono, Droid Sans Mono, Liberation Mono, Courier New, Courier, monospace; */
   font-weight: 400;
   font-weight: 300;
@@ -584,7 +658,8 @@ ul.featured.bordered li a:first-child,
   margin: 0;
   padding: 0;
 }
-.menu .menu-header .sub-menu.\:is-target {
+.menu .menu-header .sub-menu.\:is-target
+{
   display: block;
 }
 /*
@@ -608,16 +683,19 @@ main > section {
    */
 
 }
-main > section > article {
+main > section > article
+{
   min-height: 100vh;
   height: 100%;
   padding: 2em 2em;
   & > h1:first-child , & > h2:first-child, \
     & > h3:first-child , & > h4:first-child, \
-    & > h5:first-child , & > h6:first-child {
+    & > h5:first-child , & > h6:first-child
+{
     padding-top: 0;
   }
-  ul {
+  ul
+{
     margin-left: 1em;
   }
 }
@@ -630,16 +708,19 @@ main > section > article {
   overflow: hidden
   
 }
-.featured picture {
+.featured picture
+{
   display: block;
   position: relative;
 }
-.featured picture img {
+.featured picture img
+{
   max-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.featured .headline {
+.featured .headline
+{
   position: absolute;
   top: 0px;
   left: 0px;
@@ -660,24 +741,27 @@ main > section > article {
       justify-content: space-around;
   text-align: center;/* String is just outline with some pattern */
 }
-.featured .headline .title {
-  font-family: 'Open Sans', sans-serif;
+.featured .headline .title
+{
+  font-family: 'FuturaStd', sans-serif;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 600;
   font-size: 240px;
   font-size: 15rem;
   text-transform: uppercase;
   text-shadow: 0px 0px 0.75em rgba(0, 0, 0, .5);
 }
-.featured .headline .subtitle {
-  font-family: 'Open Sans', sans-serif;
+.featured .headline .subtitle
+{
+  font-family: 'FuturaStd', sans-serif;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 600;
   text-transform: none;
   margin: 0px auto;
   text-shadow: 0px 0px 0.75em rgba(0, 0, 0, .5);
 }
-.featured .headline strong {
+.featured .headline strong
+{
   -webkit-text-stroke-color: #cfcfcf;
   -webkit-text-stroke-width: 2px;
   -webkit-background-clip: text;
@@ -704,7 +788,8 @@ main > section > article {
   max-height: 880px;
   zoom: 1.0
 }
-.cellphone-mask:after {
+.cellphone-mask:after
+{
   content: ' ';
   z-index: 10;
   position: absolute;
@@ -716,14 +801,16 @@ main > section > article {
   height: 100%;
   width: 100%;
 }
-.cellphone-mask > .cellphone-screen {
+.cellphone-mask > .cellphone-screen
+{
   position: relative;
   overflow: hidden;
   width: 100%;
   min-height: 380px;
   z-index: 5;
 }
-.cellphone-mask > .cellphone-screen > * {
+.cellphone-mask > .cellphone-screen > *
+{
   position: absolute;
   top: 66px;
   left: 42px;
@@ -743,7 +830,8 @@ main > section > article {
    padding: 2em;
    height: 100vh
  }
-.browser-mask > .browser-screen {
+.browser-mask > .browser-screen
+{
   position: relative;
   overflow: hidden;
   width: 80%;
@@ -753,7 +841,8 @@ main > section > article {
   box-shadow: 5px 5px 50px rgba(0, 0, 0, .5);
   border-radius: 5px;
 }
-.browser-mask > .browser-screen:after {
+.browser-mask > .browser-screen:after
+{
   content: ' ';
   z-index: 10;
   position: absolute;
@@ -765,7 +854,8 @@ main > section > article {
   height: 100%;
   width: 100%;
 }
-.browser-mask > .browser-screen > img {
+.browser-mask > .browser-screen > img
+{
   position: relative;
   -o-object-fit: cover;
      object-fit: cover;
@@ -799,7 +889,8 @@ body.blog {
   
   /* Grow a underscore */
 }
-body.software .header-anim-growTooltip, body.blog .header-anim-growTooltip {/* left *//* right 
+body.software .header-anim-growTooltip, body.blog .header-anim-growTooltip
+{/* left *//* right 
     &:after {
       content: ' ';
       background-color: var(--black);
@@ -814,7 +905,8 @@ body.software .header-anim-growTooltip, body.blog .header-anim-growTooltip {/* l
     }
     *//* States of animation */
 }
-body.software .header-anim-growTooltip:before, body.software .header-anim-growTooltip:after, body.blog .header-anim-growTooltip:before, body.blog .header-anim-growTooltip:after {
+body.software .header-anim-growTooltip:before, body.software .header-anim-growTooltip:after, body.blog .header-anim-growTooltip:before, body.blog .header-anim-growTooltip:after
+{
   content: ' ';
   background-color: #161616;
   width: 0%;
@@ -824,13 +916,16 @@ body.software .header-anim-growTooltip:before, body.software .header-anim-growTo
   z-index: 0;
   transition: width 0.5s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
-body.software .header-anim-growTooltip:before, body.blog .header-anim-growTooltip:before {
+body.software .header-anim-growTooltip:before, body.blog .header-anim-growTooltip:before
+{
   right: 50%;
 }
-body.software .header-anim-growTooltip:after, body.blog .header-anim-growTooltip:after {
+body.software .header-anim-growTooltip:after, body.blog .header-anim-growTooltip:after
+{
   left: 50%;
 }
-body.software .header-anim-growTooltip .sub-menu, body.blog .header-anim-growTooltip .sub-menu {
+body.software .header-anim-growTooltip .sub-menu, body.blog .header-anim-growTooltip .sub-menu
+{
   max-height: 0px;
   opacity: 0;
   visibility: hidden;
@@ -838,31 +933,38 @@ body.software .header-anim-growTooltip .sub-menu, body.blog .header-anim-growToo
   transition: max-height 0.5s 0.5s cubic-bezier(0.52, 0.01, 0.16, 1), 
                   opacity 0.25s 0.5s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
-body.software .header-anim-growTooltip:hover, body.blog .header-anim-growTooltip:hover {
+body.software .header-anim-growTooltip:hover, body.blog .header-anim-growTooltip:hover
+{
 }
-body.software .header-anim-growTooltip:hover:before, body.blog .header-anim-growTooltip:hover:before {
+body.software .header-anim-growTooltip:hover:before, body.blog .header-anim-growTooltip:hover:before
+{
   width: 150%;
 }
-body.software .header-anim-growTooltip:hover:after, body.blog .header-anim-growTooltip:hover:after {
+body.software .header-anim-growTooltip:hover:after, body.blog .header-anim-growTooltip:hover:after
+{
   width: 150%;
 }
-body.software .header-anim-growTooltip:hover .sub-menu, body.blog .header-anim-growTooltip:hover .sub-menu {
+body.software .header-anim-growTooltip:hover .sub-menu, body.blog .header-anim-growTooltip:hover .sub-menu
+{
   visibility: visible;
   opacity: 1;
   max-height: 500px;
 }
 html {
+  font-size: 14px;
   font-size: 16px;
-  font-size: 16px;
-  line-height: 18px;
-  line-height: 16px;
+  font-size: 1rem;
+  line-height: 14px;
+  line-height: 20px;
+  line-height: 1.25rem;
   
   text-rendering: optimizeLegibility;
   -webkit-font-feature-settings: "kern" 1;
           font-feature-settings: "kern" 1;
 }
 body {
-  font-family: -apple-system, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial, sans-serif;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  /*font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial, sans-serif;*/
   /*font-family: 'Source Sans Pro', Helvetica Neue, sans-serif;*/
   /*font-family: var(--paragraph-font);*/
   margin: 0;
@@ -872,7 +974,8 @@ body {
   
   /* Background grid */
 }
-body:after {
+body:after
+{
   will-change: transform;
   content: ' ';
   pointer-events: none;
@@ -925,23 +1028,26 @@ body > header {
   }
   */
 }
-body > header .logo-container {
+body > header .logo-container
+{
   display: -ms-flexbox;
   display: flex;
 }
-body > header .logo {
+body > header .logo
+{
   display: inline-block;
   width: 85%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'FuturaStd', sans-serif;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 600;
   color: inherit;
   font-size: 32px;
   font-size: 2.0rem;
   padding-left: 0;
   margin: 0;
 }
-body > header .menu-close {
+body > header .menu-close
+{
   visibility: hidden;
   display: block;
   width: 48px;
@@ -953,7 +1059,8 @@ body > header .menu-close {
   margin: 0;
   transition: all 0.15s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
-body > header .menu-close:hover {
+body > header .menu-close:hover
+{
   fill: #161616;
 }
 /* Index page billboard */
@@ -974,28 +1081,34 @@ body > header .menu-close:hover {
  */
 body.apps {
 }
-body.apps .project__info {
+body.apps .project__info
+{
   text-align: center;
 }
-body.apps .project__info .project__logo {
+body.apps .project__info .project__logo
+{
   margin: 0 auto;
   width: 20%;
 }
-body.apps .project__info .project__logo > img {
+body.apps .project__info .project__logo > img
+{
   width: 100%;
 }
-body.apps .project__info .project__meta {
+body.apps .project__info .project__meta
+{
   list-style: none;
   display: table;
   margin: 0 auto;
   text-align: center;
   border-collapse: collapse;
 }
-body.apps .project__info .project__meta li {
+body.apps .project__info .project__meta li
+{
   display: table-cell;
   border: 1px solid;
 }
-body.apps .project__info .project__meta li .value, body.apps .project__info .project__meta li .label {
+body.apps .project__info .project__meta li .value, body.apps .project__info .project__meta li .label
+{
   padding: 0 2em;
   display: block;
   width: 100%;
@@ -1007,23 +1120,28 @@ body.apps .project__info .project__meta li .value, body.apps .project__info .pro
   font-size: 1.0rem;
   font-weight: 700;
 }
-body.apps .project__info .project__meta li .label {
+body.apps .project__info .project__meta li .label
+{
   font-weight: 700;
   font-size: 12.8px;
   font-size: 0.8rem;
   border-bottom: 1px solid rgb(166, 166, 166);
 }
-body.apps .project__info .project__meta li .value {
+body.apps .project__info .project__meta li .value
+{
   color: #f05553;
 }
-body.apps .project__info .project__meta, body.apps .project__info .project__meta li, body.apps .project__info.project__meta .label {
+body.apps .project__info .project__meta, body.apps .project__info .project__meta li, body.apps .project__info.project__meta .label
+{
   border-color: rgb(166, 166, 166);
 }
-body.apps .project__info .project__description {
+body.apps .project__info .project__description
+{
   font-size: 16px;
   font-size: 1rem;
 }
-body.apps .project__body {
+body.apps .project__body
+{
 }
 /**
  * Apps/Blog Menu 
@@ -1033,7 +1151,8 @@ body.blog {
 
   /* Menu is horizontal */
 }
-body.apps #menu, body.blog #menu {
+body.apps #menu, body.blog #menu
+{
   background-color: transparent;
   width: 80%;
   height: 64px;
@@ -1049,34 +1168,41 @@ body.apps #menu, body.blog #menu {
   -ms-flex-pack: justify;
       justify-content: space-between;/* Navigation spacing *//* Menu *//* submenus appear as bottom children  *//* Show submenus on hover */
 }
-body.apps #menu .logo-container, body.blog #menu .logo-container {
+body.apps #menu .logo-container, body.blog #menu .logo-container
+{
   width: 20%;
 }
-body.apps #menu .logo-container .menu-close, body.blog #menu .logo-container .menu-close {
+body.apps #menu .logo-container .menu-close, body.blog #menu .logo-container .menu-close
+{
   display: none;
 }
-body.apps #menu nav, body.blog #menu nav {
+body.apps #menu nav, body.blog #menu nav
+{
   width: 80%;
   -ms-flex-direction: row;
       flex-direction: row;
   -ms-flex-pack: end;
       justify-content: flex-end;
 }
-body.apps #menu .menu-header, body.blog #menu .menu-header {
+body.apps #menu .menu-header, body.blog #menu .menu-header
+{
   position: relative;
   padding-bottom: 0;
   letter-spacing: 0px;
   background-color: transparent;
 }
-body.apps #menu .menu-header:first-child, body.blog #menu .menu-header:first-child {
+body.apps #menu .menu-header:first-child, body.blog #menu .menu-header:first-child
+{
   margin-top: 0;
 }
-body.apps #menu .menu-header > .title, body.blog #menu .menu-header > .title {
+body.apps #menu .menu-header > .title, body.blog #menu .menu-header > .title
+{
   vertical-align: baseline;
   padding: 0.5em;
   z-index: 10;
 }
-body.apps #menu .sub-menu, body.blog #menu .sub-menu {
+body.apps #menu .sub-menu, body.blog #menu .sub-menu
+{
   position: absolute;
   left: -100%;
   width: 200%;
@@ -1096,20 +1222,24 @@ body.apps #menu .sub-menu, body.blog #menu .sub-menu {
   transition-timing-function: cubic-bezier(0.52, 0.01, 0.16, 1);
   transition-duration: 0.5s;
 }
-body.apps #menu .sub-menu li, body.blog #menu .sub-menu li {
+body.apps #menu .sub-menu li, body.blog #menu .sub-menu li
+{
   width: 100%;
   padding: 0.5em 0em;
 }
-body.apps #menu .sub-menu li > a, body.blog #menu .sub-menu li > a {
+body.apps #menu .sub-menu li > a, body.blog #menu .sub-menu li > a
+{
   width: 100%;
   display: inline;
   vertical-align: baseline;
 }
-body.apps #menu .sub-menu li > a:hover, body.blog #menu .sub-menu li > a:hover {
+body.apps #menu .sub-menu li > a:hover, body.blog #menu .sub-menu li > a:hover
+{
   font-weight: bold;
   text-decoration: underline;
 }
-body.apps #menu .menu-header.has-submenu:hover .sub-menu, body.blog #menu .menu-header.has-submenu:hover .sub-menu {
+body.apps #menu .menu-header.has-submenu:hover .sub-menu, body.blog #menu .menu-header.has-submenu:hover .sub-menu
+{
   visibility: visible;
   opacity: 1;
 }
@@ -1124,7 +1254,8 @@ body.home {
   
   /* Right info area */
 }
-body.work .showcase, body.about .showcase, body.home .showcase {
+body.work .showcase, body.about .showcase, body.home .showcase
+{
   position: relative;
   display: block;
   width: calc(100% - 392px);
@@ -1132,18 +1263,22 @@ body.work .showcase, body.about .showcase, body.home .showcase {
   padding: 0;
   overflow: hidden;
 }
-body.work .showcase .gallery, body.about .showcase .gallery, body.home .showcase .gallery {
+body.work .showcase .gallery, body.about .showcase .gallery, body.home .showcase .gallery
+{
 }
-body.work .showcase .gallery p, body.about .showcase .gallery p, body.home .showcase .gallery p {
+body.work .showcase .gallery p, body.about .showcase .gallery p, body.home .showcase .gallery p
+{
   margin: 0;
   padding: 0;
 }
-body.work .showcase .gallery > img, body.about .showcase .gallery > img, body.home .showcase .gallery > img {
+body.work .showcase .gallery > img, body.about .showcase .gallery > img, body.home .showcase .gallery > img
+{
   display: block;
   width: 100%;
   animation: intro 1s;
 }
-body.work .showcase .overlay, body.about .showcase .overlay, body.home .showcase .overlay {
+body.work .showcase .overlay, body.about .showcase .overlay, body.home .showcase .overlay
+{
   position: absolute;
   width: 100%;
   height: 100vh;
@@ -1152,17 +1287,19 @@ body.work .showcase .overlay, body.about .showcase .overlay, body.home .showcase
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;/** See more */
 }
-body.work .showcase .overlay .see-more, body.about .showcase .overlay .see-more, body.home .showcase .overlay .see-more {
+body.work .showcase .overlay .see-more, body.about .showcase .overlay .see-more, body.home .showcase .overlay .see-more
+{
   text-align: center;
   -ms-flex-item-align: end;
       align-self: flex-end;
   margin: 1em auto;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'FuturaStd', sans-serif;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 600;
   text-transform: none;
 }
-body.work .info, body.about .info, body.home .info {
+body.work .info, body.about .info, body.home .info
+{
   position: fixed;
   top: 0;
   right: 0px;
@@ -1170,35 +1307,43 @@ body.work .info, body.about .info, body.home .info {
   height: 100%;
   padding: 48px;/* Logo as image or text *//* Description *//* Footer links at bottom */
 }
-body.work .info picture.logo, body.about .info picture.logo, body.home .info picture.logo {
+body.work .info picture.logo, body.about .info picture.logo, body.home .info picture.logo
+{
 }
-body.work .info picture.logo img, body.about .info picture.logo img, body.home .info picture.logo img {
+body.work .info picture.logo img, body.about .info picture.logo img, body.home .info picture.logo img
+{
   display: block;
   max-height: 128px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-body.work .info picture.logo h2, body.about .info picture.logo h2, body.home .info picture.logo h2 {
+body.work .info picture.logo h2, body.about .info picture.logo h2, body.home .info picture.logo h2
+{
   display: block;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'FuturaStd', sans-serif;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 600;
   text-transform: uppercase;
   margin: 0;
 }
-body.work .info .description, body.about .info .description, body.home .info .description {
+body.work .info .description, body.about .info .description, body.home .info .description
+{
   margin-top: 48px;
 }
-body.work .info .description p, body.about .info .description p, body.home .info .description p {
+body.work .info .description p, body.about .info .description p, body.home .info .description p
+{
   font-family: 'Share Tech Mono', monospace;/*font-family: SFMono-Regular, source-code-pro, Menlo, Monaco, Consolas, Roboto Mono, Droid Sans Mono, Liberation Mono, Courier New, Courier, monospace; */
   font-weight: 400;
-  margin: 0 0 16px 0;
+  margin: 0 0 20px 0;
+  margin: 0 0 1.25rem 0;
   padding: 0;
 }
-body.work .info .more, body.about .info .more, body.home .info .more {
+body.work .info .more, body.about .info .more, body.home .info .more
+{
   margin-top: auto;
 }
-body.work .info footer, body.about .info footer, body.home .info footer {
+body.work .info footer, body.about .info footer, body.home .info footer
+{
   margin-top: auto;/*
       & li {
         border: 1px solid;
@@ -1229,7 +1374,8 @@ body.work,
  body.about,
  body.home {
  }
-body.work #menu, body.about #menu, body.home #menu {/* Occupy full .info position */
+body.work #menu, body.about #menu, body.home #menu
+{/* Occupy full .info position */
   position: fixed;
   margin: 0;
   width: 392px;
@@ -1243,10 +1389,12 @@ body.work #menu, body.about #menu, body.home #menu {/* Occupy full .info positio
   transition: all 0.15s cubic-bezier(0.52, 0.01, 0.16, 1);
   transition-duration: 0.85s;/* Enable close btn *//* Show menu when clicked */
 }
-body.work #menu .menu-close, body.about #menu .menu-close, body.home #menu .menu-close {
+body.work #menu .menu-close, body.about #menu .menu-close, body.home #menu .menu-close
+{
   visibility: visible;
 }
-body.work #menu.\:is-target, body.about #menu.\:is-target, body.home #menu.\:is-target {
+body.work #menu.\:is-target, body.about #menu.\:is-target, body.home #menu.\:is-target
+{
   transform: translateY(0);
   visibility: visible;
 }
@@ -1254,7 +1402,8 @@ body.work #menu.\:is-target, body.about #menu.\:is-target, body.home #menu.\:is-
   * About Section
   */
 section.about {
-    font-family: -apple-system, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial, sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    /*font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial, sans-serif;*/
     /*font-family: 'Source Sans Pro', Helvetica Neue, sans-serif;*/
     
     display: -ms-flexbox;
@@ -1271,46 +1420,55 @@ section.about {
     
     /* Contact */
   }
-section.about > h3:first-child {
+section.about > h3:first-child
+{
   text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'FuturaStd', sans-serif;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 600;
   color: inherit;
   padding: 1em 0;
   font-size: 32px;
   font-size: 2.0rem;
 }
-section.about p {
+section.about p
+{
   font-family: inherit;
   padding-left: 0;
 }
-section.about .summary {
+section.about .summary
+{
   margin-top: 48px;
   margin-top: 3rem;
 }
-section.about .summary .title {
+section.about .summary .title
+{
   text-transform: uppercase;
   margin-left: 8px;
   margin-left: 0.5rem;/*margin-bottom: 2rem;*/
 }
-section.about .summary .txt {
+section.about .summary .txt
+{
   margin-bottom: 32px;
   margin-bottom: 2rem;
   margin-left: 16px;
   margin-left: 1rem;
 }
-section.about .summary .first-column {
+section.about .summary .first-column
+{
   width: 40%;
   margin-right: 5em;
 }
-section.about .summary .second-column {
+section.about .summary .second-column
+{
   width: 50%;
 }
-section.about .contact {
+section.about .contact
+{
   perspective: 800px;
 }
-section.about .contact > a {
+section.about .contact > a
+{
   display: block;
   height: 288px;
   box-shadow: 5px 5px 3em rgba(0, 0, 0, .5);
@@ -1330,10 +1488,11 @@ section.about .contact > a {
         }
         */
 }
-section.about .contact .label {
-  font-family: 'Open Sans', sans-serif;
+section.about .contact .label
+{
+  font-family: 'FuturaStd', sans-serif;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 600;
   text-align: center;
   color: #fff;/* center */
   height: inherit;

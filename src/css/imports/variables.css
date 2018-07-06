@@ -10,15 +10,15 @@
   --gray:  #efefef;
 
   --dark-gray: color( var(--gray) b(50%));
-  --primary:     #f68e2b;
-  --second:      #ae509e;
+  --primary:     #f05553;
+  --second:      #f68e2b;
   --second-soft: #f68e2b;
   --third:       #0bb14d;
   --fourth:      #f05553;
   
   /* typography scale */
-  --base-fontsize: 16px;
-  --line-height:   16px;
+  --base-fontsize: 1rem;
+  --line-height:   calc( 1rem * var(--major-third) );
   --perfect-fifth: calc(3/2); 
   --major-third:   calc(5/4);
   --typoscale: var(--perfect-fifth);
