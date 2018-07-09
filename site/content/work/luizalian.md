@@ -1,6 +1,5 @@
 +++
 draft = false
-colorscheme = "dark"
 color = "#fbfbfb"
 bg_color = "rgba(0,0,0, 1.0)"
 high_color = "#f05553"

@@ -1,11 +1,12 @@
 +++
 draft = false
 parent = "software"
-colorscheme = "light"
 color = "#0f0f0f"
-bg_color = "rgba(255,255,255, 0.90)"
-high_color = "#f05553"
+#bg_color = "rgba(255,255,255, 0.90)"
+bg_color = "#f8fbfb"
 txt_color = "#4b4748"
+dark_gray = "#f8f8f8"
+
 title = "I Ching"
 website = "iching.xyz"
 subtitle = "The chinese book of changes"

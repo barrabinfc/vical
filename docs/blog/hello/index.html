@@ -14,8 +14,8 @@
   *, *::after , *::before { box-sizing: border-box; }
   html,body { margin: 0; }
   body { 
-    background-color: #161616; 
-    color: #f0f0f0; 
+    background-color: #fff; 
+    color: #0f0f0f; 
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; 
     overflow-x: hidden;
   }
@@ -25,7 +25,7 @@
   blockquote { width: 100%; margin: 1em auto; font-size: 2em; line-height: 1.0em; text-align: center; }
   blockquote > p { margin: 0; }
   
-  body>header { position: absolute; top: 0; width: 100%; }
+  body>header { position: sticky; top: 0; width: 100%; }
   main > section {  position: relative; width: 100%; min-height: 100vh; 
                     display: flex; flex-direction: column; justify-content: center; }
   main > section > article {
@@ -95,81 +95,65 @@
   
   <body class="light page blog ">
 
-    <header role="header" class="container " id="menu">
+    <header role="header" class="" id="menu">
       
   <a href="/" class="logo" id="logo">
   Vicale
 </a>
   
 
-<nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="menu ">
+<nav class="menu ">
 
   
     
     
 
-    <div class="menu-header hoverable 
-                
-                has-submenu header-anim-growTooltip "
-                id="menu-work">
+    <a class="menu-header hoverable
+             "
+        href="/work/"
+        id="menu-work">
       
-        <a href="#submenu-work" class="title">work</a>
-        <ul class="sub-menu" id="submenu-work">
+        work
         
-            <li>→ <a href="/work/astrorunners" class="default"> Astrorunners </a> </li>
-        
-            <li>→ <a href="/work/bmg" class="default"> BMG </a> </li>
-        
-            <li>→ <a href="/work/bigud" class="default"> Bigud </a> </li>
-        
-            <li>→ <a href="/work/luizalian" class="default"> Luiza Lian </a> </li>
-        
-        </ul>
       
-    </div>
+      </a>
   
     
     
 
-    <div class="menu-header hoverable 
-                
-                has-submenu header-anim-growTooltip "
-                id="menu-apps">
+    <a class="menu-header hoverable
+             "
+        href="/apps/"
+        id="menu-apps">
       
-        <a href="#submenu-apps" class="title">apps</a>
-        <ul class="sub-menu" id="submenu-apps">
+        apps
         
-            <li>→ <a href="/apps/iching" class="default"> I Ching </a> </li>
-        
-            <li>→ <a href="/apps/piano-coach" class="default"> Piano Coach </a> </li>
-        
-        </ul>
       
-    </div>
+      </a>
   
     
     
 
-    <div class="menu-header hoverable 
-                
-                is-link"
-                id="menu-about">
+    <a class="menu-header hoverable
+             "
+        href="/about/me"
+        id="menu-about">
       
-        <a href="/about/me" class="title">About</a>
+        About
       
-    </div>
+      </a>
   
     
     
 
-    <div class="menu-header hoverable 
-                selected
-                is-link"
-                id="menu-blog">
+    <a class="menu-header hoverable
+             selected"
+        href="/blog/"
+        id="menu-blog">
       
-        <a href="/blog/" class="title">Blog</a>
+        Blog
       
-    </div>
+      </a>
   
 
 </nav>
@@ -181,7 +165,7 @@
   <section class="post">
     
     
-    <article id="post__body" class="container grid :vertical :around :header-margin">
+    <article id="post__body" class="container grid :vertical :around ">
       
 
 <h1 id="an-h1-header">An h1 header</h1>
@@ -366,14 +350,22 @@ which you wish to be displayed literally, ex.: `foo`, *bar*, etc.</p>
   <style>
    
   :root {
-    --black: #0f0f0f;
-    --white: rgba(255,255,255, 0.90);
+    --front: #0f0f0f;
+    --back: rgba(255,255,255, 0.90);
+    --dark-gray: 
   }
 
-  main { 
-    background-color: rgba(255,255,255, 0.90);
-    color: #0f0f0f;
+  main {
+    background-color: var(--back);
+    color: var(--front);
   }
+
+   
+  body > header {
+    background-color: var(--front);
+    color: var(--back);
+  }
+
   .color-high {
     color: #f05553 !important;
   }
@@ -388,103 +380,7 @@ which you wish to be displayed literally, ex.: `foo`, *bar*, etc.</p>
    }
 
   
-   
-  
-   
-  body.blog .menu-header::before,
-  body.blog .menu-header::after,
-  body.apps .menu-header::before , 
-  body.apps .menu-header::after {
-    background-color: #0f0f0f !important;
-  }
-  
-  body.blog #menu .selected > a ,
-  body.apps #menu .selected > a {
-    background-color: #0f0f0f !important; 
-    color: rgba(255,255,255, 0.90) !important;    
-  }
-
-  body.blog .menu-header.has-submenu:hover > a,
-  body.blog .menu-header.is-link:hover > a,
-  body.apps .menu-header.has-submenu:hover > a,
-  body.apps .menu-header.is-link:hover > a {  
-    background-color: #0f0f0f !important; 
-    color: rgba(255,255,255, 0.90) !important;
-  }
-
-  body.blog #menu .menu-header .sub-menu,
-  body.apps #menu .menu-header .sub-menu {
-    background-color: #0f0f0f !important;
-    color: rgba(255,255,255, 0.90) !important;
-  }
-  
-   
-   body.work #menu , 
-   body.about #menu ,
-   body.home #menu{
-     background-color: #0f0f0f;
-     color: rgba(255,255,255, 0.90);
-     fill: rgba(255,255,255, 0.90);
-   }
-   body.home .menu-header,
-   body.work .menu-header,
-   body.about .menu-header {
-     background-color: rgba(255,255,255, 0.90);
-     color: #0f0f0f;
-   }
-
-   body.home .menu-header.selected,   
-   body.work .menu-header.selected ,
-   body.about .menu-header.selected {
-     transform: translate3d(0,0,50px);
-     border-color: rgba(255,255,255, 0.90);
-     background-color: #0f0f0f;
-     color: rgba(255,255,255, 0.90);
-   }
-
-    
-   body.work .menu-header:hover,   
-   body.work #menu .menu-header:hover,
-   body.about #menu .menu-header:hover {
-     transform: translate3d(0,0,50px);
-     border: 1px solid rgba(255,255,255, 0.90);
-     background-color: #0f0f0f;
-
-     color: rgba(255,255,255, 0.90);
-   }
-
-
-   body.work #menu .menu-close, 
-   body.about #menu .menu-close  {
-     border-color: rgba(255,255,255, 0.90);
-   }
-   body.work #menu .menu-close:hover ,
-   body.about #menu .menu-close:hover {
-     background-color: rgba(255,255,255, 0.90);
-     color: #0f0f0f;
-     fill: #0f0f0f;
-   }
-   body.work #menu .selected > a ,
-   body.about #menu .selected > a {
-     background-color: transparent;
-     color: inherit;
-   }
-   
-   
-    
-   ul.featured.bordered {
-    border-color: #0f0f0f     
-   }
-   ul.featured.bordered a {
-    color: #0f0f0f;
-    fill: #0f0f0f;
-   }
-   ul.featured.bordered a:hover {
-     background-color: #0f0f0f !important;
-     color: rgba(255,255,255, 0.90) !important;
-   }
-   
-        
+                                    
 </style>
 
 </footer>
