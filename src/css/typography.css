@@ -61,6 +61,7 @@ h5 {
 h6 {
   font-size: calc(1rem * .77 * var(--typoscale));
   line-height: calc(1rem * .77 * var(--typoscale)); 
+  margin: 0.25em;
 }
 
 p { 

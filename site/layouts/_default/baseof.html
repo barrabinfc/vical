@@ -38,9 +38,15 @@
     </header>
     
     <main>{{ block "main" .}}{{ end }}</main>
-    <footer>{{ block "footer" .}}{{ end }}</footer>
+    <footer role="footer">{{ block "footer" .}}{{ end }}</footer>
 
     <script src="/js/app.js" defer></script>
     <script src="/js/vendor/evil-icons.js" defer></script>
+    <script type="text/javascript" defer>
+      document.addEventListener('DOMContentLoaded', function(){
+        window.unlockMail();
+      } );
+    </script>
+  
   </body>
 </html>

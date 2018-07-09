@@ -38,8 +38,6 @@
   .container-fluid { max-width: 95%; }
   .container, .container-fluid { margin: 0 auto; }
   
-  .icon {   position: relative; display: inline-block;
-            width: 1em; height: 1em; fill: #f0f0f0; }
   .picture { position: relative; }
   
   .txt-center { text-align: center; }
@@ -341,7 +339,7 @@ No nosso caso, vamos ler a versão do arquivo NEWS</p>
     </article>
   </section>
 </main>
-    <footer>
+    <footer role="footer">
   <style>
    
   :root {
@@ -382,5 +380,11 @@ No nosso caso, vamos ler a versão do arquivo NEWS</p>
 
     <script src="/js/app.js" defer></script>
     <script src="/js/vendor/evil-icons.js" defer></script>
+    <script type="text/javascript" defer>
+      document.addEventListener('DOMContentLoaded', function(){
+        window.unlockMail();
+      } );
+    </script>
+  
   </body>
 </html>

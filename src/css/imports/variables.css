@@ -10,8 +10,9 @@
   --front: var(--black);
   --back:  var(--white);
 
-  --gray:  #e5e7de;
-  --dark-gray: color( var(--gray) b(50%));
+  --gray:  #e9e9e9;
+  --dark-gray: color( var(--gray) l(50%));
+  --rly-dark-gray: color( var(--gray) l(20%));
   
   --primary:     #f05553;
   --second:      #0098d8;

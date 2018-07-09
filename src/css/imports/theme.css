@@ -31,7 +31,8 @@ blockquote {
 blockquote > p { margin: 0; }
 
 
-a {  text-decoration: none; }
+a { text-decoration: none; color: var(--second); }
+a:hover { text-decoration: underline; }
 
 a.default {
   position: relative;
@@ -163,8 +164,12 @@ ul.featured.bordered {
 }
 
 
-.pull\:left { float: left; }
-.pull\:right { float: right; }
+.float\:left { float: left; }
+.float\:right { float: right; }
+.pull\:left { margin-right: auto; }
+.pull\:right { margin-left: auto; }
+.align\:left { text-align: left; }
+.align\:right { text-align: right; }
 
 .w5  { max-width: 5%; }
 .w10 { max-width: 10%; }
@@ -243,7 +248,7 @@ header[role="header"] {
     
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 
   perspective: 800px;
 
@@ -288,6 +293,9 @@ header[role="header"] {
       color: inherit;
 
       padding: 1rem;
+      /** Avoid last link to have a right margin, 
+          making it container alignment easier */
+      &:last-child { margin-right: 0; }
       
       border: 1px solid transparent;
       margin-bottom: 1rem;
@@ -310,7 +318,7 @@ header[role="header"] {
         width: 0%;
         height: calc( var(--gutter) * 0.5 );
         left: 0;
-        bottom: calc( -1 * var(--gutter));
+        bottom: 0;
 
         background-color: transparent;
         @apply --transition;
@@ -327,6 +335,8 @@ header[role="header"] {
       }
 
       &:hover {
+        text-decoration: none;
+
         &::after {
           width: 100%;
           background-color: color( var(--primary) alpha(40%));
@@ -411,6 +421,48 @@ header[role="header"] {
     }
   }
   */
+}
+
+/** Footer */
+footer[role="footer"] {
+  width: 100%;
+  height: var(--header-height);
+  margin: 0;
+  padding: 0 calc( 2 * var(--pad-big));
+  z-index: 1000;
+
+  /* Invert colors */
+  border-top: 1px solid var(--gray);
+  background-color: var(--back);
+  color: var(--front );
+    
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  & ul { width: 100%; height: inherit; }
+  & ul li { 
+    flex: 0.2;
+  }
+
+  & .title {
+    @apply --hero-font;
+    font-weight: 100;
+    font-size: calc( 0.8rem * var(--perfect-fifth));
+    text-transform: capitalize;
+
+    font-weight: 100;
+    color: var(--rly-dark-gray);
+    margin: 0.5em 0;
+    padding: 0;
+  }
+
+  & a {
+    font-size: 14px;
+    color: var(--dark-gray); 
+    margin: 0;
+    padding: 0;
+  }
 }
 
 

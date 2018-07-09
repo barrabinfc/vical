@@ -343,7 +343,8 @@ blockquote {
   text-align: center;
 }
 blockquote > p { margin: 0; }
-a {  text-decoration: none; }
+a { text-decoration: none; color: #0098d8; }
+a:hover { text-decoration: underline; }
 a.default {
   position: relative;
   cursor: pointer;
@@ -454,7 +455,7 @@ ul.as-flex-table .label
   font-weight: 700;
   font-size: 12.8px;
   font-size: 0.8rem;
-  border-bottom: 1px solid rgb(162, 162, 162);
+  border-bottom: 1px solid rgb(128, 128, 128);
 }
 /**
  * Bordered featured list, with first/last without padding
@@ -486,8 +487,12 @@ ul.featured.bordered li a:first-child,
 {
   padding: 1em 0em;
 }
-.pull\:left { float: left; }
-.pull\:right { float: right; }
+.float\:left { float: left; }
+.float\:right { float: right; }
+.pull\:left { margin-right: auto; }
+.pull\:right { margin-left: auto; }
+.align\:left { text-align: left; }
+.align\:right { text-align: right; }
 .w5  { max-width: 5%; }
 .w10 { max-width: 10%; }
 .w33 { max-width: 33%; }
@@ -562,8 +567,8 @@ header[role="header"] {
   display: flex;
   -ms-flex-align: center;
       align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
 
   perspective: 800px
   
@@ -692,11 +697,16 @@ header[role="header"] .menu .menu-header
   text-transform: uppercase;
   color: inherit;
   padding: 16px;
-  padding: 1rem;
+  padding: 1rem;/** Avoid last link to have a right margin, 
+          making it container alignment easier */
   border: 1px solid transparent;
   margin-bottom: 16px;
   margin-bottom: 1rem;
   transition: all 0.15s cubic-bezier(0.52, 0.01, 0.16, 1);/** Icons *//** Underscore decoration *//** Selected/hover states **/
+}
+header[role="header"] .menu .menu-header:last-child
+{
+  margin-right: 0;
 }
 header[role="header"] .menu .menu-header ::before
 {
@@ -715,7 +725,7 @@ header[role="header"] .menu .menu-header::after
   width: 0%;
   height: 0.25em;
   left: 0;
-  bottom: -0.5em;
+  bottom: 0;
   background-color: transparent;
   transition: all 0.15s cubic-bezier(0.52, 0.01, 0.16, 1);
   transition-duration: 0.35s;
@@ -730,11 +740,64 @@ header[role="header"] .menu .menu-header.selected::after
 }
 header[role="header"] .menu .menu-header:hover
 {
+  text-decoration: none;
 }
 header[role="header"] .menu .menu-header:hover::after
 {
   width: 100%;
   background-color: rgba(240, 85, 83, 0.4);
+}
+/** Footer */
+footer[role="footer"] {
+  width: 100%;
+  height: 96px;
+  margin: 0;
+  padding: 0 96px;
+  z-index: 1000;
+
+  /* Invert colors */
+  border-top: 1px solid #e9e9e9;
+  background-color: #fff;
+  color: #000;
+    
+  display: -ms-flexbox;
+    
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between
+}
+footer[role="footer"] ul
+{
+  width: 100%;
+  height: inherit;
+}
+footer[role="footer"] ul li
+{
+  -ms-flex: 0.2;
+      flex: 0.2;
+}
+footer[role="footer"] .title
+{
+  font-family: 'FuturaStd', sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-weight: 100;
+  font-size: 19.2px;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  font-weight: 100;
+  color: rgb(51, 51, 51);
+  margin: 0.5em 0;
+  padding: 0;
+}
+footer[role="footer"] a
+{
+  font-size: 14px;
+  color: rgb(128, 128, 128);
+  margin: 0;
+  padding: 0;
 }
 /*
  * A block full page
@@ -1195,7 +1258,7 @@ body.apps .project__info .project__meta li .label
   font-weight: 700;
   font-size: 12.8px;
   font-size: 0.8rem;
-  border-bottom: 1px solid rgb(162, 162, 162);
+  border-bottom: 1px solid rgb(128, 128, 128);
 }
 body.apps .project__info .project__meta li .value
 {
@@ -1203,7 +1266,7 @@ body.apps .project__info .project__meta li .value
 }
 body.apps .project__info .project__meta, body.apps .project__info .project__meta li, body.apps .project__info.project__meta .label
 {
-  border-color: rgb(162, 162, 162);
+  border-color: rgb(128, 128, 128);
 }
 body.apps .project__info .project__description
 {
