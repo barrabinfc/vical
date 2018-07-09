@@ -1,12 +1,11 @@
 +++
 title = "About vitor"
 
-colorscheme = "light"
 color = "#000"
 bg_color = "rgba(255,255,255, 1.0)"
 high_color = "#f05553"
 
-menuModifier = ":is-target"
+menuModifier = ""
 subtitle = "And some other ... text"
 description = "About"
 
