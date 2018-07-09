@@ -25,7 +25,10 @@ gulp.task("build-preview", ["css", "vendor-js", "js", "hugo-preview"]);
 gulp.task("css", () => (
   gulp.src("./src/css/*.css")
     .pipe(sourcemaps.init())
-    .pipe(postcss([cssImport({from: "./src/css/main.css"}), cssnext(), svgInline()]))
+    .pipe(postcss([
+      cssImport({from: "./src/css/main.css"}), 
+      cssnext(), 
+      svgInline()]))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("./docs/css"))
     //.pipe(browserSync.stream())

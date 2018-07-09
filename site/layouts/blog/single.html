@@ -4,7 +4,7 @@
 {{ end }}
 {{ define "main" }}
   <section class="post">
-    {{ $has_feature_klass  := .Params.featured_image | default ":header-margin" }}
+    {{ $has_feature_klass  := .Params.featured_image | default "" }}
     {{ if .Params.featured_image }}
       <article id="post__showcase" class="container grid :vertical :middle :around">
         <picture>

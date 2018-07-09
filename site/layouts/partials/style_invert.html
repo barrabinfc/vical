@@ -3,14 +3,22 @@
    * Global style
    */
   :root {
-    --black: {{ safeCSS .Params.color }};
-    --white: {{ safeCSS .Params.bg_color }};
+    --front: {{ safeCSS .Params.color }};
+    --back: {{ safeCSS .Params.bg_color }};
+    --dark-gray: {{ safeCSS .Params.dark_gray}}
   }
 
-  main { 
-    background-color: {{ safeCSS .Params.bg_color }};
-    color: {{ safeCSS .Params.color }};
+  main {
+    background-color: var(--back);
+    color: var(--front);
   }
+
+  /* Invert header colors */
+  body > header {
+    background-color: var(--front);
+    color: var(--back);
+  }
+
   .color-high {
     color: {{ safeCSS .Params.high_color }} !important;
   }
@@ -27,9 +35,9 @@
   
   /**
    * apps/Blog pages 
-   **/
+   *
   
-  /* Menu hover invert */
+  /* Menu hover invert
   body.blog .menu-header::before,
   body.blog .menu-header::after,
   body.apps .menu-header::before , 
@@ -59,19 +67,21 @@
   
   /**
    * Work&About pages 
-   **/
+   *
    body.work #menu , 
    body.about #menu ,
    body.home #menu{
-     background-color: {{ safeCSS .Params.color }};
+     // background-color: {{ safeCSS .Params.color }};
+     //color: {{ safeCSS .Params.bg_color }}; 
      color: {{ safeCSS .Params.bg_color }};
      fill: {{ safeCSS .Params.bg_color }};
    }
    body.home .menu-header,
    body.work .menu-header,
    body.about .menu-header {
-     background-color: {{ safeCSS .Params.bg_color }};
-     color: {{ safeCSS .Params.color }};
+     // background-color: {{ safeCSS .Params.bg_color }};
+     // color: {{ safeCSS .Params.color }}; 
+     color: {{ safeCSS .Params.bg_color }};
    }
 
    body.home .menu-header.selected,   
@@ -83,7 +93,7 @@
      color: {{ safeCSS .Params.bg_color }};
    }
 
-   /** Hover **/
+   /** Hover 
    body.work .menu-header:hover,   
    body.work #menu .menu-header:hover,
    body.about #menu .menu-header:hover {
@@ -112,7 +122,7 @@
    }
    
    
-   /* Footer navigation */
+   /* Footer navigation 
    ul.featured.bordered {
     border-color: {{ safeCSS .Params.color }}     
    }

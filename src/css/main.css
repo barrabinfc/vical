@@ -23,27 +23,30 @@ body {
   max-width: 100vw;
   min-height: 100vh;
   
-  /* Background grid */  
+  /* Background grid   
   &:after {
     will-change: transform;
     @apply --empty;
     @apply --grid-background;
     position: fixed;
   }
+  */
 }
 
-/* Top Header */
+::selection {
+  background-color: var(--primary); /* WebKit/Blink Browsers */
+}
+
+/* Top Header 
 body > header {
   position: absolute;
   width: 400px;
   height: 80%;
-  height: 80%;
   top: var(--pad-big);
   left: var(--pad-big);
-  background-color: #fff;
   
   z-index: 10;
-  will-change: opacity;
+  will-change: opacity;f#
   color: var(--black);
   padding: 1em 3em;
 
@@ -65,21 +68,23 @@ body > header {
     margin: 0;  
   }
 
-  /** Close btn */  
+  /** Close btn 
   & .menu-close {
     visibility: hidden;
     display: block;
     width: var(--pad-big);
     height: var(--pad-big);
     margin-right: 0px;
-    fill: var(--white);
+    fill: var(--front);
     padding: 0;
     border: 0;
     margin: 0;
     
     @apply --transition;
+    transform: scale(1.0);
+
     &:hover {
-      fill: var(--black);
+      transform: scale(1.2);
     }
   }  
 
@@ -91,7 +96,7 @@ body > header {
   & .menu-header:first-child {
     margin-top: 3rem;
   }
-  */
+  
   
 
   /** About aligned at bottom 
@@ -99,9 +104,9 @@ body > header {
     margin-top: auto;
     margin-bottom: 3rem;
   }
-  */
+  
 }
-
+*/
 
 /* Index page billboard */
 .billboard {
@@ -161,7 +166,7 @@ body.apps {
           border-bottom: 1px solid var(--dark-gray);
         }
         & .value {
-          color: var(--fourth);
+          color: var(--primary);
         }
       }
       
@@ -186,14 +191,16 @@ body.apps {
 body.apps,
 body.blog {
 
-  /* Menu is horizontal */
+  /* Menu is horizontal */ 
   & #menu {
-    background-color: transparent;
+    /*
     width: 80%;
     height: var(--header-height);
     margin: 0 auto;
-    
-    color: inherit;
+
+    /* Invert colors 
+    background-color: transparent;
+    color: var(--front );
     
     left: 0; right: 0;
     top: 0;
@@ -207,14 +214,14 @@ body.blog {
       & .menu-close { display: none; }      
     }
     
-    /* Navigation spacing */    
+    /* Navigation spacing 
     & nav {
       width: 80%;
       flex-direction: row;
       justify-content: flex-end;
     }
     
-    /* Menu */
+    /* Menu 
     & .menu-header {
       position: relative;
       padding-bottom: 0;

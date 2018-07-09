@@ -12,8 +12,8 @@
   *, *::after , *::before { box-sizing: border-box; }
   html,body { margin: 0; }
   body { 
-    background-color: #161616; 
-    color: #f0f0f0; 
+    background-color: #fff; 
+    color: #0f0f0f; 
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; 
     overflow-x: hidden;
   }
@@ -23,7 +23,7 @@
   blockquote { width: 100%; margin: 1em auto; font-size: 2em; line-height: 1.0em; text-align: center; }
   blockquote > p { margin: 0; }
   
-  body>header { position: absolute; top: 0; width: 100%; }
+  body>header { position: sticky; top: 0; width: 100%; }
   main > section {  position: relative; width: 100%; min-height: 100vh; 
                     display: flex; flex-direction: column; justify-content: center; }
   main > section > article {
@@ -93,81 +93,65 @@
   
   <body class="dark section blog ">
 
-    <header role="header" class="container " id="menu">
+    <header role="header" class="" id="menu">
       
   <a href="/" class="logo" id="logo">
   Vicale
 </a>
   
 
-<nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="menu ">
+<nav class="menu ">
 
   
     
     
 
-    <div class="menu-header hoverable 
-                
-                has-submenu header-anim-growTooltip "
-                id="menu-work">
+    <a class="menu-header hoverable
+             "
+        href="/work/"
+        id="menu-work">
       
-        <a href="#submenu-work" class="title">work</a>
-        <ul class="sub-menu" id="submenu-work">
+        work
         
-            <li>→ <a href="/work/astrorunners" class="default"> Astrorunners </a> </li>
-        
-            <li>→ <a href="/work/bmg" class="default"> BMG </a> </li>
-        
-            <li>→ <a href="/work/bigud" class="default"> Bigud </a> </li>
-        
-            <li>→ <a href="/work/luizalian" class="default"> Luiza Lian </a> </li>
-        
-        </ul>
       
-    </div>
+      </a>
   
     
     
 
-    <div class="menu-header hoverable 
-                
-                has-submenu header-anim-growTooltip "
-                id="menu-apps">
+    <a class="menu-header hoverable
+             "
+        href="/apps/"
+        id="menu-apps">
       
-        <a href="#submenu-apps" class="title">apps</a>
-        <ul class="sub-menu" id="submenu-apps">
+        apps
         
-            <li>→ <a href="/apps/iching" class="default"> I Ching </a> </li>
-        
-            <li>→ <a href="/apps/piano-coach" class="default"> Piano Coach </a> </li>
-        
-        </ul>
       
-    </div>
+      </a>
   
     
     
 
-    <div class="menu-header hoverable 
-                
-                is-link"
-                id="menu-about">
+    <a class="menu-header hoverable
+             "
+        href="/about/me"
+        id="menu-about">
       
-        <a href="/about/me" class="title">About</a>
+        About
       
-    </div>
+      </a>
   
     
     
 
-    <div class="menu-header hoverable 
-                selected
-                is-link"
-                id="menu-blog">
+    <a class="menu-header hoverable
+             selected"
+        href="/blog/"
+        id="menu-blog">
       
-        <a href="/blog/" class="title">Blog</a>
+        Blog
       
-    </div>
+      </a>
   
 
 </nav>

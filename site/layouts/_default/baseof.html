@@ -33,7 +33,7 @@
   {{ $menuModifier := .Params.menuModifier | default "" }}
   <body class="{{ $colorscheme }} {{ $page }} {{ $section }} {{ $layout }}">
 
-    <header role="header" class="container {{ $menuModifier }}" id="menu">
+    <header role="header" class="{{ $menuModifier }}" id="menu">
       {{ block "header" .}}{{ end }}
     </header>
     
