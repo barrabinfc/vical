@@ -376,68 +376,10 @@ body.home {
     /* Footer links at bottom */
     & footer {
       margin-top: auto;
-      /*
-      & li {
-        border: 1px solid;
-        
-        /* Links of menu 
-        & a { 
-          display: block;
-          margin: 0em;
-          padding: 1rem;
-          @apply --hero-font;
-           
-          &:hover {
-            background-color: #fff;
-            color: #000;
-          }
-
-          /* First&Last are next/previous 
-          &:first-child ,
-          &:last-child { padding: 1em 0em; }
-        }
-      }
-      */
     }
   }
 }
 
-
-/**
- * Work & about Menu 
- */
- body.work,
- body.about,
- body.home {
-
-   & #menu {
-     /* Occupy full .info position */
-     position: fixed;
-     margin: 0;
-     width: 392px;
-     height: 100vh;
-     top: 0;
-     left: calc(100% - 392px);
-     padding: var(--pad-big);
-          
-     /* Initially off from viewport */ 
-     transform: translateY(100vh);
-     visibility: hidden;
-     
-     will-change: transform;
-     @apply --transition;
-     transition-duration: var(--trans-time-slow);
-     
-     /* Enable close btn */
-     & .menu-close { visibility: visible; }
-     
-     /* Show menu when clicked */
-     &.\:is-target {
-       transform: translateY(0);
-       visibility: visible;
-     }
-   }
- }
  
  
  /**

@@ -2,8 +2,7 @@
 title = "About vitor"
 
 color = "#000"
-bg_color = "rgba(255,255,255, 1.0)"
-high_color = "#f05553"
+bg_color = "#f8fbfb"
 
 menuModifier = ""
 subtitle = "And some other ... text"

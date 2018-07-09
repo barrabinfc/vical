@@ -1475,59 +1475,7 @@ body.work .info .more, body.about .info .more, body.home .info .more
 }
 body.work .info footer, body.about .info footer, body.home .info footer
 {
-  margin-top: auto;/*
-      & li {
-        border: 1px solid;
-        
-        /* Links of menu 
-        & a { 
-          display: block;
-          margin: 0em;
-          padding: 1rem;
-          @apply --hero-font;
-           
-          &:hover {
-            background-color: #fff;
-            color: #000;
-          }
-
-          /* First&Last are next/previous 
-          &:first-child ,
-          &:last-child { padding: 1em 0em; }
-        }
-      }
-      */
-}
-/**
- * Work & about Menu 
- */
-body.work,
- body.about,
- body.home {
- }
-body.work #menu, body.about #menu, body.home #menu
-{/* Occupy full .info position */
-  position: fixed;
-  margin: 0;
-  width: 392px;
-  height: 100vh;
-  top: 0;
-  left: calc(100% - 392px);
-  padding: 48px;/* Initially off from viewport */
-  transform: translateY(100vh);
-  visibility: hidden;
-  will-change: transform;
-  transition: all 0.15s cubic-bezier(0.52, 0.01, 0.16, 1);
-  transition-duration: 0.85s;/* Enable close btn *//* Show menu when clicked */
-}
-body.work #menu .menu-close, body.about #menu .menu-close, body.home #menu .menu-close
-{
-  visibility: visible;
-}
-body.work #menu.\:is-target, body.about #menu.\:is-target, body.home #menu.\:is-target
-{
-  transform: translateY(0);
-  visibility: visible;
+  margin-top: auto;
 }
 /**
   * About Section
