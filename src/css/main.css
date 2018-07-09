@@ -530,11 +530,14 @@ section.about {
 /**
  * Icons for menu
  */
-#menu-work .title::before {
-  content: '💼';
+#menu-work::before {
+  content: ' ';
+  font-weight: 100;
 }
-#menu-apps .title::before {
-  content: '📱';
+#menu-apps::before {
+  content: ' ';
+  font-weight: 100;
+
 }
 /*
 #menu-about .title::before {
