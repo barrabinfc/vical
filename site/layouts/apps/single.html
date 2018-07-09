@@ -3,7 +3,6 @@
     {{ partial "logo" . }}
   </div>
 
-  {{ .Scratch.Set "menuModifier" "top" }}
   {{ partial "nav" . }}
 {{ end }}
 {{ define "main" }}
@@ -51,5 +50,6 @@
 
 
 {{ define "footer"}}
+  {{ partial "footer_links" . }}
   {{ partial "style_invert" .}}
 {{ end }}
