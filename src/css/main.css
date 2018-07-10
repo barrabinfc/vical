@@ -8,8 +8,8 @@
 @import "imports/animation.css";
 
 html {
-  font-size: var(--base-fontsize, 14px);
-  line-height: var(--line-height, 14px);
+  font-size: var(--base-fontsize, 16px);
+  line-height: var(--line-height, 16px);
   
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern" 1;
@@ -387,103 +387,115 @@ body.home {
   */
 section.about {
     @apply --paragraph-font;
-    
+    perspective: 800px;
+
     display: flex;
     flex-direction: column;
     
+    width: 100%;
     height: 100%;
-    margin: 1em 3.4em;
-    margin-bottom: 0;
+
     
     /* Text */
-    & > h3:first-child { 
-      text-transform: uppercase;
+    & > h1:first-child { 
       @apply --hero-font;
+      font-weight: 100;
+      padding-top: calc(2*var(--pad-big));
+
       color: inherit;
-      padding: calc( 2*var(--gutter) ) 0;
-      
-      font-size: 2.0rem; 
+      font-size: 5.0rem; 
+      margin: 0 auto;
     }
-    & p { font-family: inherit; padding-left: 0; }
 
-
-    
-    & .summary {
-      margin-top: 3rem;
+    & .intro {
+      padding: calc( 2* var(--pad-big)) 0;
       
-      & .title { 
-        text-transform: uppercase;
-        margin-left: 0.5rem;
-        /*margin-bottom: 2rem;*/
-      }
-      & .txt { margin-bottom: 2rem; margin-left: 1rem; }
-      
-      & .first-column {
-        width: 40%;
-        margin-right: 5em;
-      }
-      & .second-column { width: 50%; }
-    }
-    
-    /* Contact */
-    & .contact {      
-      perspective: 800px;
+      display: flex;
+      width: 80%;
+      margin: 0 auto;
+      align-items: center;
 
-      & > a { 
-        display: block; 
-        height: 288px;
-        box-shadow: var(--shadow-big);
-        background-image: url(../images/old-computer.jpg);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-
-        border-radius: 15px;
-        cursor: pointer;
-
-        /*
-        @apply --transition;
-        transition-timing-function: var(--trans-easing);
-        transition-duration: 0.5s;
-
-        &:hover {
-          transform: translate3d(0px, 0px , 15px);
-          box-shadow: var(--shadow-huge);  
-        }
-        */
-      }
-            
-      & .label {
-        @apply --hero-font;
-        text-align: center;
-
-        color: #fff;
-        
-        /* center */
-        height: inherit;
+      & .intro_image {
+        flex: 0.3;
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: stretch;
+        align-items: center;
+
+        & > img { 
+          width: 80%;
+          margin: 0 auto; 
+          border-radius: 50%; overflow: hidden;
+          border: 1px solid var(--gray); 
+        }
+      }
+      & .intro_lead {
+        flex: 0.7;
+        padding: 0; margin: 0;
+        font-weight: 100;
+        font-size: 2rem;
+        line-height: 2.5rem; 
+      }
+
+    }
+
+    & .more {
+      & .summary {
+        width: 75%;
+        margin: 0 auto;
+
+        & .title { 
+          text-transform: uppercase;
+          padding: calc( 2 * var(--gutter) ) 0;
+        }
+
+        & p { margin: 0; padding: 0; }
+
+        & .txt { line-height: 1.7em; }
+        
+        & .first-column { flex: 0.5; }
+        & .second-column { flex: 0.5; }
+        
+        & .education { 
+          & li {
+            padding-bottom: calc( 2 * var(--gutter));
+          }
+        }
+      }
+    
+      /* Contact */
+      & .contact {      
+        perspective: 800px;
+        padding: calc( 2* var(--pad-big)) 0;
+
+        & > a { 
+          display: block; 
+          height: 288px;
+          box-shadow: var(--shadow-big);
+          background-image: url(../images/old-computer.jpg);
+          background-size: auto;
+          background-position: center;
+          background-repeat: no-repeat;
+
+          border-radius: 15px;
+          cursor: pointer;
+        }
+              
+        & .label {
+          @apply --hero-font;
+          font-size: 5em;
+          font-weight: bold;
+          text-align: center;
+          text-shadow: 0 0 50px #000;
+
+          color: #fff;
+          
+          /* center */
+          height: inherit;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: stretch;
+        }
       }
     }
   }
-
-/**
- * Icons for menu
- */
-#menu-work::before {
-  content: ' ';
-  font-weight: 100;
-}
-#menu-apps::before {
-  content: ' ';
-  font-weight: 100;
-
-}
-/*
-#menu-about .title::before {
-  content: '👨‍💻';  
-}
-*/
 

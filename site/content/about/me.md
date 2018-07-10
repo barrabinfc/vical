@@ -1,59 +1,59 @@
 +++
-title = "About vitor"
+title = "About me"
 
 color = "#000"
 bg_color = "#f8fbfb"
 
-menuModifier = ""
-subtitle = "And some other ... text"
-description = "About"
+subtitle = ""
+description = "I'm Vitor Calejuri, a creative developer in Brazil. For the last ten years, I've been working with all sorts of clients, helping them build awesome things."
+logo = "/images/icons/yin_yang.svg"
 
 aliases = [
   "/about/"
 ]
 +++
 
-### Vitor Calejuri, Software Developer
-
-Meus interesses são em ferramentas digitais para música, audiovisual e web. Eu desenvolvo ferramentas interativas, para facilitar o trabalho criativo e o aprendizado, usando um vocabulário disciplinado de computação, matemática e design.
-
-Anos de trabalho desenvolvendo software open-source, em casas de software, agências de publicidade e institutos de arte, me deram uma compreensão intuitiva entre computação, arte e design. 
-
-<div class="summary two-columns grid :horizontal :baseline">
-  <div class="first-column">
-    <h5 class="title">Especialidades</h5>
-    <hr>
+<div class="summary two-columns grid :horizontal :baseline :between">
+  <div class="first-column skill">
+    <h6 class="title">Skills</h6>
     <div class="txt">
       <ul>
-        <li>- Full stack Web Development and Data visualization</li>
-        <li>- Audiovisual and interactive Software</li>
-        <li>- Tangible interfaces</li>
-      </ul>
-    </div>
-    <h5 class="title">+ trabalhos</h5>
-    <hr>
-    <div class="txt">
-      <ul>
-        <li>
-          <a href="http://github.com" class="default clean black">http://github.com/barrabinfc</a>
-        </li>
-        <li>
-          <a href="http://github.com" class="default clean black">http://github.com/barrabinfc</a>
-        </li>
+        <li>- Javascript ES6 / Typescript / HTML5 / CSS3</li>
+        <li>- React/Redux | VueJS | jQuery</li>
+        <li>- Python/Django/SQL databases</li>
+        <li>- Linux / Unix </li>
+        <li>- C/C++/Lisp</li>
+        <li>- Processing/OpenFrameworks/Arduino/Raspberry</li>
+        <li>- Git/webpack/make/other developer ecosystem tools</li>
       </ul>
     </div>
   </div>
-  <div class="second-column">
-    <!-- <h5 class="title">Contact</h5> -->
-    <div class="contact">
-      <a href="" class="picture nomargin no-underline" data-tilt data-tilt-max="10" data-tilt-speed="800" data-tilt-scale="1.025" data-tilt-glare data-tilt-max-glare="0.5" 
-      target="_blank" role="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">
-        <h3 class="label">
-          <div class="ceasar says">hufad.omvgxqdu</div>
-          <div>at</div>
-          <div class="ceasar says">symux.oay</div>
-        </h3>
-      </a>
+  <div class="second-column education">
+    <h6 class="title">Education</h6>
+    <div class="txt">
+      <ul>
+        <li>
+          <p>Nanodegree in Data science</p>
+          <p class="subtitle">2017, Udacity</p>
+        </li>
+        <li>
+          <p>BsC, Computer Science</p>
+          <p class="subtitle">2009, Mackenzie</p>
+        </li>
+        <li>
+          <p>Certificate in Information Systems</p>
+          <p class="subtitle">2004, COPI/Fiap</p>
+        </li>
+
+      </ul>
     </div>
   </div>
+</div>
+<div class="contact">
+  <a href="" class="picture nomargin no-underline" data-tilt data-tilt-max="10" data-tilt-speed="800" data-tilt-scale="1.025" data-tilt-glare data-tilt-max-glare="0.5" 
+  target="_blank" role="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">
+    <h3 class="label">
+      <div>GET IN TOUCH</div>
+    </h3>
+  </a>
 </div>

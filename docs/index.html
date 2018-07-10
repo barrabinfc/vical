@@ -33,8 +33,7 @@
   }
   
   
-  .container { max-width: 80%; }
-  .container-fluid { max-width: 95%; }
+  .container { padding: 0 96px; }
   .container, .container-fluid { margin: 0 auto; }
   
   .picture { position: relative; }
@@ -92,11 +91,11 @@
   
   <body class="dark home  frontpage">
 
-    <header role="header" class=":is-target" id="menu">
+    <header role="header" class="" id="menu">
       
   <div class="logo-container">
-      <a href="/" class="logo" id="logo">
-  Vicale
+      <a href="/" class="logo no-hover" id="logo">
+  vicale
 </a>
       <a href="#menu" class="menu-close">
         <svg class="icon__cnt"><use xlink:href="#ei-close-icon"></use></svg>
@@ -164,19 +163,46 @@
     </header>
     
     <main>
-<section class="work">
+<section>
   <article class="showcase">
-      <section class="about"></section>
+      <section class="about">Hello, my name is Vitor</section>
   </article>
-  <article id="content-body" class="info grid :vertical"></article>
+  <article id="content-body" class="info grid :vertical">
+    <p>Hello World</p>
+
+<section style="background-color: rgba(0,175,134, 0.90); ">
+    Another section
+</section>
+
+  </article>
 </section>
 </main>
     <footer role="footer">
+  <ul class="grid :horizontal :middle">
+    <li>
+        <div class="title">Contact</div>
+        <a href="" role="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">
+            <span class="ceasar says">hufad.omvgxqdu@symux.oay</span>
+        </a>
+    </li>
+    <li>
+        <div class="title">Social</div>
+        <a href="http://github.com/barrabinfc">Github</a>
+    </li>
+    <li class="align:right pull:right">
+        <a href="http://github.com/barrabinfc" class="icon icon--m">
+            <svg class="icon__cnt"><use xlink:href="#ei-sc-github-icon"></use></svg>
+        </a>
+        <a href="http://github.com/barrabinfc" class="icon icon--m">
+            <svg class="icon__cnt"><use xlink:href="#ei-envelope-icon"></use></svg>
+        </a>
+    </li>
+</ul>
   <style>
    
   :root {
-    --front: #fbfbfb;
-    --back: rgba(0,0,0, 1.0);
+    --front: #000;
+    --back: #f8fbfb;
     --primary: ;
     --dark-gray: ;
   }

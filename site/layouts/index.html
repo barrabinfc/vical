@@ -9,14 +9,17 @@
 {{ end }}
 
 {{ define "main" }}
-<section class="work">
+<section>
   <article class="showcase">
-      <section class="about">{{ .Content }}</section>
+      <section class="about">{{ .Params.subtitle }}</section>
   </article>
-  <article id="content-body" class="info grid :vertical"></article>
+  <article id="content-body" class="info grid :vertical">
+    {{ .Content }}
+  </article>
 </section>
 {{ end }}
 
 {{ define "footer" }}
+  {{ partial "footer_links" . }}
   {{ partial "style_invert" .}}
 {{ end }}

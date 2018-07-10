@@ -2,8 +2,8 @@
 @import "rules.css";
 
 hr {
-  border: 1px solid #aaa;
-  border-top: 0;
+  border: 0;
+  border-bottom: 1px solid var(--gray);
 }
 
 pre {
@@ -33,6 +33,7 @@ blockquote > p { margin: 0; }
 
 a { text-decoration: none; color: var(--second); }
 a:hover { text-decoration: underline; }
+a.no-hover:hover { text-decoration: none; }
 
 a.default {
   position: relative;
@@ -186,6 +187,8 @@ ul.featured.bordered {
 .txt\:big  { font-size: 2em; line-height: 1em; }
 .txt\:hero { font-size: 4rem; line-height: 2em; }
 
+.subtitle { color: var(--dark-gray); }
+
 .bg\:primary{ background-color: color( var(--primary) alpha(80%)); }      
 .bg\:second { background-color: color( var(--second) alpha(80%)); }
 
@@ -258,6 +261,7 @@ header[role="header"] {
     & .logo {
       @apply --hero-font;
       font-size: 2.0rem;
+      font-weight: bold;
 
       display: inline-block;
       width: 85%;
@@ -287,7 +291,7 @@ header[role="header"] {
 
       @apply --hero-font;
       font-size: calc( var(--perfect-fifth) * 1rem);
-      font-weight: bold;
+      font-weight: normal;
       text-align: center;
       text-transform: uppercase;
       color: inherit;

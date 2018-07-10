@@ -2,12 +2,17 @@
 layout = "frontpage"
 date = "2017-04-08T18:58:42-03:00"
 title = "Index"
-colorscheme = "dark"
-color = "#fbfbfb"
-bg_color = "rgba(0,0,0, 1.0)"
-high_color = "#f05553"
-subtitle = "And some other ... text"
+
+color = "#000"
+bg_color = "#f8fbfb"
+
+subtitle = "Hello, my name is Vitor"
 description = ""
-menuModifier = ":is-target"
+
 +++
 
+Hello World
+
+<section style="background-color: rgba(0,175,134, 0.90); ">
+    Another section
+</section>
