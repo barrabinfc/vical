@@ -19,7 +19,7 @@
   --third:       #0b3536;
   
   /* typography scale */
-  --base-fontsize: 1rem;
+  --base-fontsize: 16px;
   --line-height:   calc( 1rem * var(--major-third) );
   --perfect-fifth: calc(3/2); 
   --major-third:   calc(5/4);

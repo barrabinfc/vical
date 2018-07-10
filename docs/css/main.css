@@ -314,8 +314,8 @@ select.form-control {
     }
 }
 hr {
-  border: 1px solid #aaa;
-  border-top: 0;
+  border: 0;
+  border-bottom: 1px solid #e9e9e9;
 }
 pre {
   padding: 32px;
@@ -332,7 +332,6 @@ code, pre, pre code {
   margin: 28px 0;
   margin: 1.75rem 0;
   font-family: 'Share Tech Mono', monospace;
-  /*font-family: SFMono-Regular, source-code-pro, Menlo, Monaco, Consolas, Roboto Mono, Droid Sans Mono, Liberation Mono, Courier New, Courier, monospace; */
   font-weight: 400; 
 }
 blockquote { 
@@ -345,6 +344,7 @@ blockquote {
 blockquote > p { margin: 0; }
 a { text-decoration: none; color: #0098d8; }
 a:hover { text-decoration: underline; }
+a.no-hover:hover { text-decoration: none; }
 a.default {
   position: relative;
   cursor: pointer;
@@ -444,7 +444,7 @@ ul.as-flex-table .value, ul.as-flex-table .label
   width: 100%;
   line-height: 2em;
   text-transform: uppercase;
-  font-family: 'Share Tech Mono', monospace;/*font-family: SFMono-Regular, source-code-pro, Menlo, Monaco, Consolas, Roboto Mono, Droid Sans Mono, Liberation Mono, Courier New, Courier, monospace; */
+  font-family: 'Share Tech Mono', monospace;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.0rem;
@@ -473,7 +473,6 @@ ul.featured.bordered li a
   padding: 16px;
   padding: 1rem;
   font-family: 'FuturaStd', sans-serif;
-  text-transform: uppercase;
   font-weight: 300;
   font-weight: bold;/* First&Last are next/previous */
 }
@@ -506,6 +505,7 @@ ul.featured.bordered li a:first-child,
 .txt\:mask { -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .txt\:big  { font-size: 2em; line-height: 1em; }
 .txt\:hero { font-size: 64px; font-size: 4rem; line-height: 2em; }
+.subtitle { color: rgb(128, 128, 128); }
 .bg\:primary{ background-color: rgba(240, 85, 83, 0.8); }
 .bg\:second { background-color: rgba(0, 152, 216, 0.8); }
 .color-high { color: #f05553; }
@@ -513,7 +513,7 @@ ul.featured.bordered li a:first-child,
 .nomargin { margin: 0; padding: 0; }
 .rounded { border-radius: 2em; }
 .bordered { border: 1px solid;  }
-.hero { font-family: 'FuturaStd', sans-serif; text-transform: uppercase; font-weight: 300; }
+.hero { font-family: 'FuturaStd', sans-serif; font-weight: 300; }
 /* Apply margin-top iof header size */
 .\:header-margin {
   margin-top: 96px;
@@ -658,10 +658,10 @@ header[role="header"] .logo-container
 header[role="header"] .logo-container .logo
 {
   font-family: 'FuturaStd', sans-serif;
-  text-transform: uppercase;
   font-weight: 300;
   font-size: 32px;
   font-size: 2.0rem;
+  font-weight: bold;
   display: inline-block;
   width: 85%;
   color: inherit;
@@ -688,11 +688,10 @@ header[role="header"] .menu .menu-header
   vertical-align: baseline;
   z-index: 10;
   font-family: 'FuturaStd', sans-serif;
-  text-transform: uppercase;
   font-weight: 300;
   font-size: 24px;
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: normal;
   text-align: center;
   text-transform: uppercase;
   color: inherit;
@@ -781,7 +780,6 @@ footer[role="footer"] ul li
 footer[role="footer"] .title
 {
   font-family: 'FuturaStd', sans-serif;
-  text-transform: uppercase;
   font-weight: 300;
   font-weight: 100;
   font-size: 19.2px;
@@ -881,7 +879,6 @@ main > section > article
 .featured .headline .title
 {
   font-family: 'FuturaStd', sans-serif;
-  text-transform: uppercase;
   font-weight: 300;
   font-weight: bold;
   font-size: 240px;
@@ -892,7 +889,6 @@ main > section > article
 .featured .headline .subtitle
 {
   font-family: 'FuturaStd', sans-serif;
-  text-transform: uppercase;
   font-weight: 300;
   font-weight: bold;
   text-transform: none;
@@ -1090,10 +1086,9 @@ body.software .header-anim-growTooltip:hover .sub-menu, body.blog .header-anim-g
   max-height: 500px;
 }
 html {
-  font-size: 14px;
   font-size: 16px;
-  font-size: 1rem;
-  line-height: 14px;
+  font-size: 16px;
+  line-height: 16px;
   line-height: 20px;
   line-height: 1.25rem;
   
@@ -1103,8 +1098,6 @@ html {
 }
 body {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  /*font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial, sans-serif;*/
-  /*font-family: 'Source Sans Pro', Helvetica Neue, sans-serif;*/
   /*font-family: var(--paragraph-font);*/
   margin: 0;
   word-wrap: break-word;
@@ -1247,7 +1240,7 @@ body.apps .project__info .project__meta li .value, body.apps .project__info .pro
   width: 100%;
   line-height: 2em;
   text-transform: uppercase;
-  font-family: 'Share Tech Mono', monospace;/*font-family: SFMono-Regular, source-code-pro, Menlo, Monaco, Consolas, Roboto Mono, Droid Sans Mono, Liberation Mono, Courier New, Courier, monospace; */
+  font-family: 'Share Tech Mono', monospace;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.0rem;
@@ -1425,7 +1418,6 @@ body.work .showcase .overlay .see-more, body.about .showcase .overlay .see-more,
       align-self: flex-end;
   margin: 1em auto;
   font-family: 'FuturaStd', sans-serif;
-  text-transform: uppercase;
   font-weight: 300;
   text-transform: none;
 }
@@ -1452,7 +1444,6 @@ body.work .info picture.logo h2, body.about .info picture.logo h2, body.home .in
 {
   display: block;
   font-family: 'FuturaStd', sans-serif;
-  text-transform: uppercase;
   font-weight: 300;
   text-transform: uppercase;
   margin: 0;
@@ -1463,7 +1454,7 @@ body.work .info .description, body.about .info .description, body.home .info .de
 }
 body.work .info .description p, body.about .info .description p, body.home .info .description p
 {
-  font-family: 'Share Tech Mono', monospace;/*font-family: SFMono-Regular, source-code-pro, Menlo, Monaco, Consolas, Roboto Mono, Droid Sans Mono, Liberation Mono, Courier New, Courier, monospace; */
+  font-family: 'Share Tech Mono', monospace;
   font-weight: 400;
   margin: 0 0 20px 0;
   margin: 0 0 1.25rem 0;
@@ -1482,97 +1473,134 @@ body.work .info footer, body.about .info footer, body.home .info footer
   */
 section.about {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    /*font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial, sans-serif;*/
-    /*font-family: 'Source Sans Pro', Helvetica Neue, sans-serif;*/
-    
+    perspective: 800px;
+
     display: -ms-flexbox;
-    
+
     display: flex;
     -ms-flex-direction: column;
         flex-direction: column;
     
-    height: 100%;
-    margin: 1em 3.4em;
-    margin-bottom: 0
+    width: 100%;
+    height: 100%
+
     
     /* Text */
-    
-    /* Contact */
   }
-section.about > h3:first-child
+section.about > h1:first-child
 {
-  text-transform: uppercase;
   font-family: 'FuturaStd', sans-serif;
-  text-transform: uppercase;
   font-weight: 300;
+  font-weight: 100;
+  padding-top: 96px;
   color: inherit;
-  padding: 1em 0;
+  font-size: 80px;
+  font-size: 5.0rem;
+  margin: 0 auto;
+}
+section.about .intro
+{
+  padding: 96px 0;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  -ms-flex-align: center;
+      align-items: center;
+}
+section.about .intro .intro_image
+{
+  -ms-flex: 0.3;
+      flex: 0.3;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+}
+section.about .intro .intro_image > img
+{
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #e9e9e9;
+}
+section.about .intro .intro_lead
+{
+  -ms-flex: 0.7;
+      flex: 0.7;
+  padding: 0;
+  margin: 0;
+  font-weight: 100;
   font-size: 32px;
-  font-size: 2.0rem;
+  font-size: 2rem;
+  line-height: 40px;
+  line-height: 2.5rem;
 }
-section.about p
+section.about .more
+{/* Contact */
+}
+section.about .more .summary
 {
-  font-family: inherit;
-  padding-left: 0;
+  width: 75%;
+  margin: 0 auto;
 }
-section.about .summary
-{
-  margin-top: 48px;
-  margin-top: 3rem;
-}
-section.about .summary .title
+section.about .more .summary .title
 {
   text-transform: uppercase;
-  margin-left: 8px;
-  margin-left: 0.5rem;/*margin-bottom: 2rem;*/
+  padding: 1em 0;
 }
-section.about .summary .txt
+section.about .more .summary p
 {
-  margin-bottom: 32px;
-  margin-bottom: 2rem;
-  margin-left: 16px;
-  margin-left: 1rem;
+  margin: 0;
+  padding: 0;
 }
-section.about .summary .first-column
+section.about .more .summary .txt
 {
-  width: 40%;
-  margin-right: 5em;
+  line-height: 1.7em;
 }
-section.about .summary .second-column
+section.about .more .summary .first-column
 {
-  width: 50%;
+  -ms-flex: 0.5;
+      flex: 0.5;
 }
-section.about .contact
+section.about .more .summary .second-column
+{
+  -ms-flex: 0.5;
+      flex: 0.5;
+}
+section.about .more .summary .education
+{
+}
+section.about .more .summary .education li
+{
+  padding-bottom: 1em;
+}
+section.about .more .contact
 {
   perspective: 800px;
+  padding: 96px 0;
 }
-section.about .contact > a
+section.about .more .contact > a
 {
   display: block;
   height: 288px;
   box-shadow: 5px 5px 3em rgba(0, 0, 0, .5);
   background-image: url(../images/old-computer.jpg);
-  background-size: cover;
+  background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 15px;
-  cursor: pointer;/*
-        @apply --transition;
-        transition-timing-function: var(--trans-easing);
-        transition-duration: 0.5s;
-
-        &:hover {
-          transform: translate3d(0px, 0px , 15px);
-          box-shadow: var(--shadow-huge);  
-        }
-        */
+  cursor: pointer;
 }
-section.about .contact .label
+section.about .more .contact .label
 {
   font-family: 'FuturaStd', sans-serif;
-  text-transform: uppercase;
   font-weight: 300;
+  font-size: 5em;
+  font-weight: bold;
   text-align: center;
+  text-shadow: 0 0 50px #000;
   color: #fff;/* center */
   height: inherit;
   display: -ms-flexbox;
@@ -1584,23 +1612,6 @@ section.about .contact .label
   -ms-flex-align: stretch;
       align-items: stretch;
 }
-/**
- * Icons for menu
- */
-#menu-work::before {
-  content: ' ';
-  font-weight: 100;
-}
-#menu-apps::before {
-  content: ' ';
-  font-weight: 100;
-
-}
-/*
-#menu-about .title::before {
-  content: '👨‍💻';  
-}
-*/
 
 
 /*# sourceMappingURL=main.css.map */
