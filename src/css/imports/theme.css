@@ -255,6 +255,9 @@ header[role="header"] {
 
   perspective: 800px;
 
+  @apply --transition;
+  transition-duration: 0.65s;
+
   & .logo-container {
     flex: 0.2;
 
@@ -343,7 +346,7 @@ header[role="header"] {
 
         &::after {
           width: 100%;
-          background-color: color( var(--primary) alpha(40%));
+          background-color: color( var(--third) lightness(60%));
         }
       }
       

@@ -20,5 +20,10 @@
     </section>
   </article>
 </section>
-{{ end }} {{ define "footer" }} {{ partial "footer_links" . }} {{ partial "style_invert" .}}
-<script type="text/javascript" src="/js/vendor/vanilla-tilt.babel.min.js"></script> {{ end }}
+{{ end }} 
+
+{{ define "footer" }} 
+  {{ partial "footer_links" . }} 
+  {{ partial "style_invert" .}}
+  <script type="text/javascript" src="/js/vendor/vanilla-tilt.babel.min.js"></script> 
+{{ end }}
