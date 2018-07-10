@@ -574,6 +574,8 @@ header[role="header"] {
 
   transition: all 0.15s cubic-bezier(0.52, 0.01, 0.16, 1);
   transition-duration: 0.65s
+
+  /* Shrink menu*/
   
   /* Navigation */
 
@@ -652,6 +654,10 @@ header[role="header"] {
     }
   }
   */
+}
+header[role="header"].shrink
+{
+  height: 72px;
 }
 header[role="header"] .logo-container
 {
