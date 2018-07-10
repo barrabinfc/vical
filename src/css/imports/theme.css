@@ -258,6 +258,9 @@ header[role="header"] {
   @apply --transition;
   transition-duration: 0.65s;
 
+  /* Shrink menu*/
+  &.shrink{ height: calc( 3/4 * var(--header-height)); }
+
   & .logo-container {
     flex: 0.2;
 
