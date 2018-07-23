@@ -8,6 +8,8 @@ title = "Piano Coach"
 website = "piano-coach.xyz"
 description = "A web tool for piano practice"
 logo = "/images/icons/piano-roll.svg"
+thumbnail = "/images/apps/thumb-workout.jpg"
+
 tech = "Web"
 license = "GPL v3"
 created_at = "06/2017"

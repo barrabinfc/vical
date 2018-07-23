@@ -8,6 +8,8 @@ title = "CAMTwist-Syphon"
 website = "https://github.com/barrabinfc/camtwist-syphon"
 description = "Syphon Inputs & output for CAMTwist"
 logo = "/images/icons/piano-roll.svg"
+thumbnail = "/images/apps/geraes.jpg"
+
 tech = "Web"
 license = "GPL v3"
 created_at = "06/2017"

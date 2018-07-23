@@ -1,0 +1,24 @@
+<section class="apps-list">
+    <article class="container w100">
+
+        <h1 class="title hero">APPS</h1>
+
+        <ul class="list grid :horizontal :around">
+            {{- range . }}
+                <li class="cell :4of12">
+                    <a class="card app-card" 
+                       href="{{ .Permalink }}"
+                       data-tilt data-tilt-max="5" 
+                       data-tilt-speed="800" 
+                       data-tilt-scale="1.15" 
+                       data-tilt-glare data-tilt-max-glare="0.5"                       
+                       >
+                        <img class="thumbnail" src="{{ .Params.thumbnail }}" />
+                        <h3 class="listitem__title">{{ .Title }}</h3>
+                    </a>
+                </li>
+            {{- end }}
+        </ul>
+
+    </article>
+</section>

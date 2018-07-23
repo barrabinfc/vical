@@ -55,8 +55,9 @@ input:hover,
   /* Header height */
   
   /* Shadows */
+
   
-  /* Animations/transitions */ /* Expo ease-out */
+  /* Animations/transitions */ /* Expo ease-out */ /* Elastic */
   
   /* Reactive variables */
 }
@@ -194,6 +195,11 @@ input:hover,
     .cell.\:11of12 {
         -ms-flex: 0 0 91.66667%;
         flex: 0 0 91.66667%
+    }
+
+    .cell.\:12of12 {
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
     }
 }
 @media screen and (max-width:768px) {
@@ -472,8 +478,7 @@ ul.featured.bordered li a
   margin: 0em;
   padding: 16px;
   padding: 1rem;
-  font-family: 'FuturaStd', sans-serif;
-  font-weight: 300;
+  font-family: 'FuturaStd', sans-serif;/*font-weight: 300;*/
   font-weight: bold;/* First&Last are next/previous */
 }
 ul.featured.bordered li a:hover
@@ -513,7 +518,7 @@ ul.featured.bordered li a:first-child,
 .nomargin { margin: 0; padding: 0; }
 .rounded { border-radius: 2em; }
 .bordered { border: 1px solid;  }
-.hero { font-family: 'FuturaStd', sans-serif; font-weight: 300; }
+.hero { font-family: 'FuturaStd', sans-serif; /*font-weight: 300;*/ }
 /* Apply margin-top iof header size */
 .\:header-margin {
   margin-top: 96px;
@@ -666,8 +671,7 @@ header[role="header"] .logo-container
 }
 header[role="header"] .logo-container .logo
 {
-  font-family: 'FuturaStd', sans-serif;
-  font-weight: 300;
+  font-family: 'FuturaStd', sans-serif;/*font-weight: 300;*/
   font-size: 32px;
   font-size: 2.0rem;
   font-weight: bold;
@@ -696,8 +700,7 @@ header[role="header"] .menu .menu-header
   background-color: transparent;
   vertical-align: baseline;
   z-index: 10;
-  font-family: 'FuturaStd', sans-serif;
-  font-weight: 300;
+  font-family: 'FuturaStd', sans-serif;/*font-weight: 300;*/
   font-size: 24px;
   font-size: 1.5rem;
   font-weight: normal;
@@ -788,8 +791,7 @@ footer[role="footer"] ul li
 }
 footer[role="footer"] .title
 {
-  font-family: 'FuturaStd', sans-serif;
-  font-weight: 300;
+  font-family: 'FuturaStd', sans-serif;/*font-weight: 300;*/
   font-weight: 100;
   font-size: 19.2px;
   font-size: 1.2rem;
@@ -887,8 +889,7 @@ main > section > article
 }
 .featured .headline .title
 {
-  font-family: 'FuturaStd', sans-serif;
-  font-weight: 300;
+  font-family: 'FuturaStd', sans-serif;/*font-weight: 300;*/
   font-weight: bold;
   font-size: 240px;
   font-size: 15rem;
@@ -897,8 +898,7 @@ main > section > article
 }
 .featured .headline .subtitle
 {
-  font-family: 'FuturaStd', sans-serif;
-  font-weight: 300;
+  font-family: 'FuturaStd', sans-serif;/*font-weight: 300;*/
   font-weight: bold;
   text-transform: none;
   margin: 0px auto;
@@ -1128,76 +1128,6 @@ body {
 ::selection {
   background-color: #f05553; /* WebKit/Blink Browsers */
 }
-/* Top Header 
-body > header {
-  position: absolute;
-  width: 400px;
-  height: 80%;
-  top: var(--pad-big);
-  left: var(--pad-big);
-  
-  z-index: 10;
-  will-change: opacity;f#
-  color: var(--black);
-  padding: 1em 3em;
-
-  text-align: left;
-  
-  & .logo-container {
-    display: flex;
-  }
-
-  & .logo {
-    display: inline-block;
-    width: 85%;
-    @apply --hero-font;
-    color: inherit;
-    
-    font-size: 2.0rem;
-    
-    padding-left: 0;    
-    margin: 0;  
-  }
-
-  /** Close btn 
-  & .menu-close {
-    visibility: hidden;
-    display: block;
-    width: var(--pad-big);
-    height: var(--pad-big);
-    margin-right: 0px;
-    fill: var(--front);
-    padding: 0;
-    border: 0;
-    margin: 0;
-    
-    @apply --transition;
-    transform: scale(1.0);
-
-    &:hover {
-      transform: scale(1.2);
-    }
-  }  
-
-  
-  /** 3em of space between submenus
-  & .menu-header  {
-    padding-bottom: 2rem;
-  }
-  & .menu-header:first-child {
-    margin-top: 3rem;
-  }
-  
-  
-
-  /** About aligned at bottom 
-  & .menu-header:last-child {
-    margin-top: auto;
-    margin-bottom: 3rem;
-  }
-  
-}
-*/
 /* Index page billboard */
 .billboard {
   position: absolute;
@@ -1212,13 +1142,11 @@ body > header {
   background-color: rgba(252, 13, 94, 0.9);
 }
 /**
- * Apps Page
+ * Apps Single Page
  */
-body.apps {
-}
-body.apps .project__info
-{
-  text-align: center;
+body.apps .project__info {
+    text-align: center
+  
 }
 body.apps .project__info .project__logo
 {
@@ -1275,8 +1203,77 @@ body.apps .project__info .project__description
   font-size: 16px;
   font-size: 1rem;
 }
-body.apps .project__body
+/** Apps list **/
+.apps-list {
+}
+.apps-list .container
 {
+  width: 100%;
+  background-color: #0b3536;
+  color: #fff;
+}
+.apps-list .title
+{
+  font-family: 'FuturaStd', sans-serif;/*font-weight: 300;*/
+  text-align: center;
+  font-weight: 100;
+  padding: 48px 0;
+  color: inherit;
+  font-size: 80px;
+  font-size: 5.0rem;
+  margin: 0 auto;
+}
+.apps-list .list
+{
+  perspective: 800px;
+}
+.apps-list .card
+{
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: space-evenly;
+      justify-content: space-evenly;
+  width: 70%;
+  height: 360px;
+  overflow: hidden;
+  color: inherit;
+  border-radius: 15px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .76), 0 2px 6px rgba(0, 0, 0, .77), 0 10px 20px rgba(0, 0, 0, .49);
+  background-color: rgb(128, 128, 128);
+  margin: 32px auto;
+  margin: 2rem auto;
+  padding: 0px;
+  padding: 0rem;
+  transition: background-color 0.35s ease-out;
+}
+.apps-list .card .listitem__title
+{
+  transform: translateZ(20px);
+  font-size: 48px;
+  font-size: 3rem;
+  line-height: 48px;
+  line-height: 3rem;
+  position: absolute;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .76), 0 2px 6px rgba(0, 0, 0, .77), 0 10px 20px rgba(0, 0, 0, .49);
+  width: 100%;
+  text-align: center;
+  padding: 16px;
+  padding: 1rem;
+  color: inherit;
+}
+.apps-list .card .thumbnail
+{
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  mix-blend-mode: multiply;
+}
+.apps-list .card:hover
+{
+  background-color: #fff;
 }
 /**
  * Apps/Blog Menu 
@@ -1426,8 +1423,7 @@ body.work .showcase .overlay .see-more, body.about .showcase .overlay .see-more,
   -ms-flex-item-align: end;
       align-self: flex-end;
   margin: 1em auto;
-  font-family: 'FuturaStd', sans-serif;
-  font-weight: 300;
+  font-family: 'FuturaStd', sans-serif;/*font-weight: 300;*/
   text-transform: none;
 }
 body.work .info, body.about .info, body.home .info
@@ -1452,8 +1448,7 @@ body.work .info picture.logo img, body.about .info picture.logo img, body.home .
 body.work .info picture.logo h2, body.about .info picture.logo h2, body.home .info picture.logo h2
 {
   display: block;
-  font-family: 'FuturaStd', sans-serif;
-  font-weight: 300;
+  font-family: 'FuturaStd', sans-serif;/*font-weight: 300;*/
   text-transform: uppercase;
   margin: 0;
 }
@@ -1498,8 +1493,7 @@ section.about {
   }
 section.about > h1:first-child
 {
-  font-family: 'FuturaStd', sans-serif;
-  font-weight: 300;
+  font-family: 'FuturaStd', sans-serif;/*font-weight: 300;*/
   font-weight: 100;
   padding-top: 96px;
   color: inherit;
@@ -1594,7 +1588,7 @@ section.about .more .contact > a
 {
   display: block;
   height: 288px;
-  box-shadow: 5px 5px 3em rgba(0, 0, 0, .5);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .76), 0 2px 6px rgba(0, 0, 0, .77), 0 10px 20px rgba(0, 0, 0, .49);
   background-image: url(../images/old-computer.jpg);
   background-size: auto;
   background-position: center;
@@ -1604,12 +1598,11 @@ section.about .more .contact > a
 }
 section.about .more .contact .label
 {
-  font-family: 'FuturaStd', sans-serif;
-  font-weight: 300;
+  font-family: 'FuturaStd', sans-serif;/*font-weight: 300;*/
   font-size: 5em;
   font-weight: bold;
   text-align: center;
-  text-shadow: 0 0 50px #000;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .76), 0 2px 6px rgba(0, 0, 0, .77), 0 10px 20px rgba(0, 0, 0, .49);/*0 0 50px #000;*/
   color: #fff;/* center */
   height: inherit;
   display: -ms-flexbox;
