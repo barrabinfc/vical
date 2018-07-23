@@ -46,10 +46,14 @@
       {{ .Content }}
     </article>
   </section>
+
+  {{ $related := where .Site.RegularPages "Section" "apps" | first 5 }}
+  {{ partial "apps_list" $related }}
 {{ end }}
 
 
 {{ define "footer"}}
   {{ partial "footer_links" . }}
   {{ partial "style_invert" .}}
+  <script type="text/javascript" src="/js/vendor/vanilla-tilt.babel.min.js"></script> 
 {{ end }}

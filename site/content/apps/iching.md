@@ -4,6 +4,7 @@ parent = "software"
 color = "#0f0f0f"
 bg_color = "#f8fbfb"
 dark_gray = "#f8f8f8"
+thumbnail = "/images/apps/masin-cover-01.jpg"
 
 title = "I Ching"
 website = "iching.xyz"
@@ -18,7 +19,7 @@ created_at = "06/2016"
 <div class="cellphone">
     <div class="cellphone-mask">
         <div class="cellphone-screen">
-            <iframe src="http://barrabinfc.github.io/react-iching/#/?_k=yo6w0u" width="320" height="440">
+            <iframe src="http://barrabinfc.github.io/iching/?media=small" width="320" height="568">
             </iframe>
         </div>
     </div>

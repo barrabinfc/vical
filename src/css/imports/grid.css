@@ -124,6 +124,10 @@
         -ms-flex: 0 0 91.66667%;
         flex: 0 0 91.66667%
     }
+
+    .cell.\:12of12 {
+        flex: 0 0 100%;
+    }
 }
 
 @media screen and (max-width:768px) {
