@@ -50,7 +50,7 @@ aliases = [
   </div>
 </div>
 <div class="contact">
-  <a href="" class="picture nomargin no-underline" data-tilt data-tilt-max="5" data-tilt-speed="800" data-tilt-scale="1.025" data-tilt-glare data-tilt-max-glare="0.5" 
+  <a href="" class="picture nomargin no-underline" data-tilt data-tilt-max="5" data-tilt-speed="800" data-tilt-scale="1.025" 
   target="_blank" role="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">
     <h3 class="label">
       <div>GET IN TOUCH</div>
