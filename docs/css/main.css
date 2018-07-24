@@ -812,7 +812,7 @@ footer[role="footer"] a
 /*
  * A block full page
  */
-main > section {
+.page-container > section {
   position: relative;
   width: 100%;
   min-height: calc( 100vh - 96px);
@@ -830,7 +830,7 @@ main > section {
    */
 
 }
-main > section > article
+.page-container > section > article
 {
   min-height: calc( 100vh - 96px);
   height: 100%;
@@ -1008,6 +1008,16 @@ main > section > article
   height: calc(100% - 2.5vw);
   top: 2.5vw;
 }
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.fade-in { animation: fade-in 2.0s; }
+@keyframes fade-out {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.fade-out { animation: fade-out 2.0s; }
 @keyframes intro {
   0% {
     opacity: 0;
