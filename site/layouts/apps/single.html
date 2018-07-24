@@ -48,7 +48,8 @@
   </section>
 
   {{ $related := where .Site.RegularPages "Section" "apps" | first 5 }}
-  {{ partial "apps_list" $related }}
+  {{ $title   := "+ APPS" }}
+  {{ partial "card_list" (dict "list" $related "title" $title) }}
 {{ end }}
 
 

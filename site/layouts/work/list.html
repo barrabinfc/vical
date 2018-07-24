@@ -12,8 +12,9 @@
 
 {{ define "main" }}
   {{ $related := .Pages | first 6 }}
-  {{ $title   := "APPS"}}
-  {{ partial "card_list" (dict "list" $related "title" $title) }}
+  {{ $title   := "Work" }}
+  {{ $class   := "list-isotope" }}
+  {{ partial "card_list" (dict "list" $related "title" $title "class" $class) }}
 {{ end }}
 
 {{ define "footer"}}

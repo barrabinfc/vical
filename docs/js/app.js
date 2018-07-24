@@ -59,8 +59,15 @@
 	var pointerClick = document.ontouchstart === undefined ? "click" : "touchstart";
 
 	function start() {
-	  scrollListener();
-	  fixHrefTarget(document);
+	  requestIdleCallback(function () {
+	    scrollListener();
+	    fixHrefTarget(document);
+	  });
+
+	  requestAnimationFrame(function () {
+	    // Page loaded animation
+	    document.body.classList.add('page-loaded');
+	  });
 
 	  /* Get relative address of page */
 	  var address = location.href.split("/").filter(function (t) {
@@ -73,12 +80,13 @@
 	/*
 	 * Listen to scroll-y, update css --scrolly variable
 	 */
-	function scrollListener() {
-	  // add passive listener
-	  var scrollHandler = document.addEventListener("scroll", function (ev) {
-	    docStyle.setProperty("--scrolly", document.body.scrollTop);
-	  }, { passive: true });
-	}
+	function scrollListener() {}
+	/* add passive listener
+	const scrollHandler = document.addEventListener("scroll", (ev) => {
+	  docStyle.setProperty("--scrolly", document.body.scrollTop)
+	}, {passive: true})
+	*/
+
 
 	/**
 	 * fixHrefTarget

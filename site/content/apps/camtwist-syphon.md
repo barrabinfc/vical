@@ -1,9 +1,8 @@
 +++
 draft = false
 colorscheme = "light"
-color = "#fff"
-bg_color = "rgba(0,175,134, 0.90)"
-high_color = "#ffffff"
+color = "#0f0f0f"
+bg_color = "#f8fbfb"
 title = "CAMTwist-Syphon"
 website = "https://github.com/barrabinfc/camtwist-syphon"
 description = "Syphon Inputs & output for CAMTwist"

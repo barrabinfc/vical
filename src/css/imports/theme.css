@@ -271,7 +271,7 @@ header[role="header"] {
       font-weight: bold;
 
       display: inline-block;
-      width: 85%;
+      width: 100%;
       color: inherit;
             
       padding-left: 0;    
@@ -483,7 +483,7 @@ footer[role="footer"] {
 main > section {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: calc( 100vh - var(--header-height));
   height: auto;
   display: flex;
   flex-direction: column;
@@ -494,7 +494,7 @@ main > section {
    * Content of pages
    */
   & > article {
-    min-height: 100vh;
+    min-height: calc( 100vh - var(--header-height));
     height: 100%;
     padding: 2em calc( 4 * var(--gutter));
 

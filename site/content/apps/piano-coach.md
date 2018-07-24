@@ -1,9 +1,9 @@
 +++
 draft = false
 colorscheme = "dark"
-color = "#fff"
-bg_color = "rgba(0,175,134, 0.90)"
-high_color = "#ffffff"
+#bg_color = "rgba(0,175,134, 0.90)"
+color = "#0f0f0f"
+bg_color = "#f8fbfb"
 title = "Piano Coach"
 website = "piano-coach.xyz"
 description = "A web tool for piano practice"
