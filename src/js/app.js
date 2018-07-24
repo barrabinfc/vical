@@ -1,4 +1,7 @@
 var rot = require("rot")
+var Barba = require('barba.js');
+
+import {GeneralTransition} from './transitions/fade';
 
 const docStyle = document.documentElement.style;
 const pointerClick = (document.ontouchstart === undefined ? "click" : "touchstart")
@@ -12,6 +15,13 @@ function start() {
   requestAnimationFrame( () => {
     // Page loaded animation
     document.body.classList.add('page-loaded');
+
+    // Page transition loader
+    Barba.Pjax.Dom.wrapperId = 'page-trans-wrapper';
+    Barba.Pjax.Dom.containerClass = 'page-container';
+
+    Barba.Pjax.getTransition = () => (GeneralTransition('fade-in','fade-out', 2000));
+    Barba.Pjax.start();
   })
 
   /* Get relative address of page */

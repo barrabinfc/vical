@@ -480,7 +480,7 @@ footer[role="footer"] {
 /*
  * A block full page
  */
-main > section {
+.page-container > section {
   position: relative;
   width: 100%;
   min-height: calc( 100vh - var(--header-height));
