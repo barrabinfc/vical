@@ -15,77 +15,28 @@
   0% { opacity: 0; transform: translateY(50px); }
   100% { opacity: 1; transform: translateY(0px); }
 }
-.appearFromBottom-anim {
-  animation: appearFromBottom 1s var(--trans-easing);
+.appearFromBottom {
+  animation: appearFromBottom 0.55s var(--trans-easing);
+  animation-fill-mode: both;
+  animation-play-state: paused;
+}
+body.page-loaded .appearFromBottom {
+  animation-play-state: running;
 }
 
 
 
-/** 
- *  Enable header-anim-growTooltip only in project&blog pages
- */
-body.software ,
-body.blog {
-  
-  /* Grow a underscore */
-  & .header-anim-growTooltip {
-    
-    /* left */
-    &:before , &:after {
-      content: ' ';
-      background-color: var(--black);
-      width: 0%;
-      top: 1.7em;
-      height: 2px;
-      position: absolute;
-      
-      z-index: 0;
-      transition: width 0.5s var(--trans-easing);
-    }
-    &:before { right: 50%; }
-    &:after { left: 50%; }
-    
-    /* right 
-    &:after {
-      content: ' ';
-      background-color: var(--black);
-      width: 0%;
-      left: 50%;
-      top: 1.7em;
-      height: 2px;
-      position: absolute;
+.appearFromBottomCropped {
+  overflow: hidden;
 
-      z-index: 0;
-      transition: width 0.5s var(--trans-easing);
-    }
-    */
-    
-    & .sub-menu {
-      max-height: 0px;
-      opacity: 0;
-      visibility: hidden;
-      overflow: hidden;
-
-      transition: max-height 0.5s 0.5s var(--trans-easing), 
-                  opacity 0.25s 0.5s var(--trans-easing);
-    }
-    
-    /* States of animation */
-    &:hover {
-      &:before {
-        width: 150%;
-      }
-      &:after {
-        width: 150%;
-      }
-      & .sub-menu {
-        visibility: visible;
-        opacity: 1;
-        max-height: 500px;
-      }
-    }
-    
+  & > span {
+    display: block;
+    transform: translateY(150px);
+    transition: transform 0.55s var(--trans-easing-out);
   }
 }
-
-
+body.page-loaded .appearFromBottomCropped {
+  & > span {
+      transform: translateY(0px);
+  }
+}

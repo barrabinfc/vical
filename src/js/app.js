@@ -4,8 +4,15 @@ const docStyle = document.documentElement.style;
 const pointerClick = (document.ontouchstart === undefined ? "click" : "touchstart")
 
 function start() {
-  scrollListener()
-  fixHrefTarget(document)
+  requestIdleCallback( () => {
+    scrollListener()
+    fixHrefTarget(document);
+  })
+
+  requestAnimationFrame( () => {
+    // Page loaded animation
+    document.body.classList.add('page-loaded');
+  })
 
   /* Get relative address of page */
   var address = location.href.split("/")
@@ -20,10 +27,11 @@ function start() {
  * Listen to scroll-y, update css --scrolly variable
  */
 function scrollListener() {
-  // add passive listener
+  /* add passive listener
   const scrollHandler = document.addEventListener("scroll", (ev) => {
     docStyle.setProperty("--scrolly", document.body.scrollTop)
   }, {passive: true})
+  */
 }
 
 
