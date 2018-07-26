@@ -1,5 +1,4 @@
 let Barba = require('barba.js');
-let TWEEN = require('@tweenjs/tween.js');
 
 export let GeneralTransition = (InClass = 'fade-in', OutClass = 'fade-out', duration = 1500) =>
     Barba.BaseTransition.extend({

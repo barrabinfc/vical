@@ -6,21 +6,31 @@ import {GeneralTransition} from './transitions/fade';
 const docStyle = document.documentElement.style;
 const pointerClick = (document.ontouchstart === undefined ? "click" : "touchstart")
 
-function start() {
+const PAGE_LOAD_DURATION = 2000
+
+function pageStart(){
+  requestIdleCallback( () => {
+    window.unlockMail();
+    fixHrefTarget(document);
+
+    // Page loaded animation
+    let bodyClasses = document.body.classList
+    /*bodyClasses.remove('page-loaded');
+    bodyClasses.add('page-loaded');*/
+  })
+}
+
+function boot() {
   requestIdleCallback( () => {
     scrollListener()
-    fixHrefTarget(document);
   })
 
   requestAnimationFrame( () => {
-    // Page loaded animation
-    document.body.classList.add('page-loaded');
-
     // Page transition loader
     Barba.Pjax.Dom.wrapperId = 'page-trans-wrapper';
     Barba.Pjax.Dom.containerClass = 'page-container';
 
-    Barba.Pjax.getTransition = () => (GeneralTransition('fade-in','fade-out', 2000));
+    Barba.Pjax.getTransition = () => (GeneralTransition('fade-in','fade-out', PAGE_LOAD_DURATION ));
     Barba.Pjax.start();
   })
 
@@ -29,7 +39,7 @@ function start() {
                         .filter((t) => { return (t != "" && t != "http:") })
                         .splice(1, 10).join("/")
 
-  /* Specific actions for Specific pages */
+  document.dispatchEvent( new Event('page-loaded') );                  
 }
 
 
@@ -129,4 +139,5 @@ function unlockMail() {
 /* Export */
 window.unlockMail = unlockMail;
 
-document.addEventListener("DOMContentLoaded", start)
+document.addEventListener("DOMContentLoaded", boot)
+document.addEventListener('page-loaded', pageStart);

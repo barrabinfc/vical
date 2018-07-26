@@ -4,7 +4,7 @@ import gutil from "gulp-util";
 import sourcemaps from "gulp-sourcemaps";
 import postcss from "gulp-postcss";
 import cssImport from "postcss-import";
-import cssnext from "postcss-cssnext";
+import cssPreset from "postcss-preset-env";
 import svgInline from "postcss-inline-svg";
 import BrowserSync from "browser-sync";
 import webpack from "webpack";
@@ -27,7 +27,7 @@ gulp.task("css", () => (
     .pipe(sourcemaps.init())
     .pipe(postcss([
       cssImport({from: "./src/css/main.css"}), 
-      cssnext(), 
+      cssPreset({stage: 0}),
       svgInline()]))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("./docs/css"))
