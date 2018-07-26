@@ -1,7 +1,5 @@
 @import "imports/reset.css"; 
 @import "imports/variables.css";
-@import "imports/colors.css";
-@import "imports/rules.css";
 @import "imports/grid.css";
 @import "imports/form.css";
 @import "imports/theme.css";
@@ -18,8 +16,7 @@ html {
 }
 
 body {
-  @apply --paragraph-font;
-  /*font-family: var(--paragraph-font);*/
+  font-family: var(--paragraph-font);
   margin: 0;
   overflow-wrap: break-word;
   max-width: 100vw;

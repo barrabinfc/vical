@@ -18,7 +18,7 @@ code, pre, pre code {
   font-weight: 100;
   text-shadow: none;
   margin: 1.75rem 0;
-  @apply --code-font; 
+  font-family: var(--code-font);
 }
 
 blockquote { 
@@ -122,7 +122,7 @@ ul.as-flex-table {
       width: 100%;
       line-height: 2em;
       text-transform: uppercase;
-      @apply --code-font;
+      font-family: var(--code-font);
 
       font-size: 1.0rem;
       font-weight: 700;
@@ -149,7 +149,7 @@ ul.featured.bordered {
       display: block;
       margin: 0em;
       padding: 1rem;
-      @apply --hero-font;
+      font-family: var(--hero-font);
       font-weight: bold;
 
       &:hover {
@@ -183,14 +183,17 @@ ul.featured.bordered {
 .w90 { max-width: 90%; }
 .w100 { max-width: 100%; }
 
-.txt\:mask { @apply --text-masked; }
+.txt\:mask { 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .txt\:big  { font-size: 2em; line-height: 1em; }
 .txt\:hero { font-size: 4rem; line-height: 2em; }
 
 .subtitle { color: var(--dark-gray); }
 
-.bg\:primary{ background-color: color( var(--primary) alpha(80%)); }      
-.bg\:second { background-color: color( var(--second) alpha(80%)); }
+.bg\:primary{ background-color: color-mod( var(--primary) alpha(80%)); }      
+.bg\:second { background-color: color-mod( var(--second) alpha(80%)); }
 
 .color-high { color: var(--primary); }
 .color-low { color: var(--second); }
@@ -199,7 +202,7 @@ ul.featured.bordered {
 .rounded { border-radius: 2em; }
 
 .bordered { border: 1px solid;  }
-.hero { @apply --hero-font; }
+.hero { font-family: var(--hero-font); }
 
 /* Apply margin-top iof header size */
 .\:header-margin {
@@ -211,7 +214,7 @@ ul.featured.bordered {
  * General components
  */
 .btn {
-  @apply --transition;
+  transition: all var(--trans-time) var(--trans-easing);
   
   color: var(--white);
   padding: var(--gutter) calc(2*var(--gutter));
@@ -256,7 +259,6 @@ header[role="header"] {
 
   perspective: 800px;
 
-  @apply --transition;
   transition-duration: 0.65s;
 
   /* Shrink menu*/
@@ -264,9 +266,9 @@ header[role="header"] {
 
   & .logo-container {
     flex: 0.2;
+    font-family: var(--hero-font);
 
     & .logo {
-      @apply --hero-font;
       font-size: 2.0rem;
       font-weight: bold;
 
@@ -296,7 +298,7 @@ header[role="header"] {
       vertical-align: baseline;
       z-index: 10;
 
-      @apply --hero-font;
+      font-family: inherit;
       font-size: calc( var(--perfect-fifth) * 1rem);
       font-weight: normal;
       text-align: center;
@@ -304,14 +306,13 @@ header[role="header"] {
       color: inherit;
 
       padding: 1rem;
+
       /** Avoid last link to have a right margin, 
           making it container alignment easier */
       &:last-child { margin-right: 0; }
       
       border: 1px solid transparent;
       margin-bottom: 1rem;
-
-      @apply --transition;
 
       /** Icons */
       & ::before {
@@ -332,8 +333,9 @@ header[role="header"] {
         bottom: 0;
 
         background-color: transparent;
-        @apply --transition;
         transition-duration: 0.35s;
+
+        transition: all var(--trans-time) var(--trans-easing);
       }
 
 
@@ -350,7 +352,7 @@ header[role="header"] {
 
         &::after {
           width: 100%;
-          background-color: color( var(--third) lightness(60%));
+          background-color: color-mod( var(--third) lightness(60%));
         }
       }
       
@@ -490,7 +492,7 @@ footer[role="footer"] {
       -webkit-background-clip: text;
       color: transparent;
       text-shadow: none;
-      background-color: color( var(--black) alpha(50%));
+      background-color: color-mod( var(--black) alpha(50%));
       background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='5' height='5'><rect width='5' height='5' fill='transparent'/> <rect width='1' height='1' fill='#ccc'/></svg>")
     }
 

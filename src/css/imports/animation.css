@@ -1,14 +1,25 @@
+/**
+ * General transition
+ */
+.animated {
+  transition: all var(--trans-time) var(--trans-easing);
+}
+
 @keyframes fade-in {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
-.fade-in { animation: fade-in 2.0s; }
-
 @keyframes fade-out {
   0% { opacity: 1; }
   100% { opacity: 0; }
 }
-.fade-out { animation: fade-out 2.0s; }
+
+
+/**
+ * General animations for page-in and page-out
+ */
+.page-in { animation: fade-in 2.0s; }
+.page-out { animation: fade-out 2.0s; }
 
 
 @keyframes intro {
@@ -28,10 +39,12 @@
   0% { opacity: 0; transform: translateY(50px); }
   100% { opacity: 1; transform: translateY(0px); }
 }
-.page-loaded .appearFromBottom {
+.appearFromBottom {
   animation: appearFromBottom 0.55s var(--trans-easing);
   animation-fill-mode: both;
-  animation-play-state: running;
+  animation-play-state: paused;
+  
+  &.\:play { animation-play-state: running; }
 }
 
 
@@ -45,13 +58,12 @@
 
   & > span {
     display: block;
-  }
-}
-
-.page-loaded .appearFromBottomCropped {
-  & > span {
     animation: appearFromBottomCropped 0.55s var(--trans-easing);
     animation-fill-mode: both;  
-    animation-play-state: running;
+    animation-play-state: paused;
+  }
+
+  &.\:play { 
+    & > span { animation-play-state: running; }
   }
 }

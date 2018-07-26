@@ -1,11 +1,10 @@
 /*
  * Apply rules
- */
+ *
 :root {
 
   --hero-font: {
     font-family: 'FuturaStd', sans-serif;
-    /*font-weight: 300;*/
   };
 
   --code-font: {
@@ -29,16 +28,10 @@
     background: var(--black) url("../images/grid-24x16.png") repeat;
   };
   
-  /*
-   * Animation/transition
-   */
   --transition: {
     transition: var(--trans-props) var(--trans-time) var(--trans-easing);
   }
   
-  /*
-   * Useful rules
-   */
   --nostyle { all: unset; }
   --abs {
     position: absolute;
@@ -70,10 +63,10 @@
   --grid-around { justify-content: space-around; }  
   --grid-between { justify-content: space-between; }
   
-  /* absolute center */
   --abscenter {
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
   }
 }
+*/

@@ -24,11 +24,6 @@
 @import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Roboto:900|Open+Sans');
 */
 
-:root {
-  --linescale: calc(5/4);
-  --typoscale: calc(3/2);   /* perfect fifth */
-}
-
 
 h1 { 
   --size:  calc(1rem * 2.33 * var(--typoscale));
