@@ -7,6 +7,8 @@
 @import "imports/theme.css";
 @import "imports/animation.css";
 
+@import "sections/about.css";
+
 html {
   font-size: var(--base-fontsize, 16px);
   line-height: var(--line-height, 16px);
@@ -55,11 +57,10 @@ body {
   
 
 
-
 /**
  * Apps Single Page
  */
-body.apps .project__info {
+.apps .project__info {
     text-align: center;
     
     & .project__logo {
@@ -221,9 +222,9 @@ body.apps .project__info {
 /**
  * Work pages
  */
-body.work ,
-body.about,
-body.home {
+.work ,
+.about,
+.home {
 
   /* 2 columns */
   & section.work {
@@ -307,130 +308,6 @@ body.home {
     /* Footer links at bottom */
     & footer {
       margin-top: auto;
-    }
-  }
-}
-
- 
- 
- /**
-  * About Section
-  */
-body.about {
-  & section.about {
-    @apply --paragraph-font;
-    perspective: 800px;
-
-    display: flex;
-    flex-direction: column;
-    
-    width: 100%;
-    height: 100%;
-    
-    /* Text */
-    & > .title { 
-      @apply --hero-font;
-      font-weight: 100;
-      padding-top: calc(2*var(--pad-big));
-
-      color: inherit;
-      font-size: 5.0rem;
-      line-height: 5rem;
-       
-      margin: 0 auto;
-    }
-
-    & .intro {
-      padding: calc( 2* var(--pad-big)) 0;
-      
-      display: flex;
-      width: 80%;
-      margin: 0 auto;
-      align-items: center;
-
-      & .intro_image {
-        flex: 0.3;
-        display: flex;
-        align-items: center;
-
-        & > img { 
-          width: 80%;
-          margin: 0 auto; 
-          border-radius: 50%; overflow: hidden;
-          border: 1px solid var(--gray); 
-        }
-      }
-      & .intro_lead {
-        flex: 0.7;
-        padding: 0; margin: 0;
-        font-weight: 100;
-        font-size: 2rem;
-        line-height: 2.5rem; 
-
-        animation-delay: 0.25s;
-      }
-
-    }
-
-    & .more {
-      & .summary {
-        width: 75%;
-        margin: 0 auto;
-
-        & .title { 
-          text-transform: uppercase;
-          padding: calc( 2 * var(--gutter) ) 0;
-        }
-
-        & p { margin: 0; padding: 0; }
-
-        & .txt { line-height: 1.7em; }
-        
-        & .first-column { flex: 0.5; }
-        & .second-column { flex: 0.5; }
-        
-        & .education { 
-          & li {
-            padding-bottom: calc( 2 * var(--gutter));
-          }
-        }
-      }
-    
-      /* Contact */
-      & .contact {      
-        perspective: 800px;
-        padding: calc( 2* var(--pad-big)) 0;
-
-        & > a { 
-          display: block; 
-          height: 288px;
-          box-shadow: var(--shadow-card);
-          background-image: url(../images/old-computer.jpg);
-          background-size: auto;
-          background-position: center;
-          background-repeat: no-repeat;
-
-          border-radius: 15px;
-          cursor: pointer;
-        }
-              
-        & .label {
-          @apply --hero-font;
-          font-size: 5em;
-          font-weight: bold;
-          text-align: center;
-          text-shadow: var(--shadow-card); /*0 0 50px #000;*/
-
-          color: #fff;
-          
-          /* center */
-          height: inherit;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-          align-items: stretch;
-        }
-      }
     }
   }
 }

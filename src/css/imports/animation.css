@@ -28,28 +28,30 @@
   0% { opacity: 0; transform: translateY(50px); }
   100% { opacity: 1; transform: translateY(0px); }
 }
-.appearFromBottom {
+.page-loaded .appearFromBottom {
   animation: appearFromBottom 0.55s var(--trans-easing);
   animation-fill-mode: both;
-  animation-play-state: paused;
-}
-body.page-loaded .appearFromBottom {
   animation-play-state: running;
 }
 
 
 
+@keyframes appearFromBottomCropped {
+  0% { transform: translateY(150px); }
+  100% { transform: translateY(0px); }
+}
 .appearFromBottomCropped {
   overflow: hidden;
 
   & > span {
     display: block;
-    transform: translateY(150px);
-    transition: transform 0.55s var(--trans-easing-out);
   }
 }
-body.page-loaded .appearFromBottomCropped {
+
+.page-loaded .appearFromBottomCropped {
   & > span {
-      transform: translateY(0px);
+    animation: appearFromBottomCropped 0.55s var(--trans-easing);
+    animation-fill-mode: both;  
+    animation-play-state: running;
   }
 }

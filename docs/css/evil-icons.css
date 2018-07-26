@@ -12,7 +12,8 @@
   background: inherit;
   fill: inherit;
   pointer-events: none; /* Do not catch pointer events */
-  transform: translateX(0); /* Crisp fix for non-retina */
+  -webkit-transform: translateX(0);
+          transform: translateX(0); /* Crisp fix for non-retina */
   -ms-transform: translate(0.5px, -0.3px); /* Crisp fix for IE */
 }
 .icon--m {
@@ -41,10 +42,12 @@
 }
 .icon--ei-spinner .icon__spinner,
 .icon--ei-spinner-2 .icon__spinner {
-  animation: spin 1s steps(12) infinite;
+  -webkit-animation: spin 1s steps(12) infinite;
+          animation: spin 1s steps(12) infinite;
 }
 .icon--ei-spinner-3 .icon__spinner {
-  animation: spin 1.5s linear infinite;
+  -webkit-animation: spin 1.5s linear infinite;
+          animation: spin 1.5s linear infinite;
 }
 
 /*# sourceMappingURL=evil-icons.css.map */

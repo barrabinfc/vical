@@ -25,32 +25,27 @@
     <link rel="stylesheet" href="/css/typography.css">
     
     
-  </head>
-  {{ $colorscheme := .Params.colorscheme | default "dark" }}
+  </head>  
   {{ $layout := .Params.layout | default "" }}
-  {{ $page := .Kind | default "page" }}
-  {{ $section := .Section | default "" }}
-  {{ $menuModifier := .Params.menuModifier | default "" }}
-  <body class="{{ $colorscheme }} {{ $page }} {{ $section }} {{ $layout }}">
+  <body class="{{ $layout }}">
 
+    {{ $menuModifier := .Params.menuModifier | default "" }}
     <header role="header" class="{{ $menuModifier }}" id="menu">
       {{ block "header" .}}{{ end }}
     </header>
-    
+
+    {{ $page := .Kind | default "page" }}
+    {{ $section := .Section | default "" }}  
     <main id="page-trans-wrapper">
-      <div class="page-container">
+      <div class="page-container {{ $page }} {{ $section }}">
         {{ block "main" .}}{{ end }}
       </div>
     </main>
     <footer role="footer">{{ block "footer" .}}{{ end }}</footer>
 
     <script src="/js/app.js" defer></script>
-    <script src="/js/vendor/evil-icons.js" defer></script>
-    <script type="text/javascript" defer>
-      document.addEventListener('DOMContentLoaded', function(){
-        window.unlockMail();
-      } );
-    </script>
+    <script src="/js/vendor/evil-icons.js" defer></script>    
+    <script type="text/javascript" src="/js/vendor/vanilla-tilt.babel.min.js" async></script> 
   
   </body>
 </html>

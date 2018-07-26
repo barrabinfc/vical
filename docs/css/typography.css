@@ -21,59 +21,67 @@
 /*
 @import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Roboto:900|Open+Sans');
 */
-:root {   /* perfect fifth */
+:root {
+  --linescale: calc(5/4);
+  --typoscale: calc(3/2);   /* perfect fifth */
 }
 h1 { 
-  font-size: 55.92px; 
-  font-size: 3.495rem;    
-  line-height: 55.92px;    
-  line-height: 3.495rem;
-  margin: 0;
+  --size:  calc(1rem * 2.33 * calc(3/2)); 
+  --size:  calc(1rem * 2.33 * var(--typoscale));
+  
+  font-size: var(--size);
+  
+  font-size: var(--size);    
+  line-height: var(--size);    
+  line-height: var(--size);
+  margin: var(--size);
+  margin: var(--size);
 }
 h2 { 
-  font-size: 48px; 
-  font-size: 3rem;       
-  line-height: 48px;       
-  line-height: 3rem;
+  font-size: calc(1rem * 2 * calc(3/2)); 
+  font-size: calc(1rem * 2 * var(--typoscale));       
+  line-height: calc(1rem * 2 * calc(3/2));       
+  line-height: calc(1rem * 2 * var(--typoscale));
   margin: 0;
 }
 h3 { 
-  font-size: 39.84px; 
-  font-size: 2.49rem;    
-  line-height: 39.84px;    
-  line-height: 2.49rem;
+  font-size: calc(1rem * 1.66 * calc(3/2)); 
+  font-size: calc(1rem * 1.66 * var(--typoscale));    
+  line-height: calc(1rem * 1.66 * calc(3/2));    
+  line-height: calc(1rem * 1.66 * var(--typoscale));
   margin: 0;
 }
 h4 {
-  font-size: 31.92px;
-  font-size: 1.995rem;
-  line-height: 31.92px;
-  line-height: 1.995rem;  
+  font-size: calc(1rem * 1.33 * calc(3/2));
+  font-size: calc(1rem * 1.33 * var(--typoscale));
+  line-height: calc(1rem * 1.33 * calc(3/2));
+  line-height: calc(1rem * 1.33 * var(--typoscale));  
   margin: 0;
 
 }
 h5 {
-  font-size: 24px;
-  font-size: 1.5rem;
-  line-height: 24px;
-  line-height: 1.5rem;
+  font-size: calc(1rem * 1 * calc(3/2));
+  font-size: calc(1rem * 1 * var(--typoscale));
+  line-height: calc(1rem * 1 * calc(3/2));
+  line-height: calc(1rem * 1 * var(--typoscale));
   margin: 0;
 }
 h6 {
-  font-size: 18.48px;
-  font-size: 1.155rem;
-  line-height: 18.48px;
-  line-height: 1.155rem; 
+  font-size: calc(1rem * .77 * calc(3/2));
+  font-size: calc(1rem * .77 * var(--typoscale));
+  line-height: calc(1rem * .77 * calc(3/2));
+  line-height: calc(1rem * .77 * var(--typoscale)); 
   margin: 0.25em;
 }
 p { 
   margin: 0 0 1.5em;
+  line-height: inherit;
 }
 .font-big {
-  font-size: 39.84px;
-  font-size: 2.49rem;    
-  line-height: 39.84px;    
-  line-height: 2.49rem;
+  font-size: calc(1rem * 1.66 * calc(3/2));
+  font-size: calc(1rem * 1.66 * var(--typoscale));    
+  line-height: calc(1rem * 1.66 * calc(3/2));    
+  line-height: calc(1rem * 1.66 * var(--typoscale));
 }
 
 /*# sourceMappingURL=typography.css.map */

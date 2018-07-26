@@ -31,10 +31,13 @@
 
 
 h1 { 
-  font-size: calc(1rem * 2.33 * var(--typoscale));    
-  line-height: calc(1rem * 2.33 * var(--typoscale));
-  margin: 0;
+  --size:  calc(1rem * 2.33 * var(--typoscale));
+  
+  font-size: var(--size);    
+  line-height: var(--size);
+  margin: var(--size);
 }
+
 h2 { 
   font-size: calc(1rem * 2 * var(--typoscale));       
   line-height: calc(1rem * 2 * var(--typoscale));
@@ -65,6 +68,7 @@ h6 {
 
 p { 
   margin: 0 0 1.5em;
+  line-height: inherit;
 }
 
 .font-big {
