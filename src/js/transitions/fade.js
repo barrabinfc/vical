@@ -1,6 +1,6 @@
 let Barba = require('barba.js');
 
-export let GeneralTransition = (InClass = 'fade-in', OutClass = 'fade-out', duration = 1500) =>
+export let GeneralTransition = (InClass = 'page-in', OutClass = 'page-out', duration = 1500) =>
     Barba.BaseTransition.extend({
         start: function () {
             /**
@@ -11,11 +11,11 @@ export let GeneralTransition = (InClass = 'fade-in', OutClass = 'fade-out', dura
 
             // As soon the loading is finished and the old page is faded out, let's fade the new page
             Promise
-                .all([this.newContainerLoading, this.fadeOut.bind(this)()])
-                .then(this.fadeIn.bind(this));
+                .all([this.newContainerLoading, this.pageOut.bind(this)()])
+                .then(this.pageIn.bind(this));
         },
 
-        fadeOut: function() {
+        pageOut: function() {
             /**
              * WHAAAT
              * this.oldContainer is the HTMLElement of the old Container
@@ -31,7 +31,7 @@ export let GeneralTransition = (InClass = 'fade-in', OutClass = 'fade-out', dura
             });
         },
 
-        fadeIn: function() {
+        pageIn: function() {
             /**
              * this.newContainer is the HTMLElement of the new Container
              * At this stage newContainer is on the DOM (inside our #barba-container and with visibility: hidden)

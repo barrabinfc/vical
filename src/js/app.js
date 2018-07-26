@@ -30,7 +30,7 @@ function boot() {
     Barba.Pjax.Dom.wrapperId = 'page-trans-wrapper';
     Barba.Pjax.Dom.containerClass = 'page-container';
 
-    Barba.Pjax.getTransition = () => (GeneralTransition('fade-in','fade-out', PAGE_LOAD_DURATION ));
+    Barba.Pjax.getTransition = () => (GeneralTransition('page-in','page-out', PAGE_LOAD_DURATION ));
     Barba.Pjax.start();
   })
 

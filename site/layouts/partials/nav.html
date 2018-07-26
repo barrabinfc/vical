@@ -1,27 +1,16 @@
 {{ $currentNode := . }}
 {{ $navModifier := .Scratch.Get "navModifier" }}
-<nav class="menu {{ $navModifier }}">
+<nav class="menu {{ $navModifier }} animated">
 
   {{ range .Site.Menus.main }}
     {{ $is  := $currentNode.IsMenuCurrent "main" . }}
     {{ $has := $currentNode.HasMenuCurrent "main" . }}
 
-    <a class="menu-header hoverable
+    <a class="menu-header animated
              {{ if $has }}selected{{end}}"
         href="{{ .URL }}"
         id="menu-{{ .Identifier }}">
-      {{ if .HasChildren }}
         {{ trim .Name " "}}
-        <!-- <a href="#submenu-{{ trim .Name " "}}" class="title">{{trim .Name " "}}</a> 
-        <ul class="sub-menu" id="submenu-{{ trim .Name " " }}">
-        {{ range .Children }}
-            <li>→ <a href="{{.URL}}" class="default"> {{ .Name }} </a> </li>
-        {{ end }}
-        </ul>
-      -->
-      {{ else }}
-        {{ trim .Name " "}}
-      {{ end }}
       </a>
   {{ end }}
 

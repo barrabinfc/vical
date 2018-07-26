@@ -11,18 +11,24 @@
   --back:  var(--white);
 
   --gray:  #e9e9e9;
-  --dark-gray: color( var(--gray) l(50%));
-  --rly-dark-gray: color( var(--gray) l(20%));
+  --dark-gray: color-mod( var(--gray) l(50%));
+  --rly-dark-gray: color-mod( var(--gray) l(20%));
   
   --primary:     #f05553;
   --second:      #0098d8;
   --third:       #0b3536;
   
   /* typography scale */
+  --hero-font: 'FuturaStd', sans-serif;
+  --code-font: 'Share Tech Mono', monospace;
+  --paragraph-font: system-ui;
+
   --base-fontsize: 16px;
   --line-height:   calc( 1rem * var(--major-third) );
+ 
   --perfect-fifth: calc(3/2); 
   --major-third:   calc(5/4);
+  
   --typoscale: var(--perfect-fifth);
   --linescale: var(--major-third);
     
@@ -42,12 +48,12 @@
 
   
   /* Animations/transitions */
-  --trans-props:    all;
-  --trans-time:     0.15s;
-  --trans-easing:   cubic-bezier(0.52, 0.01, 0.16, 1); /* Expo ease-out */
+  --trans-expo-out:   cubic-bezier(0.52, 0.01, 0.16, 1); /* Expo ease-out */
   --trans-easing-elastic: cubic-bezier(.10,1.28,.17,1.41); /* Elastic */
   --trans-easing-out:  cubic-bezier(0.000, 1.000, 0.725, 1.000);
-  
+  --trans-easing: var(--trans-easing-out);
+
+  --trans-time:     0.25s;  
   --trans-time-slow: 0.85s;
   
   /* Reactive variables */

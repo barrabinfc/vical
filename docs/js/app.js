@@ -86,7 +86,7 @@
 	    Barba.Pjax.Dom.containerClass = 'page-container';
 
 	    Barba.Pjax.getTransition = function () {
-	      return (0, _fade.GeneralTransition)('fade-in', 'fade-out', PAGE_LOAD_DURATION);
+	      return (0, _fade.GeneralTransition)('page-in', 'page-out', PAGE_LOAD_DURATION);
 	    };
 	    Barba.Pjax.start();
 	  });
@@ -215,8 +215,8 @@
 	var Barba = __webpack_require__(3);
 
 	var GeneralTransition = exports.GeneralTransition = function GeneralTransition() {
-	    var InClass = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'fade-in';
-	    var OutClass = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'fade-out';
+	    var InClass = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'page-in';
+	    var OutClass = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'page-out';
 	    var duration = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1500;
 	    return Barba.BaseTransition.extend({
 	        start: function start() {
@@ -227,10 +227,10 @@
 	             */
 
 	            // As soon the loading is finished and the old page is faded out, let's fade the new page
-	            Promise.all([this.newContainerLoading, this.fadeOut.bind(this)()]).then(this.fadeIn.bind(this));
+	            Promise.all([this.newContainerLoading, this.pageOut.bind(this)()]).then(this.pageIn.bind(this));
 	        },
 
-	        fadeOut: function fadeOut() {
+	        pageOut: function pageOut() {
 	            /**
 	             * WHAAAT
 	             * this.oldContainer is the HTMLElement of the old Container
@@ -248,7 +248,7 @@
 	            });
 	        },
 
-	        fadeIn: function fadeIn() {
+	        pageIn: function pageIn() {
 	            var _this2 = this;
 
 	            /**

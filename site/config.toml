@@ -1,6 +1,6 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "« vicale »"
+title = "vicale"
 paginate = 5
 
 pluralizelisttitles =false
@@ -17,7 +17,16 @@ footnoteReturnLinkContents = "↩"
   show_menu = true
   powered_by = false
   images = []
-  theme_variant = ""
+
+[params.colors]
+  black = "#000"
+  white = "#fff"
+  gray  = "#e9e9e9"
+  dark-gray =  "hsl(0, 0%, 50%)"
+  rly-dark_gray = "hsl(0, 0%, 20%)"
+  primary = "#f05553"
+  second = "#0098d8"
+  third = "#0b3536"  
   
 [[menu.main]]
   name = "work"
