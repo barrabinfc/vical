@@ -19,14 +19,14 @@
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; 
     font-display: swap;
     overflow-x: hidden;
+    overflow-y: overlay;
   }
   iframe,embed,img,video { max-width: 100%; }
   
-  a,p,button { margin: 1em; padding: 0.5em; }
-  blockquote { width: 100%; margin: 1em auto; font-size: 2em; line-height: 1.0em; text-align: center; }
-  blockquote > p { margin: 0; }
+  a,p,button { margin: 0; padding: 0; }
+  blockquote { width: 100%; margin: 1em auto; line-height: 1.0em; }
   
-  body>header { position: sticky; top: 0; width: 100%; }
+  body>header { position: absolute; top: 0; width: 100%; }
   main > section {  position: relative; width: 100%; min-height: 100vh; 
                     display: flex; flex-direction: column; justify-content: center; }
   main > section > article {
@@ -223,7 +223,7 @@
       </div>
     </main>
     <footer role="footer">
-  <ul class="grid :horizontal :middle">
+  <ul class="grid :horizontal :middle clean">
     <li>
         <div class="title">Contact</div>
         <a href="" role="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">

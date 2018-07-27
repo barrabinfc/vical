@@ -61,17 +61,31 @@
 	var docStyle = document.documentElement.style;
 	var pointerClick = document.ontouchstart === undefined ? "click" : "touchstart";
 
-	var PAGE_LOAD_DURATION = 2000;
+	var PAGE_LOAD_DURATION = 750;
 
 	function pageStart() {
 	  requestIdleCallback(function () {
 	    window.unlockMail();
 	    fixHrefTarget(document);
 
-	    // Page loaded animation
-	    var bodyClasses = document.body.classList;
+	    var tiltedElements = document.querySelectorAll('[data-tilt]');
+	    Array.from(tiltedElements).map(function (el) {
+	      if (!el.vanillaTilt) VanillaTilt.init(el);
+	    });
+
 	    /*bodyClasses.remove('page-loaded');
 	    bodyClasses.add('page-loaded');*/
+	  });
+	}
+
+	function pageDestroy() {
+	  var tiltedElements = document.querySelectorAll('[data-tilt]');
+
+	  requestIdleCallback(function () {
+	    Array.from(tiltedElements).map(function (el) {
+	      console.log('Destroy: ', el);
+	      el.vanillaTilt.destroy();
+	    });
 	  });
 	}
 
@@ -96,7 +110,7 @@
 	    return t != "" && t != "http:";
 	  }).splice(1, 10).join("/");
 
-	  document.dispatchEvent(new Event('page-loaded'));
+	  document.dispatchEvent(new Event('page-in'));
 	}
 
 	/*
@@ -201,7 +215,8 @@
 	window.unlockMail = unlockMail;
 
 	document.addEventListener("DOMContentLoaded", boot);
-	document.addEventListener('page-loaded', pageStart);
+	document.addEventListener('page-in', pageStart);
+	document.addEventListener('page-out', pageDestroy);
 
 /***/ }),
 /* 2 */
@@ -227,7 +242,10 @@
 	             */
 
 	            // As soon the loading is finished and the old page is faded out, let's fade the new page
-	            Promise.all([this.newContainerLoading, this.pageOut.bind(this)()]).then(this.pageIn.bind(this));
+	            document.dispatchEvent(new Event('page-out'));
+	            Promise.all([this.newContainerLoading, this.pageOut.bind(this)()]).then(this.pageIn.bind(this)).then(function () {
+	                return document.dispatchEvent(new Event('page-in'));
+	            });
 	        },
 
 	        pageOut: function pageOut() {
@@ -241,6 +259,9 @@
 	                requestAnimationFrame(function () {
 	                    el.classList.remove(InClass);
 	                    el.classList.add(OutClass);
+
+	                    // hide scrollbar in transition
+	                    document.body.style['overflow-y'] = 'hidden';
 	                });
 	                setTimeout(function () {
 	                    return resolve();
@@ -261,12 +282,16 @@
 	            var el = this.newContainer;
 
 	            this.oldContainer.style.visibility = 'hidden';
+	            this.oldContainer.style.display = 'none';
 	            el.style.visibility = 'visible';
 
 	            requestAnimationFrame(function () {
 	                el.classList.add(InClass);
 	            });
 	            setTimeout(function () {
+	                // show scrollbar
+	                document.body.style['overflow-y'] = 'overlay';
+
 	                _this2.done();
 	            }, duration);
 	        }

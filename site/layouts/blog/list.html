@@ -8,9 +8,41 @@
   {{ partial "nav" . }}
 {{ end }}
 {{ define "main" }}
-  <div id="content-featured" class="featured">
-    {{- range first 10 .Data.Pages }}
-      <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
-    {{- end }} 
-  </div>
+  <section>
+    <article class="container grid :vertical w100">
+      <section class="post-list">
+        <h1 class="title appearFromBottomCropped :play"><span>Blog</span></h1>
+        <ol class="posts">
+        {{- range first 10 .Data.Pages }}
+          <li>
+            <label>
+              <div class="date">
+                {{ if eq .PublishDate.Year 1 }}
+                  
+                {{ else }}
+                  {{ .PublishDate.Month }}
+                  {{ .PublishDate.Day }},
+                  {{ .PublishDate.Year }}
+                {{ end }}
+              </div>
+              <div class="tags">
+                {{ if isset .Params "tags"}}
+                  {{- range first 5 .Params.tags }}
+                    <span>{{.}}</span>
+                  {{- end}}
+                {{ end }}
+              </div>
+            </label>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </li>
+        {{- end }} 
+        </ul>
+      </section>
+    </article> 
+  </section>
+{{ end }}
+
+{{ define "footer"}}
+  {{ partial "footer_links" . }}
+  {{ partial "style_invert" .}}
 {{ end }}

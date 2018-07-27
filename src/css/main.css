@@ -6,6 +6,7 @@
 @import "imports/animation.css";
 
 @import "sections/about.css";
+@import "sections/blog.css";
 
 html {
   font-size: var(--base-fontsize, 16px);
@@ -20,20 +21,11 @@ body {
   margin: 0;
   overflow-wrap: break-word;
   max-width: 100vw;
-  min-height: 100vh;
-  
-  /* Background grid   
-  &:after {
-    will-change: transform;
-    @apply --empty;
-    @apply --grid-background;
-    position: fixed;
-  }
-  */
+  min-height: 100vh;  
 }
 
 ::selection {
-  background-color: var(--primary); /* WebKit/Blink Browsers */
+  background-color: var(--primary);
 }
 
 
@@ -82,7 +74,7 @@ body {
           width: 100%;
           line-height: 2em;
           text-transform: uppercase;
-          @apply --code-font;
+          font-family: var(--code-font);
           font-size: 1.0rem;
           font-weight: 700;
         }
@@ -118,10 +110,10 @@ body {
   }
 
   & .title {
-    @apply --hero-font;
+    font-family: var(--hero-font);
     text-align: center;
     font-weight: 100;
-    padding-top: calc(2*var(--pad-big));
+    padding-top: calc(2*var(--pad-medium));
 
     color: inherit;
     font-size: 5.0rem; 
@@ -131,7 +123,7 @@ body {
 
   /** 3 per row **/
   & .list-cards {
-    padding: calc( 2* var(--pad-big)) 0;    
+    padding: calc( 2* var(--pad-medium)) 0;    
     animation-delay: 0.25s; 
 
     & > .cell {
@@ -148,7 +140,7 @@ body {
    * -repeat-
    */
   & .list-isotope {
-    padding: calc( 2* var(--pad-big)) 0;    
+    padding: calc( 2* var(--pad-medium)) 0;    
     animation-delay: 0.25s;
     justify-content: space-between; 
 
@@ -181,7 +173,7 @@ body {
       box-shadow: var(--shadow-card);
       background-color: #000;
 
-      margin: 0 auto 2rem auto;
+      margin: 0 auto var(--pad-big) auto;
       padding: 0rem;
 
       transition: background-color 0.35s ease-out;
@@ -203,7 +195,8 @@ body {
         height: 100%;
         object-fit: cover;
         opacity: 0.7;
-        transition: all 0.5s ease-out;
+        transition: filter 0.35s ease-out,
+                    opacity 0.35s ease-out;
         filter: contrast(90%);
       }
           
@@ -250,7 +243,7 @@ body {
       position: absolute;
       width: 100%;
       height: 100vh;
-      @apply --grid;
+      display: flex;
       
       /** See more */
       & .see-more {
@@ -258,7 +251,7 @@ body {
         align-self: flex-end;
         margin: 1em auto;
 
-        @apply --hero-font;
+        font-family: var(--hero-font);
         text-transform: none;
       }
     }
@@ -267,8 +260,8 @@ body {
   /* Right info area */
   & .info {
     position: sticky;
-    top: var(--header-height);
-    right: 0px;
+    top: 0;
+    width: calc(100% - 392px);
     width: 392px;
     min-height: calc( 100vh - var(--header-height));
     padding: var(--pad-medium) var(--pad-big);
@@ -283,7 +276,7 @@ body {
       
       & h2 {
         display: block;
-        @apply --hero-font;
+        font-family: var(--hero-font);
         text-transform: uppercase;
         margin: 0;
       }
@@ -293,8 +286,7 @@ body {
     & .description {
       margin-top: var(--pad-big);
       & p { 
-        @apply --code-font; 
-        margin: 0 0 var(--line-height) 0; padding: 0;
+        padding: 0;
       }
     }
 

@@ -1,30 +1,35 @@
 {{ define "header" }}
+<div class="logo-container">
   {{ partial "logo" . }}
-  {{ partial "nav" . }}
-{{ end }}
+  <a href="#menu" class="menu-close">
+    <svg class="icon__cnt">
+      <use xlink:href="#ei-close-icon"></use>
+    </svg>
+  </a>
+</div>
+{{ partial "nav" . }} 
+{{ end }} 
+
 {{ define "main" }}
-  <section class="post">
-    {{ $has_feature_klass  := .Params.featured_image | default "" }}
-    {{ if .Params.featured_image }}
-      <article id="post__showcase" class="container grid :vertical :middle :around">
-        <picture>
-          {{ with .Params.featured_image }}
-            <img src="{{ . }}">
-          {{ end }}
-        </picture>
-        <div class="headline">
-          <h1 class="title">{{ safeHTML .Title }}</h1>
-          <h3 class="subtitle">{{ .Params.subtitle }}</h3>
-        </div>
-      </article>
-    {{ end }}
-    <article id="post__body" class="container grid :vertical :around {{$has_feature_klass}}">
-      {{ .Content }}
-    </article>
-  </section>
-{{ end }}
+<section class="post">
+  {{ $featured := .Page.Resources.GetMatch "featured" }} {{ if $featured }}
+  <article id="post__showcase" class="featured">
+    <picture>
+      <img src="{{ $featured.Permalink }}">
+    </picture>
+    <div class="headline {{ $featured.Params.colorscheme }}">
+      <h1 class="title">{{ safeHTML .Title }}</h1>
+      <h3 class="subtitle">{{ .Params.subtitle }}</h3>
+    </div>
+  </article>
+  {{ end }}
+  <article id="post__body" class="container grid :vertical :around">
+    {{ .Content }}
+  </article>
+</section>
+{{ end }} 
 
-
-{{ define "footer"}}
-  {{ partial "style_invert" .}}
+{{ define "footer"}} 
+{{ partial "footer_links" . }} 
+{{ partial "style_invert" .}} 
 {{ end }}

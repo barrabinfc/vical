@@ -16,6 +16,8 @@ look like:
   * that one
   * the other one
 
+<button class="btn">Example</button>
+
 Note that --- not considering the asterisk --- the actual text
 content starts at 4-columns in.
 

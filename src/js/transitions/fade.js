@@ -10,9 +10,11 @@ export let GeneralTransition = (InClass = 'page-in', OutClass = 'page-out', dura
              */
 
             // As soon the loading is finished and the old page is faded out, let's fade the new page
+            document.dispatchEvent( new Event('page-out'));
             Promise
                 .all([this.newContainerLoading, this.pageOut.bind(this)()])
-                .then(this.pageIn.bind(this));
+                .then(this.pageIn.bind(this))
+                .then( () => document.dispatchEvent(new Event('page-in')))
         },
 
         pageOut: function() {
@@ -26,6 +28,9 @@ export let GeneralTransition = (InClass = 'page-in', OutClass = 'page-out', dura
                 requestAnimationFrame(() => {
                     el.classList.remove(InClass);
                     el.classList.add(OutClass);
+
+                    // hide scrollbar in transition
+                    document.body.style['overflow-y'] = 'hidden';
                 })
                 setTimeout(() => (resolve()), duration);
             });
@@ -41,13 +46,18 @@ export let GeneralTransition = (InClass = 'page-in', OutClass = 'page-out', dura
             var _this = this;
             var el = this.newContainer;
 
+            
             this.oldContainer.style.visibility = 'hidden';
+            this.oldContainer.style.display = 'none';
             el.style.visibility = 'visible';
             
             requestAnimationFrame(() => {
                 el.classList.add(InClass);
             })
             setTimeout(() => {
+                // show scrollbar
+                document.body.style['overflow-y'] = 'overlay';
+                
                 this.done();
             }, duration);
         },
