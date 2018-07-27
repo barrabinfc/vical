@@ -2,7 +2,10 @@
  * General transition
  */
 .animated {
-  transition: all var(--trans-time) var(--trans-easing);
+  transition: opacity var(--trans-time) var(--trans-easing),
+              color var(--trans-time) var(--trans-easing),
+              background-color var(--trans-time) var(--trans-easing),
+              transform var(--trans-time) var(--trans-easing-elastic);  
 }
 
 @keyframes fade-in {
@@ -18,8 +21,8 @@
 /**
  * General animations for page-in and page-out
  */
-.page-in { animation: fade-in 2.0s; }
-.page-out { animation: fade-out 2.0s; }
+.page-in { animation: fade-in .750s ease-out; animation-fill-mode: both; }
+.page-out { animation: fade-out .750s ease-in; animation-fill-mode: both; }
 
 
 @keyframes intro {

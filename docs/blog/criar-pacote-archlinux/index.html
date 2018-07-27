@@ -1,0 +1,387 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Como criar um pacote para &lt;b&gt;archlinux&lt;/b&gt;</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+      <meta name="description" content="Criando pacotes para gerenciador pacman">
+    
+  
+    <style>
+  *, *::after , *::before { box-sizing: border-box; }
+  html,body { margin: 0; padding: 0; }
+  body { 
+    background-color: #fff; 
+    color: #0f0f0f; 
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; 
+    font-display: swap;
+    overflow-x: hidden;
+    overflow-y: overlay;
+  }
+  iframe,embed,img,video { max-width: 100%; }
+  
+  a,p,button { margin: 0; padding: 0; }
+  blockquote { width: 100%; margin: 1em auto; line-height: 1.0em; }
+  
+  body>header { position: absolute; top: 0; width: 100%; }
+  main > section {  position: relative; width: 100%; min-height: 100vh; 
+                    display: flex; flex-direction: column; justify-content: center; }
+  main > section > article {
+    min-height: 100vh;
+    padding: 2em 2em;
+  }
+  
+  
+  .container { padding: 0 96px; }
+  .container, .container-fluid { margin: 0 auto; }
+  
+  .picture { position: relative; }
+  
+  .txt-center { text-align: center; }
+  .bg\:primary{ background-color: #f58021; }      
+  .bg\:second { background-color: #ae509e; }
+              
+  .grid { display: flex; flex-wrap: wrap; }
+  .grid.\:vertical { flex-direction: column; }
+  .grid.\:between { justify-content: space-between; }
+  .grid.\:around { justify-content: space-around; }
+  .grid.\:middle { align-items: center; }
+  
+  .columns1 { columns: 1; column-gap: 0em; }
+  .columns2 { columns: 2; column-gap: 2em; }
+  .columns3 { columns: 3; column-gap: 1em; }
+  
+  .w10 { max-width: 10%; }
+  .w33 { max-width: 33%; }
+  .w25 { max-width: 25%; }
+  .w40 { max-width: 40%; }
+  .w50 { max-width: 50%; }
+  .w70 { max-width: 70%; }
+  .w90 { max-width: 90%; }
+  .w100 { max-width: 100%; }
+
+  
+  .abscenter {
+    margin: 0;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+    
+    
+    <script type="text/javascript">
+        ['/css/evil-icons.css'].map( function(url) {
+            var link = document.createElement('link');
+            link.rel = "stylesheet";
+            link.href = url;
+            document.head.appendChild(link);
+        });
+    </script>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/typography.css">
+    
+    
+  </head>  
+  
+  <body class="">
+
+    
+    <header role="header" class="" id="menu">
+      
+<div class="logo-container">
+  <a href="/" class="logo no-hover" id="logo">
+  vicale
+</a>
+  <a href="#menu" class="menu-close">
+    <svg class="icon__cnt">
+      <use xlink:href="#ei-close-icon"></use>
+    </svg>
+  </a>
+</div>
+
+
+<nav class="menu  animated">
+
+  
+    
+    
+
+    <a class="menu-header animated
+             "
+        href="/work/"
+        id="menu-work">
+        work
+      </a>
+  
+    
+    
+
+    <a class="menu-header animated
+             "
+        href="/apps/"
+        id="menu-apps">
+        apps
+      </a>
+  
+    
+    
+
+    <a class="menu-header animated
+             "
+        href="/about/me"
+        id="menu-about">
+        About
+      </a>
+  
+    
+    
+
+    <a class="menu-header animated
+             selected"
+        href="/blog/"
+        id="menu-blog">
+        Blog
+      </a>
+  
+
+</nav>
+ 
+
+    </header>
+
+    
+      
+    <main id="page-trans-wrapper">
+      <div class="page-container page blog">
+        
+<section class="post">
+   
+  <article id="post__showcase" class="featured">
+    <picture>
+      <img src="/blog/criar-pacote-archlinux/images/containers-unsplash.jpg">
+    </picture>
+    <div class="headline dark">
+      <h1 class="title">Como criar um pacote para <b>archlinux</b></h1>
+      <h3 class="subtitle"></h3>
+    </div>
+  </article>
+  
+  <article id="post__body" class="container grid :vertical :around">
+    
+
+<p>Como muitas pessoas, eu adoro archlinux e seu gerenciador de pacotes.
+Porém , a quantidade de software no catálogo ainda é inferior ao ubuntu ou Mac,
+e eventualmente você vai ter que instalar software manualmente.</p>
+
+<p>Nesses casos, é muito útil saber como empacotar software para archlinux. Dessa forma,
+ainda podemos gerênciar instalação/atualizações/remoção usando o <code>pacman</code>, sem termos
+software zumbi no sistema operacional.</p>
+
+<p>Nesse artigo, vou mostrar como empacotar o software <code>Giflossy</code>, um otimizador lossy de gifs.</p>
+
+<h3 id="instalando-o-giflossy-manualmente">Instalando o <code>giflossy</code> manualmente</h3>
+
+<p>O primeiro passo, é compilar e instalar o software manualmente. Em sistemas unix, quase todos os softwares
+vem com um ciclo de 3 passos:</p>
+
+<pre><code>$ ./configure
+$ make
+$ make install
+</code></pre>
+
+<p>Estes passos garantem que o software compile e funciona corretamente na sua máquina.
+Antes de criar o pacote, é sempre necessário testar localmente.</p>
+
+<p>No nosso caso, vamos baixar o Giflossy diretamente do <code>git</code> e instalar.
+Como o software foi baixado através do git, não existe o arquivo &lsquo;configure&rsquo;.
+Nestes casos, basta rodar o <code>autoconf</code> com o comando <code>autoreconf -i</code> e prosseguir.</p>
+
+<pre><code>$ git clone https://github.com/pornel/giflossy
+$ cd giflossy
+$ autoreconf -i
+$ ./configure
+$ make
+$ make install
+</code></pre>
+
+<p>O software compilou e instalou sem problemas. Podemos prosseguir e criar o pacote!</p>
+
+<h3 id="criando-o-pacote">Criando o pacote</h3>
+
+<p>Para criar o pacote, criamos um arquivo de receita chamado <code>PKGBUILD</code> . Cada gerenciador
+de pacotes tem seu proprio formato de receita, alguns bastante burocráticos. Felizmente,
+o do <code>pacman</code> é simples, conciso e direto ao ponto.</p>
+
+<p>Após a receita descrita, preparamos o pacote usando o programa <code>makepkg</code>, gerando um <code>zip</code> no formato <code>tar.xz</code>.
+Este zip é o pacote final que é distribuido e instalado diretamente através do pacman: <code>pacman -U &lt;pacote&gt;</code></p>
+
+<p>Para criar o nosso pacote, vamos criar uma nova pasta e copiar o esqueleto padrão do PKGBUILD</p>
+
+<pre><code>mkdir -o ~/Desktop/giflossy-pkg
+cd ~/Desktop/giflossy-pkg
+cp /usr/share/pacman/PKGBUILD.proto PKGBUILD
+</code></pre>
+
+<p>Agora precisamos preencher a receita com as informações do software.
+Os campos devem ser as descrições do software, como nome, licensa e versão.</p>
+
+<p>No nosso caso, nosso arquivo ficou assim</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Maintainer: vical &lt;barrabin.fc@gmail.com&gt;
+</span><span style="color:#75715e"></span>pkgname<span style="color:#f92672">=</span>giflossy
+pkgver<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>.89
+pkgrel<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+epoch<span style="color:#f92672">=</span>
+pkgdesc<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Lossy GIF compressor ( fork of gifsicle)&#34;</span>
+arch<span style="color:#f92672">=(</span><span style="color:#e6db74">&#39;x86_64&#39;</span><span style="color:#f92672">)</span>
+url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://github.com/pornel/giflossy&#34;</span>
+license<span style="color:#f92672">=(</span><span style="color:#e6db74">&#39;GPL&#39;</span><span style="color:#f92672">)</span>
+groups<span style="color:#f92672">=()</span>
+depends<span style="color:#f92672">=()</span>
+makedepends<span style="color:#f92672">=()</span>
+checkdepends<span style="color:#f92672">=()</span>
+optdepends<span style="color:#f92672">=()</span>
+provides<span style="color:#f92672">=()</span>
+conflicts<span style="color:#f92672">=()</span>
+replaces<span style="color:#f92672">=()</span>
+backup<span style="color:#f92672">=()</span>
+options<span style="color:#f92672">=()</span>
+install<span style="color:#f92672">=</span>
+changelog<span style="color:#f92672">=</span>
+source<span style="color:#f92672">=(</span><span style="color:#e6db74">&#34;https://github.com/pornel/giflossy/archive/master.zip&#34;</span><span style="color:#f92672">)</span>
+noextract<span style="color:#f92672">=()</span>
+md5sums<span style="color:#f92672">=(</span><span style="color:#e6db74">&#34;f37da4b0730a38778fa5901a80aa9636&#34;</span><span style="color:#f92672">)</span>
+validpgpkeys<span style="color:#f92672">=()</span>
+
+prepare<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    cd <span style="color:#e6db74">&#34;</span>$pkgname<span style="color:#e6db74">-master&#34;</span>
+    autoreconf -i
+<span style="color:#f92672">}</span>
+
+build<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    cd <span style="color:#e6db74">&#34;</span>$pkgname<span style="color:#e6db74">-master&#34;</span>
+    ./configure --prefix<span style="color:#f92672">=</span>/usr
+    make
+<span style="color:#f92672">}</span>
+
+check<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    cd <span style="color:#e6db74">&#34;</span>$pkgname<span style="color:#e6db74">-master&#34;</span>
+    make -k check
+<span style="color:#f92672">}</span>
+
+package<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    cd <span style="color:#e6db74">&#34;</span>$pkgname<span style="color:#e6db74">-master&#34;</span>
+    make DESTDIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$pkgdir<span style="color:#e6db74">/&#34;</span> install
+<span style="color:#f92672">}</span></code></pre></div>
+<p>Tome atenção com os campos <code>source</code> e <code>md5sum</code>. Assim como as funções <code>prepare()</code>, <code>build()</code> e <code>package()</code>,
+elas são a <code>crux</code> e o segredo do processo.</p>
+
+<blockquote>
+<p><strong>Atenção</strong></p>
+
+<p>Por razões de integridade e segurança, é sempre necessário colocar o md5sum do pacote</p>
+</blockquote>
+
+<pre><code>$ md5sum master.zip
+f37da4b0730a38778fa5901a80aa9636  master.zip
+$
+</code></pre>
+
+<p>Agora vamos preparar o prato!</p>
+
+<pre><code>$ makepkg
+</code></pre>
+
+<p>Podemos preparar a receita quantas vezes for necessário, até ela dar certo. Vamos adaptando o PKGBUILD e repetindo o processo.
+No final, teremos nosso pacote <code>giflossy-1.89-1-x86_64.pkg.tar</code></p>
+
+<h3 id="validando-o-pacote">Validando o pacote</h3>
+
+<p>Embora o pacote esteja pronto, pode ainda conter alguns erros. Um deles, no nosso caso, é que esquecemos de
+declarar uma dependencia. A ferramenta <code>namcap</code> ajuda nesse processo de encontrar erros:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ namcap PKGBUILD
+$ namcap &lt;pacote&gt;.tar.xz
+giflossy E: Dependency libx11 detected and not included <span style="color:#f92672">(</span>libraries <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;usr/lib/libX11.so.6&#39;</span><span style="color:#f92672">]</span> needed in files <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;usr/bin/gifview&#39;</span><span style="color:#f92672">])</span></code></pre></div>
+<p>Ótimo! Podemos voltar ao nosso PKGBUILD e corrigir , declarando as dependencias:</p>
+
+<pre><code>depends=(&quot;libx11&quot;)
+</code></pre>
+
+<p>Repetindo o processo do <code>namcap</code>, nosso pacote está 100% correto!</p>
+
+<h3 id="instalando">Instalando</h3>
+
+<ol>
+<li>
+Para instalar o pacote: <code>pacman -U &lt;pacote&gt;.tar.xz</code></li>
+<li>
+Apagar: <code>pacman -R giflossy</code></li>
+</ol>
+
+<hr />
+
+<blockquote>
+<p><strong>Notas p/ pacotes baixados através do git</strong></p>
+
+<p>Como nosso pacote é baixado através do git, a versão descrita do pacote
+pode não ser a versão que é baixada do git. O archlinux recomenda que nesses
+casos fazemos um autobump de versão(<a href="https://wiki.archlinux.org/index.php/VCS_package_guidelines#The_pkgver.28.29_function">https://wiki.archlinux.org/index.php/VCS_package_guidelines#The_pkgver.28.29_function</a>)</p>
+
+<p>Para isso, sobrescrevemos a função <code>pkgver()</code>, que deve retornar a versão do software.
+No nosso caso, vamos ler a versão do arquivo NEWS</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pkgver<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    cd <span style="color:#e6db74">&#34;</span>$pkgname<span style="color:#e6db74">-master&#34;</span>
+    head NEWS | grep Version | awk <span style="color:#e6db74">&#39;{print $2}&#39;</span>
+<span style="color:#f92672">}</span></code></pre></div>
+<p>Pronto! Agora não precisamos atualizar a mão toda vez que ocorrer uma atualização do <code>giflossy</code>.</p>
+</blockquote>
+
+  </article>
+</section>
+
+      </div>
+    </main>
+    <footer role="footer"> 
+<ul class="grid :horizontal :middle clean">
+    <li>
+        <div class="title">Contact</div>
+        <a href="" role="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">
+            <span class="ceasar says">hufad.omvgxqdu@symux.oay</span>
+        </a>
+    </li>
+    <li>
+        <div class="title">Social</div>
+        <a href="http://github.com/barrabinfc">Github</a>
+    </li>
+    <li class="align:right pull:right">
+        <a href="http://github.com/barrabinfc" class="icon icon--m">
+            <svg class="icon__cnt"><use xlink:href="#ei-sc-github-icon"></use></svg>
+        </a>
+        <a href="http://github.com/barrabinfc" class="icon icon--m">
+            <svg class="icon__cnt"><use xlink:href="#ei-envelope-icon"></use></svg>
+        </a>
+    </li>
+</ul> 
+<style>
+   
+  :root {
+    --front:     #000;
+    --back:      #fff;
+    --primary:   #f05553;
+  }
+
+ 
+
+</style>
+ 
+</footer>
+
+    <script src="/js/app.js" defer></script>
+    <script src="/js/vendor/evil-icons.js" defer></script>    
+    <script type="text/javascript" src="/js/vendor/vanilla-tilt.babel.min.js" async></script> 
+  
+  </body>
+</html>

@@ -4,14 +4,9 @@ description = "Hello Post"
 Title = "Hello"
 parent = "blog"
 
-colorscheme = "light"
-color = "#0f0f0f"
-bg_color = "rgba(255,255,255, 0.90)"
-high_color = "#f05553"
-txt_color = "#4b4748"
 +++
 
-An h1 header
+An :smile: header
 ============
 
 Paragraphs are separated by a blank line.
@@ -74,7 +69,12 @@ for i in range(10):
     print i
 ~~~
 
+Some table
 
+   Name | Age
+--------|------
+    Bob | 27
+  Alice | 23
 
 ### An h3 header ###
 
@@ -100,6 +100,14 @@ Now a nested list:
         goto first step (or shut off burner when done)
 
     Do not bump wooden spoon or it will fall.
+ 4. Please yes
+
+## Todo Input
+
+- [ ] a task list item
+- [ ] list syntax required
+- [ ] incomplete
+- [x] completed
 
 Notice again how text always lines up on 4-space indents (including
 that last line which continues item 3 above).
@@ -112,59 +120,41 @@ doc](#an-h2-header). Here's a footnote [^1].
 
 Tables can look like this:
 
-size  material      color
-----  ------------  ------------
-9     leather       brown
-10    hemp canvas   natural
-11    glass         transparent
+size | material | color
+--- |--- | ---
+9   |  leather     |   brown
+10  |  hemp canvas |   natural
+11  | glass        |   transparent
 
 Table: Shoes, their sizes, and what they're made of
 
 (The above is the caption for the table.) Pandoc also supports
 multi-line tables:
 
---------  -----------------------
-keyword   text
---------  -----------------------
-red       Sunsets, apples, and
-          other red or reddish
-          things.
-
-green     Leaves, grass, frogs
-          and other things it's
-          not easy being.
---------  -----------------------
-
-A horizontal rule follows.
-
 ***
 
 Here's a definition list:
 
 apples
-  : Good for making applesauce.
+: Good for making applesauce.
+
 oranges
-  : Citrus!
+: Citrus!
+
 tomatoes
-  : There's no "e" in tomatoe.
+: There's no "e" in tomatoe.
 
 Again, text is indented 4 spaces. (Put a blank line between each
 term/definition pair to spread things out more.)
 
 Here's a "line block":
 
-| Line one
-|   Line too
-| Line tree
+> **Line one**
+> 
+>   Line too
+>
+> Line tree
 
 and images can be specified like so:
 
-![example image](example-image.jpg "An exemplary image")
-
-Inline math equations go in like so: $\omega = d\phi / dt$. Display
-math should get its own line and be put in in double-dollarsigns:
-
-$$I = \int \rho R^{2} dV$$
-
-And note that you can backslash-escape any punctuation characters
-which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")

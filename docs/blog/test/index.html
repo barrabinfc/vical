@@ -19,14 +19,14 @@
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; 
     font-display: swap;
     overflow-x: hidden;
+    overflow-y: overlay;
   }
   iframe,embed,img,video { max-width: 100%; }
   
-  a,p,button { margin: 1em; padding: 0.5em; }
-  blockquote { width: 100%; margin: 1em auto; font-size: 2em; line-height: 1.0em; text-align: center; }
-  blockquote > p { margin: 0; }
+  a,p,button { margin: 0; padding: 0; }
+  blockquote { width: 100%; margin: 1em auto; line-height: 1.0em; }
   
-  body>header { position: sticky; top: 0; width: 100%; }
+  body>header { position: absolute; top: 0; width: 100%; }
   main > section {  position: relative; width: 100%; min-height: 100vh; 
                     display: flex; flex-direction: column; justify-content: center; }
   main > section > article {
@@ -92,10 +92,17 @@
     
     <header role="header" class="" id="menu">
       
+<div class="logo-container">
   <a href="/" class="logo no-hover" id="logo">
   vicale
 </a>
-  
+  <a href="#menu" class="menu-close">
+    <svg class="icon__cnt">
+      <use xlink:href="#ei-close-icon"></use>
+    </svg>
+  </a>
+</div>
+
 
 <nav class="menu  animated">
 
@@ -142,7 +149,7 @@
   
 
 </nav>
-
+ 
 
     </header>
 
@@ -151,11 +158,10 @@
     <main id="page-trans-wrapper">
       <div class="page-container page blog">
         
-  <section class="post">
+<section class="post">
+   
+  <article id="post__body" class="container grid :vertical :around">
     
-    
-    <article id="post__body" class="container grid :vertical :around ">
-      
 
 <h1 id="an-h1-header">An h1 header</h1>
 
@@ -169,6 +175,8 @@ look like:</p>
 <li>that one</li>
 <li>the other one</li>
 </ul>
+
+<p><button class="btn">Example</button></p>
 
 <p>Note that &mdash; not considering the asterisk &mdash; the actual text
 content starts at 4-columns in.</p>
@@ -212,15 +220,12 @@ indenting the block, you can use delimited blocks, if you like:</p>
 
 <p>(which makes copying &amp; pasting easier). You can optionally mark the
 delimited block for Pandoc to syntax highlight it:</p>
-
-<pre><code class="language-python">import time
-# Quick, count to ten!
-for i in range(10):
-    # (but not *too* quick)
-    time.sleep(0.5)
-    print i
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> time
+<span style="color:#75715e"># Quick, count to ten!</span>
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
+    <span style="color:#75715e"># (but not *too* quick)</span>
+    time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">0.5</span>)
+    <span style="color:#66d9ef">print</span> i</code></pre></div>
 <h3 id="an-h3-header">An h3 header</h3>
 
 <p>Now a nested list:</p>
@@ -332,13 +337,33 @@ which you wish to be displayed literally, ex.: `foo`, *bar*, etc.</p>
 </ol>
 </div>
 
-    </article>
-  </section>
+  </article>
+</section>
 
       </div>
     </main>
-    <footer role="footer">
-  <style>
+    <footer role="footer"> 
+<ul class="grid :horizontal :middle clean">
+    <li>
+        <div class="title">Contact</div>
+        <a href="" role="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">
+            <span class="ceasar says">hufad.omvgxqdu@symux.oay</span>
+        </a>
+    </li>
+    <li>
+        <div class="title">Social</div>
+        <a href="http://github.com/barrabinfc">Github</a>
+    </li>
+    <li class="align:right pull:right">
+        <a href="http://github.com/barrabinfc" class="icon icon--m">
+            <svg class="icon__cnt"><use xlink:href="#ei-sc-github-icon"></use></svg>
+        </a>
+        <a href="http://github.com/barrabinfc" class="icon icon--m">
+            <svg class="icon__cnt"><use xlink:href="#ei-envelope-icon"></use></svg>
+        </a>
+    </li>
+</ul> 
+<style>
    
   :root {
     --front:     #000;
@@ -349,7 +374,7 @@ which you wish to be displayed literally, ex.: `foo`, *bar*, etc.</p>
  
 
 </style>
-
+ 
 </footer>
 
     <script src="/js/app.js" defer></script>

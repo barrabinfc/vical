@@ -3,8 +3,8 @@
   */
   .about {
     & section.about {
-      @apply --paragraph-font;
-      perspective: 800px;
+      font-family: var(--paragraph-font);
+      perspective: var(--perspective);
   
       display: flex;
       flex-direction: column;
@@ -83,7 +83,7 @@
       
         /* Contact */
         & .contact {      
-          perspective: 800px;
+          perspective: var(--perspective);
           padding: calc( 2* var(--pad-big)) 0;
   
           & > a { 
@@ -95,7 +95,7 @@
             background-position: center;
             background-repeat: no-repeat;
   
-            border-radius: 15px;
+            border-radius: var(--curve-big);
             cursor: pointer;
           }
                 

@@ -17,14 +17,14 @@
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; 
     font-display: swap;
     overflow-x: hidden;
+    overflow-y: overlay;
   }
   iframe,embed,img,video { max-width: 100%; }
   
-  a,p,button { margin: 1em; padding: 0.5em; }
-  blockquote { width: 100%; margin: 1em auto; font-size: 2em; line-height: 1.0em; text-align: center; }
-  blockquote > p { margin: 0; }
+  a,p,button { margin: 0; padding: 0; }
+  blockquote { width: 100%; margin: 1em auto; line-height: 1.0em; }
   
-  body>header { position: sticky; top: 0; width: 100%; }
+  body>header { position: absolute; top: 0; width: 100%; }
   main > section {  position: relative; width: 100%; min-height: 100vh; 
                     display: flex; flex-direction: column; justify-content: center; }
   main > section > article {
@@ -154,15 +154,97 @@
     <main id="page-trans-wrapper">
       <div class="page-container section blog">
         
-  <div id="content-featured" class="featured">
-      <h4><a href="/blog/criar-pacote-para-archlinux/">Como criar um pacote para archlinux</a></h4>
-      <h4><a href="/blog/hello/">Hello</a></h4>
-      <h4><a href="/blog/test/">Test</a></h4> 
-  </div>
+  <section>
+    <article class="container grid :vertical w100">
+      <section class="post-list">
+        <h1 class="title appearFromBottomCropped :play"><span>Blog</span></h1>
+        <ol class="posts">
+          <li>
+            <label>
+              <div class="date">
+                
+                  July
+                  15,
+                  2017
+                
+              </div>
+              <div class="tags">
+                
+                    <span>archlinux</span>
+                    <span>pacman</span>
+                    <span>recipe</span>
+                
+              </div>
+            </label>
+            <a href="/blog/criar-pacote-archlinux/">Como criar um pacote para &lt;b&gt;archlinux&lt;/b&gt;</a>
+          </li>
+          <li>
+            <label>
+              <div class="date">
+                
+                  
+                
+              </div>
+              <div class="tags">
+                
+              </div>
+            </label>
+            <a href="/blog/hello/">Hello</a>
+          </li>
+          <li>
+            <label>
+              <div class="date">
+                
+                  
+                
+              </div>
+              <div class="tags">
+                
+              </div>
+            </label>
+            <a href="/blog/test/">Test</a>
+          </li> 
+        </ul>
+      </section>
+    </article> 
+  </section>
 
       </div>
     </main>
-    <footer role="footer"></footer>
+    <footer role="footer">
+  <ul class="grid :horizontal :middle clean">
+    <li>
+        <div class="title">Contact</div>
+        <a href="" role="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">
+            <span class="ceasar says">hufad.omvgxqdu@symux.oay</span>
+        </a>
+    </li>
+    <li>
+        <div class="title">Social</div>
+        <a href="http://github.com/barrabinfc">Github</a>
+    </li>
+    <li class="align:right pull:right">
+        <a href="http://github.com/barrabinfc" class="icon icon--m">
+            <svg class="icon__cnt"><use xlink:href="#ei-sc-github-icon"></use></svg>
+        </a>
+        <a href="http://github.com/barrabinfc" class="icon icon--m">
+            <svg class="icon__cnt"><use xlink:href="#ei-envelope-icon"></use></svg>
+        </a>
+    </li>
+</ul>
+  <style>
+   
+  :root {
+    --front:     #000;
+    --back:      #fff;
+    --primary:   #f05553;
+  }
+
+ 
+
+</style>
+
+</footer>
 
     <script src="/js/app.js" defer></script>
     <script src="/js/vendor/evil-icons.js" defer></script>    

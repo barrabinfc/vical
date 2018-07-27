@@ -6,17 +6,31 @@ import {GeneralTransition} from './transitions/fade';
 const docStyle = document.documentElement.style;
 const pointerClick = (document.ontouchstart === undefined ? "click" : "touchstart")
 
-const PAGE_LOAD_DURATION = 2000
+const PAGE_LOAD_DURATION = 750
 
 function pageStart(){
   requestIdleCallback( () => {
     window.unlockMail();
     fixHrefTarget(document);
 
-    // Page loaded animation
-    let bodyClasses = document.body.classList
+    let tiltedElements = document.querySelectorAll('[data-tilt]')
+    Array.from(tiltedElements).map( (el) => {
+      if(!el.vanillaTilt) VanillaTilt.init(el)
+    })
+
     /*bodyClasses.remove('page-loaded');
     bodyClasses.add('page-loaded');*/
+  })
+}
+
+function pageDestroy(){
+  let tiltedElements = document.querySelectorAll('[data-tilt]')
+
+  requestIdleCallback( () => {
+    Array.from(tiltedElements).map( (el) => {
+      console.log('Destroy: ', el)
+      el.vanillaTilt.destroy()
+    })
   })
 }
 
@@ -39,7 +53,7 @@ function boot() {
                         .filter((t) => { return (t != "" && t != "http:") })
                         .splice(1, 10).join("/")
 
-  document.dispatchEvent( new Event('page-loaded') );                  
+  document.dispatchEvent( new Event('page-in') );                  
 }
 
 
@@ -140,4 +154,5 @@ function unlockMail() {
 window.unlockMail = unlockMail;
 
 document.addEventListener("DOMContentLoaded", boot)
-document.addEventListener('page-loaded', pageStart);
+document.addEventListener('page-in', pageStart);
+document.addEventListener('page-out', pageDestroy);

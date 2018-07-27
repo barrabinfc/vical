@@ -19,14 +19,14 @@
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; 
     font-display: swap;
     overflow-x: hidden;
+    overflow-y: overlay;
   }
   iframe,embed,img,video { max-width: 100%; }
   
-  a,p,button { margin: 1em; padding: 0.5em; }
-  blockquote { width: 100%; margin: 1em auto; font-size: 2em; line-height: 1.0em; text-align: center; }
-  blockquote > p { margin: 0; }
+  a,p,button { margin: 0; padding: 0; }
+  blockquote { width: 100%; margin: 1em auto; line-height: 1.0em; }
   
-  body>header { position: sticky; top: 0; width: 100%; }
+  body>header { position: absolute; top: 0; width: 100%; }
   main > section {  position: relative; width: 100%; min-height: 100vh; 
                     display: flex; flex-direction: column; justify-content: center; }
   main > section > article {
@@ -200,8 +200,8 @@
   </div>
 </div>
 <div class="contact">
-  <a href="" class="picture nomargin no-underline" data-tilt data-tilt-max="5" data-tilt-speed="800" data-tilt-scale="1.025" 
-  target="_blank" role="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">
+  <a href="" class="btn picture nomargin no-underline" data-tilt data-tilt-max="5" data-tilt-speed="800" data-tilt-scale="1.025" 
+  target="none" role="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">
     <h3 class="label">
       <div>GET IN TOUCH</div>
     </h3>
@@ -217,7 +217,7 @@
       </div>
     </main>
     <footer role="footer"> 
-  <ul class="grid :horizontal :middle">
+  <ul class="grid :horizontal :middle clean">
     <li>
         <div class="title">Contact</div>
         <a href="" role="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">
