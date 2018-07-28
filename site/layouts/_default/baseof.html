@@ -35,9 +35,10 @@
     </header>
 
     {{ $page := .Kind | default "page" }}
-    {{ $section := .Section | default "" }}  
+    {{ $section := .Section | default "" }}
+    {{ $layout := .Section | default "" }}
     <main id="page-trans-wrapper">
-      <div class="page-container {{ $page }} {{ $section }}">
+      <div class="page-container {{ $page }} {{ $section }} {{ $layout }}">
         {{ block "main" .}}{{ end }}
       </div>
     </main>

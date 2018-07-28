@@ -1,0 +1,66 @@
+{{ define "header" }}
+  <div class="logo-container">
+    {{ partial "logo" . }}
+  </div>
+
+  {{ partial "nav" . }}
+{{ end }}
+{{ define "main" }}
+  <section class="project__info">
+    <article class="container grid :vertical :middle :around">
+      <picture class="project__logo">
+        {{ $featured := .Page.Resources.GetMatch "featured" }}
+        {{ if $featured }}
+            <img src="{{ $featured.Permalink }}">
+        {{ else }}
+          <span>{{ safeHTML .Title }}</span>
+        {{ end }}
+      </picture>
+      
+      <table class="project__meta clean">
+        <thead>
+          <tr>
+            <td>URL</td>
+            <td>Created at</td>
+            <td>Technology</td>
+            <td>License</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="http://{{ .Params.website }}" class="clean value color-high">{{ .Params.website }}</a></td>
+            <td>
+                <span class="value">{{ .Params.created_at}}</span>
+            </td>
+            <td>
+                <span href="" class="value">{{ .Params.tech }}</span>
+            </td>
+            <td>
+                <span href="" class="value">{{ .Params.license }}</span>          
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <div class="project__description font-big">
+        <p>{{ .Params.description }}</p>
+      </div>
+    </article>
+  </section>
+  <section class="project__body">
+    <article class="container grid">
+      {{ .Content }}
+    </article>
+  </section>
+
+  {{ $related := where .Site.RegularPages "Section" "work" }}
+  {{ $title   := "+ Work" }}
+  {{ $class   := "list-isotope" }}
+  {{ partial "card_list" (dict "list" $related "title" $title "class" $class) }}
+{{ end }}
+
+
+{{ define "footer"}}
+  {{ partial "footer_links" . }}
+  {{ partial "style_invert" .}}
+{{ end }}
