@@ -291,6 +291,20 @@
     <script src="/js/vendor/evil-icons.js" defer></script>    
     <script type="text/javascript" src="/js/vendor/vanilla-tilt.babel.min.js" async></script> 
     <script type="text/javascript" src="/js/vendor/netlify-identity-widget.v1.4.14.js" async></script> 
-    
+    <script>
+        document.addEventListener('load', setupNetlify)
+        function setupNetlify() {
+          if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+              if (!user) {
+                window.netlifyIdentity.on("login", () => {
+                  document.location.href = "/admin/";
+                });
+              }
+            });
+          }
+        }
+    </script>
+      
   </body>
 </html>
