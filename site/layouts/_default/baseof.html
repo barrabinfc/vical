@@ -34,11 +34,10 @@
       {{ block "header" .}}{{ end }}
     </header>
 
-    {{ $page := .Kind | default "page" }}
     {{ $section := .Section | default "" }}
     {{ $layout := .Section | default "" }}
     <main id="page-trans-wrapper">
-      <div class="page-container {{ $page }} {{ $section }} {{ $layout }}">
+      <div class="page-container {{ $section }} {{ $layout }}">
         {{ block "main" .}}{{ end }}
       </div>
     </main>
