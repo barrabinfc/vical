@@ -30,7 +30,7 @@ ul, ol {
    padding: 0;
    counter-increment: list-counter;
    margin-bottom: var(--gutter);
-   
+      
    & > p:first-child {
     display: inline-block;
     margin-bottom: var(--gutter);
