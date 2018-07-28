@@ -83,7 +83,6 @@
 
 	  requestIdleCallback(function () {
 	    Array.from(tiltedElements).map(function (el) {
-	      console.log('Destroy: ', el);
 	      el.vanillaTilt.destroy();
 	    });
 	  });

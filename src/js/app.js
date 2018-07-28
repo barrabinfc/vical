@@ -28,7 +28,6 @@ function pageDestroy(){
 
   requestIdleCallback( () => {
     Array.from(tiltedElements).map( (el) => {
-      console.log('Destroy: ', el)
       el.vanillaTilt.destroy()
     })
   })
