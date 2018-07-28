@@ -38,7 +38,6 @@
   
   .picture { position: relative; }
   
-  .txt-center { text-align: center; }
   .bg\:primary{ background-color: #f58021; }      
   .bg\:second { background-color: #ae509e; }
               
@@ -60,14 +59,6 @@
   .w70 { max-width: 70%; }
   .w90 { max-width: 90%; }
   .w100 { max-width: 100%; }
-
-  
-  .abscenter {
-    margin: 0;
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-  }
 </style>
     
     
@@ -158,16 +149,16 @@
     <article class="container grid :vertical w100">
       <section class="post-list">
         <h1 class="title appearFromBottomCropped :play"><span>Blog</span></h1>
-        <ol class="posts">
+        <ol class="posts clean">
           <li>
             <label>
-              <div class="date">
+              <time datetime="2017-07-15 00:00:00 &#43;0000 UTC" class="date">
                 
                   July
                   15,
                   2017
                 
-              </div>
+              </time>
               <div class="tags">
                 
                     <span>archlinux</span>
@@ -176,33 +167,20 @@
                 
               </div>
             </label>
-            <a href="/blog/criar-pacote-archlinux/">Como criar um pacote para &lt;b&gt;archlinux&lt;/b&gt;</a>
+            <a href="/blog/criar-pacote-archlinux/">Como criar um pacote para <b>archlinux</b></a>
           </li>
           <li>
             <label>
-              <div class="date">
+              <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" class="date">
                 
                   
                 
-              </div>
+              </time>
               <div class="tags">
                 
               </div>
             </label>
-            <a href="/blog/hello/">Hello</a>
-          </li>
-          <li>
-            <label>
-              <div class="date">
-                
-                  
-                
-              </div>
-              <div class="tags">
-                
-              </div>
-            </label>
-            <a href="/blog/test/">Test</a>
+            <a href="/blog/styleguide/">Styleguide</a>
           </li> 
         </ul>
       </section>

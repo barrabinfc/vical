@@ -18,20 +18,20 @@ aliases = [
     <h6 class="title">Skills</h6>
     <div class="txt">
       <ul>
-        <li>- Javascript ES6 / Typescript / HTML5 / CSS3</li>
-        <li>- React/Redux | VueJS | jQuery</li>
-        <li>- Python/Django/SQL databases</li>
-        <li>- Linux / Unix </li>
-        <li>- C/C++/Lisp</li>
-        <li>- Processing/OpenFrameworks/Arduino/Raspberry</li>
-        <li>- Git/webpack/make/other developer ecosystem tools</li>
+        <li>Javascript ES6 / Typescript / HTML5 / CSS3</li>
+        <li>React/Redux | VueJS | jQuery</li>
+        <li>Python/Django/SQL databases</li>
+        <li>Linux / Unix </li>
+        <li>C/C++/Lisp</li>
+        <li>Processing/OpenFrameworks/Arduino/Raspberry</li>
+        <li>Git/webpack/make/other developer ecosystem tools</li>
       </ul>
     </div>
   </div>
   <div class="second-column education">
     <h6 class="title">Education</h6>
     <div class="txt">
-      <ul>
+      <ul class="clean">
         <li>
           <p>Nanodegree in Data science</p>
           <p class="subtitle">2017, Udacity</p>

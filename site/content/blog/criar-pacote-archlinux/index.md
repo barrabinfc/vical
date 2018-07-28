@@ -14,33 +14,18 @@ date = "2017-07-15"
 
 +++
 
-Como muitas pessoas, eu adoro archlinux e seu gerenciador de pacotes. 
-Porém , a quantidade de software no catálogo ainda é inferior ao ubuntu ou Mac,
+Archlinux é uma das melhores distribuições Linux em 2018. Entretanto, a quantidade de software no catálogo ainda é inferior ao ubuntu,
 e eventualmente você vai ter que instalar software manualmente.
 
-Nesses casos, é muito útil saber como empacotar software para archlinux. Dessa forma,
-ainda podemos gerênciar instalação/atualizações/remoção usando o `pacman`, sem termos
+Nesses casos, é muito útil saber como empacotar software. Dessa forma,
+ainda podemos gerênciar instalação/atualizações/remoção usando o **pacman**, sem termos
 software zumbi no sistema operacional.
 
-Nesse artigo, vou mostrar como empacotar o software `Giflossy`, um otimizador lossy de gifs.
+Nesse artigo, vou mostrar como empacotar o software [giflossy](https://github.com/kornelski/giflossy), um otimizador lossy de gifs.
 
 ### Instalando o `giflossy` manualmente
 
-O primeiro passo, é compilar e instalar o software manualmente. Em sistemas unix, quase todos os softwares
-vem com um ciclo de 3 passos:
-
-```
-$ ./configure
-$ make
-$ make install
-```
-
-Estes passos garantem que o software compile e funciona corretamente na sua máquina.
-Antes de criar o pacote, é sempre necessário testar localmente.
-
-No nosso caso, vamos baixar o Giflossy diretamente do `git` e instalar.
-Como o software foi baixado através do git, não existe o arquivo 'configure'. 
-Nestes casos, basta rodar o `autoconf` com o comando `autoreconf -i` e prosseguir.
+O primeiro passo, é compilar e instalar o software manualmente. Vamos baixar o Giflossy diretamente do `git` e instalar.
 
 ```
 $ git clone https://github.com/pornel/giflossy
@@ -51,18 +36,16 @@ $ make
 $ make install
 ```
 
-O software compilou e instalou sem problemas. Podemos prosseguir e criar o pacote!
+O software compilou e instalou sem problemas. Vamos prosseguir e empacotar.
 
 ### Criando o pacote
 
-Para criar o pacote, criamos um arquivo de receita chamado `PKGBUILD` . Cada gerenciador
+Para criar o pacote, criamos um arquivo de receita chamado **PKGBUILD** . Cada gerenciador
 de pacotes tem seu proprio formato de receita, alguns bastante burocráticos. Felizmente, 
-o do `pacman` é simples, conciso e direto ao ponto.
+o pacman usa simples _bash_ scripts, concisos e direto ao ponto.
  
-Após a receita descrita, preparamos o pacote usando o programa `makepkg`, gerando um `zip` no formato `tar.xz`.
-Este zip é o pacote final que é distribuido e instalado diretamente através do pacman: `pacman -U <pacote>`
-
-Para criar o nosso pacote, vamos criar uma nova pasta e copiar o esqueleto padrão do PKGBUILD
+Após a receita descrita, preparamos o pacote usando o programa `makepkg`, gerando um pacote no formato _tar.xz_.
+Este pacote pode ser distribuido,e se instala diretamente através do pacman: `pacman -U <pacote>`
 
 ```
 mkdir -o ~/Desktop/giflossy-pkg
@@ -70,10 +53,8 @@ cd ~/Desktop/giflossy-pkg
 cp /usr/share/pacman/PKGBUILD.proto PKGBUILD
 ```
 
-Agora precisamos preencher a receita com as informações do software. 
-Os campos devem ser as descrições do software, como nome, licensa e versão.
+Vamos preencher a receita com as informações do software, como descrição, nome, licensa e versão.
 
-No nosso caso, nosso arquivo ficou assim
 ```bash
 # Maintainer: vical <barrabin.fc@gmail.com>
 pkgname=giflossy
@@ -123,29 +104,23 @@ package() {
 }
 ```
 
-Tome atenção com os campos `source` e `md5sum`. Assim como as funções `prepare()`, `build()` e `package()`, 
-elas são a `crux` e o segredo do processo.
+As funções essenciais ao processo são `prepare()`, `build()` e `package()`. Elas devem estar presentes, mesmo se vazias. Rode o processo de compilação na funcão `build`.
 
 > **Atenção** 
 >
 > Por razões de integridade e segurança, é sempre necessário colocar o md5sum do pacote
-
-
-```
+> 
+>```bash
 $ md5sum master.zip
 f37da4b0730a38778fa5901a80aa9636  master.zip
 $
 ```  
+>
 
-Agora vamos preparar o prato!
+Com a receita pronta, vamos rodar o programa `makepkg`, que irá gerar o pacote **giflossy-1.89-1-x86_64.pkg.tar**.
 
-```
-$ makepkg
-```
-
-Podemos preparar a receita quantas vezes for necessário, até ela dar certo. Vamos adaptando o PKGBUILD e repetindo o processo. 
-No final, teremos nosso pacote `giflossy-1.89-1-x86_64.pkg.tar`
-
+Podemos preparar o pacote quantas vezes for necessário, ajustando e adaptando a receita até estar perfeita.
+ 
 ### Validando o pacote
 
 Embora o pacote esteja pronto, pode ainda conter alguns erros. Um deles, no nosso caso, é que esquecemos de 
@@ -157,13 +132,11 @@ $ namcap <pacote>.tar.xz
 giflossy E: Dependency libx11 detected and not included (libraries ['usr/lib/libX11.so.6'] needed in files ['usr/bin/gifview'])
 ```
 
-Ótimo! Podemos voltar ao nosso PKGBUILD e corrigir , declarando as dependencias:
+Ótimo! Podemos voltar ao nosso PKGBUILD e corrigir , declarando as dependencias que faltam e criando de novo o pacote
 
 ```
 depends=("libx11")
 ```
-
-Repetindo o processo do `namcap`, nosso pacote está 100% correto!
 
 ### Instalando 
 
@@ -176,21 +149,21 @@ Repetindo o processo do `namcap`, nosso pacote está 100% correto!
 ***
 
 >
-> **Notas p/ pacotes baixados através do git**
+> **Pacotes baixados através do git**
 >
-> Como nosso pacote é baixado através do git, a versão descrita do pacote
-> pode não ser a versão que é baixada do git. O archlinux recomenda que nesses
-> casos fazemos um autobump de versão(https://wiki.archlinux.org/index.php/VCS_package_guidelines#The_pkgver.28.29_function)
+> Como nosso pacote é baixado através do git, a versão do pacote
+> pode não ser a versão que é baixada do git. 
+> Nesses casos, fazemos [autobump de versão](https://wiki.archlinux.org/index.php/VCS_package_guidelines#The_pkgver.28.29_function)
 > 
-> Para isso, sobrescrevemos a função `pkgver()`, que deve retornar a versão do software.
-> No nosso caso, vamos ler a versão do arquivo NEWS
+> Para isso, sobrescrevemos a função `pkgver()`, que deve retornar uma string com a versão do software.
+> No nosso caso, vamos ler a versão do arquivo **NEWS**
 > 
 > 
 > ```bash
-pkgver() {
-	cd "$pkgname-master"
-	head NEWS | grep Version | awk '{print $2}'
-}
+>pkgver() {
+>	cd "$pkgname-master"
+>	head NEWS | grep Version | awk '{print $2}'
+>}
 > ```
-
-> Pronto! Agora não precisamos atualizar a mão toda vez que ocorrer uma atualização do `giflossy`.
+>
+> Pronto! Agora o pacote é sempre atualizado do git.

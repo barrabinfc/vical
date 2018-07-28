@@ -1,0 +1,376 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Styleguide</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+  
+    <style>
+  *, *::after , *::before { box-sizing: border-box; }
+  html,body { margin: 0; padding: 0; }
+  body { 
+    background-color: #fff; 
+    color: #0f0f0f; 
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; 
+    font-display: swap;
+    overflow-x: hidden;
+    overflow-y: overlay;
+  }
+  iframe,embed,img,video { max-width: 100%; }
+  
+  a,p,button { margin: 0; padding: 0; }
+  blockquote { width: 100%; margin: 1em auto; line-height: 1.0em; }
+  
+  body>header { position: absolute; top: 0; width: 100%; }
+  main > section {  position: relative; width: 100%; min-height: 100vh; 
+                    display: flex; flex-direction: column; justify-content: center; }
+  main > section > article {
+    min-height: 100vh;
+    padding: 2em 2em;
+  }
+  
+  
+  .container { padding: 0 96px; }
+  .container, .container-fluid { margin: 0 auto; }
+  
+  .picture { position: relative; }
+  
+  .bg\:primary{ background-color: #f58021; }      
+  .bg\:second { background-color: #ae509e; }
+              
+  .grid { display: flex; flex-wrap: wrap; }
+  .grid.\:vertical { flex-direction: column; }
+  .grid.\:between { justify-content: space-between; }
+  .grid.\:around { justify-content: space-around; }
+  .grid.\:middle { align-items: center; }
+  
+  .columns1 { columns: 1; column-gap: 0em; }
+  .columns2 { columns: 2; column-gap: 2em; }
+  .columns3 { columns: 3; column-gap: 1em; }
+  
+  .w10 { max-width: 10%; }
+  .w33 { max-width: 33%; }
+  .w25 { max-width: 25%; }
+  .w40 { max-width: 40%; }
+  .w50 { max-width: 50%; }
+  .w70 { max-width: 70%; }
+  .w90 { max-width: 90%; }
+  .w100 { max-width: 100%; }
+</style>
+    
+    
+    <script type="text/javascript">
+        ['/css/evil-icons.css'].map( function(url) {
+            var link = document.createElement('link');
+            link.rel = "stylesheet";
+            link.href = url;
+            document.head.appendChild(link);
+        });
+    </script>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/typography.css">
+    
+    
+  </head>  
+  
+  <body class="">
+
+    
+    <header role="header" class="" id="menu">
+      
+<div class="logo-container">
+  <a href="/" class="logo no-hover" id="logo">
+  vicale
+</a>
+  <a href="#menu" class="menu-close">
+    <svg class="icon__cnt">
+      <use xlink:href="#ei-close-icon"></use>
+    </svg>
+  </a>
+</div>
+
+
+<nav class="menu  animated">
+
+  
+    
+    
+
+    <a class="menu-header animated
+             "
+        href="/work/"
+        id="menu-work">
+        work
+      </a>
+  
+    
+    
+
+    <a class="menu-header animated
+             "
+        href="/apps/"
+        id="menu-apps">
+        apps
+      </a>
+  
+    
+    
+
+    <a class="menu-header animated
+             "
+        href="/about/me"
+        id="menu-about">
+        About
+      </a>
+  
+    
+    
+
+    <a class="menu-header animated
+             selected"
+        href="/blog/"
+        id="menu-blog">
+        Blog
+      </a>
+  
+
+</nav>
+ 
+
+    </header>
+
+    
+      
+    <main id="page-trans-wrapper">
+      <div class="page-container page blog">
+        
+<section class="post">
+  
+  <article id="post__showcase" class="
+                                      light">
+    <picture>
+      
+    </picture>
+    <div class="headline">
+      <h1 class="title">Styleguide</h1>
+      <h3 class="subtitle">CSS Styleguide</h3>
+    </div>
+  </article>
+  <article id="post__body" class="container grid :vertical :around">
+    
+
+<p>This document shows Markdown formatting and style rules for hugo theme. Theme created by vical 😄.</p>
+
+<p>Lets start aaragraph, with <em>Italic</em>, <strong>bold</strong>, and <code>monospace</code>. And see vertical rhythm with lorem ipsum.</p>
+
+<h1 id="lorem-ipsum">Lorem ipsum</h1>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lacinia nibh eu congue ullamcorper. Vestibulum vitae augue pharetra justo fringilla dignissim. Integer gravida, lacus vel molestie fermentum, turpis massa commodo dui, faucibus efficitur nisl nisl nec augue. Nunc pellentesque fringilla lacus, sed laoreet justo egestas quis. Nullam lobortis augue ac neque feugiat, sed sodales elit rutrum. Vestibulum sed metus finibus, accumsan arcu eget, ultricies tortor. Duis ullamcorper lectus sed odio commodo malesuada. Curabitur ex tellus, mollis sed nisl eget, porta semper turpis. Nulla a nibh non purus placerat faucibus et ut sem. Duis id lacus augue. Vestibulum mi tellus, vestibulum ut massa vitae, facilisis pellentesque tortor. Etiam quis nisi laoreet, rhoncus tortor consequat, interdum ligula. Nulla sodales sapien eu tortor consequat sollicitudin. Donec pulvinar egestas ante, vel pulvinar enim euismod in. Sed consequat nulla quis dui porttitor ullamcorper. Donec dictum commodo pellentesque.</p>
+
+<p>Cras pharetra urna nec est interdum, vitae aliquam odio egestas. Aliquam sollicitudin est et augue pellentesque, id fringilla metus ultricies. Etiam gravida euismod augue quis mattis. Vivamus ac tristique enim. Proin euismod risus ipsum, eu gravida nunc auctor nec. Nam pretium sollicitudin quam, et convallis tellus sodales vel. Fusce maximus vitae sapien quis fermentum. Pellentesque sed ultricies lorem, quis pretium sem. Donec eget massa mattis, hendrerit enim quis, fringilla tellus. Quisque lobortis maximus sapien eget ultrices. Integer aliquet ex quis dui rhoncus semper. Nam vitae diam bibendum, euismod enim sed, commodo justo. Sed nibh lacus, rhoncus eget imperdiet sit amet, sollicitudin ac nisi. Suspendisse ut nulla justo.</p>
+
+<blockquote>
+<p><strong>Block quotes are
+written like so.</strong></p>
+
+<p>They can span multiple paragraphs,
+if you like.</p>
+
+<p>And may contain <div class="bg:primary txt:hero align:center">HTML Markup</div></p>
+</blockquote>
+
+<p>Fusce congue mollis sem, quis tempus augue lacinia tincidunt. Integer vulputate, quam eu scelerisque aliquam, velit neque lobortis massa, at viverra metus tortor eu purus. In fringilla, felis interdum tristique dictum, lorem elit fermentum erat, id pellentesque velit ligula in velit. Sed eu neque rutrum, pretium nunc id, feugiat elit. Donec eget dui nec massa efficitur cursus eget eget purus. Proin ac nisl pretium, interdum nisi ac, placerat erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed egestas nec neque ac imperdiet. Integer vitae nunc sit amet urna gravida accumsan. Quisque ut libero nec arcu sodales sagittis ac facilisis orci. Proin venenatis quis diam eget malesuada. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec pretium mi eu pulvinar aliquam. Donec ac sem sed tortor dictum tempor. Suspendisse consequat eleifend tellus a blandit. Quisque et vestibulum nisi, eget pharetra sapien.</p>
+
+<p>Donec non ex orci. Suspendisse purus felis, laoreet ac interdum eget, ultrices iaculis sem. Vestibulum sapien augue, tempus non magna quis, vehicula vehicula ipsum. Cras sit amet tortor interdum, convallis dui vel, dignissim ante. Nunc eget rutrum sapien, sed scelerisque lacus. Nam aliquam eros malesuada erat interdum ultricies. Integer euismod ipsum elit, id condimentum urna eleifend eget. Nulla imperdiet fringilla massa, id porttitor tellus egestas ac.</p>
+
+<h2 id="an-h2-header">An h2 header</h2>
+
+<p>Images can be specified like so:</p>
+
+<p><img src="https://images.unsplash.com/photo-1532680678473-a16f2cda8e43?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=c35c44795a15fb33ba90a783355c2fc6&amp;auto=format&amp;fit=crop&amp;w=1500&amp;q=80" alt="alt text" title="Logo Title Text 1" /></p>
+
+<p>And here&rsquo;s a numbered list:</p>
+
+<ol>
+<li>first item</li>
+<li>second item</li>
+<li>third item</li>
+</ol>
+
+<p>Note again how the actual text starts at 4 columns in (4 characters
+from the left side). Here&rsquo;s a code sample:</p>
+
+<pre><code># Let me re-iterate ...
+for i in 1 .. 10 { do-something(i) }
+</code></pre>
+
+<p>As you probably guessed, indented 4 spaces. By the way, instead of
+indenting the block, you can use delimited blocks, if you like:</p>
+
+<pre><code>define foobar() {
+    print &quot;Welcome to flavor country!&quot;;
+}
+</code></pre>
+
+<p>(which makes copying &amp; pasting easier). You can optionally mark the
+delimited block for Pandoc to syntax highlight it:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> time
+<span style="color:#75715e"># Quick, count to ten!</span>
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
+    <span style="color:#75715e"># (but not *too* quick)</span>
+    time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">0.5</span>)
+    <span style="color:#66d9ef">print</span> i</code></pre></div>
+<h3 id="an-h3-header">An h3 header</h3>
+
+<p>Now a nested list:</p>
+
+<ol>
+<li><p>First, get these ingredients:</p>
+
+<ul>
+<li>carrots</li>
+<li>celery</li>
+<li>lentils</li>
+</ul></li>
+
+<li><p>Boil some water.</p></li>
+
+<li><p>Dump everything in the pot and follow
+this algorithm:</p>
+
+<pre><code>find wooden spoon
+uncover pot
+stir
+cover pot
+balance wooden spoon precariously on pot handle
+wait 10 minutes
+goto first step (or shut off burner when done)
+</code></pre>
+
+<p>Do not bump wooden spoon or it will fall.</p></li>
+
+<li><p>Please say yes</p></li>
+</ol>
+
+<h2 id="todo-input">Todo Input</h2>
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> a task list item</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> list syntax required</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> incomplete</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> completed</label></li>
+</ul>
+
+<p>Here&rsquo;s a link to <a href="http://foo.bar">a website</a>, to a <a href="local-doc.html">local
+doc</a>, and to a <a href="#an-h2-header">section heading in the current
+doc</a>.
+Here&rsquo;s a footnote <sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>.</p>
+
+<p>Tables can look like this:</p>
+
+<div class="align:center txt:hero">Table: Shoes, their sizes, and what they're made of</div>
+
+<hr />
+
+<table>
+<thead>
+<tr>
+<th>size</th>
+<th>material</th>
+<th>color</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>9</td>
+<td>leather</td>
+<td>brown</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>hemp canvas</td>
+<td>natural</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>glass</td>
+<td>transparent</td>
+</tr>
+</tbody>
+</table>
+
+<p>Here&rsquo;s a definition list:</p>
+
+<dl>
+<dt>apples</dt>
+<dd>Good for making applesauce.</dd>
+<dt>oranges</dt>
+<dd>Citrus!</dd>
+<dt>tomatoes</dt>
+<dd>There&rsquo;s no &ldquo;e&rdquo; in tomatoe.</dd>
+</dl>
+
+<p>Again, text is indented 4 spaces. (Put a blank line between each
+term/definition pair to spread things out more.)</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">Footnote text goes here.
+ <a class="footnote-return" href="#fnref:1">↩</a></li>
+</ol>
+</div>
+
+  </article>
+</section>
+
+      </div>
+    </main>
+    <footer role="footer"> 
+<ul class="grid :horizontal :middle clean">
+    <li>
+        <div class="title">Contact</div>
+        <a href="" role="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">
+            <span class="ceasar says">hufad.omvgxqdu@symux.oay</span>
+        </a>
+    </li>
+    <li>
+        <div class="title">Social</div>
+        <a href="http://github.com/barrabinfc">Github</a>
+    </li>
+    <li class="align:right pull:right">
+        <a href="http://github.com/barrabinfc" class="icon icon--m">
+            <svg class="icon__cnt"><use xlink:href="#ei-sc-github-icon"></use></svg>
+        </a>
+        <a href="http://github.com/barrabinfc" class="icon icon--m">
+            <svg class="icon__cnt"><use xlink:href="#ei-envelope-icon"></use></svg>
+        </a>
+    </li>
+</ul> 
+<style>
+   
+  :root {
+    --front:     #000;
+    --back:      #fff;
+    --primary:   #f05553;
+  }
+
+ 
+
+</style>
+ 
+</footer>
+
+    <script src="/js/app.js" defer></script>
+    <script src="/js/vendor/evil-icons.js" defer></script>    
+    <script type="text/javascript" src="/js/vendor/vanilla-tilt.babel.min.js" async></script> 
+  
+  </body>
+</html>

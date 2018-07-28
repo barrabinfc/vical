@@ -5,7 +5,7 @@
 
         {{ $list_klass := .class | default "list-cards" }}
         {{ $hover_size := .hover_size | default "1.05"}}
-        <ul class="{{ $list_klass }} grid :horizontal :around appearFromBottom :play">
+        <ul class="{{ $list_klass }} clean grid :horizontal :around appearFromBottom :play">
             {{- range .list }}
                 <li class="cell">
                     <a class="card app-card" 

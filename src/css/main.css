@@ -54,48 +54,19 @@ body {
     
     & .project__logo {
       margin: 0 auto;
-      width: 20%;
       & > img { width: 100%; }
     }
       
     & .project__meta {
-      list-style: none;
-      display: table;
-      margin: 0 auto;
-      text-align: center;
-      border-collapse: collapse;
-      & li {
-        display: table-cell;
-        border: 1px solid;
-
-        & .value , & .label {
-          padding: 0 2em;
-          display: block;
-          width: 100%;
-          line-height: 2em;
-          text-transform: uppercase;
-          font-family: var(--code-font);
-          font-size: 1.0rem;
-          font-weight: 700;
-        }
-        
-        & .label {
-          font-weight: 700;
-          font-size: 0.8rem; 
-          border-bottom: 1px solid var(--dark-gray);
-        }
-        & .value {
-          color: var(--primary);
-        }
-      }
-      
-    }
-    & .project__meta, & .project__meta li , &.project__meta .label {
-      border-color: var(--dark-gray);
+      max-width: 50%;
+      width: auto;
+      margin: 0 auto var(--pad-big) auto; 
     }
     
     & .project__description {
       font-size: 1rem;
+      text-align: left;
+      width: 70%;
     }
   
 }
@@ -186,6 +157,7 @@ body {
         position: absolute;
         text-shadow: var(--shadow-card);
         width: 100%;
+        margin: 0;
         text-align: center;
         padding: 1rem;
         color: inherit;
@@ -260,7 +232,7 @@ body {
   /* Right info area */
   & .info {
     position: sticky;
-    top: 0;
+    top: calc( var(--header-height) * 0.5);
     width: calc(100% - 392px);
     width: 392px;
     min-height: calc( 100vh - var(--header-height));
@@ -292,11 +264,8 @@ body {
 
     & .more {
       margin-top: auto;
+      margin-bottom: 1rem;
     }
     
-    /* Footer links at bottom */
-    & footer {
-      margin-top: auto;
-    }
   }
 }

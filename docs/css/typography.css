@@ -64,7 +64,7 @@
   --shadow-big: 5px 5px calc(4*var(--gutter)*var(--perfect-fifth)) rgba(0,0,0,0.4);
   --shadow-huge: 10px 10px calc(8*0.5em*calc(3/2)) rgba(0,0,0,0.4);
   --shadow-huge: 10px 10px calc(8*var(--gutter)*var(--perfect-fifth)) rgba(0,0,0,0.4);
-  --shadow-card: 0 1px 0 rgba(0, 0, 0, .76), 0 2px 6px rgba(0, 0, 0, .77), 0 10px 20px rgba(0, 0, 0, .49);
+  --shadow-card: 0 1px 0 rgba(0, 0, 0, .46), 0 2px 6px rgba(0, 0, 0, .47), 0 10px 20px rgba(0, 0, 0, .29);
 
   
   /* Animations/transitions */
@@ -132,6 +132,7 @@
   font-family: "Source Code Pro", Menlo, monospace;
   font-family: var(--code-font);
   font-size: 90%;
+  overflow: hidden;
 }blockquote { 
   width: 100%; 
   margin: 0 0 1.5rem 0;
@@ -140,42 +141,7 @@
   font-size: 1rem; 
   border-left: 4px solid #E6ECF1; 
   border-left: 4px solid var(--light-gray);
-}.highlight { margin-bottom: 1.5rem; }.highlight > pre { margin: 0; }p > code , li > code {
-  font-size: 85%;
-  padding: 0.5em;
-  padding: var(--gutter);
-  background-color: #e9e9e9;
-  background-color: var(--gray);
-  border-radius: 3px;
-}/**
-* Fix adjacent spacing
-*/p + h1, p + h2, p + h3 , p + h4, p + h5, p + h6 , 
-ul + h1, ul + h2, ul + h3 , ul + h4, ul + h5, ul + h6 ,
-ol + h1, ol + h2, ol + h3 , ol + h4, ol + h5, ol + h6 ,
-table + h1, table + h2, table + h3 , table + h4, table + h5, table + h6 , 
-.highlight + h1, .highlight + h2, .highlight + h3 , .highlight + h4, .highlight + h5, .highlight + h6 {
-  margin-top: calc( var(--size) - 1.5rem);
-  margin-top: calc( var(--size) - 1.5rem);
-}/* Adjacent list elements */ul + p, ol + p {
-  margin-top: 1.5rem;
-}ul > li , ol > li {
-  margin-bottom: 0.5em;
-  margin-bottom: var(--gutter);
-}li > p:first-child {
-  display: inline-block;
-  margin-bottom: 0.5em;
-  margin-bottom: var(--gutter);
-}/* Nested lists */li > ul , 
-li > ol , 
-li > *:not(:first-child) {
-  margin-left: calc( 2.0rem + 0.5em);
-  margin-left: calc( 2.0rem + var(--gutter));
-  margin-bottom: 0.5em;
-  margin-bottom: var(--gutter)
-  /* Decrease list number size */ 
-}li > ul > li::before, li > ol > li::before, li > *:not(:first-child) > li::before {
-    font-size:  1.0rem;
-  }/**
+}.highlight { margin-bottom: 1.5rem; }.highlight > pre { margin: 0; }/**
  * Links
  */a { text-decoration: none; color: #0098d8; color: var(--second); }a:hover { text-decoration: underline; }a.no-hover:hover { text-decoration: none; }a.default {
   position: relative;

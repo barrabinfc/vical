@@ -36,25 +36,26 @@
       </div>
 
       <div class="more">
-          <ul class="as-flex-table">
-              <li>
-                <strong class="label">Visit</strong>
-                <a href="{{.Params.website}}" class="clean value color-high">{{.Params.website}}</a>      
-              </li>
+        <!-- 
+          <a href="http://{{.Params.website}}" target="_blank" class="btn :txt :primary margin:auto">{{.Params.website}}</a> 
+        -->
+        <a href="http://{{.Params.website}}" alt="{{.Params.website}}" target="_blank" class="no-underline btn :hero :primary :curved :card :href">
+          <span>VISIT: </span>
+        </a> 
       </div>
 
-      
+      <!--
       <footer>
-        <ul role="nav" class="horizontal featured bordered">
+        <ul role="nav" class="horizontal clean featured bordered">
           {{if .PrevInSection}}
             <li class="w5"><a href="{{.PrevInSection.Permalink}}" class="default btn no-underline">◂</a></li>
           {{end}}
-          <li class="w90"><a href="#menu" class="default btn no-underline">Menu</a></li>
           {{if .NextInSection}}
             <li class="w5"><a href="{{.NextInSection.Permalink}}" class="default btn no-underline">▸</a></li>
           {{end}}
         </ul>
       </footer>
+      -->
     </article>    
   </section>
 {{ end }}

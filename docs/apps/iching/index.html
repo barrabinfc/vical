@@ -40,7 +40,6 @@
   
   .picture { position: relative; }
   
-  .txt-center { text-align: center; }
   .bg\:primary{ background-color: #f58021; }      
   .bg\:second { background-color: #ae509e; }
               
@@ -62,14 +61,6 @@
   .w70 { max-width: 70%; }
   .w90 { max-width: 90%; }
   .w100 { max-width: 100%; }
-
-  
-  .abscenter {
-    margin: 0;
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-  }
 </style>
     
     
@@ -158,29 +149,35 @@
     <article class="container grid :vertical :middle :around">
       <picture class="project__logo">
         
-          <img src="/images/icons/yin_yang.svg">
         
+            <img src="/apps/iching/images/I%20CHING-cropped.png">
         
       </picture>
       
-      <ul class="project__meta">
-        <li>
-          <strong class="label">Visit</strong>
-          <a href="http://iching.xyz" class="clean value color-high">iching.xyz</a>
-        </li>
-        <li>
-          <strong class="label">Created at</strong>
-          <span class="value color-high">06/2016</span>
-        </li>
-        <li>
-          <strong class="label">Technology</strong>
-          <span href="" class="value color-high">React</span>
-        </li>
-        <li>
-          <strong class="label">License</strong>
-          <span href="" class="value color-high">GPL v3</span>          
-        </li>
-      </ul>
+      <table class="project__meta clean">
+        <thead>
+          <tr>
+            <td>URL</td>
+            <td>Created at</td>
+            <td>Technology</td>
+            <td>License</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="http://iching.xyz" class="clean value color-high">iching.xyz</a></td>
+            <td>
+                <span class="value">06/2018</span>
+            </td>
+            <td>
+                <span href="" class="value">React PWA</span>
+            </td>
+            <td>
+                <span href="" class="value">MIT</span>          
+            </td>
+          </tr>
+        </tbody>
+      </table>
       
       <div class="project__description font-big">
         <p>The I Ching, or Book of Changes, a common source for both Confucianist and Taoist philosophy, is one of the first efforts of the human mind to place itself within the universe. It has exerted a living influence in China for 3,000 years, and interest in it has been rapidly spreading in the West.</p>
@@ -210,7 +207,7 @@
 
         
         
-        <ul class="list-cards grid :horizontal :around appearFromBottom :play">
+        <ul class="list-cards clean grid :horizontal :around appearFromBottom :play">
                 <li class="cell">
                     <a class="card app-card" 
                        href="/apps/camtwist-syphon/"

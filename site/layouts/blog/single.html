@@ -12,17 +12,19 @@
 
 {{ define "main" }}
 <section class="post">
-  {{ $featured := .Page.Resources.GetMatch "featured" }} {{ if $featured }}
-  <article id="post__showcase" class="featured">
+  {{ $featured := .Page.Resources.GetMatch "featured" }}
+  <article id="post__showcase" class="{{ if $featured }} featured {{ end }}
+                                      {{ if $featured }}{{ $featured.Params.colorscheme }}{{else}}light{{end}}">
     <picture>
-      <img src="{{ $featured.Permalink }}">
+      {{ if $featured }}
+        <img src="{{ $featured.Permalink }}">
+      {{ end }}
     </picture>
-    <div class="headline {{ $featured.Params.colorscheme }}">
+    <div class="headline">
       <h1 class="title">{{ safeHTML .Title }}</h1>
       <h3 class="subtitle">{{ .Params.subtitle }}</h3>
     </div>
   </article>
-  {{ end }}
   <article id="post__body" class="container grid :vertical :around">
     {{ .Content }}
   </article>

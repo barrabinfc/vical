@@ -10,10 +10,16 @@ title = "I Ching"
 website = "iching.xyz"
 subtitle = "The chinese book of changes"
 description = "The I Ching, or Book of Changes, a common source for both Confucianist and Taoist philosophy, is one of the first efforts of the human mind to place itself within the universe. It has exerted a living influence in China for 3,000 years, and interest in it has been rapidly spreading in the West."
-logo = "/images/icons/yin_yang.svg"
-tech = "React"
-license = "GPL v3"
-created_at = "06/2016"
+tech = "React PWA"
+license = "MIT"
+created_at = "06/2018"
+
+[[resources]]
+  name = "featured"
+  src = "images/I CHING-cropped.png"
+  [resources.params]
+    colorscheme = "light"
+
 +++
 
 <div class="cellphone">

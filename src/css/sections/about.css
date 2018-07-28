@@ -16,7 +16,8 @@
       & > .title { 
         @apply --hero-font;
         font-weight: 100;
-        padding-top: calc(2*var(--pad-big));
+        padding-top: calc(2*var(--pad-medium));
+        padding-bottom: calc(2*var(--pad-medium));
   
         color: inherit;
         font-size: 5.0rem;
@@ -26,7 +27,7 @@
       }
   
       & .intro {
-        padding: calc( 2* var(--pad-big)) 0;
+        padding: calc( 2* var(--pad-medium)) 0;
         
         display: flex;
         width: 80%;
@@ -68,13 +69,13 @@
           }
   
           & p { margin: 0; padding: 0; }
-  
-          & .txt { line-height: 1.7em; }
-          
+            
           & .first-column { flex: 0.5; }
           & .second-column { flex: 0.5; }
           
-          & .education { 
+          & .education {
+            & .txt { line-height: 1.7em; }
+            & .subtitle { color: var(--dark-gray); }
             & li {
               padding-bottom: calc( 2 * var(--gutter));
             }
@@ -109,6 +110,7 @@
             color: #fff;
             
             /* center */
+            margin: 0;
             height: inherit;
             display: flex;
             flex-direction: column;
