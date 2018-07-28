@@ -18,13 +18,13 @@ aliases = [
     <h6 class="title">Skills</h6>
     <div class="txt">
       <ul>
-        <li>Javascript ES6 / Typescript / HTML5 / CSS3</li>
-        <li>React/Redux | VueJS | jQuery</li>
-        <li>Python/Django/SQL databases</li>
-        <li>Linux / Unix </li>
-        <li>C/C++/Lisp</li>
-        <li>Processing/OpenFrameworks/Arduino/Raspberry</li>
-        <li>Git/webpack/make/other developer ecosystem tools</li>
+        <li>Frontend development with modern HTML/CSS/SVG</li> 
+        <li><p>Javascript ES6 / Typescript and React/VueJS</p></li>
+        <li>Backend development with Django and nodeJS</li>
+        <li>Python and C/C++</li>
+        <li>SQL and noSQL databases</li>
+        <li>Linux/Unix servers</li>
+        <li><p>Data visualization and image processing</p></li>
       </ul>
     </div>
   </div>
