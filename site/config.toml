@@ -1,7 +1,6 @@
 baseurl = "/"
-languageCode = "en-us"
 title = "vicale"
-paginate = 5
+paginate = 10
 
 pluralizelisttitles =false
 enableEmoji = true
