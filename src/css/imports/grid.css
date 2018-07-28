@@ -31,6 +31,12 @@
     align-items: flex-end
 }
 
+.grid.\:baseline {
+    -ms-flex-align: baseline;
+    -ms-grid-row-align: baseline;
+    align-items: baseline;
+}
+
 .grid.\:stretch {
     -ms-flex-align: stretch;
     -ms-grid-row-align: stretch;
@@ -117,6 +123,10 @@
     .cell.\:11of12 {
         -ms-flex: 0 0 91.66667%;
         flex: 0 0 91.66667%
+    }
+
+    .cell.\:12of12 {
+        flex: 0 0 100%;
     }
 }
 

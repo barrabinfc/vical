@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recipe on vicale</title>
+    <link>/tags/recipe/</link>
+    <description>Recent content in Recipe on vicale</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Jul 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/recipe/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Como criar um pacote para &lt;b&gt;archlinux&lt;/b&gt;</title>
+      <link>/blog/criar-pacote-archlinux/</link>
+      <pubDate>Sat, 15 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/criar-pacote-archlinux/</guid>
+      <description>Archlinux é uma das melhores distribuições Linux em 2018. Entretanto, a quantidade de software no catálogo ainda é inferior ao ubuntu, e eventualmente você vai ter que instalar software manualmente.
+Nesses casos, é muito útil saber como empacotar software. Dessa forma, ainda podemos gerênciar instalação/atualizações/remoção usando o pacman, sem termos software zumbi no sistema operacional.
+Nesse artigo, vou mostrar como empacotar o software giflossy, um otimizador lossy de gifs.</description>
+    </item>
+    
+  </channel>
+</rss>

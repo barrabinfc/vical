@@ -1,3 +1,30 @@
+/**
+ * General transition
+ */
+.animated {
+  transition: opacity var(--trans-time) var(--trans-easing),
+              color var(--trans-time) var(--trans-easing),
+              background-color var(--trans-time) var(--trans-easing),
+              transform var(--trans-time) var(--trans-easing-elastic);  
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fade-out {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+/**
+ * General animations for page-in and page-out
+ */
+.page-in { animation: fade-in .750s ease-out; animation-fill-mode: both; }
+.page-out { animation: fade-out .750s ease-in; animation-fill-mode: both; }
+
+
 @keyframes intro {
   0% {
     opacity: 0;
@@ -15,75 +42,31 @@
   0% { opacity: 0; transform: translateY(50px); }
   100% { opacity: 1; transform: translateY(0px); }
 }
-.appearFromBottom-anim {
-  animation: appearFromBottom 1s var(--trans-easing);
+.appearFromBottom {
+  animation: appearFromBottom 0.55s var(--trans-easing);
+  animation-fill-mode: both;
+  animation-play-state: paused;
+  
+  &.\:play { animation-play-state: running; }
 }
 
 
 
-/** 
- *  Enable header-anim-growTooltip only in project&blog pages
- */
-body.software ,
-body.blog {
-  
-  /* Grow a underscore */
-  & .header-anim-growTooltip {
-    
-    /* left */
-    &:before {
-      content: ' ';
-      background-color: var(--black);
-      width: 0%;
-      right: 50%;
-      top: 1.7em;
-      height: 2px;
-      position: absolute;
-      
-      z-index: 0;
-      transition: width 0.5s var(--trans-easing);
-    }
-    
-    /* right */
-    &:after {
-      content: ' ';
-      background-color: var(--black);
-      width: 0%;
-      left: 50%;
-      top: 1.7em;
-      height: 2px;
-      position: absolute;
+@keyframes appearFromBottomCropped {
+  0% { transform: translateY(150px); }
+  100% { transform: translateY(0px); }
+}
+.appearFromBottomCropped {
+  overflow: hidden;
 
-      z-index: 0;
-      transition: width 0.5s var(--trans-easing);
-    }
-    
-    & .sub-menu {
-      max-height: 0px;
-      opacity: 0;
-      visibility: hidden;
-      overflow: hidden;
+  & > span {
+    display: block;
+    animation: appearFromBottomCropped 0.55s var(--trans-easing);
+    animation-fill-mode: both;  
+    animation-play-state: paused;
+  }
 
-      transition: max-height 0.5s 0.5s var(--trans-easing), 
-                  opacity 0.25s 0.5s var(--trans-easing);
-    }
-    
-    /* States of animation */
-    &:hover {
-      &:before {
-        width: 150%;
-      }
-      &:after {
-        width: 150%;
-      }
-      & .sub-menu {
-        visibility: visible;
-        opacity: 1;
-        max-height: 500px;
-      }
-    }
-    
+  &.\:play { 
+    & > span { animation-play-state: running; }
   }
 }
-
-

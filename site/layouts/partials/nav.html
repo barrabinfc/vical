@@ -1,24 +1,17 @@
-<a href="#" class="menu-close"></a>
-<nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="menu">
-  {{ $currentNode := . }}
+{{ $currentNode := . }}
+{{ $navModifier := .Scratch.Get "navModifier" }}
+<nav class="menu {{ $navModifier }} animated">
+
   {{ range .Site.Menus.main }}
     {{ $is  := $currentNode.IsMenuCurrent "main" . }}
     {{ $has := $currentNode.HasMenuCurrent "main" . }}
-    <div class="menu-header hoverable 
-                {{ if $has }}selected{{end}}
-                {{ if .HasChildren }}has-submenu header-anim-growTooltip {{else}}is-link{{end}}"
-                id="menu-{{ .Identifier }}">
-      {{ if .HasChildren }}
-        <a>{{trim .Name " "}}</a>
-        <ul class="sub-menu">
-        {{ range .Children }}
-            <li> <a href="{{.URL}}" class="default"> {{ .Name }} </a> </li>
-        {{ end }}
-        </ul>
-      {{ else }}
-        <a href="{{ .URL }}">{{trim .Name " "}}</a>
-      {{ end }}
-    </div>
+
+    <a class="menu-header animated
+             {{ if $has }}selected{{end}}"
+        href="{{ .URL }}"
+        id="menu-{{ .Identifier }}">
+        {{ trim .Name " "}}
+      </a>
   {{ end }}
 
 </nav>

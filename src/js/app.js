@@ -1,18 +1,59 @@
 var rot = require("rot")
+var Barba = require('barba.js');
+
+import {GeneralTransition} from './transitions/fade';
 
 const docStyle = document.documentElement.style;
 const pointerClick = (document.ontouchstart === undefined ? "click" : "touchstart")
 
-function start() {
-  scrollListener()
-  fixHrefTarget(document)
+const PAGE_LOAD_DURATION = 750
+
+function pageStart(){
+  requestIdleCallback( () => {
+    window.unlockMail();
+    fixHrefTarget(document);
+
+    let tiltedElements = document.querySelectorAll('[data-tilt]')
+    Array.from(tiltedElements).map( (el) => {
+      if(!el.vanillaTilt) VanillaTilt.init(el)
+    })
+
+    /*bodyClasses.remove('page-loaded');
+    bodyClasses.add('page-loaded');*/
+  })
+}
+
+function pageDestroy(){
+  let tiltedElements = document.querySelectorAll('[data-tilt]')
+
+  requestIdleCallback( () => {
+    Array.from(tiltedElements).map( (el) => {
+      console.log('Destroy: ', el)
+      el.vanillaTilt.destroy()
+    })
+  })
+}
+
+function boot() {
+  requestIdleCallback( () => {
+    scrollListener()
+  })
+
+  requestAnimationFrame( () => {
+    // Page transition loader
+    Barba.Pjax.Dom.wrapperId = 'page-trans-wrapper';
+    Barba.Pjax.Dom.containerClass = 'page-container';
+
+    Barba.Pjax.getTransition = () => (GeneralTransition('page-in','page-out', PAGE_LOAD_DURATION ));
+    Barba.Pjax.start();
+  })
 
   /* Get relative address of page */
   var address = location.href.split("/")
                         .filter((t) => { return (t != "" && t != "http:") })
                         .splice(1, 10).join("/")
 
-  /* Specific actions for Specific pages */
+  document.dispatchEvent( new Event('page-in') );                  
 }
 
 
@@ -20,10 +61,11 @@ function start() {
  * Listen to scroll-y, update css --scrolly variable
  */
 function scrollListener() {
-  // add passive listener
+  /* add passive listener
   const scrollHandler = document.addEventListener("scroll", (ev) => {
     docStyle.setProperty("--scrolly", document.body.scrollTop)
   }, {passive: true})
+  */
 }
 
 
@@ -36,18 +78,21 @@ function fixHrefTarget(container, tgtClass = ":is-target") {
   const linksWithHash = container.querySelectorAll('a[href^="#"]')
   let target = undefined
 
+  function add(tgt, klass) { tgt.classList.add(klass) }
+  function rm(tgt, klass) { tgt.classList.remove(klass) }
+
   linksWithHash.forEach((link) => {
     link.addEventListener(pointerClick, function(e) {
       e.preventDefault()
-
-      // remove old target
-      if (target) { target.classList.remove(":is-target") }
 
       // set new target
       var newTgt = this.getAttribute("href")
       if (newTgt != "#") {
         target = container.querySelector(newTgt)
-        target.classList.add(":is-target")
+
+        // remove or add new class
+        if(target.classList.contains(tgtClass)) rm(target, tgtClass)
+        else add(target, tgtClass)
       }
     })
   })
@@ -59,7 +104,6 @@ function fixHrefTarget(container, tgtClass = ":is-target") {
 function hoverInOut(container, selector = "hoverable", timeout = 5000) {
   var hoveredEls = container.querySelectorAll(selector)
   hoveredEls.forEach((el) => {
-    console.log("Adding hover behaviour to -> ", el)
     let is_hovered = false;
     el.addEventListener("mouseover", (ev) => {
       is_hovered = true;
@@ -109,4 +153,6 @@ function unlockMail() {
 /* Export */
 window.unlockMail = unlockMail;
 
-document.addEventListener("DOMContentLoaded", start)
+document.addEventListener("DOMContentLoaded", boot)
+document.addEventListener('page-in', pageStart);
+document.addEventListener('page-out', pageDestroy);

@@ -1,11 +1,11 @@
 +++
 draft = false
-colorscheme = "light"
 color = "#000"
-bg_color = "rgba(255,255,255, 0.90)"
+bg_color = "rgba(255,255,255, 1.0)"
 high_color = "#f05553"
 title = "BMG"
-website = "http://genitalia.me"
+thumbnail = "/images/bmg/admin-login.png"
+website = "genitalia.me"
 subtitle = "Banco mundial da genitalia"
 description = "<p>O <a href='http://genitalia.me' class='default nomargin black underline' target='_blank'>genitalia.me</a> é um projeto artístico, uma galeria infinita de genitálias doadas por anônimos do mundo todo através do site.</p><p>Desenvolvi o mosaico infinito utilizando <strong>HTML</strong> e <strong>Javascript</strong> e a área administração em <strong>Python</strong> com o framework <strong>Django</strong>.</p>"
 +++

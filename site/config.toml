@@ -1,24 +1,41 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "« wity »"
+title = "vicale"
 paginate = 5
 
 pluralizelisttitles =false
+enableEmoji = true
+enableGitInfo = true
 enableRobotsTXT=true
 googleAnalytis  = ""
 disqusShortname = ""
 SectionPagesMenu="main"
 footnoteReturnLinkContents = "↩"
+pygmentsCodeFences = true
+
+[frontmatter]
+  date = ["date", ":default"]
+  publishDate = ["publishDate", "date", "lastmod" ]
 
 [params]
   description = ""
   author = ""
-  hide_author = false
+  hide_author = true
   show_menu = true
   powered_by = false
   images = []
-  theme_variant = ""
-  
+
+[params.colors]
+  black = "#000"
+  white = "#fff"
+  gray  = "#e9e9e9"
+  dark-gray =  "hsl(0, 0%, 50%)"
+  rly-dark_gray = "hsl(0, 0%, 20%)"
+  primary = "#f05553"
+  second = "#0098d8"
+  third = "#0b3536"  
+
+
 [[menu.main]]
   name = "work"
   weight = 1
@@ -49,34 +66,32 @@ footnoteReturnLinkContents = "↩"
   identifier = "work/bmg"
   url = "/work/bmg"
 
-  
-[[menu.main]]
-  name = "software"
-  weight = 2
-  identifier = "software"
-  url = "/software/"
-  
-[[menu.main]]
-  name = "I Ching"
-  parent = "software"
-  identifier = "software/iching"
-  url = "/software/iching"
-  
-[[menu.main]]
-  name = "Piano Coach"
-  parent = "software"
-  identifier = "software/pianocoach"
-  url = "/software/piano-coach"
-
-
 #[[menu.main]]
-#  name = "Blog"
-#  identifier = "blog"
-#  url = "/blog/"
-#  weight = 10
+#  name = "apps"
+#  weight = 2
+#  identifier = "apps"
+#  url = "/apps/"
+  
+#[[menu.main]]
+#  name = "I Ching"
+#  parent = "apps"
+#  identifier = "apps/iching"
+#  url = "/apps/iching"
+  
+#[[menu.main]]
+#  name = "Piano Coach"
+#  parent = "apps"
+#  identifier = "apps/pianocoach"
+#  url = "/apps/piano-coach"
+
+[[menu.main]]
+  name = "Blog"
+  identifier = "blog"
+  url = "/blog/"
+  weight = 100
   
 [[menu.main]]
   name = "About"
-  weight = 100
+  weight = 10
   identifier = "about"
   url = "/about/me"

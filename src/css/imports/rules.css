@@ -1,24 +1,22 @@
 /*
  * Apply rules
- */
+ *
 :root {
+
   --hero-font: {
-    font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-    font-weight: 900;
+    font-family: 'FuturaStd', sans-serif;
   };
 
   --code-font: {
-    font-family: 'Cutive Mono', monospace;
-    font-weight: normal;
-    letter-spacing: -1px;
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: 400;
   };
 
   --paragraph-font: {
-    font-family: 'Open Sans',Helvetica Neue,sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
   };
   
-  --grid-background {
+  --grid-background: {
     position: absolute;
     overflow: hidden;
     top: 0; left: 0;
@@ -28,18 +26,12 @@
     opacity: 0.05;
     z-index: -10;
     background: var(--black) url("../images/grid-24x16.png") repeat;
-  }
+  };
   
-  /*
-   * Animation/transition
-   */
-  --transition {
+  --transition: {
     transition: var(--trans-props) var(--trans-time) var(--trans-easing);
   }
   
-  /*
-   * Useful rules
-   */
   --nostyle { all: unset; }
   --abs {
     position: absolute;
@@ -71,10 +63,10 @@
   --grid-around { justify-content: space-around; }  
   --grid-between { justify-content: space-between; }
   
-  /* absolute center */
   --abscenter {
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
   }
 }
+*/

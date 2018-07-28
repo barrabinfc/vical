@@ -1,58 +1,156 @@
+@import 'imports/variables.css';
 /*
  * Typography futuristic themed.
  *  code: Source Code Pro
  *  Title: Orbitron
  *  text: Play or Antic 
  */
+/*@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');*/
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:500');
+
+@font-face {
+  font-family: 'FuturaStd';
+  font-weight: 300;
+  src: 
+       url('/fonts/FuturaStd-Book.woff2') format('woff2'); /* Super Modern Browsers */
+}
+@font-face {
+  font-family: 'FuturaStd';
+  font-weight: 600;
+  src: 
+       url('/fonts/FuturaStd-Bold.woff2') format('woff2'); /* Super Modern Browsers */
+}
+
+
 /*
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Abril+Fatface|Montserrat:700|Source+Code+Pro:400,700');
-*/
 @import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Roboto:900|Open+Sans');
-
-:root {
-  --linescale: calc(5/4);
-  --typoscale: calc(3/2);   /* perfect fifth */
-}
+*/
 
 
-h1 { 
-  font-size: calc(1rem * 2.33 * var(--typoscale));    
-  line-height: calc(1rem * 2.33 * var(--typoscale));
-  margin: 0;
-}
-h2 { 
-  font-size: calc(1rem * 2 * var(--typoscale));       
-  line-height: calc(1rem * 2 * var(--typoscale));
-  margin: 0;
-}
+h1,h2,h3,h4,h5,h6 { 
+  --size:  calc(1rem * 2.33 * var(--typoscale));
   
-h3 { 
-  font-size: calc(1rem * 1.66 * var(--typoscale));    
-  line-height: calc(1rem * 1.66 * var(--typoscale));
-  margin: 0;
-}
-h4 {
-  font-size: calc(1rem * 1.33 * var(--typoscale));
-  line-height: calc(1rem * 1.33 * var(--typoscale));  
-  margin: 0;
+  font-family: var(--hero-font);
+  font-size: var(--size);    
+  line-height: var(--size);
+  margin: var(--size) 0;
 
-}
-h5 {
-  font-size: calc(1rem * 1 * var(--typoscale));
-  line-height: calc(1rem * 1 * var(--typoscale));
-  margin: 0;
-}
-h6 {
-  font-size: calc(1rem * .77 * var(--typoscale));
-  line-height: calc(1rem * .77 * var(--typoscale)); 
+  orphans: 2;
+  widows: 2
 }
 
+h2 {  --size:  calc(1rem * 2.00 * var(--typoscale)); }
+h3 {  --size:  calc(1rem * 1.66 * var(--typoscale)); }
+h4 {  --size:  calc(1rem * 1.33 * var(--typoscale)); }
+h5 {  --size:  calc(1rem * 1.00 * var(--typoscale)); }
+h6 {  --size:  calc(1rem * 0.66 * var(--typoscale)); }
+
+/* Paragraphs and codes */
 p { 
-  font-family: 'Open Sans';
-  margin: 0 0 1.5em;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.625rem;
+
+  orphans: 2;
+  widows: 2;
 }
 
-.font-big {
-  font-size: calc(1rem * 1.66 * var(--typoscale));    
-  line-height: calc(1rem * 1.66 * var(--typoscale));
+pre {
+  padding: calc( 2 * var(--pad));
+  margin: 0 0 1.5rem 0;
+  background-color: var(--light-gray);
+  overflow: auto;
+}
+
+code, pre, pre code {
+  font-weight: 100;
+  text-shadow: none;
+  font-family: var(--code-font);
+  font-size: 90%;
+  overflow: hidden;
+}
+
+blockquote { 
+  width: 100%; 
+  margin: 0 0 1.5rem 0;
+  padding-left: calc(2 * var(--gutter));
+  font-size: 1rem; 
+  border-left: 4px solid var(--light-gray);
+}
+
+.highlight { margin-bottom: 1.5rem; }
+.highlight > pre { margin: 0; } 
+
+
+/**
+ * Links
+ */
+a { text-decoration: none; color: var(--second); }
+a:hover { text-decoration: underline; }
+a.no-hover:hover { text-decoration: none; }
+
+a.default {
+  position: relative;
+  cursor: pointer;
+  color: var(--white);
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
+}
+a.black {
+  color: var(--black);
+}
+a.no-underline {
+  &:hover { text-decoration: none !important; }
+}
+a.underline {
+  text-decoration: underline;
+}
+
+
+/** 
+ * A links without default style
+ */
+a.clean {
+  margin: inherit;
+  padding: inherit;
+}
+
+
+
+/**
+ * Tables
+ */
+table {
+  margin-bottom: 1.5rem;
+  border-collapse: collapse;
+  border-radius: var(--curve-soft);
+  overflow: hidden;
+  
+  & thead {
+    background-color: var(--front);
+    color: var(--back);
+    font-weight: bold;
+    font-family: var(--hero-font);
+  }
+  & tr {
+    border-bottom: 1px solid var(--gray);
+    &:not(:last-child){
+      border-bottom: 1px solid var(--gray);
+    }
+  }
+  & td:first-of-type {
+    border-left: 1px solid var(--gray);
+  }
+  & td:last-of-type {
+    border-right: 1px solid var(--gray);
+  }
+
+  & th, & td {
+    padding: calc( 2* var(--gutter));
+
+    &:not(:last-child){
+      border-right: 1px solid var(--gray);
+    }
+  }
+
 }
