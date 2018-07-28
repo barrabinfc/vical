@@ -298,7 +298,7 @@ header[role="header"] {
     flex: 0.5;
     
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
   
     /* Menu */
     & .menu-header {
@@ -316,6 +316,7 @@ header[role="header"] {
       color: inherit;
 
       padding: 1rem;
+      margin-left: var(--pad-medium);
 
       /** Avoid last link to have a right margin, 
           making it container alignment easier */

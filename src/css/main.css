@@ -47,9 +47,9 @@ body {
 
 
 /**
- * Apps Single Page
+ * App Single Page
  */
-.apps .project__info {
+.app .project__info {
     text-align: center;
     
     & .project__logo {

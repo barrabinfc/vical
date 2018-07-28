@@ -66,23 +66,23 @@ pygmentsCodeFences = true
   identifier = "work/bmg"
   url = "/work/bmg"
 
-[[menu.main]]
-  name = "apps"
-  weight = 2
-  identifier = "apps"
-  url = "/apps/"
+#[[menu.main]]
+#  name = "apps"
+#  weight = 2
+#  identifier = "apps"
+#  url = "/apps/"
   
-[[menu.main]]
-  name = "I Ching"
-  parent = "apps"
-  identifier = "apps/iching"
-  url = "/apps/iching"
+#[[menu.main]]
+#  name = "I Ching"
+#  parent = "apps"
+#  identifier = "apps/iching"
+#  url = "/apps/iching"
   
-[[menu.main]]
-  name = "Piano Coach"
-  parent = "apps"
-  identifier = "apps/pianocoach"
-  url = "/apps/piano-coach"
+#[[menu.main]]
+#  name = "Piano Coach"
+#  parent = "apps"
+#  identifier = "apps/pianocoach"
+#  url = "/apps/piano-coach"
 
 [[menu.main]]
   name = "Blog"

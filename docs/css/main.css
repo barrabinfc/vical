@@ -662,7 +662,7 @@ header[role="header"] .menu {
     flex: 0.5;
     
     display: flex;
-    justify-content: space-between
+    justify-content: flex-end
   
     /* Menu */
   }
@@ -681,7 +681,9 @@ header[role="header"] .menu .menu-header {
       text-transform: uppercase;
       color: inherit;
 
-      padding: 1rem
+      padding: 1rem;
+      margin-left: 24px;
+      margin-left: var(--pad-medium)
 
       /** Avoid last link to have a right margin, 
           making it container alignment easier */
@@ -1493,23 +1495,23 @@ body {
   background-color: color( #fc0d5e alpha(90%));
 }
 /**
- * Apps Single Page
+ * App Single Page
  */
-.apps .project__info {
+.app .project__info {
     text-align: center
   
 }
-.apps .project__info .project__logo {
+.app .project__info .project__logo {
       margin: 0 auto
     }
-.apps .project__info .project__logo > img { width: 100%; }
-.apps .project__info .project__meta {
+.app .project__info .project__logo > img { width: 100%; }
+.app .project__info .project__meta {
       max-width: 50%;
       width: auto;
       margin: 0 auto 48px auto;
       margin: 0 auto var(--pad-big) auto; 
     }
-.apps .project__info .project__description {
+.app .project__info .project__description {
       font-size: 1rem;
       text-align: left;
       width: 70%;

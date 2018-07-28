@@ -5,6 +5,7 @@ color = "#0f0f0f"
 bg_color = "#f8fbfb"
 dark_gray = "#f8f8f8"
 thumbnail = "/images/apps/masin-cover-01.jpg"
+layout = "app"
 
 title = "I Ching"
 website = "iching.xyz"
