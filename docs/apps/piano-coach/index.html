@@ -40,7 +40,6 @@
   
   .picture { position: relative; }
   
-  .txt-center { text-align: center; }
   .bg\:primary{ background-color: #f58021; }      
   .bg\:second { background-color: #ae509e; }
               
@@ -62,14 +61,6 @@
   .w70 { max-width: 70%; }
   .w90 { max-width: 90%; }
   .w100 { max-width: 100%; }
-
-  
-  .abscenter {
-    margin: 0;
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-  }
 </style>
     
     
@@ -158,29 +149,35 @@
     <article class="container grid :vertical :middle :around">
       <picture class="project__logo">
         
-          <img src="/images/icons/piano-roll.svg">
         
+          <span>Piano Coach</span>
         
       </picture>
       
-      <ul class="project__meta">
-        <li>
-          <strong class="label">Visit</strong>
-          <a href="http://piano-coach.xyz" class="clean value color-high">piano-coach.xyz</a>
-        </li>
-        <li>
-          <strong class="label">Created at</strong>
-          <span class="value color-high">06/2017</span>
-        </li>
-        <li>
-          <strong class="label">Technology</strong>
-          <span href="" class="value color-high">Web</span>
-        </li>
-        <li>
-          <strong class="label">License</strong>
-          <span href="" class="value color-high">GPL v3</span>          
-        </li>
-      </ul>
+      <table class="project__meta clean">
+        <thead>
+          <tr>
+            <td>URL</td>
+            <td>Created at</td>
+            <td>Technology</td>
+            <td>License</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="http://piano-coach.xyz" class="clean value color-high">piano-coach.xyz</a></td>
+            <td>
+                <span class="value">06/2017</span>
+            </td>
+            <td>
+                <span href="" class="value">Web</span>
+            </td>
+            <td>
+                <span href="" class="value">GPL v3</span>          
+            </td>
+          </tr>
+        </tbody>
+      </table>
       
       <div class="project__description font-big">
         <p>A web tool for piano practice</p>
@@ -203,7 +200,7 @@
 
         
         
-        <ul class="list-cards grid :horizontal :around appearFromBottom :play">
+        <ul class="list-cards clean grid :horizontal :around appearFromBottom :play">
                 <li class="cell">
                     <a class="card app-card" 
                        href="/apps/camtwist-syphon/"

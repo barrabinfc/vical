@@ -12,8 +12,9 @@
         /* Text */
         & > .title { 
           font-weight: 100;
-          padding-top: calc(2*var(--pad-big));
-    
+          padding-top: calc(2*var(--pad-medium));
+          padding-bottom: calc(2*var(--pad-medium));
+          
           color: inherit;
           font-size: 5.0rem;
           line-height: 5rem;
@@ -26,7 +27,7 @@
             width: 100%;
             margin: 0 auto;
 
-            margin: calc( 2* var(--pad-big)) 0 0 0;
+            margin: calc( 2* var(--pad-medium)) 0 0 0;
             position: relative; 
 
             & li {
@@ -35,7 +36,6 @@
                 padding: var(--pad-medium);
 
                 font-family: var(--hero-font);
-                border-radius: var(--curve-soft);
 
                 &:nth-child(even){
                     background-color: var(--light-gray);
@@ -102,8 +102,132 @@
     }
 
     & section.post {
-        & #post__body {
-            width: 90%;
+        /** No-Featured post showcase **/
+        & > #post__showcase {
+
+            display: flex;
+            min-height: 50vh;
+            height: 50vh;
+
+            & > .headline {
+                margin: 0 auto;
+                width: 50%;
+                text-align: center;
+
+                & > .title {
+                    font-size: calc(1rem * 5 * var(--typoscale));
+                    line-height: calc(1rem * 5 * var(--typoscale));
+                }
+            }
+
+            /** Colorschemes **/
+            &.dark { 
+                & .title { color: var(--white); } 
+                & .subtitle { color: var(--black); }
+            }
+            &.light {
+                background-color: var(--second);
+                & .title { color: var(--front); }
+                & .subtitle { color: var(--light-gray); }
+            }
+
+        }
+
+        /** feature post **/
+        & > #post__showcase.featured {
+            width: 100%;
+            height: calc( 100vh - var(--header-height));
+            max-height: 100vh;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            
+            & picture {
+              display: block;
+              position: relative;
+              background:  radial-gradient( circle, transparent 50vh,                                             
+                                  rgba(0, 0, 0, 0.85) 120vh);
+              
+              & img {
+                max-width: 100%;
+                object-fit: cover;
+                mix-blend-mode: multiply;
+              }
+            }
+            
+            & .headline {
+              position: absolute;
+              top: 25%;
+              left: 15%;
+              width: 70%;
+              height: 50%;
+              display: flex;
+              flex-wrap: nowrap;
+              flex-direction: column;
+              align-items: center;
+              justify-content: space-around;
+              text-align: center;
+          
+              color: inherit;
+              
+              /** Big ass title **/
+              & .title {
+                font-size: calc(1rem * 5 * var(--typoscale));
+                line-height: calc(1rem * 5 * var(--typoscale));
+          
+                font-weight: bold;
+              }
+              & .subtitle  {
+                font-weight: bold;  
+                margin: 0px auto;
+              }
+              
+              /* Strong is just outline with some pattern */
+              & strong , & b {
+                -webkit-text-stroke-color: var(--white);
+                -webkit-text-stroke-width: 2px;
+                -webkit-background-clip: text;
+                color: transparent;
+                text-shadow: none;
+                background-color: color-mod( var(--black) alpha(50%));
+                /*background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='5' height='5'><rect width='5' height='5' fill='transparent'/> <rect width='1' height='1' fill='#ccc'/></svg>")*/
+              }
+          
+            }          
+        }
+
+        & > #post__body {
+            width: 70%;
+
+            /**
+             * Adjacent spacement fixes
+             */
+             & p > code , 
+             & li > code {
+                font-size: 85%;
+                padding: var(--gutter);
+                background-color: var(--gray);
+                border-radius: 3px;
+             }
+            
+              /**
+              * Header adjacement
+              */
+              & p + h1,  & p + h2,  & p + h3 , & p + h4,  & p + h5,  & p + h6 , 
+              & ul + h1, & ul + h2, & ul + h3, & ul + h4, & ul + h5, & ul + h6 ,
+              & ol + h1, & ol + h2, & ol + h3 ,& ol + h4, & ol + h5, & ol + h6 ,
+              & table + h1, & table + h2, & table + h3 , & table + h4, & table + h5, & table + h6 , 
+              & .highlight + h1, & .highlight + h2, & .highlight + h3 , & .highlight + h4, & .highlight + h5, & .highlight + h6,
+              & pre + h1,  & pre + h2,  & pre + h3 , & pre + h4,  & pre + h5,  & pre + h6 {
+                margin-top: calc( var(--size) - 1.5rem);
+              }
+              
+              /* Adjacent list elements */
+              & ul + p, 
+              & ol + p {
+                margin-top: 1.5rem;
+              }              
         }
     }
 }

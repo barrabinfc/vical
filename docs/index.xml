@@ -17,9 +17,9 @@
       <pubDate>Sat, 15 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>/blog/criar-pacote-archlinux/</guid>
-      <description>Como muitas pessoas, eu adoro archlinux e seu gerenciador de pacotes. Porém , a quantidade de software no catálogo ainda é inferior ao ubuntu ou Mac, e eventualmente você vai ter que instalar software manualmente.
-Nesses casos, é muito útil saber como empacotar software para archlinux. Dessa forma, ainda podemos gerênciar instalação/atualizações/remoção usando o pacman, sem termos software zumbi no sistema operacional.
-Nesse artigo, vou mostrar como empacotar o software Giflossy, um otimizador lossy de gifs.</description>
+      <description>Archlinux é uma das melhores distribuições Linux em 2018. Entretanto, a quantidade de software no catálogo ainda é inferior ao ubuntu, e eventualmente você vai ter que instalar software manualmente.
+Nesses casos, é muito útil saber como empacotar software. Dessa forma, ainda podemos gerênciar instalação/atualizações/remoção usando o pacman, sem termos software zumbi no sistema operacional.
+Nesse artigo, vou mostrar como empacotar o software giflossy, um otimizador lossy de gifs.</description>
     </item>
     
     <item>
@@ -28,7 +28,7 @@ Nesse artigo, vou mostrar como empacotar o software Giflossy, um otimizador loss
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/me/</guid>
-      <description>Skills  - Javascript ES6 / Typescript / HTML5 / CSS3 - React/Redux | VueJS | jQuery - Python/Django/SQL databases - Linux / Unix  - C/C++/Lisp - Processing/OpenFrameworks/Arduino/Raspberry - Git/webpack/make/other developer ecosystem tools    Education   Nanodegree in Data science
+      <description>Skills  Javascript ES6 / Typescript / HTML5 / CSS3 React/Redux | VueJS | jQuery Python/Django/SQL databases Linux / Unix  C/C++/Lisp Processing/OpenFrameworks/Arduino/Raspberry Git/webpack/make/other developer ecosystem tools    Education  Nanodegree in Data science
 2017, Udacity
   BsC, Computer Science
 2009, Mackenzie
@@ -65,20 +65,6 @@ Nesse artigo, vou mostrar como empacotar o software Giflossy, um otimizador loss
     </item>
     
     <item>
-      <title>Hello</title>
-      <link>/blog/hello/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/hello/</guid>
-      <description>An 😄 header Paragraphs are separated by a blank line.
-2nd paragraph. Italic, bold, and monospace. Itemized lists look like:
- this one that one the other one  Note that &amp;mdash; not considering the asterisk &amp;mdash; the actual text content starts at 4-columns in.
- Block quotes are written like so.
-They can span multiple paragraphs, if you like.
- Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex.</description>
-    </item>
-    
-    <item>
       <title>I Ching</title>
       <link>/apps/iching/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -106,18 +92,14 @@ They can span multiple paragraphs, if you like.
     </item>
     
     <item>
-      <title>Test</title>
-      <link>/blog/test/</link>
+      <title>Styleguide</title>
+      <link>/blog/styleguide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/blog/test/</guid>
-      <description>An h1 header Paragraphs are separated by a blank line.
-2nd paragraph. Italic, bold, and monospace. Itemized lists look like:
- this one that one the other one  Example
-Note that &amp;mdash; not considering the asterisk &amp;mdash; the actual text content starts at 4-columns in.
- Block quotes are written like so.
-They can span multiple paragraphs, if you like.
- Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex.</description>
+      <guid>/blog/styleguide/</guid>
+      <description>This document shows Markdown formatting and style rules for hugo theme. Theme created by vical 😄.
+Lets start aaragraph, with Italic, bold, and monospace. And see vertical rhythm with lorem ipsum.
+Lorem ipsum Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lacinia nibh eu congue ullamcorper. Vestibulum vitae augue pharetra justo fringilla dignissim. Integer gravida, lacus vel molestie fermentum, turpis massa commodo dui, faucibus efficitur nisl nisl nec augue.</description>
     </item>
     
   </channel>

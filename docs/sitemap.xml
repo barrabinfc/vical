@@ -4,7 +4,7 @@
   
   <url>
     <loc>/blog/criar-pacote-archlinux/</loc>
-    <lastmod>2017-07-15T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-27T02:25:28-03:00</lastmod>
   </url>
   
   <url>
@@ -14,13 +14,13 @@
   
   <url>
     <loc>/about/</loc>
-    <lastmod>2018-07-23T18:08:42-03:00</lastmod>
+    <lastmod>2018-07-27T02:25:28-03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/about/me/</loc>
-    <lastmod>2018-07-23T18:08:42-03:00</lastmod>
+    <lastmod>2018-07-27T02:25:28-03:00</lastmod>
   </url>
   
   <url>
@@ -31,7 +31,7 @@
   
   <url>
     <loc>/tags/archlinux/</loc>
-    <lastmod>2017-07-15T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-27T02:25:28-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -47,7 +47,7 @@
   
   <url>
     <loc>/blog/</loc>
-    <lastmod>2017-07-15T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-27T02:25:28-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -62,23 +62,17 @@
   </url>
   
   <url>
-    <loc>/blog/hello/</loc>
-    <lastmod>2017-06-18T23:14:13-03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/apps/iching/</loc>
-    <lastmod>2018-07-23T17:59:13-03:00</lastmod>
   </url>
   
   <url>
     <loc>/work/luizalian/</loc>
-    <lastmod>2018-07-23T22:12:37-03:00</lastmod>
+    <lastmod>2018-07-27T02:25:28-03:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/pacman/</loc>
-    <lastmod>2017-07-15T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-27T02:25:28-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -89,24 +83,23 @@
   
   <url>
     <loc>/tags/recipe/</loc>
-    <lastmod>2017-07-15T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-27T02:25:28-03:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/styleguide/</loc>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2017-07-15T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-27T02:25:28-03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/test/</loc>
-    <lastmod>2017-06-12T00:50:34-03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/work/</loc>
-    <lastmod>2018-07-23T22:12:37-03:00</lastmod>
+    <lastmod>2018-07-27T02:25:28-03:00</lastmod>
     <priority>0</priority>
   </url>
   

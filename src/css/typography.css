@@ -67,6 +67,7 @@ code, pre, pre code {
   text-shadow: none;
   font-family: var(--code-font);
   font-size: 90%;
+  overflow: hidden;
 }
 
 blockquote { 
@@ -79,50 +80,6 @@ blockquote {
 
 .highlight { margin-bottom: 1.5rem; }
 .highlight > pre { margin: 0; } 
-
-p > code , li > code {
-  font-size: 85%;
-  padding: var(--gutter);
-  background-color: var(--gray);
-  border-radius: 3px;
-}
-
-/**
-* Fix adjacent spacing
-*/
-p + h1, p + h2, p + h3 , p + h4, p + h5, p + h6 , 
-ul + h1, ul + h2, ul + h3 , ul + h4, ul + h5, ul + h6 ,
-ol + h1, ol + h2, ol + h3 , ol + h4, ol + h5, ol + h6 ,
-table + h1, table + h2, table + h3 , table + h4, table + h5, table + h6 , 
-.highlight + h1, .highlight + h2, .highlight + h3 , .highlight + h4, .highlight + h5, .highlight + h6 {
-  margin-top: calc( var(--size) - 1.5rem);
-}
-
-/* Adjacent list elements */
-ul + p, ol + p {
-  margin-top: 1.5rem;
-}
-
-ul > li , ol > li {
-  margin-bottom: var(--gutter);
-}
-
-li > p:first-child {
-  display: inline-block;
-  margin-bottom: var(--gutter);
-}
-
-/* Nested lists */
-li > ul , 
-li > ol , 
-li > *:not(:first-child) {
-  margin-left: calc( 2.0rem + var(--gutter));
-  margin-bottom: var(--gutter);
-  /* Decrease list number size */
-  & > li::before {
-    font-size:  1.0rem;
-  } 
-}
 
 
 /**
