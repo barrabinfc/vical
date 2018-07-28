@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Code on vicale</title>
+    <link>/categories/code/</link>
+    <description>Recent content in Code on vicale</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Jul 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/code/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Como criar um pacote para archlinux</title>
+      <link>/blog/criar-pacote-para-archlinux/</link>
+      <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/criar-pacote-para-archlinux/</guid>
+      <description>Como criar um pacote archlinux Como muitas pessoas, eu adoro archlinux e seu gerenciador de pacotes. Porém , a quantidade de software no catálogo ainda é inferior ao ubuntu ou Mac, e eventualmente você vai ter que instalar software manualmente.
+Nesses casos, é muito útil saber como empacotar software para archlinux. Dessa forma, ainda podemos gerênciar instalação/atualizações/remoção usando o pacman, sem termos software zumbi no sistema operacional.
+Nesse artigo, vou mostrar como empacotar o software Giflossy, um otimizador lossy de gifs.</description>
+    </item>
+    
+  </channel>
+</rss>

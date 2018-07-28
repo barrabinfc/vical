@@ -1,0 +1,419 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Hello</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+      <meta name="description" content="Hello Post">
+    
+  
+    <style>
+  *, *::after , *::before { box-sizing: border-box; }
+  html,body { margin: 0; padding: 0; }
+  body { 
+    background-color: #fff; 
+    color: #0f0f0f; 
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; 
+    font-display: swap;
+    overflow-x: hidden;
+    overflow-y: overlay;
+  }
+  iframe,embed,img,video { max-width: 100%; }
+  
+  a,p,button { margin: 0; padding: 0; }
+  blockquote { width: 100%; margin: 1em auto; line-height: 1.0em; }
+  
+  body>header { position: absolute; top: 0; width: 100%; }
+  main > section {  position: relative; width: 100%; min-height: 100vh; 
+                    display: flex; flex-direction: column; justify-content: center; }
+  main > section > article {
+    min-height: 100vh;
+    padding: 2em 2em;
+  }
+  
+  
+  .container { padding: 0 96px; }
+  .container, .container-fluid { margin: 0 auto; }
+  
+  .picture { position: relative; }
+  
+  .txt-center { text-align: center; }
+  .bg\:primary{ background-color: #f58021; }      
+  .bg\:second { background-color: #ae509e; }
+              
+  .grid { display: flex; flex-wrap: wrap; }
+  .grid.\:vertical { flex-direction: column; }
+  .grid.\:between { justify-content: space-between; }
+  .grid.\:around { justify-content: space-around; }
+  .grid.\:middle { align-items: center; }
+  
+  .columns1 { columns: 1; column-gap: 0em; }
+  .columns2 { columns: 2; column-gap: 2em; }
+  .columns3 { columns: 3; column-gap: 1em; }
+  
+  .w10 { max-width: 10%; }
+  .w33 { max-width: 33%; }
+  .w25 { max-width: 25%; }
+  .w40 { max-width: 40%; }
+  .w50 { max-width: 50%; }
+  .w70 { max-width: 70%; }
+  .w90 { max-width: 90%; }
+  .w100 { max-width: 100%; }
+
+  
+  .abscenter {
+    margin: 0;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+    
+    
+    <script type="text/javascript">
+        ['/css/evil-icons.css'].map( function(url) {
+            var link = document.createElement('link');
+            link.rel = "stylesheet";
+            link.href = url;
+            document.head.appendChild(link);
+        });
+    </script>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/typography.css">
+    
+    
+  </head>  
+  
+  <body class="">
+
+    
+    <header role="header" class="" id="menu">
+      
+<div class="logo-container">
+  <a href="/" class="logo no-hover" id="logo">
+  vicale
+</a>
+  <a href="#menu" class="menu-close">
+    <svg class="icon__cnt">
+      <use xlink:href="#ei-close-icon"></use>
+    </svg>
+  </a>
+</div>
+
+
+<nav class="menu  animated">
+
+  
+    
+    
+
+    <a class="menu-header animated
+             "
+        href="/work/"
+        id="menu-work">
+        work
+      </a>
+  
+    
+    
+
+    <a class="menu-header animated
+             "
+        href="/apps/"
+        id="menu-apps">
+        apps
+      </a>
+  
+    
+    
+
+    <a class="menu-header animated
+             "
+        href="/about/me"
+        id="menu-about">
+        About
+      </a>
+  
+    
+    
+
+    <a class="menu-header animated
+             selected"
+        href="/blog/"
+        id="menu-blog">
+        Blog
+      </a>
+  
+
+</nav>
+ 
+
+    </header>
+
+    
+      
+    <main id="page-trans-wrapper">
+      <div class="page-container page blog">
+        
+<section class="post">
+   
+  <article id="post__body" class="container grid :vertical :around">
+    
+
+<h1 id="an-header">An 😄 header</h1>
+
+<p>Paragraphs are separated by a blank line.</p>
+
+<p>2nd paragraph. <em>Italic</em>, <strong>bold</strong>, and <code>monospace</code>. Itemized lists
+look like:</p>
+
+<ul>
+<li>this one</li>
+<li>that one</li>
+<li>the other one</li>
+</ul>
+
+<p>Note that &mdash; not considering the asterisk &mdash; the actual text
+content starts at 4-columns in.</p>
+
+<blockquote>
+<p>Block quotes are
+written like so.</p>
+
+<p>They can span multiple paragraphs,
+if you like.</p>
+</blockquote>
+
+<p>Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., &ldquo;it&rsquo;s all
+in chapters 12&ndash;14&rdquo;). Three dots &hellip; will be converted to an ellipsis.
+Unicode is supported. ☺</p>
+
+<h2 id="an-h2-header">An h2 header</h2>
+
+<p>Here&rsquo;s a numbered list:</p>
+
+<ol>
+<li>first item</li>
+<li>second item</li>
+<li>third item</li>
+</ol>
+
+<p>Note again how the actual text starts at 4 columns in (4 characters
+from the left side). Here&rsquo;s a code sample:</p>
+
+<pre><code># Let me re-iterate ...
+for i in 1 .. 10 { do-something(i) }
+</code></pre>
+
+<p>As you probably guessed, indented 4 spaces. By the way, instead of
+indenting the block, you can use delimited blocks, if you like:</p>
+
+<pre><code>define foobar() {
+    print &quot;Welcome to flavor country!&quot;;
+}
+</code></pre>
+
+<p>(which makes copying &amp; pasting easier). You can optionally mark the
+delimited block for Pandoc to syntax highlight it:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> time
+<span style="color:#75715e"># Quick, count to ten!</span>
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
+    <span style="color:#75715e"># (but not *too* quick)</span>
+    time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">0.5</span>)
+    <span style="color:#66d9ef">print</span> i</code></pre></div>
+<p>Some table</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Age</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Bob</td>
+<td>27</td>
+</tr>
+
+<tr>
+<td>Alice</td>
+<td>23</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="an-h3-header">An h3 header</h3>
+
+<p>Now a nested list:</p>
+
+<ol>
+<li><p>First, get these ingredients:</p>
+
+<ul>
+<li>carrots</li>
+<li>celery</li>
+<li>lentils</li>
+</ul></li>
+
+<li><p>Boil some water.</p></li>
+
+<li><p>Dump everything in the pot and follow
+this algorithm:</p>
+
+<pre><code>find wooden spoon
+uncover pot
+stir
+cover pot
+balance wooden spoon precariously on pot handle
+wait 10 minutes
+goto first step (or shut off burner when done)
+</code></pre>
+
+<p>Do not bump wooden spoon or it will fall.</p></li>
+
+<li><p>Please yes</p></li>
+</ol>
+
+<h2 id="todo-input">Todo Input</h2>
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> a task list item</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> list syntax required</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> incomplete</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> completed</label></li>
+</ul>
+
+<p>Notice again how text always lines up on 4-space indents (including
+that last line which continues item 3 above).</p>
+
+<p>Here&rsquo;s a link to <a href="http://foo.bar">a website</a>, to a <a href="local-doc.html">local
+doc</a>, and to a <a href="#an-h2-header">section heading in the current
+doc</a>. Here&rsquo;s a footnote <sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>.</p>
+
+<p>Tables can look like this:</p>
+
+<table>
+<thead>
+<tr>
+<th>size</th>
+<th>material</th>
+<th>color</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>9</td>
+<td>leather</td>
+<td>brown</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>hemp canvas</td>
+<td>natural</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>glass</td>
+<td>transparent</td>
+</tr>
+</tbody>
+</table>
+
+<p>Table: Shoes, their sizes, and what they&rsquo;re made of</p>
+
+<p>(The above is the caption for the table.) Pandoc also supports
+multi-line tables:</p>
+
+<hr />
+
+<p>Here&rsquo;s a definition list:</p>
+
+<dl>
+<dt>apples</dt>
+<dd>Good for making applesauce.</dd>
+<dt>oranges</dt>
+<dd>Citrus!</dd>
+<dt>tomatoes</dt>
+<dd>There&rsquo;s no &ldquo;e&rdquo; in tomatoe.</dd>
+</dl>
+
+<p>Again, text is indented 4 spaces. (Put a blank line between each
+term/definition pair to spread things out more.)</p>
+
+<p>Here&rsquo;s a &ldquo;line block&rdquo;:</p>
+
+<blockquote>
+<p><strong>Line one</strong></p>
+
+<p>Line too</p>
+
+<p>Line tree</p>
+</blockquote>
+
+<p>and images can be specified like so:</p>
+
+<p><img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png" alt="alt text" title="Logo Title Text 1" /></p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">Footnote text goes here.
+ <a class="footnote-return" href="#fnref:1">↩</a></li>
+</ol>
+</div>
+
+  </article>
+</section>
+
+      </div>
+    </main>
+    <footer role="footer"> 
+<ul class="grid :horizontal :middle clean">
+    <li>
+        <div class="title">Contact</div>
+        <a href="" role="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">
+            <span class="ceasar says">hufad.omvgxqdu@symux.oay</span>
+        </a>
+    </li>
+    <li>
+        <div class="title">Social</div>
+        <a href="http://github.com/barrabinfc">Github</a>
+    </li>
+    <li class="align:right pull:right">
+        <a href="http://github.com/barrabinfc" class="icon icon--m">
+            <svg class="icon__cnt"><use xlink:href="#ei-sc-github-icon"></use></svg>
+        </a>
+        <a href="http://github.com/barrabinfc" class="icon icon--m">
+            <svg class="icon__cnt"><use xlink:href="#ei-envelope-icon"></use></svg>
+        </a>
+    </li>
+</ul> 
+<style>
+   
+  :root {
+    --front:     #000;
+    --back:      #fff;
+    --primary:   #f05553;
+  }
+
+ 
+
+</style>
+ 
+</footer>
+
+    <script src="/js/app.js" defer></script>
+    <script src="/js/vendor/evil-icons.js" defer></script>    
+    <script type="text/javascript" src="/js/vendor/vanilla-tilt.babel.min.js" async></script> 
+  
+  </body>
+</html>

@@ -4,7 +4,7 @@ import gutil from "gulp-util";
 import sourcemaps from "gulp-sourcemaps";
 import postcss from "gulp-postcss";
 import cssImport from "postcss-import";
-import cssnext from "postcss-cssnext";
+import cssPreset from "postcss-preset-env";
 import svgInline from "postcss-inline-svg";
 import BrowserSync from "browser-sync";
 import webpack from "webpack";
@@ -12,7 +12,7 @@ import webpackConfig from "./webpack.conf";
 
 const browserSync = BrowserSync.create();
 const hugoBin = "hugo";
-const defaultArgs = ["-d", "../dist",
+const defaultArgs = ["-d", "../docs",
   "-s", "site",
   "-v"];
 
@@ -25,15 +25,18 @@ gulp.task("build-preview", ["css", "vendor-js", "js", "hugo-preview"]);
 gulp.task("css", () => (
   gulp.src("./src/css/*.css")
     .pipe(sourcemaps.init())
-    .pipe(postcss([cssImport({from: "./src/css/main.css"}), cssnext(), svgInline()]))
+    .pipe(postcss([
+      cssImport({from: "./src/css/main.css"}), 
+      cssPreset({stage: 0}),
+      svgInline()]))
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest("./dist/css"))
+    .pipe(gulp.dest("./docs/css"))
     //.pipe(browserSync.stream())
 ));
 
 gulp.task("vendor-js", () => {
   gulp.src("./src/js/vendor/*.js")
-    .pipe(gulp.dest("./dist/js/vendor"))
+    .pipe(gulp.dest("./docs/js/vendor"))
 })
 
 gulp.task("js", (cb) => {
@@ -51,13 +54,11 @@ gulp.task("js", (cb) => {
 });
 
 gulp.task("server", ["hugo", "css", "vendor-js", "js"], () => {
-  /*
   browserSync.init({
     server: {
-      baseDir: "./dist"
+      baseDir: "./docs"
     }
   });
-  */
   gulp.watch("./src/js/vendor/*.js", ["vendor-js"]);
   gulp.watch("./src/js/**/*.js", ["js"]);
   gulp.watch("./src/css/**/*.css", ["css"]);

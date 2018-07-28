@@ -1,11 +1,11 @@
 +++
 draft = false
-colorscheme = "light"
 color = "#000"
-bg_color = "rgba(255,255,255, 0.90)"
+bg_color = "rgba(255,255,255, 1.0)"
 high_color = "#f05553"
 title = "Astrorunners"
-website = "http://www.astrorunners.com"
+thumbnail = "/images/astrorunners/showcase.jpg"
+website = "www.astrorunners.com"
 subtitle = "Astrorunners"
 description = "<p>O site, concebido pelo artista visual Dedos (Rafael Trabasso), cria uma nova experiência estética para a escuta do álbum. Ao navegar pelo site, o ouvinte tem uma nova narrativa visual, um novo caminho para a apreciação da obra.</p><p>Lorem ipsum dolor sit amet.</p>"
 logo = "/images/astrorunners/logo-black-final.png"

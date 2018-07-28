@@ -1,0 +1,25 @@
+<section class="more-list">
+    <article class="container w100">
+
+        <h1 class="title hero appearFromBottomCropped :play"><span>{{.title}}</span></h1>
+
+        {{ $list_klass := .class | default "list-cards" }}
+        {{ $hover_size := .hover_size | default "1.05"}}
+        <ul class="{{ $list_klass }} clean grid :horizontal :around appearFromBottom :play">
+            {{- range .list }}
+                <li class="cell">
+                    <a class="card app-card" 
+                       href="{{ .Permalink }}"
+                       data-tilt data-tilt-max="5" 
+                       data-tilt-speed="800" 
+                       data-tilt-scale="{{ $hover_size }}" 
+                       >
+                        <img class="thumbnail" src="{{ .Params.thumbnail }}" />
+                        <h3 class="listitem__title">{{ .Title }}</h3>
+                    </a>
+                </li>
+            {{- end }}
+        </ul>
+
+    </article>
+</section>
