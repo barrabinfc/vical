@@ -5,6 +5,9 @@
 @import "imports/theme.css";
 @import "imports/animation.css";
 
+@import "./typography.css";
+@import "./evil-icons.css";
+
 @import "sections/about.css";
 @import "sections/blog.css";
 
@@ -111,6 +114,8 @@ body {
    * -repeat-
    */
   & .list-isotope {
+    width: 90%;
+    margin: 0 auto;
     padding: calc( 2* var(--pad-medium)) 0;    
     animation-delay: 0.25s;
     justify-content: space-between; 
@@ -137,7 +142,7 @@ body {
       justify-content: space-evenly;
 
       width: 50%;
-      height: 260px;
+      height: 200px;
       overflow: hidden;
       color: inherit;
       border-radius: 15px;

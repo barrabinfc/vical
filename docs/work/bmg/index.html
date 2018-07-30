@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     
-      <meta name="description" content="&lt;p&gt;O &lt;a href=&#39;http://genitalia.me&#39; class=&#39;default nomargin black underline&#39; target=&#39;_blank&#39;&gt;genitalia.me&lt;/a&gt; é um projeto artístico, uma galeria infinita de genitálias doadas por anônimos do mundo todo através do site.&lt;/p&gt;&lt;p&gt;Desenvolvi o mosaico infinito utilizando &lt;strong&gt;HTML&lt;/strong&gt; e &lt;strong&gt;Javascript&lt;/strong&gt; e a área administração em &lt;strong&gt;Python&lt;/strong&gt; com o framework &lt;strong&gt;Django&lt;/strong&gt;.&lt;/p&gt;">
+      <meta name="description" content="&lt;p&gt;&lt;a href=&#39;http://genitalia.me&#39; class=&#39;default nomargin black underline&#39; target=&#39;_blank&#39;&gt;Genitalia.me&lt;/a&gt; is an adult art project, aimed at natural body positivity. A infinity anonymous gallery of genitals donated by everyone in the world.&lt;/p&gt;&lt;p&gt;The mosaic is developed using &lt;strong&gt;Javascript&lt;/strong&gt;, and the backend in &lt;strong&gt;Python&lt;/strong&gt; and &lt;strong&gt;Django&lt;/strong&gt;.&lt;/p&gt;">
     
   
     <style>
@@ -21,7 +21,7 @@
     overflow-x: hidden;
     overflow-y: overlay;
   }
-  iframe,embed,img,video { max-width: 100%; }
+  iframe,embed,img,video,picture { max-width: 100%; }
   
   a,p,button { margin: 0; padding: 0; }
   blockquote { width: 100%; margin: 1em auto; line-height: 1.0em; }
@@ -37,44 +37,17 @@
   
   .container { padding: 0 96px; }
   .container, .container-fluid { margin: 0 auto; }
-  
-  .picture { position: relative; }
-  
-  .bg\:primary{ background-color: #f58021; }      
-  .bg\:second { background-color: #ae509e; }
               
   .grid { display: flex; flex-wrap: wrap; }
   .grid.\:vertical { flex-direction: column; }
   .grid.\:between { justify-content: space-between; }
   .grid.\:around { justify-content: space-around; }
   .grid.\:middle { align-items: center; }
-  
-  .columns1 { columns: 1; column-gap: 0em; }
-  .columns2 { columns: 2; column-gap: 2em; }
-  .columns3 { columns: 3; column-gap: 1em; }
-  
-  .w10 { max-width: 10%; }
-  .w33 { max-width: 33%; }
-  .w25 { max-width: 25%; }
-  .w40 { max-width: 40%; }
-  .w50 { max-width: 50%; }
-  .w70 { max-width: 70%; }
-  .w90 { max-width: 90%; }
-  .w100 { max-width: 100%; }
+    
 </style>
     
     
-    <script type="text/javascript">
-        ['/css/evil-icons.css'].map( function(url) {
-            var link = document.createElement('link');
-            link.rel = "stylesheet";
-            link.href = url;
-            document.head.appendChild(link);
-        });
-    </script>
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/typography.css">
-    
     
   </head>  
   
@@ -85,7 +58,7 @@
       
   <div class="logo-container">
     <a href="/" class="logo no-hover" id="logo">
-  vicale
+  vical
 </a>
     <a href="#menu" class="menu-close">
       <svg class="icon__cnt"><use xlink:href="#ei-close-icon"></use></svg>
@@ -175,7 +148,7 @@
       </picture>
 
       <div class="description">
-        <p>O <a href='http://genitalia.me' class='default nomargin black underline' target='_blank'>genitalia.me</a> é um projeto artístico, uma galeria infinita de genitálias doadas por anônimos do mundo todo através do site.</p><p>Desenvolvi o mosaico infinito utilizando <strong>HTML</strong> e <strong>Javascript</strong> e a área administração em <strong>Python</strong> com o framework <strong>Django</strong>.</p>  
+        <p><a href='http://genitalia.me' class='default nomargin black underline' target='_blank'>Genitalia.me</a> is an adult art project, aimed at natural body positivity. A infinity anonymous gallery of genitals donated by everyone in the world.</p><p>The mosaic is developed using <strong>Javascript</strong>, and the backend in <strong>Python</strong> and <strong>Django</strong>.</p>  
       </div>
 
       <div class="more">
@@ -218,7 +191,7 @@
                        data-tilt-speed="800" 
                        data-tilt-scale="1.05" 
                        >
-                        <img class="thumbnail" src="/images/bmg/admin-login.png" />
+                        <img class="thumbnail" src="/images/textures/couro-enguia.jpg" />
                         <h3 class="listitem__title">BMG</h3>
                     </a>
                 </li>
@@ -229,7 +202,7 @@
                        data-tilt-speed="800" 
                        data-tilt-scale="1.05" 
                        >
-                        <img class="thumbnail" src="/images/apps/masin-cover-01.jpg" />
+                        <img class="thumbnail" src="/images/textures/cashmere-la.jpg" />
                         <h3 class="listitem__title">I Ching</h3>
                     </a>
                 </li>
@@ -266,10 +239,10 @@
     </li>
     <li class="align:right pull:right">
         <a href="http://github.com/barrabinfc" class="icon icon--m">
-            <svg class="icon__cnt"><use xlink:href="#ei-sc-github-icon"></use></svg>
+            <svg class="icon__cnt"><use xlink:href="/images/_svgicons.svg#ei-sc-github-icon"></use></svg>
         </a>
         <a href="http://github.com/barrabinfc" class="icon icon--m">
-            <svg class="icon__cnt"><use xlink:href="#ei-envelope-icon"></use></svg>
+            <svg class="icon__cnt"><use xlink:href="/images/_svgicons.svg#ei-envelope-icon"></use></svg>
         </a>
     </li>
 </ul>
@@ -288,11 +261,10 @@
 </footer>
 
     <script src="/js/app.js" defer></script>
-    <script src="/js/vendor/evil-icons.js" defer></script>    
     <script type="text/javascript" src="/js/vendor/vanilla-tilt.babel.min.js" async></script> 
     <script type="text/javascript" src="/js/vendor/netlify-identity-widget.v1.4.14.js" async></script> 
     <script>
-        document.addEventListener('load', setupNetlify)
+        window.addEventListener('load', setupNetlify)
         function setupNetlify() {
           if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
@@ -305,6 +277,6 @@
           }
         }
     </script>
-      
+
   </body>
 </html>

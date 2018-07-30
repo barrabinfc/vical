@@ -674,8 +674,7 @@ header[role="header"] .menu .menu-header {
       z-index: 10;
 
       font-family: inherit;
-      font-size: calc( calc(3/2) * 1rem);
-      font-size: calc( var(--perfect-fifth) * 1rem);
+      font-size: calc( 1.25 * 1rem);
       font-weight: normal;
       text-align: center;
       text-transform: uppercase;
@@ -871,41 +870,58 @@ footer[role="footer"] a {
  * Cellphone mask
  */
 .cellphone-mask {
+  /*
   position: relative;
   overflow: hidden;
   min-width: 280px;
   min-height: 440px;
   max-width: 568px;
   max-height: 880px;
-  zoom: 1.0
+  zoom: 1.0;
+  */
+  display: flex;
+  align-items: center;
+  position: relative;
+  /* overflow: hidden; */
 }
 .cellphone-mask:after {
+    pointer-events: none;
     content: ' ';
     z-index: 10;
     position: absolute;
-    top: 0; left: 0;
-    
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-size: contain;
     background-image: url(../images/cellphone-mask.png);
     background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-    
+    /* filter: drop-shadow(9px 9px 9px rgba(0,0,0,0.3)); */
   }
 .cellphone-mask > .cellphone-screen {
+    /*
     position: relative;
     overflow: hidden;
     width: 100%;
     min-height: 380px;
-    z-index: 5
+    z-index: 5;
+    */
+    padding: 6.30rem 1.7rem 6rem 1.7rem;
+    position: relative;
+    overflow: hidden;
+    height: 670px;
+    z-index: 5;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 90%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 90%);
+    filter: drop-shadow(9px 9px 9px rgba(0,0,0,0.3));
+    /* box-shadow: 0 0 10px #000; */
   }
-.cellphone-mask > .cellphone-screen > * {
-      position: absolute;
-      top: 66px;
-      left: calc(42px);
-      width: 196px;
+.cellphone-mask > .cellphone-screen > img, .cellphone-mask > .cellphone-screen > iframe {
       border: 0;
-    }
+      position: relative;
+      max-width: 300px;
+      min-height: 470px;
+   }
 /**
  * Browser mask
  */
@@ -920,8 +936,7 @@ footer[role="footer"] a {
 .browser-mask > .browser-screen {
      position: relative;
      overflow: hidden;
-     width: 80%;
-     height: 70%;
+     width: 85%;
      z-index: 5;
      margin: 0px auto;
      box-shadow: 5px 5px 50px rgba(0,0,0,0.5);
@@ -943,7 +958,6 @@ footer[role="footer"] a {
        -o-object-fit: cover;
           object-fit: cover;
        width: 100%;
-       height: calc(100% - 2.5vw);
        top: 2.5vw;
      }
 /**
@@ -1060,6 +1074,225 @@ footer[role="footer"] a {
             animation-play-state: paused;
   }
 .appearFromBottomCropped.\:play > span { -webkit-animation-play-state: running; animation-play-state: running; }
+/*
+ * Typography futuristic themed.
+ *  code: Source Code Pro
+ *  Title: Futura
+ */
+/*@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');*/
+/* latin-ext */
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Source Code Pro Medium'), local('SourceCodePro-Medium'), url(https://fonts.gstatic.com/s/sourcecodepro/v7/HI_XiYsKILxRpg3hIP6sJ7fM7PqtzsjDvecq_mk.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Source Code Pro Medium'), local('SourceCodePro-Medium'), url(https://fonts.gstatic.com/s/sourcecodepro/v7/HI_XiYsKILxRpg3hIP6sJ7fM7PqtzsjDs-cq.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'FuturaStd';
+  font-weight: 300;
+  src: 
+       url('/fonts/FuturaStd-Book.woff2') format('woff2'); /* Super Modern Browsers */
+}
+@font-face {
+  font-family: 'FuturaStd';
+  font-weight: 600;
+  src: 
+       url('/fonts/FuturaStd-Bold.woff2') format('woff2'); /* Super Modern Browsers */
+}
+/*
+@import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Roboto:900|Open+Sans');
+*/
+h1,h2,h3,h4,h5,h6 { 
+  --size:  calc(1rem * 2.33 * calc(5/4)); 
+  --size:  calc(1rem * 2.33 * var(--typoscale));
+  
+  font-family: 'FuturaStd', sans-serif;
+  
+  font-family: var(--hero-font);
+  font-size: var(--size);
+  font-size: var(--size);    
+  line-height: var(--size);    
+  line-height: var(--size);
+  margin: var(--size) 0;
+  margin: var(--size) 0;
+
+  orphans: 2;
+  widows: 2
+}
+h2 {  --size:  calc(1rem * 2.00 * calc(5/4));  --size:  calc(1rem * 2.00 * var(--typoscale)); }
+h3 {  --size:  calc(1rem * 1.66 * calc(5/4));  --size:  calc(1rem * 1.66 * var(--typoscale)); }
+h4 {  --size:  calc(1rem * 1.33 * calc(5/4));  --size:  calc(1rem * 1.33 * var(--typoscale)); }
+h5 {  --size:  calc(1rem * 1.00 * calc(5/4));  --size:  calc(1rem * 1.00 * var(--typoscale)); }
+h6 {  --size:  calc(1rem * 0.66 * calc(5/4));  --size:  calc(1rem * 0.66 * var(--typoscale)); }
+/* Paragraphs and codes */
+p { 
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.625rem;
+
+  orphans: 2;
+  widows: 2;
+}
+pre {
+  padding: calc( 2 * 0.5em);
+  padding: calc( 2 * var(--pad));
+  margin: 0 0 1.5rem 0;
+  background-color: #E6ECF1;
+  background-color: var(--light-gray);
+  overflow: auto;
+}
+code, pre, pre code {
+  font-weight: 100;
+  text-shadow: none;
+  font-family: "Source Code Pro", Menlo, monospace;
+  font-family: var(--code-font);
+  font-size: 90%;
+  overflow: hidden;
+}
+blockquote { 
+  width: 100%; 
+  margin: 0 0 1.5rem 0;
+  padding-left: calc(2 * 0.5em);
+  padding-left: calc(2 * var(--gutter));
+  font-size: 1rem; 
+  border-left: 4px solid #E6ECF1; 
+  border-left: 4px solid var(--light-gray);
+}
+.highlight { margin-bottom: 1.5rem; }
+.highlight > pre { margin: 0; }
+/**
+ * Links
+ */
+a { text-decoration: none; color: #0098d8; color: var(--second); }
+a:hover { text-decoration: underline; }
+a.no-hover:hover { text-decoration: none; }
+a.default {
+  position: relative;
+  cursor: pointer;
+  color: #fff;
+  color: var(--white);
+  text-decoration: none
+}
+a.default:hover { text-decoration: underline; }
+a.black {
+  color: #000;
+  color: var(--black);
+}
+a.no-underline:hover { text-decoration: none !important; }
+a.underline {
+  text-decoration: underline;
+}
+/** 
+ * A links without default style
+ */
+a.clean {
+  margin: inherit;
+  padding: inherit;
+}
+/**
+ * Tables
+ */
+table {
+  margin-bottom: 1.5rem;
+  border-collapse: collapse;
+  border-radius: 5px;
+  border-radius: var(--curve-soft);
+  overflow: hidden
+
+}
+table thead {
+    background-color: #000;
+    background-color: var(--front);
+    color: #fff;
+    color: var(--back);
+    font-weight: bold;
+    font-family: 'FuturaStd', sans-serif;
+    font-family: var(--hero-font);
+  }
+table tr {
+    border-bottom: 1px solid #e9e9e9;
+    border-bottom: 1px solid var(--gray)
+  }
+table tr:not(:last-child){
+      border-bottom: 1px solid #e9e9e9;
+      border-bottom: 1px solid var(--gray);
+    }
+table td:first-of-type {
+    border-left: 1px solid #e9e9e9;
+    border-left: 1px solid var(--gray);
+  }
+table td:last-of-type {
+    border-right: 1px solid #e9e9e9;
+    border-right: 1px solid var(--gray);
+  }
+table th, table td {
+    padding: calc( 2* 0.5em);
+    padding: calc( 2* var(--gutter))
+  }
+table th:not(:last-child),table td:not(:last-child){
+      border-right: 1px solid #e9e9e9;
+      border-right: 1px solid var(--gray);
+    }
+/* https://github.com/evil-icons/evil-icons/ */
+.icon {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+  fill: currentColor;
+}
+.icon__cnt {
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  fill: inherit;
+  pointer-events: none; /* Do not catch pointer events */
+  -webkit-transform: translateX(0);
+          transform: translateX(0); /* Crisp fix for non-retina */
+  -ms-transform: translate(0.5px, -0.3px); /* Crisp fix for IE */
+}
+.icon--m {
+  width: 50px;
+  height: 50px;
+  top: 18px; /* align at center of text */
+}
+.icon--l {
+  width: 100px;
+  height: 100px;
+}
+.icon--xl {
+  width: 150px;
+  height: 150px;
+}
+.icon--xxl {
+  width: 200px;
+  height: 200px;
+}
+.icon__spinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.icon--ei-spinner .icon__spinner,
+.icon--ei-spinner-2 .icon__spinner {
+  -webkit-animation: spin 1s steps(12) infinite;
+          animation: spin 1s steps(12) infinite;
+}
+.icon--ei-spinner-3 .icon__spinner {
+  -webkit-animation: spin 1.5s linear infinite;
+          animation: spin 1.5s linear infinite;
+}
 /**
   * About Section
   */
@@ -1154,11 +1387,13 @@ footer[role="footer"] a {
           -webkit-perspective: var(--perspective);      
                   perspective: var(--perspective);
           padding: calc( 2* 48px) 0;
-          padding: calc( 2* var(--pad-big)) 0
+          padding: calc( 2* var(--pad-big)) 0;
+          width: 90%;
+          margin: 0 auto
         }
 .about section.about .more .contact > a { 
             display: block; 
-            height: 288px;
+            height: 200px;
             box-shadow: 0 1px 0 rgba(0, 0, 0, .46), 0 2px 6px rgba(0, 0, 0, .47), 0 10px 20px rgba(0, 0, 0, .29);
             box-shadow: var(--shadow-card);
             background-image: url(../images/old-computer.jpg);
@@ -1562,6 +1797,8 @@ body {
    */
 }
 .more-list .list-isotope {
+    width: 90%;
+    margin: 0 auto;
     padding: calc( 2* 24px) 0;
     padding: calc( 2* var(--pad-medium)) 0;    
     -webkit-animation-delay: 0.25s;    
@@ -1585,22 +1822,21 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
-
       width: 50%;
-      height: 260px;
-      overflow: hidden;
-      color: inherit;
-      border-radius: 15px;
-      box-shadow: 0 1px 0 rgba(0, 0, 0, .46), 0 2px 6px rgba(0, 0, 0, .47), 0 10px 20px rgba(0, 0, 0, .29);
-      box-shadow: var(--shadow-card);
-      background-color: #000;
-
-      margin: 0 auto 48px auto;
-
-      margin: 0 auto var(--pad-big) auto;
-      padding: 0rem;
-
-      transition: background-color 0.35s ease-out
+      height: 200px;
+      background-color: var(--primary);
+      overflow: hidden
+      color: inherit
+      border-radius: 15px
+      box-shadow: 0 1px 0 rgba(0, 0, 0, .46), 0 2px 6px rgba(0, 0, 0, .47), 0 10px 20px rgba(0, 0, 0, .29)
+      box-shadow: var(
+      --shadow-card);
+      /* background-color: #000; */
+      margin: 0 auto 48px auto
+      margin: 0 auto var(
+      --pad-big) auto;
+      padding: 0rem
+      transition: background-color 0.35s ease-out;
   }
 .more-list .card .listitem__title {
         -webkit-transform: translateZ(20px);

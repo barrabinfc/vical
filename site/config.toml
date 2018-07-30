@@ -1,5 +1,5 @@
 baseurl = "/"
-title = "vicale"
+title = "vical"
 paginate = 10
 
 pluralizelisttitles =false

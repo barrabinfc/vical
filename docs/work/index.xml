@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Work on vicale</title>
+    <title>Work on vical</title>
     <link>/work/</link>
-    <description>Recent content in Work on vicale</description>
+    <description>Recent content in Work on vical</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	<atom:link href="/work/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/work/astrorunners/</guid>
-      <description>   </description>
+      <description>--        </description>
     </item>
     
     <item>

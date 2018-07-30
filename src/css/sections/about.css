@@ -86,10 +86,12 @@
         & .contact {      
           perspective: var(--perspective);
           padding: calc( 2* var(--pad-big)) 0;
-  
+          width: 90%;
+          margin: 0 auto;
+
           & > a { 
             display: block; 
-            height: 288px;
+            height: 200px;
             box-shadow: var(--shadow-card);
             background-image: url(../images/old-computer.jpg);
             background-size: auto;

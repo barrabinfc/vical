@@ -12,18 +12,17 @@
   
     {{ partial "_instyle" .}}
     
-    <!-- Load css asynchronously -->
+    <!-- Load css asynchronously 
     <script type="text/javascript">
-        ['/css/evil-icons.css'].map( function(url) {
+        ['/css/evil-icons.css','/css/typography.css'].map( function(url) {
             var link = document.createElement('link');
             link.rel = "stylesheet";
             link.href = url;
             document.head.appendChild(link);
         });
     </script>
+    -->
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/typography.css">
-    
     
   </head>  
   {{ $layout := .Params.layout | default "" }}
@@ -44,11 +43,10 @@
     <footer role="footer">{{ block "footer" .}}{{ end }}</footer>
 
     <script src="/js/app.js" defer></script>
-    <script src="/js/vendor/evil-icons.js" defer></script>    
     <script type="text/javascript" src="/js/vendor/vanilla-tilt.babel.min.js" async></script> 
     <script type="text/javascript" src="/js/vendor/netlify-identity-widget.v1.4.14.js" async></script> 
     <script>
-        document.addEventListener('load', setupNetlify)
+        window.addEventListener('load', setupNetlify)
         function setupNetlify() {
           if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
@@ -61,6 +59,6 @@
           }
         }
     </script>
-      
+
   </body>
 </html>

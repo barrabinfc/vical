@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     
-      <meta name="description" content="&lt;p&gt;O site, concebido pelo artista visual Dedos (Rafael Trabasso), cria uma nova experiência estética para a escuta do álbum. Ao navegar pelo site, o ouvinte tem uma nova narrativa visual, um novo caminho para a apreciação da obra.&lt;/p&gt;&lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;">
+      <meta name="description" content="&lt;p&gt;&lt;a href=&#39;http://astrorunners.com&#39; class=&#39;default nomargin black underline&#39; target=&#39;_blank&#39;&gt;Astrorunners&lt;/a&gt; asked me to design their online store, to match the collection style, using strong constrast of black and white colors.&lt;/p&gt;&lt;p&gt; It was developed to be mobile first, using responsive design tecniques, and be highly customizable in the store administration area.&lt;/p&gt;">
     
   
     <style>
@@ -21,7 +21,7 @@
     overflow-x: hidden;
     overflow-y: overlay;
   }
-  iframe,embed,img,video { max-width: 100%; }
+  iframe,embed,img,video,picture { max-width: 100%; }
   
   a,p,button { margin: 0; padding: 0; }
   blockquote { width: 100%; margin: 1em auto; line-height: 1.0em; }
@@ -37,44 +37,17 @@
   
   .container { padding: 0 96px; }
   .container, .container-fluid { margin: 0 auto; }
-  
-  .picture { position: relative; }
-  
-  .bg\:primary{ background-color: #f58021; }      
-  .bg\:second { background-color: #ae509e; }
               
   .grid { display: flex; flex-wrap: wrap; }
   .grid.\:vertical { flex-direction: column; }
   .grid.\:between { justify-content: space-between; }
   .grid.\:around { justify-content: space-around; }
   .grid.\:middle { align-items: center; }
-  
-  .columns1 { columns: 1; column-gap: 0em; }
-  .columns2 { columns: 2; column-gap: 2em; }
-  .columns3 { columns: 3; column-gap: 1em; }
-  
-  .w10 { max-width: 10%; }
-  .w33 { max-width: 33%; }
-  .w25 { max-width: 25%; }
-  .w40 { max-width: 40%; }
-  .w50 { max-width: 50%; }
-  .w70 { max-width: 70%; }
-  .w90 { max-width: 90%; }
-  .w100 { max-width: 100%; }
+    
 </style>
     
     
-    <script type="text/javascript">
-        ['/css/evil-icons.css'].map( function(url) {
-            var link = document.createElement('link');
-            link.rel = "stylesheet";
-            link.href = url;
-            document.head.appendChild(link);
-        });
-    </script>
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/typography.css">
-    
     
   </head>  
   
@@ -85,7 +58,7 @@
       
   <div class="logo-container">
     <a href="/" class="logo no-hover" id="logo">
-  vicale
+  vical
 </a>
     <a href="#menu" class="menu-close">
       <svg class="icon__cnt"><use xlink:href="#ei-close-icon"></use></svg>
@@ -149,11 +122,21 @@
       <div class="gallery">
   <img src="/images/astrorunners/showcase.jpg" alt="Showcase" />
   <img src="/images/astrorunners/first-page.png" alt="Show case" />  
+  <!--
   <img src="/images/astrorunners/produto.jpg" alt="Product page" />  
-  <img src="/images/astrorunners/frete.png" alt="Shipping page" />
-  <div class="cellphone-mask">
-    <div class="cellphone-screen">
-      <img src="/images/astrorunners/mobile-bone.png" alt="Mobile page" />
+  -->
+  <div class="browser-mask">
+    <div class="browser-screen appearFromBottom :play">
+      <img src="/images/astrorunners/frete.png" alt="Shipping page" />
+    </div>
+  </div>
+  <div class="container grid">
+    <div class="cellphone margin:auto">
+      <div class="cellphone-mask appearFromBottom :play">
+        <div class="cellphone-screen">
+          <img src="/images/astrorunners/mobile-bone.png" alt="Mobile page" />
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -169,7 +152,7 @@
       </picture>
 
       <div class="description">
-        <p>O site, concebido pelo artista visual Dedos (Rafael Trabasso), cria uma nova experiência estética para a escuta do álbum. Ao navegar pelo site, o ouvinte tem uma nova narrativa visual, um novo caminho para a apreciação da obra.</p><p>Lorem ipsum dolor sit amet.</p>  
+        <p><a href='http://astrorunners.com' class='default nomargin black underline' target='_blank'>Astrorunners</a> asked me to design their online store, to match the collection style, using strong constrast of black and white colors.</p><p> It was developed to be mobile first, using responsive design tecniques, and be highly customizable in the store administration area.</p>  
       </div>
 
       <div class="more">
@@ -212,7 +195,7 @@
                        data-tilt-speed="800" 
                        data-tilt-scale="1.05" 
                        >
-                        <img class="thumbnail" src="/images/bmg/admin-login.png" />
+                        <img class="thumbnail" src="/images/textures/couro-enguia.jpg" />
                         <h3 class="listitem__title">BMG</h3>
                     </a>
                 </li>
@@ -223,7 +206,7 @@
                        data-tilt-speed="800" 
                        data-tilt-scale="1.05" 
                        >
-                        <img class="thumbnail" src="/images/apps/masin-cover-01.jpg" />
+                        <img class="thumbnail" src="/images/textures/cashmere-la.jpg" />
                         <h3 class="listitem__title">I Ching</h3>
                     </a>
                 </li>
@@ -260,10 +243,10 @@
     </li>
     <li class="align:right pull:right">
         <a href="http://github.com/barrabinfc" class="icon icon--m">
-            <svg class="icon__cnt"><use xlink:href="#ei-sc-github-icon"></use></svg>
+            <svg class="icon__cnt"><use xlink:href="/images/_svgicons.svg#ei-sc-github-icon"></use></svg>
         </a>
         <a href="http://github.com/barrabinfc" class="icon icon--m">
-            <svg class="icon__cnt"><use xlink:href="#ei-envelope-icon"></use></svg>
+            <svg class="icon__cnt"><use xlink:href="/images/_svgicons.svg#ei-envelope-icon"></use></svg>
         </a>
     </li>
 </ul>
@@ -282,11 +265,10 @@
 </footer>
 
     <script src="/js/app.js" defer></script>
-    <script src="/js/vendor/evil-icons.js" defer></script>    
     <script type="text/javascript" src="/js/vendor/vanilla-tilt.babel.min.js" async></script> 
     <script type="text/javascript" src="/js/vendor/netlify-identity-widget.v1.4.14.js" async></script> 
     <script>
-        document.addEventListener('load', setupNetlify)
+        window.addEventListener('load', setupNetlify)
         function setupNetlify() {
           if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
@@ -299,6 +281,6 @@
           }
         }
     </script>
-      
+
   </body>
 </html>
