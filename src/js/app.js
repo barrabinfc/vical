@@ -6,7 +6,7 @@ import {GeneralTransition} from './transitions/fade';
 const docStyle = document.documentElement.style;
 const pointerClick = (document.ontouchstart === undefined ? "click" : "touchstart")
 
-const PAGE_LOAD_DURATION = 750
+const PAGE_LOAD_DURATION = 250
 
 function pageStart(){
   requestIdleCallback( () => {

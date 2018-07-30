@@ -9,20 +9,20 @@
 }
 
 @keyframes fade-in {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% { opacity: 0; transform: translateY(100px); }
+  100% { opacity: 1; transform: translateY(0px); }
 }
 @keyframes fade-out {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+  0% { opacity: 1; transform: translateY(0px);}
+  100% { opacity: 0; transform: translateY(-200px);}
 }
 
 
 /**
  * General animations for page-in and page-out
  */
-.page-in { animation: fade-in .750s ease-out; animation-fill-mode: both; }
-.page-out { animation: fade-out .750s ease-in; animation-fill-mode: both; }
+.page-in { animation: fade-in .250s ease-out; animation-fill-mode: both; }
+.page-out { animation: fade-out .500s ease-in; animation-fill-mode: both; }
 
 
 @keyframes intro {

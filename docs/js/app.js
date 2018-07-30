@@ -61,7 +61,7 @@
 	var docStyle = document.documentElement.style;
 	var pointerClick = document.ontouchstart === undefined ? "click" : "touchstart";
 
-	var PAGE_LOAD_DURATION = 750;
+	var PAGE_LOAD_DURATION = 250;
 
 	function pageStart() {
 	  requestIdleCallback(function () {

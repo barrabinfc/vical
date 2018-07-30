@@ -24,10 +24,18 @@ created_at = "06/2018"
 +++
 
 <div class="cellphone">
-    <div class="cellphone-mask">
-        <div class="cellphone-screen">
-            <iframe src="http://barrabinfc.github.io/iching/?media=small">
-            </iframe>
-        </div>
-    </div>
+      <div class="marvel-device iphone5s black">
+          <div class="top-bar"></div>
+          <div class="sleep"></div>
+          <div class="volume"></div>
+          <div class="camera"></div>
+          <div class="sensor"></div>
+          <div class="speaker"></div>
+          <div class="screen">
+              <!-- Content goes here -->
+              <iframe src="http://barrabinfc.github.io/iching/?media=small"></iframe>
+          </div>
+          <div class="home"></div>
+          <div class="bottom-bar"></div>
+      </div>
 </div>
