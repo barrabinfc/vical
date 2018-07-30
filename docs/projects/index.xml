@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Work on vical</title>
-    <link>/work/</link>
-    <description>Recent content in Work on vical</description>
+    <title>Projects on vical</title>
+    <link>/projects/</link>
+    <description>Recent content in Projects on vical</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	<atom:link href="/work/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Astrorunners</title>
-      <link>/work/astrorunners/</link>
+      <link>/projects/astrorunners/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/work/astrorunners/</guid>
+      <guid>/projects/astrorunners/</guid>
       <description>--               </description>
     </item>
     
     <item>
       <title>BMG</title>
-      <link>/work/bmg/</link>
+      <link>/projects/bmg/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/work/bmg/</guid>
+      <guid>/projects/bmg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>I Ching</title>
-      <link>/work/iching/</link>
+      <link>/projects/iching/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/work/iching/</guid>
+      <guid>/projects/iching/</guid>
       <description>    </description>
     </item>
     
     <item>
       <title>Luiza Lian</title>
-      <link>/work/luizalian/</link>
+      <link>/projects/luizalian/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/work/luizalian/</guid>
+      <guid>/projects/luizalian/</guid>
       <description> </description>
     </item>
     

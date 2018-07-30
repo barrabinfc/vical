@@ -13,18 +13,23 @@ description = "<p><a href='http://genitalia.me' class='default nomargin black un
 
 <div class="gallery">
   <div class="browser-mask" style="background-color: #ffcc8c">
-    <div class="browser-screen appearFromBottom-anim">
+    <div class="browser-screen appearFromBottom :play">
       <img src="/images/bmg/mosaic.jpg" alt="Mosaico" />
     </div>
   </div>
   <img src="/images/bmg/detail3.png" alt="Detalhe" />  
   <img src="/images/bmg/upload.png" alt="Enviar" />  
 </div>
-<div class="gallery">
-  <div class="browser-mask pull :left">
+<div class="gallery container-fluid grid :horizontal">
+  <div class="browser-mask pull:left w40">
     <div class="browser-screen">
       <img src="/images/bmg/admin-login.png" alt="CMS" /> 
     </div>
   </div>
-  <img class="pull :right" src="/images/bmg/admin-aprovacao.jpg" alt="Aprovação" />  
+  <div class="browser-mask pull:right w50">
+    <div class="browser-screen">
+      <img src="/images/bmg/admin-aprovacao.jpg" alt="Aprovação" />  
+    </div>
+  </div>
+
 </div>

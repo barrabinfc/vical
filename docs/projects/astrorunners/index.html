@@ -1,11 +1,13 @@
 <!doctype html>
 <html>
   <head>
-    <title>Work</title>
+    <title>Astrorunners</title>
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+      <meta name="description" content="&lt;p&gt;&lt;a href=&#39;http://astrorunners.com&#39; class=&#39;default nomargin black underline&#39; target=&#39;_blank&#39;&gt;Astrorunners&lt;/a&gt; asked me to redesign their online store for their new collection. The design uses a strong constrast of black and white to be consistent to the collection aesthetics.&lt;/p&gt;&lt;p&gt;I utilized responsive layout tecniques, and built a highly adaptable theme to let them tweak the layout without touching the code.&lt;/p&gt;">
     
   
     <style>
@@ -59,9 +61,7 @@
   vical
 </a>
     <a href="#menu" class="menu-close">
-      <svg class="icon__cnt">
-        <use xlink:href="#ei-close-icon"></use>
-      </svg>
+      <svg class="icon__cnt"><use xlink:href="#ei-close-icon"></use></svg>
     </a>
   </div>
   
@@ -73,7 +73,7 @@
     
 
     <a class="menu-header animated
-             "
+             selected"
         href="/projects/"
         id="menu-projects">
         projects
@@ -99,41 +99,95 @@
         Blog
       </a>
   
-    
-    
-
-    <a class="menu-header animated
-             selected"
-        href="/work/"
-        id="menu-work">
-        Work
-      </a>
-  
 
 </nav>
- 
+
 
     </header>
 
     
     
     <main id="page-trans-wrapper">
-      <div class="page-container work work">
+      <div class="page-container projects projects">
         
+  <section class="work">
+    <article class="showcase">
+      <div class="overlay">
+        <div class="see-more">
+          <div>Scroll to see more</div>
+          <svg class="icon"><use xlink:href="#ei-chevron-down-icon"></use></svg>
+          
+        </div>
+      </div>
+      <div class="gallery">
+  <img src="/images/astrorunners/showcase.jpg" alt="Showcase" />
+  <img src="/images/astrorunners/first-page.png" alt="Show case" />  
+  <!--
+  <img src="/images/astrorunners/produto.jpg" alt="Product page" />  
+  -->
+  <div class="browser-mask">
+    <div class="browser-screen appearFromBottom :play">
+      <img src="/images/astrorunners/frete.png" alt="Shipping page" />
+    </div>
+  </div>
+  <div class="container grid">
+    <div class="cellphone margin:auto pad:big">
+      <div class="marvel-device iphone5s black">
+          <div class="top-bar"></div>
+          <div class="sleep"></div>
+          <div class="volume"></div>
+          <div class="camera"></div>
+          <div class="sensor"></div>
+          <div class="speaker"></div>
+          <div class="screen">
+              <!-- Content goes here -->
+              <img src="/images/astrorunners/mobile-bone.png" alt="Shipping page" />
+          </div>
+          <div class="home"></div>
+          <div class="bottom-bar"></div>
+      </div>
+  </div>
+</div>
+
+    </article>
+    <article id="content-body" class="info grid :vertical">
+      
+      <picture class="logo">
+        
+          <img src="/images/astrorunners/logo-black-final.png">
+        
+        
+      </picture>
+
+      <div class="description">
+        <p><a href='http://astrorunners.com' class='default nomargin black underline' target='_blank'>Astrorunners</a> asked me to redesign their online store for their new collection. The design uses a strong constrast of black and white to be consistent to the collection aesthetics.</p><p>I utilized responsive layout tecniques, and built a highly adaptable theme to let them tweak the layout without touching the code.</p>  
+      </div>
+
+      <div class="more">
+        
+        <a href="http://www.astrorunners.com" alt="www.astrorunners.com" target="_blank" class="no-underline btn :hero :primary :curved :card :href">
+          <span>VISIT: </span>
+        </a> 
+      </div>
+
+      
+    </article>    
+  </section>
+
   
   
   
   <section class="more-list">
     <article class="container w100">
 
-        <h1 class="title hero appearFromBottomCropped :play"><span>Work</span></h1>
+        <h1 class="title hero appearFromBottomCropped :play"><span>More Projects</span></h1>
 
         
         
         <ul class="list-isotope clean grid :horizontal :around appearFromBottom :play">
                 <li class="cell">
                     <a class="card app-card" 
-                       href="/work/astrorunners/"
+                       href="/projects/astrorunners/"
                        data-tilt data-tilt-max="5" 
                        data-tilt-speed="800" 
                        data-tilt-scale="1.05" 
@@ -144,7 +198,7 @@
                 </li>
                 <li class="cell">
                     <a class="card app-card" 
-                       href="/work/bmg/"
+                       href="/projects/bmg/"
                        data-tilt data-tilt-max="5" 
                        data-tilt-speed="800" 
                        data-tilt-scale="1.05" 
@@ -155,7 +209,7 @@
                 </li>
                 <li class="cell">
                     <a class="card app-card" 
-                       href="/work/iching/"
+                       href="/projects/iching/"
                        data-tilt data-tilt-max="5" 
                        data-tilt-speed="800" 
                        data-tilt-scale="1.05" 
@@ -166,7 +220,7 @@
                 </li>
                 <li class="cell">
                     <a class="card app-card" 
-                       href="/work/luizalian/"
+                       href="/projects/luizalian/"
                        data-tilt data-tilt-max="5" 
                        data-tilt-speed="800" 
                        data-tilt-scale="1.05" 
@@ -179,6 +233,7 @@
 
     </article>
 </section>
+
 
       </div>
     </main>
@@ -207,7 +262,7 @@
    
   :root {
     --front:     #000;
-    --back:      #fff;
+    --back:      rgba(255,255,255, 1.0);
     --primary:   #f05553;
   }
 

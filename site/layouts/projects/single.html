@@ -59,8 +59,8 @@
     </article>    
   </section>
 
-  {{ $related := where .Site.RegularPages "Section" "work" }}
-  {{ $title   := "+ Work" }}
+  {{ $related := where .Site.RegularPages "Section" "projects" }}
+  {{ $title   := "More Projects" }}
   {{ $class   := "list-isotope" }}
   {{ partial "card_list" (dict "list" $related "title" $title "class" $class) }}
 

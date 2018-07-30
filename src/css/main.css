@@ -2,6 +2,7 @@
 @import "imports/variables.css";
 @import "imports/grid.css";
 @import "imports/form.css";
+@import "imports/devices-mockup.min.css";
 @import "imports/theme.css";
 @import "imports/animation.css";
 
@@ -189,19 +190,19 @@ body {
 /**
  * Work pages
  */
-.work ,
+.projects ,
 .about,
 .home {
 
   /* 2 columns */
-  & section.work {
+  & section.projects {
     flex-direction: row;
   }
 
   /* Image showcase */
   & .showcase {
     position: relative;
-    display: block;
+  display: block;
     width: calc(100% - 392px);
     margin: 0; padding: 0;
     overflow: hidden;

@@ -36,34 +36,34 @@ pygmentsCodeFences = true
 
 
 [[menu.main]]
-  name = "work"
+  name = "projects"
   weight = 1
-  identifier = "work"
-  url = "/work/"
+  identifier = "projects"
+  url = "/projects/"
 
 [[menu.main]]
   name = "Astrorunners"
-  parent = "work"
-  identifier = "work/astrorunners"
-  url = "/work/astrorunners"
+  parent = "projects"
+  identifier = "projects/astrorunners"
+  url = "/projects/astrorunners"
 
 [[menu.main]]
   name = "Luiza Lian"
-  parent = "work"
-  identifier = "work/luizalian"
-  url = "/work/luizalian"
+  parent = "projects"
+  identifier = "projects/luizalian"
+  url = "/projects/luizalian"
 
 [[menu.main]]
   name = "Bigud"
-  parent = "work"
-  identifier = "work/bigud"
-  url = "/work/bigud"
+  parent = "projects"
+  identifier = "projects/bigud"
+  url = "/projects/bigud"
 
 [[menu.main]]
   name = "BMG"
-  parent = "work"
-  identifier = "work/bmg"
-  url = "/work/bmg"
+  parent = "projects"
+  identifier = "projects/bmg"
+  url = "/projects/bmg"
 
 #[[menu.main]]
 #  name = "apps"

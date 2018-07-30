@@ -12,7 +12,7 @@
 
 {{ define "main" }}
   {{ $related := .Pages | first 6 }}
-  {{ $title   := "Work" }}
+  {{ $title   := "Projects" }}
   {{ $class   := "list-isotope" }}
   {{ partial "card_list" (dict "list" $related "title" $title "class" $class) }}
 {{ end }}

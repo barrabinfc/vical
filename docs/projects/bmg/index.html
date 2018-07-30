@@ -1,11 +1,13 @@
 <!doctype html>
 <html>
   <head>
-    <title>Work</title>
+    <title>BMG</title>
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+      <meta name="description" content="&lt;p&gt;&lt;a href=&#39;http://genitalia.me&#39; class=&#39;default nomargin black underline&#39; target=&#39;_blank&#39;&gt;Genitalia.me&lt;/a&gt; is an adult art project, aimed at natural body positivity. A infinity anonymous gallery of genitals donated by everyone in the world.&lt;/p&gt;&lt;p&gt;The mosaic is developed using &lt;strong&gt;Javascript&lt;/strong&gt;, and the backend in &lt;strong&gt;Python&lt;/strong&gt; and &lt;strong&gt;Django&lt;/strong&gt;.&lt;/p&gt;">
     
   
     <style>
@@ -59,9 +61,7 @@
   vical
 </a>
     <a href="#menu" class="menu-close">
-      <svg class="icon__cnt">
-        <use xlink:href="#ei-close-icon"></use>
-      </svg>
+      <svg class="icon__cnt"><use xlink:href="#ei-close-icon"></use></svg>
     </a>
   </div>
   
@@ -73,7 +73,7 @@
     
 
     <a class="menu-header animated
-             "
+             selected"
         href="/projects/"
         id="menu-projects">
         projects
@@ -99,41 +99,88 @@
         Blog
       </a>
   
-    
-    
-
-    <a class="menu-header animated
-             selected"
-        href="/work/"
-        id="menu-work">
-        Work
-      </a>
-  
 
 </nav>
- 
+
 
     </header>
 
     
     
     <main id="page-trans-wrapper">
-      <div class="page-container work work">
+      <div class="page-container projects projects">
         
+  <section class="work">
+    <article class="showcase">
+      <div class="overlay">
+        <div class="see-more">
+          <div>Scroll to see more</div>
+          <svg class="icon"><use xlink:href="#ei-chevron-down-icon"></use></svg>
+          
+        </div>
+      </div>
+      <div class="gallery">
+  <div class="browser-mask" style="background-color: #ffcc8c">
+    <div class="browser-screen appearFromBottom :play">
+      <img src="/images/bmg/mosaic.jpg" alt="Mosaico" />
+    </div>
+  </div>
+  <img src="/images/bmg/detail3.png" alt="Detalhe" />  
+  <img src="/images/bmg/upload.png" alt="Enviar" />  
+</div>
+<div class="gallery container-fluid grid :horizontal">
+  <div class="browser-mask pull:left w40">
+    <div class="browser-screen">
+      <img src="/images/bmg/admin-login.png" alt="CMS" /> 
+    </div>
+  </div>
+  <div class="browser-mask pull:right w50">
+    <div class="browser-screen">
+      <img src="/images/bmg/admin-aprovacao.jpg" alt="Aprovação" />  
+    </div>
+  </div>
+
+<p></div></p>
+
+    </article>
+    <article id="content-body" class="info grid :vertical">
+      
+      <picture class="logo">
+        
+        
+          <h2>BMG</h2>
+        
+      </picture>
+
+      <div class="description">
+        <p><a href='http://genitalia.me' class='default nomargin black underline' target='_blank'>Genitalia.me</a> is an adult art project, aimed at natural body positivity. A infinity anonymous gallery of genitals donated by everyone in the world.</p><p>The mosaic is developed using <strong>Javascript</strong>, and the backend in <strong>Python</strong> and <strong>Django</strong>.</p>  
+      </div>
+
+      <div class="more">
+        
+        <a href="http://genitalia.me" alt="genitalia.me" target="_blank" class="no-underline btn :hero :primary :curved :card :href">
+          <span>VISIT: </span>
+        </a> 
+      </div>
+
+      
+    </article>    
+  </section>
+
   
   
   
   <section class="more-list">
     <article class="container w100">
 
-        <h1 class="title hero appearFromBottomCropped :play"><span>Work</span></h1>
+        <h1 class="title hero appearFromBottomCropped :play"><span>More Projects</span></h1>
 
         
         
         <ul class="list-isotope clean grid :horizontal :around appearFromBottom :play">
                 <li class="cell">
                     <a class="card app-card" 
-                       href="/work/astrorunners/"
+                       href="/projects/astrorunners/"
                        data-tilt data-tilt-max="5" 
                        data-tilt-speed="800" 
                        data-tilt-scale="1.05" 
@@ -144,7 +191,7 @@
                 </li>
                 <li class="cell">
                     <a class="card app-card" 
-                       href="/work/bmg/"
+                       href="/projects/bmg/"
                        data-tilt data-tilt-max="5" 
                        data-tilt-speed="800" 
                        data-tilt-scale="1.05" 
@@ -155,7 +202,7 @@
                 </li>
                 <li class="cell">
                     <a class="card app-card" 
-                       href="/work/iching/"
+                       href="/projects/iching/"
                        data-tilt data-tilt-max="5" 
                        data-tilt-speed="800" 
                        data-tilt-scale="1.05" 
@@ -166,7 +213,7 @@
                 </li>
                 <li class="cell">
                     <a class="card app-card" 
-                       href="/work/luizalian/"
+                       href="/projects/luizalian/"
                        data-tilt data-tilt-max="5" 
                        data-tilt-speed="800" 
                        data-tilt-scale="1.05" 
@@ -179,6 +226,7 @@
 
     </article>
 </section>
+
 
       </div>
     </main>
@@ -207,7 +255,7 @@
    
   :root {
     --front:     #000;
-    --back:      #fff;
+    --back:      rgba(255,255,255, 1.0);
     --primary:   #f05553;
   }
 
