@@ -36,7 +36,7 @@
     {{ $section := .Section | default "" }}
     {{ $layout := .Section | default "" }}
     <main id="page-trans-wrapper">
-      <div class="page-container {{ $section }} {{ $layout }}">
+      <div id="page-container" class="page-container {{ $section }} {{ $layout }}">
         {{ block "main" .}}{{ end }}
       </div>
     </main>

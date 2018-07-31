@@ -61,7 +61,7 @@
 	var docStyle = document.documentElement.style;
 	var pointerClick = document.ontouchstart === undefined ? "click" : "touchstart";
 
-	var PAGE_LOAD_DURATION = 250;
+	var PAGE_LOAD_DURATION = 550;
 
 	function pageStart() {
 	  requestIdleCallback(function () {
@@ -239,10 +239,14 @@
 	             * this.newContainerLoading is a Promise for the loading of the new container
 	             * (Barba.js also comes with an handy Promise polyfill!)
 	             */
+	            var pageContainer = document.getElementById('page-container');
+	            pageContainer.style.position = 'absolute';
 
 	            // As soon the loading is finished and the old page is faded out, let's fade the new page
 	            document.dispatchEvent(new Event('page-out'));
-	            Promise.all([this.newContainerLoading, this.pageOut.bind(this)()]).then(this.pageIn.bind(this)).then(function () {
+	            Promise.all([this.newContainerLoading, this.pageOut.bind(this)()]).then(this.pageIn.bind(this))
+	            //.then( () => pageContainer.style.position = 'initial' )
+	            .then(function () {
 	                return document.dispatchEvent(new Event('page-in'));
 	            });
 	        },
@@ -285,10 +289,11 @@
 	            el.style.visibility = 'visible';
 
 	            requestAnimationFrame(function () {
+	                window.scroll(0, 0);
 	                el.classList.add(InClass);
 	            });
 	            setTimeout(function () {
-	                // show scrollbar
+	                // Scroll to top and show scrollbar
 	                document.body.style['overflow-y'] = 'overlay';
 
 	                _this2.done();

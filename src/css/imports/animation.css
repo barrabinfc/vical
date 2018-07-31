@@ -9,20 +9,32 @@
 }
 
 @keyframes fade-in {
-  0% { opacity: 0; transform: translateY(100px); }
-  100% { opacity: 1; transform: translateY(0px); }
+  0% { transform: translate3d(0,300px,0); }
+  100% { transform: translate3d(0,0px,0); }
 }
 @keyframes fade-out {
-  0% { opacity: 1; transform: translateY(0px);}
-  100% { opacity: 0; transform: translateY(-200px);}
+  0% { transform: translate3d(0,0,0px); }
+  100% { transform: translate3d(0,-300px,0); }
 }
 
 
 /**
  * General animations for page-in and page-out
  */
-.page-in { animation: fade-in .250s ease-out; animation-fill-mode: both; }
-.page-out { animation: fade-out .500s ease-in; animation-fill-mode: both; }
+#page-trans-wrapper {
+  perspective: var(--perspective);
+  transform-style:  preserve-3d;
+}
+.page-container  {
+  width: 100%;
+  backface-visibility: hidden;
+  transform: translate3d(0,0,0);
+}
+.page-in { 
+  animation: fade-in .550s ease; 
+  animation-fill-mode: both; 
+}
+.page-out { animation: fade-out .550s ease; animation-fill-mode: both; }
 
 
 @keyframes intro {

@@ -79,8 +79,8 @@
                     color: inherit;
                     flex: 1 1 70%;
 
-                    font-size: 3rem;
-                    line-height: 3rem;
+                    font-size: 2.5rem;
+                    line-height: 2.5rem;
                     margin: 0;
                     font-weight: bold;
                 }
@@ -106,17 +106,18 @@
         & > #post__showcase {
 
             display: flex;
-            min-height: 50vh;
-            height: 50vh;
+            min-height: 55vh;
+            height: 55vh;
 
             & > .headline {
                 margin: 0 auto;
-                width: 50%;
+                max-width: 70%;
                 text-align: center;
 
                 & > .title {
-                    font-size: calc(1rem * 5 * var(--typoscale));
-                    line-height: calc(1rem * 5 * var(--typoscale));
+                    margin-bottom: 0;
+                    font-size: calc(1rem * 3.0 * var(--typoscale));
+                    line-height: calc(1rem * 3.0 * var(--typoscale));
                 }
             }
 
@@ -136,8 +137,9 @@
         /** feature post **/
         & > #post__showcase.featured {
             width: 100%;
-            height: calc( 100vh - var(--header-height));
-            max-height: 100vh;
+            min-height: 55vh;
+            height: 55vh;
+
             overflow: hidden;
             padding: 0;
             margin: 0;
@@ -173,8 +175,8 @@
               
               /** Big ass title **/
               & .title {
-                font-size: calc(1rem * 5 * var(--typoscale));
-                line-height: calc(1rem * 5 * var(--typoscale));
+                font-size: calc(1rem * 3.0 * var(--typoscale));
+                line-height: calc(1rem * 3.0 * var(--typoscale));
           
                 font-weight: bold;
               }
@@ -197,37 +199,100 @@
             }          
         }
 
+
         & > #post__body {
             width: 70%;
+            position: relative;
+            margin-bottom: var(--pad-big);
 
-            /**
-             * Adjacent spacement fixes
-             */
-             & p > code , 
-             & li > code {
-                font-size: 85%;
-                padding: var(--gutter);
-                background-color: var(--gray);
-                border-radius: 3px;
-             }
-            
-              /**
-              * Header adjacement
-              */
-              & p + h1,  & p + h2,  & p + h3 , & p + h4,  & p + h5,  & p + h6 , 
-              & ul + h1, & ul + h2, & ul + h3, & ul + h4, & ul + h5, & ul + h6 ,
-              & ol + h1, & ol + h2, & ol + h3 ,& ol + h4, & ol + h5, & ol + h6 ,
-              & table + h1, & table + h2, & table + h3 , & table + h4, & table + h5, & table + h6 , 
-              & .highlight + h1, & .highlight + h2, & .highlight + h3 , & .highlight + h4, & .highlight + h5, & .highlight + h6,
-              & pre + h1,  & pre + h2,  & pre + h3 , & pre + h4,  & pre + h5,  & pre + h6 {
-                margin-top: calc( var(--size) - 1.5rem);
-              }
-              
-              /* Adjacent list elements */
-              & ul + p, 
-              & ol + p {
-                margin-top: 1.5rem;
-              }              
+            & > #post__meta {
+                border-radius: var(--curve-soft);
+                background-color: var(--light-gray);
+                width: 100%;
+                margin: 0 auto;
+                overflow: hidden;
+                padding: var(--pad-big);
+                position: absolute;
+                top: -3em;
+                left: 0em;
+                height: 5em;
+    
+                display: flex;
+                align-items: center; 
+                justify-content: space-evenly;
+    
+                & > .author { 
+                    flex: 1 1 50%; 
+                    text-indent: 4rem;
+                    &::after {
+                        content: ' ';
+                        background-image: url(../images/dismas_colored.png);
+                        width: 72px;
+                        height: 75px;
+                        position: absolute;
+                        left: 16px;
+                        top: 9px;
+                        background-size: cover;
+                    }
+                }
+                & > .categories { 
+                    flex: 1 1 30%;
+                    font-size: 85%;
+    
+                    margin: var(--gutter) 0;
+                    & > span {
+                        line-height: 1.5rem;
+                        padding: calc(0.5 * var(--gutter)) var(--gutter);
+                        border-radius: 5px;
+                        background-color: var(--rly-dark-gray);
+                        color: var(--back);
+                    }
+    
+                }
+                & > .date {
+                    text-align: right;
+                    flex: 1 1 20%;
+                    display: flex;
+                    flex-direction: column;
+                    & > time {
+                        font-size: calc(1.33rem * var(--typoscale));
+                        line-height: calc(1.33rem * var(--typoscale));
+                    }
+                }
+            }
+    
+            & > #post__body__content {
+                margin-top: 3em;
+
+                /**
+                * Adjacent spacement fixes
+                */
+                & p > code , 
+                & li > code {
+                    font-size: 85%;
+                    padding: var(--gutter);
+                    background-color: var(--gray);
+                    border-radius: 3px;
+                }
+                
+                /**
+                * Header adjacement
+                */
+                & p + h1,  & p + h2,  & p + h3 , & p + h4,  & p + h5,  & p + h6 , 
+                & ul + h1, & ul + h2, & ul + h3, & ul + h4, & ul + h5, & ul + h6 ,
+                & ol + h1, & ol + h2, & ol + h3 ,& ol + h4, & ol + h5, & ol + h6 ,
+                & table + h1, & table + h2, & table + h3 , & table + h4, & table + h5, & table + h6 , 
+                & .highlight + h1, & .highlight + h2, & .highlight + h3 , & .highlight + h4, & .highlight + h5, & .highlight + h6,
+                & pre + h1,  & pre + h2,  & pre + h3 , & pre + h4,  & pre + h5,  & pre + h6 {
+                    margin-top: calc( var(--size) - 1.5rem);
+                }
+                
+                /* Adjacent list elements */
+                & ul + p, 
+                & ol + p {
+                    margin-top: 1.5rem;
+                }
+            }              
         }
     }
 }

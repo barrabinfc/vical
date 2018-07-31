@@ -44,7 +44,7 @@
 
 
 h1,h2,h3,h4,h5,h6 { 
-  --size:  calc(1rem * 2.33 * var(--typoscale));
+  --size:  calc(1rem * 3.0 * var(--typoscale));
   
   font-family: var(--hero-font);
   font-size: var(--size);    

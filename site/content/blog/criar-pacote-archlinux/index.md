@@ -1,16 +1,17 @@
 +++
 draft = false
 Title = "Como criar um pacote para <b>archlinux</b>"
+subtitle = ""
 description = "Criando pacotes para gerenciador pacman"
 tags = ["archlinux", "pacman", "recipe"]
 parent = "blog"
 date = "2017-07-15"
 
-[[resources]]
-  name = "featured"
-  src = "images/containers-unsplash.jpg"
-  [resources.params]
-    colorscheme = "dark"
+#[[resources]]
+#  name = "featured"
+#  src = "images/containers-unsplash.jpg"
+#  [resources.params]
+#    colorscheme = "dark"
 
 +++
 

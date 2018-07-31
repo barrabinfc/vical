@@ -25,8 +25,36 @@
       <h3 class="subtitle">{{ .Params.subtitle }}</h3>
     </div>
   </article>
+
   <article id="post__body" class="container grid :vertical :around">
-    {{ .Content }}
+      <div id="post__meta" class="meta">
+          <div class="author">
+            <h4 class="avatar">Vitor Calejuri</h4>
+          </div>
+          <div class="categories">
+              {{ if isset .Params "tags"}}
+              {{- range first 5 .Params.tags }}
+                <span>{{.}}</span>
+              {{- end}}
+            {{ end }}
+          </div>
+    
+          <div class="date">
+              {{ if eq .PublishDate.Year 1 }}
+                    
+              {{ else }}
+                <time datetime="{{.PublishDate}}">
+                    {{ .PublishDate.Month }}
+                    {{ .PublishDate.Day }},
+                    {{ .PublishDate.Year }}                
+                </time>
+              {{ end }}
+    
+          </div>
+      </div>
+      <div id="post__body__content">
+          {{ .Content }}
+      </div>
   </article>
 </section>
 {{ end }} 

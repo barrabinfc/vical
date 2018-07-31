@@ -86,7 +86,7 @@
         & .contact {      
           perspective: var(--perspective);
           padding: calc( 2* var(--pad-big)) 0;
-          width: 90%;
+          width: 75%;
           margin: 0 auto;
 
           & > a { 
@@ -94,10 +94,11 @@
             height: 200px;
             box-shadow: var(--shadow-card);
             background-image: url(../images/old-computer.jpg);
-            background-size: auto;
+            background-size: cover;
             background-position: center;
+            background-position-y: -380px;
             background-repeat: no-repeat;
-  
+            
             border-radius: var(--curve-big);
             cursor: pointer;
           }

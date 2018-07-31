@@ -118,8 +118,8 @@
 @import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Roboto:900|Open+Sans');
 */
 h1,h2,h3,h4,h5,h6 { 
-  --size:  calc(1rem * 2.33 * calc(5/4)); 
-  --size:  calc(1rem * 2.33 * var(--typoscale));
+  --size:  calc(1rem * 3.0 * calc(5/4)); 
+  --size:  calc(1rem * 3.0 * var(--typoscale));
   
   font-family: 'FuturaStd', sans-serif;
   

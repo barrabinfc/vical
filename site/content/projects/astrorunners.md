@@ -7,7 +7,7 @@ title = "Astrorunners"
 thumbnail = "/images/astrorunners/showcase.jpg"
 website = "www.astrorunners.com"
 subtitle = "Astrorunners"
-description = "<p><a href='http://astrorunners.com' class='default nomargin black underline' target='_blank'>Astrorunners</a> asked me to redesign their online store for their new collection. The design uses a strong constrast of black and white to be consistent to the collection aesthetics.</p><p>I utilized responsive layout tecniques, and built a highly adaptable theme to let them tweak the layout without touching the code.</p>"
+description = "<p><a href='http://astrorunners.com' class='default nomargin black underline' target='_blank'>Astrorunners</a> asked me to redesign their store for the new collection. The design uses a strong constrast of black and white to be consistent to the collection aesthetics.</p><p>The site uses responsive layout tecniques, and has a highly adaptable theme to let administradors tweak the layout without touching the code.</p>"
 logo = "/images/astrorunners/logo-black-final.png"
 +++
 

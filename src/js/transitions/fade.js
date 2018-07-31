@@ -8,12 +8,15 @@ export let GeneralTransition = (InClass = 'page-in', OutClass = 'page-out', dura
              * this.newContainerLoading is a Promise for the loading of the new container
              * (Barba.js also comes with an handy Promise polyfill!)
              */
+            const pageContainer = document.getElementById('page-container');
+            pageContainer.style.position = 'absolute';
 
             // As soon the loading is finished and the old page is faded out, let's fade the new page
             document.dispatchEvent( new Event('page-out'));
             Promise
                 .all([this.newContainerLoading, this.pageOut.bind(this)()])
                 .then(this.pageIn.bind(this))
+                //.then( () => pageContainer.style.position = 'initial' )
                 .then( () => document.dispatchEvent(new Event('page-in')))
         },
 
@@ -45,17 +48,17 @@ export let GeneralTransition = (InClass = 'page-in', OutClass = 'page-out', dura
 
             var _this = this;
             var el = this.newContainer;
-
             
             this.oldContainer.style.visibility = 'hidden';
             this.oldContainer.style.display = 'none';
             el.style.visibility = 'visible';
             
             requestAnimationFrame(() => {
+                window.scroll(0,0);
                 el.classList.add(InClass);
             })
             setTimeout(() => {
-                // show scrollbar
+                // Scroll to top and show scrollbar
                 document.body.style['overflow-y'] = 'overlay';
                 
                 this.done();
