@@ -14,7 +14,8 @@
 <section class="post">
   {{ $featured := .Page.Resources.GetMatch "featured" }}
   <article id="post__showcase" class="{{ if $featured }} featured {{ end }}
-                                      {{ if $featured }}{{ $featured.Params.colorscheme }}{{else}}light{{end}}">
+                                      {{ if $featured }}{{ $featured.Params.colorscheme }}{{end}}
+                                      {{ if .Params.colorscheme }} {{ .Params.colorscheme }}{{end}}">
     <picture>
       {{ if $featured }}
         <img src="{{ $featured.Permalink }}">
@@ -34,7 +35,7 @@
           <div class="categories">
               {{ if isset .Params "tags"}}
               {{- range first 5 .Params.tags }}
-                <span>{{.}}</span>
+                <span class="tags">{{.}}</span>
               {{- end}}
             {{ end }}
           </div>

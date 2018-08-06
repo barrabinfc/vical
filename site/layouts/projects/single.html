@@ -39,9 +39,11 @@
         <!-- 
           <a href="http://{{.Params.website}}" target="_blank" class="btn :txt :primary margin:auto">{{.Params.website}}</a> 
         -->
+        {{ if .Params.website }}
         <a href="http://{{.Params.website}}" alt="{{.Params.website}}" target="_blank" class="no-underline btn :hero :primary :curved :card :href">
           <span>VISIT: </span>
         </a> 
+        {{ end }}
       </div>
 
       <!--

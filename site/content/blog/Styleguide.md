@@ -3,13 +3,15 @@ draft = false
 Title = "Styleguide"
 subtitle = "CSS Styleguide"
 parent = "blog"
+colorscheme = "light"
 
 +++
 
 
-This document shows Markdown formatting and style rules for hugo theme. Theme created by vical :smile:.
+This document shows Markdown formatting and style rules.
 
-Lets start aaragraph, with *Italic*, **bold**, and `monospace`. And see vertical rhythm with lorem ipsum.
+Lets start a paragraph, with *Italic*, **bold**, and `monospace`. And let's see vertical rhythm with lorem ipsum.
+<!--more-->
 
 # Lorem ipsum
 

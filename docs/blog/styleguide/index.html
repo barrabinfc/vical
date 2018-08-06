@@ -19,7 +19,7 @@
     overflow-x: hidden;
     overflow-y: overlay;
   }
-  iframe,embed,img,video,picture { max-width: 100%; }
+  iframe,embed,img,video,picture { max-width: 100%; object-fit: cover; }
   
   a,p,button { margin: 0; padding: 0; }
   blockquote { width: 100%; margin: 1em auto; line-height: 1.0em; }
@@ -113,7 +113,8 @@
 <section class="post">
   
   <article id="post__showcase" class="
-                                      light">
+                                      
+                                       light">
     <picture>
       
     </picture>
@@ -140,11 +141,10 @@
           </div>
       </div>
       <div id="post__body__content">
-          
+          <p>This document shows Markdown formatting and style rules.</p>
 
-<p>This document shows Markdown formatting and style rules for hugo theme. Theme created by vical 😄.</p>
-
-<p>Lets start aaragraph, with <em>Italic</em>, <strong>bold</strong>, and <code>monospace</code>. And see vertical rhythm with lorem ipsum.</p>
+<p>Lets start a paragraph, with <em>Italic</em>, <strong>bold</strong>, and <code>monospace</code>. And let&rsquo;s see vertical rhythm with lorem ipsum.
+</p>
 
 <h1 id="lorem-ipsum">Lorem ipsum</h1>
 
@@ -307,7 +307,6 @@ term/definition pair to spread things out more.)</p>
  <a class="footnote-return" href="#fnref:1">↩</a></li>
 </ol>
 </div>
-
       </div>
   </article>
 </section>
@@ -351,21 +350,6 @@ term/definition pair to spread things out more.)</p>
 
     <script src="/js/app.js" defer></script>
     <script type="text/javascript" src="/js/vendor/vanilla-tilt.babel.min.js" async></script> 
-    <script type="text/javascript" src="/js/vendor/netlify-identity-widget.v1.4.14.js" async></script> 
-    <script>
-        window.addEventListener('load', setupNetlify)
-        function setupNetlify() {
-          if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-              if (!user) {
-                window.netlifyIdentity.on("login", () => {
-                  document.location.href = "/admin/";
-                });
-              }
-            });
-          }
-        }
-    </script>
-
+    
   </body>
 </html>

@@ -25,15 +25,18 @@
                   {{ .PublishDate.Year }}
                 {{ end }}
               </time>
-              <div class="tags">
+              <div class="tag-list">
                 {{ if isset .Params "tags"}}
                   {{- range first 5 .Params.tags }}
-                    <span>{{.}}</span>
+                    <span class="tags">{{.}}</span>
                   {{- end}}
                 {{ end }}
               </div>
             </label>
-            <a href="{{ .Permalink }}">{{ safeHTML .Title }}</a>
+            <div class="post-preview">
+              <a class="title" href="{{ .Permalink }}">{{ safeHTML .Title }}</a>
+              <p>{{ .Summary }}</p>
+            </div>
           </li>
         {{- end }} 
         </ul>

@@ -24,6 +24,8 @@ software zumbi no sistema operacional.
 
 Nesse artigo, vou mostrar como empacotar o software [giflossy](https://github.com/kornelski/giflossy), um otimizador lossy de gifs.
 
+<!--more-->
+
 ### Instalando o `giflossy` manualmente
 
 O primeiro passo, é compilar e instalar o software manualmente. Vamos baixar o Giflossy diretamente do `git` e instalar.

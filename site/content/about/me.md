@@ -5,8 +5,8 @@ color = "#000"
 bg_color = "#f8fbfb"
 
 subtitle = ""
-description = "I'm Vitor Calejuri, a creative developer in Brazil. For the last ten years, I've been working with all sorts of clients, helping them build awesome apps and websites , using a disciplined vocabulary of math, science and design."
-logo = "/images/icons/yin_yang.svg"
+description = "I'm Vitor Calejuri, i build apps and sites. For the last ten years, I've been working with all sorts of clients, helping them build apps and sites, using a disciplined vocabulary of computer programming and design."
+logo = "/images/uploads/myself-2-low.jpg"
 
 aliases = [
   "/about/"
@@ -20,11 +20,12 @@ aliases = [
       <ul>
         <li>Frontend development with modern HTML/CSS/SVG</li> 
         <li><p>Javascript ES6 / Typescript and React/VueJS</p></li>
+        <li>Git/Webpack and others developer tools</p></li>
         <li>Backend development with Django and nodeJS</li>
         <li>Python and C/C++</li>
         <li>SQL and noSQL databases</li>
         <li>Linux/Unix servers</li>
-        <li><p>Data visualization and image processing</p></li>
+        <li>Test Driven development methodologies </li>
       </ul>
     </div>
   </div>

@@ -21,7 +21,7 @@
     overflow-x: hidden;
     overflow-y: overlay;
   }
-  iframe,embed,img,video,picture { max-width: 100%; }
+  iframe,embed,img,video,picture { max-width: 100%; object-fit: cover; }
   
   a,p,button { margin: 0; padding: 0; }
   blockquote { width: 100%; margin: 1em auto; line-height: 1.0em; }
@@ -165,9 +165,11 @@
 
       <div class="more">
         
+        
         <a href="http://www.astrorunners.com" alt="www.astrorunners.com" target="_blank" class="no-underline btn :hero :primary :curved :card :href">
           <span>VISIT: </span>
         </a> 
+        
       </div>
 
       
@@ -187,12 +189,31 @@
         <ul class="list-isotope clean grid :horizontal :around appearFromBottom :play">
                 <li class="cell">
                     <a class="card app-card" 
+                       href="/projects/portinari/"
+                       data-tilt data-tilt-max="5" 
+                       data-tilt-speed="800" 
+                       data-tilt-scale="1.05" 
+                       >
+                        <img class="thumbnail" 
+                        src="/images/uploads/portinari/portal.jpg" 
+                        
+                            style="object-position: top; "
+                        
+                        />
+                        <h3 class="listitem__title">Portinari &amp; Ligalight</h3>
+                    </a>
+                </li>
+                <li class="cell">
+                    <a class="card app-card" 
                        href="/projects/astrorunners/"
                        data-tilt data-tilt-max="5" 
                        data-tilt-speed="800" 
                        data-tilt-scale="1.05" 
                        >
-                        <img class="thumbnail" src="/images/astrorunners/showcase.jpg" />
+                        <img class="thumbnail" 
+                        src="/images/astrorunners/showcase.jpg" 
+                        
+                        />
                         <h3 class="listitem__title">Astrorunners</h3>
                     </a>
                 </li>
@@ -203,7 +224,10 @@
                        data-tilt-speed="800" 
                        data-tilt-scale="1.05" 
                        >
-                        <img class="thumbnail" src="/images/textures/couro-enguia.jpg" />
+                        <img class="thumbnail" 
+                        src="/images/textures/couro-enguia.jpg" 
+                        
+                        />
                         <h3 class="listitem__title">BMG</h3>
                     </a>
                 </li>
@@ -214,7 +238,10 @@
                        data-tilt-speed="800" 
                        data-tilt-scale="1.05" 
                        >
-                        <img class="thumbnail" src="/images/textures/cashmere-la.jpg" />
+                        <img class="thumbnail" 
+                        src="/images/textures/cashmere-la.jpg" 
+                        
+                        />
                         <h3 class="listitem__title">I Ching</h3>
                     </a>
                 </li>
@@ -225,7 +252,10 @@
                        data-tilt-speed="800" 
                        data-tilt-scale="1.05" 
                        >
-                        <img class="thumbnail" src="/images/luilian/oya-screenshot.jpeg" />
+                        <img class="thumbnail" 
+                        src="/images/luilian/oya-screenshot.jpeg" 
+                        
+                        />
                         <h3 class="listitem__title">Luiza Lian</h3>
                     </a>
                 </li>
@@ -274,21 +304,6 @@
 
     <script src="/js/app.js" defer></script>
     <script type="text/javascript" src="/js/vendor/vanilla-tilt.babel.min.js" async></script> 
-    <script type="text/javascript" src="/js/vendor/netlify-identity-widget.v1.4.14.js" async></script> 
-    <script>
-        window.addEventListener('load', setupNetlify)
-        function setupNetlify() {
-          if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-              if (!user) {
-                window.netlifyIdentity.on("login", () => {
-                  document.location.href = "/admin/";
-                });
-              }
-            });
-          }
-        }
-    </script>
-
+    
   </body>
 </html>

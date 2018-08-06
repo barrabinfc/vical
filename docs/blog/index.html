@@ -19,7 +19,7 @@
     overflow-x: hidden;
     overflow-y: overlay;
   }
-  iframe,embed,img,video,picture { max-width: 100%; }
+  iframe,embed,img,video,picture { max-width: 100%; object-fit: cover; }
   
   a,p,button { margin: 0; padding: 0; }
   blockquote { width: 100%; margin: 1em auto; line-height: 1.0em; }
@@ -122,15 +122,27 @@
                   2017
                 
               </time>
-              <div class="tags">
+              <div class="tag-list">
                 
-                    <span>archlinux</span>
-                    <span>pacman</span>
-                    <span>recipe</span>
+                    <span class="tags">archlinux</span>
+                    <span class="tags">pacman</span>
+                    <span class="tags">recipe</span>
                 
               </div>
             </label>
-            <a href="/blog/criar-pacote-archlinux/">Como criar um pacote para <b>archlinux</b></a>
+            <div class="post-preview">
+              <a class="title" href="/blog/criar-pacote-archlinux/">Como criar um pacote para <b>archlinux</b></a>
+              <p><p>Archlinux é uma das melhores distribuições Linux em 2018. Entretanto, a quantidade de software no catálogo ainda é inferior ao ubuntu,
+e eventualmente você vai ter que instalar software manualmente.</p>
+
+<p>Nesses casos, é muito útil saber como empacotar software. Dessa forma,
+ainda podemos gerênciar instalação/atualizações/remoção usando o <strong>pacman</strong>, sem termos
+software zumbi no sistema operacional.</p>
+
+<p>Nesse artigo, vou mostrar como empacotar o software <a href="https://github.com/kornelski/giflossy">giflossy</a>, um otimizador lossy de gifs.</p>
+
+<p></p></p>
+            </div>
           </li>
           <li>
             <label>
@@ -139,11 +151,17 @@
                   
                 
               </time>
-              <div class="tags">
+              <div class="tag-list">
                 
               </div>
             </label>
-            <a href="/blog/styleguide/">Styleguide</a>
+            <div class="post-preview">
+              <a class="title" href="/blog/styleguide/">Styleguide</a>
+              <p><p>This document shows Markdown formatting and style rules.</p>
+
+<p>Lets start a paragraph, with <em>Italic</em>, <strong>bold</strong>, and <code>monospace</code>. And let&rsquo;s see vertical rhythm with lorem ipsum.
+</p></p>
+            </div>
           </li> 
         </ul>
       </section>
@@ -189,21 +207,6 @@
 
     <script src="/js/app.js" defer></script>
     <script type="text/javascript" src="/js/vendor/vanilla-tilt.babel.min.js" async></script> 
-    <script type="text/javascript" src="/js/vendor/netlify-identity-widget.v1.4.14.js" async></script> 
-    <script>
-        window.addEventListener('load', setupNetlify)
-        function setupNetlify() {
-          if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-              if (!user) {
-                window.netlifyIdentity.on("login", () => {
-                  document.location.href = "/admin/";
-                });
-              }
-            });
-          }
-        }
-    </script>
-
+    
   </body>
 </html>

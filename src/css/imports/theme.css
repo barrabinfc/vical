@@ -440,7 +440,7 @@ footer[role="footer"] {
   & > article {
     min-height: calc( 100vh - var(--header-height));
     height: 100%;
-    padding: 2em calc( 4 * var(--gutter));
+    padding: 2em 0; /* calc( 4 * var(--gutter)); */
 
     & > h1:first-child , & > h2:first-child, \
     & > h3:first-child , & > h4:first-child, \
@@ -516,3 +516,25 @@ footer[role="footer"] {
    }
  }
 
+
+ /**
+  * 3 part gallery
+  */
+.gallery-columns {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  & > div:first-child { 
+    flex: 1 1 65%; 
+    overflow: hidden;
+    & > * {height: 100%; }
+  }
+  & > div:nth-child(2) { 
+    flex: 1 1 35%; 
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    & > * + * { flex: 1 1 50%; }
+  }
+}

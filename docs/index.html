@@ -20,7 +20,7 @@
     overflow-x: hidden;
     overflow-y: overlay;
   }
-  iframe,embed,img,video,picture { max-width: 100%; }
+  iframe,embed,img,video,picture { max-width: 100%; object-fit: cover; }
   
   a,p,button { margin: 0; padding: 0; }
   blockquote { width: 100%; margin: 1em auto; line-height: 1.0em; }
@@ -157,21 +157,6 @@
 
     <script src="/js/app.js" defer></script>
     <script type="text/javascript" src="/js/vendor/vanilla-tilt.babel.min.js" async></script> 
-    <script type="text/javascript" src="/js/vendor/netlify-identity-widget.v1.4.14.js" async></script> 
-    <script>
-        window.addEventListener('load', setupNetlify)
-        function setupNetlify() {
-          if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-              if (!user) {
-                window.netlifyIdentity.on("login", () => {
-                  document.location.href = "/admin/";
-                });
-              }
-            });
-          }
-        }
-    </script>
-
+    
   </body>
 </html>

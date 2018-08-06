@@ -16,9 +16,16 @@
       <pubDate>Sat, 15 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>/blog/criar-pacote-archlinux/</guid>
-      <description>Archlinux é uma das melhores distribuições Linux em 2018. Entretanto, a quantidade de software no catálogo ainda é inferior ao ubuntu, e eventualmente você vai ter que instalar software manualmente.
-Nesses casos, é muito útil saber como empacotar software. Dessa forma, ainda podemos gerênciar instalação/atualizações/remoção usando o pacman, sem termos software zumbi no sistema operacional.
-Nesse artigo, vou mostrar como empacotar o software giflossy, um otimizador lossy de gifs.</description>
+      <description>&lt;p&gt;Archlinux é uma das melhores distribuições Linux em 2018. Entretanto, a quantidade de software no catálogo ainda é inferior ao ubuntu,
+e eventualmente você vai ter que instalar software manualmente.&lt;/p&gt;
+
+&lt;p&gt;Nesses casos, é muito útil saber como empacotar software. Dessa forma,
+ainda podemos gerênciar instalação/atualizações/remoção usando o &lt;strong&gt;pacman&lt;/strong&gt;, sem termos
+software zumbi no sistema operacional.&lt;/p&gt;
+
+&lt;p&gt;Nesse artigo, vou mostrar como empacotar o software &lt;a href=&#34;https://github.com/kornelski/giflossy&#34;&gt;giflossy&lt;/a&gt;, um otimizador lossy de gifs.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

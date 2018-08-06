@@ -14,7 +14,12 @@
                        data-tilt-speed="800" 
                        data-tilt-scale="{{ $hover_size }}" 
                        >
-                        <img class="thumbnail" src="{{ .Params.thumbnail }}" />
+                        <img class="thumbnail" 
+                        src="{{ .Params.thumbnail }}" 
+                        {{ if .Params.thumb_position }}
+                            style="object-position: {{ .Params.thumb_position }}; "
+                        {{ end }}
+                        />
                         <h3 class="listitem__title">{{ .Title }}</h3>
                     </a>
                 </li>

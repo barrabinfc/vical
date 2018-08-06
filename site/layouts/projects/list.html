@@ -11,7 +11,7 @@
 {{ end }} 
 
 {{ define "main" }}
-  {{ $related := .Pages | first 6 }}
+  {{ $related := .Pages.ByDate.Reverse | first 6 }}
   {{ $title   := "Projects" }}
   {{ $class   := "list-isotope" }}
   {{ partial "card_list" (dict "list" $related "title" $title "class" $class) }}

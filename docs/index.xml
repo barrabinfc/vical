@@ -11,14 +11,30 @@
     
     
     <item>
+      <title>Portinari &amp; Ligalight</title>
+      <link>/projects/portinari/</link>
+      <pubDate>Sun, 03 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/portinari/</guid>
+      <description>--         --         </description>
+    </item>
+    
+    <item>
       <title>Como criar um pacote para &lt;b&gt;archlinux&lt;/b&gt;</title>
       <link>/blog/criar-pacote-archlinux/</link>
       <pubDate>Sat, 15 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>/blog/criar-pacote-archlinux/</guid>
-      <description>Archlinux é uma das melhores distribuições Linux em 2018. Entretanto, a quantidade de software no catálogo ainda é inferior ao ubuntu, e eventualmente você vai ter que instalar software manualmente.
-Nesses casos, é muito útil saber como empacotar software. Dessa forma, ainda podemos gerênciar instalação/atualizações/remoção usando o pacman, sem termos software zumbi no sistema operacional.
-Nesse artigo, vou mostrar como empacotar o software giflossy, um otimizador lossy de gifs.</description>
+      <description>&lt;p&gt;Archlinux é uma das melhores distribuições Linux em 2018. Entretanto, a quantidade de software no catálogo ainda é inferior ao ubuntu,
+e eventualmente você vai ter que instalar software manualmente.&lt;/p&gt;
+
+&lt;p&gt;Nesses casos, é muito útil saber como empacotar software. Dessa forma,
+ainda podemos gerênciar instalação/atualizações/remoção usando o &lt;strong&gt;pacman&lt;/strong&gt;, sem termos
+software zumbi no sistema operacional.&lt;/p&gt;
+
+&lt;p&gt;Nesse artigo, vou mostrar como empacotar o software &lt;a href=&#34;https://github.com/kornelski/giflossy&#34;&gt;giflossy&lt;/a&gt;, um otimizador lossy de gifs.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -28,8 +44,8 @@ Nesse artigo, vou mostrar como empacotar o software giflossy, um otimizador loss
       
       <guid>/about/me/</guid>
       <description>Skills  Frontend development with modern HTML/CSS/SVG Javascript ES6 / Typescript and React/VueJS
- Backend development with Django and nodeJS Python and C/C++ SQL and noSQL databases Linux/Unix servers Data visualization and image processing
-    Education  Nanodegree in Data science
+ Git/Webpack and others developer tools
+ Backend development with Django and nodeJS Python and C/C++ SQL and noSQL databases Linux/Unix servers Test Driven development methodologies     Education  Nanodegree in Data science
 2017, Udacity
   BsC, Computer Science
 2009, Mackenzie
@@ -80,9 +96,10 @@ Nesse artigo, vou mostrar como empacotar o software giflossy, um otimizador loss
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/blog/styleguide/</guid>
-      <description>This document shows Markdown formatting and style rules for hugo theme. Theme created by vical 😄.
-Lets start aaragraph, with Italic, bold, and monospace. And see vertical rhythm with lorem ipsum.
-Lorem ipsum Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lacinia nibh eu congue ullamcorper. Vestibulum vitae augue pharetra justo fringilla dignissim. Integer gravida, lacus vel molestie fermentum, turpis massa commodo dui, faucibus efficitur nisl nisl nec augue.</description>
+      <description>&lt;p&gt;This document shows Markdown formatting and style rules.&lt;/p&gt;
+
+&lt;p&gt;Lets start a paragraph, with &lt;em&gt;Italic&lt;/em&gt;, &lt;strong&gt;bold&lt;/strong&gt;, and &lt;code&gt;monospace&lt;/code&gt;. And let&amp;rsquo;s see vertical rhythm with lorem ipsum.
+&lt;/p&gt;</description>
     </item>
     
   </channel>

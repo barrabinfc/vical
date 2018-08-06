@@ -5,9 +5,19 @@
     <link>/projects/</link>
     <description>Recent content in Projects on vical</description>
     <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 03 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Portinari &amp; Ligalight</title>
+      <link>/projects/portinari/</link>
+      <pubDate>Sun, 03 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/portinari/</guid>
+      <description>--         --         </description>
+    </item>
     
     <item>
       <title>Astrorunners</title>

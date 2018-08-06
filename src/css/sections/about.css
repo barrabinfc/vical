@@ -40,10 +40,14 @@
           align-items: center;
   
           & > img { 
-            width: 80%;
+            width: 225px;
+            height: 225px;
             margin: 0 auto; 
             border-radius: 50%; overflow: hidden;
-            border: 1px solid var(--gray); 
+            border: 1px solid var(--gray);
+            object-fit: cover ;
+            object-position: -5px -60px; 
+            background-color: aqua;
           }
         }
         & .intro_lead {
