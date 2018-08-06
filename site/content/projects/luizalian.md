@@ -3,6 +3,7 @@ draft = false
 title = "Luiza Lian"
 thumbnail = "/images/luilian/oya-screenshot.jpeg"
 website = "lui.xyz"
+date = "2017-06-01"
 subtitle = "Oya tempo"
 description = "<p>O site, concebido pelo artista visual Dedos (Rafael Trabasso), cria uma nova experiência estética para a escuta do álbum. Ao navegar pelo site, o ouvinte tem uma nova narrativa visual, um novo caminho para a apreciação da obra.</p><p>Lorem ipsum dolor sit amet.</p>"
 logo = "/images/luilian/luilian-oya.png"

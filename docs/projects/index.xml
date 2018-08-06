@@ -20,6 +20,24 @@
     </item>
     
     <item>
+      <title>Luiza Lian</title>
+      <link>/projects/luizalian/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/luizalian/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>BMG</title>
+      <link>/projects/bmg/</link>
+      <pubDate>Fri, 01 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/bmg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Astrorunners</title>
       <link>/projects/astrorunners/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -29,30 +47,12 @@
     </item>
     
     <item>
-      <title>BMG</title>
-      <link>/projects/bmg/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/projects/bmg/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>I Ching</title>
       <link>/projects/iching/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/projects/iching/</guid>
       <description>            </description>
-    </item>
-    
-    <item>
-      <title>Luiza Lian</title>
-      <link>/projects/luizalian/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/projects/luizalian/</guid>
-      <description> </description>
     </item>
     
   </channel>

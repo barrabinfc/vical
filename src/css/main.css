@@ -112,6 +112,10 @@ body {
     & > .cell:nth-child(3n+3){
       flex: 0 0 60%;
     }
+    /* Force last item to aways occupy 100% */
+    & > .cell:last-child {
+      flex: 1 1 100%;
+    }
 
     & .card {
       width: 100%;

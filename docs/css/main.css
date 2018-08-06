@@ -775,9 +775,13 @@ ul.task-list input[type="checkbox"] {
 .w10 { max-width: 10%; }
 .w33 { max-width: 33%; }
 .w25 { max-width: 25%; }
+.w35 { max-width: 35%; }
 .w40 { max-width: 40%; }
 .w45 { max-width: 45%; }
 .w50 { max-width: 50%; }
+.w60 { max-width: 60%; }
+.w65 { max-width: 60%; }
+.w66 { max-width: 66%; }
 .w70 { max-width: 70%; }
 .w90 { max-width: 90%; }
 .w100 { max-width: 100%; width: 100%; }
@@ -1243,7 +1247,7 @@ footer[role="footer"] a {
        -o-object-fit: cover;
           object-fit: cover;
        width: 100%;
-       top: 2.5vw;
+       top: 0;
      }
 /**
   * 3 part gallery
@@ -1501,7 +1505,7 @@ blockquote {
   border-left: 4px solid #E6ECF1; 
   border-left: 4px solid var(--light-gray);
 }
-.highlight {margin-bottom: 1.5rem;/* width: 100vw; */}
+.highlight { margin-bottom: 1.5rem; }
 .highlight > pre { margin: 0; }
 /**
  * Links
@@ -2222,6 +2226,12 @@ body {
 .more-list .list-isotope > .cell:nth-child(3n+3){
       flex: 0 0 60%;
     }
+.more-list .list-isotope {
+    /* Force last item to aways occupy 100% */
+  }
+.more-list .list-isotope > .cell:last-child {
+      flex: 1 1 100%;
+    }
 .more-list .list-isotope .card {
       width: 100%;
     }
@@ -2263,10 +2273,9 @@ body {
         color: inherit;
       }
 .more-list .card .thumbnail {
-        /* object-position: top; */
         height: 100%;
         -o-object-fit: cover;
-        object-fit: cover;
+           object-fit: cover;
         opacity: 1;
       }
 /**
