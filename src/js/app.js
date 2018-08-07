@@ -145,6 +145,7 @@ function unlockMail() {
     var plaintext = rot(encrypted, -12);
     requestAnimationFrame(() => {
       el.innerHTML = plaintext;
+      el.classList.remove('says');
     })
   })
 

@@ -9,7 +9,7 @@ export let GeneralTransition = (InClass = 'page-in', OutClass = 'page-out', dura
              * (Barba.js also comes with an handy Promise polyfill!)
              */
             const pageContainer = document.getElementById('page-container');
-            pageContainer.style.position = 'absolute';
+            //pageContainer.style.position = 'absolute';
 
             // As soon the loading is finished and the old page is faded out, let's fade the new page
             document.dispatchEvent( new Event('page-out'));

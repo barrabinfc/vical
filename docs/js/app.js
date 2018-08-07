@@ -207,6 +207,7 @@
 	    var plaintext = rot(encrypted, -12);
 	    requestAnimationFrame(function () {
 	      el.innerHTML = plaintext;
+	      el.classList.remove('says');
 	    });
 	  });
 	}
@@ -240,7 +241,7 @@
 	             * (Barba.js also comes with an handy Promise polyfill!)
 	             */
 	            var pageContainer = document.getElementById('page-container');
-	            pageContainer.style.position = 'absolute';
+	            //pageContainer.style.position = 'absolute';
 
 	            // As soon the loading is finished and the old page is faded out, let's fade the new page
 	            document.dispatchEvent(new Event('page-out'));
