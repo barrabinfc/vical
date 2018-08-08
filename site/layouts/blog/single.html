@@ -13,7 +13,7 @@
 {{ define "main" }}
 <section class="post">
   {{ $featured := .Page.Resources.GetMatch "featured" }}
-  <article id="post__showcase" class="{{ if $featured }} featured {{ end }}
+  <article id="post__showcase" class="anim appearFromBottom {{ if $featured }} featured {{ end }}
                                       {{ if $featured }}{{ $featured.Params.colorscheme }}{{end}}
                                       {{ if .Params.colorscheme }} {{ .Params.colorscheme }}{{end}}">
     <picture>

@@ -7,14 +7,20 @@
               background-color var(--trans-time) var(--trans-easing),
               transform var(--trans-time) var(--trans-easing-elastic);  
 }
+.anim {
+  animation-play-state: paused;
+  &.\:play {
+    animation-play-state: running;
+  }
+}
 
 @keyframes fade-in {
-  0% { transform: translate3d(0,300px,0); }
-  100% { transform: translate3d(0,0px,0); }
+  from { opacity: 0}; /* transform: translate3d(0,100vh,0);*/
+  to { opacity: 1};   /* transform: translate3d(0,0px,0); */
 }
 @keyframes fade-out {
-  0% { transform: translate3d(0,0,0px); }
-  100% { transform: translate3d(0,-300px,0); }
+  from { opacity: 1}; /* transform: translate3d(0,100vh,0);*/
+  to { opacity: 0};   /* transform: translate3d(0,0px,0); */
 }
 
 
@@ -24,18 +30,52 @@
 #page-trans-wrapper {
   perspective: var(--perspective);
   transform-style:  preserve-3d;
+  overflow: hidden;
 }
 .page-container  {
+  background-color: var(--back);
   width: 100%;
   backface-visibility: hidden;
   transform: translate3d(0,0,0);
 }
-.page-in { 
-  animation: fade-in .550s ease; 
+
+/** Overlay **/
+body {
+  &:after {
+    background-color: var(--front);
+    width: 100%;
+    height: 100vh;
+    content: ' ';
+    visibility: hidden;
+    position: fixed; 
+    bottom: 0; left: 0;
+
+    transition: transform .650s  cubic-bezier(0.85, 0.01, 0.35, 1);
+    transform: translate3d(0,100vh,0);
+  }
+
+  &.default:after {
+    visibility: hidden;
+    transform: translate3d(0,100vh,0); 
+  }
+
+  &.page-out:after {
+    visibility: visible;
+    transform: translate3d(0,0vh,0);
+  }
+  &.page-in:after {
+    visibility: visible;
+    transform: translate3d(0,-100vh,0);
+  }
+}
+
+/*
+.page-container.page-in { 
+  animation: fade-in .650s ease-out; 
   animation-fill-mode: both; 
 }
-.page-out { animation: fade-out .550s ease; animation-fill-mode: both; }
-
+.pag-container.page-out { animation: fade-out 2.550s ease-in; animation-fill-mode: both; }
+*/
 
 @keyframes intro {
   0% {
@@ -60,6 +100,29 @@
   animation-play-state: paused;
   
   &.\:play { animation-play-state: running; }
+}
+
+.appearItemsFromBottom { 
+  & > li {
+    animation: appearFromBottom 0.55s var(--trans-easing);
+    animation-fill-mode: both;
+    &:nth-child(0){ animation-delay: var(--trans-time); }
+    &:nth-child(1){ animation-delay: calc( 2 * var(--trans-time)); }
+    &:nth-child(2){ animation-delay: calc( 3 * var(--trans-time)); }
+    &:nth-child(3){ animation-delay: calc( 4 * var(--trans-time)); }
+    &:nth-child(4){ animation-delay: calc( 5 * var(--trans-time)); }
+    &:nth-child(5){ animation-delay: calc( 6 * var(--trans-time)); }
+    &:nth-child(6){ animation-delay: calc( 7 * var(--trans-time)); }
+    &:nth-child(7){ animation-delay: calc( 8 * var(--trans-time)); }
+    &:nth-child(8){ animation-delay: calc( 9 * var(--trans-time)); }
+
+  } 
+
+  &.\:play {
+    & > li {  
+      &.\:play { animation-play-state: running; }    
+    }
+  }
 }
 
 

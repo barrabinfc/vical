@@ -1,11 +1,11 @@
 <section class="more-list">
     <article class="container w100">
 
-        <h1 class="title hero appearFromBottomCropped :play"><span>{{.title}}</span></h1>
+        <h1 class="title hero anim appearFromBottomCropped"><span>{{.title}}</span></h1>
 
         {{ $list_klass := .class | default "list-cards" }}
         {{ $hover_size := .hover_size | default "1.05"}}
-        <ul class="{{ $list_klass }} clean grid :horizontal :around appearFromBottom :play">
+        <ul class="{{ $list_klass }} clean grid :horizontal :around anim appearItemsFromBottom ">
             {{- range .list }}
                 <li class="cell">
                     <a class="card app-card" 

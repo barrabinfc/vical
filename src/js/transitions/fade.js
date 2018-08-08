@@ -1,5 +1,14 @@
 let Barba = require('barba.js');
 
+const doc = document.documentElement || document.body;
+const scrollToTop = () => {
+    const c = doc.scrollTop;
+    if (c > 0) {
+      window.requestAnimationFrame(scrollToTop);
+      window.scrollTo(0, c - c / 4);
+    }
+};
+
 export let GeneralTransition = (InClass = 'page-in', OutClass = 'page-out', duration = 1500) =>
     Barba.BaseTransition.extend({
         start: function () {
@@ -8,7 +17,8 @@ export let GeneralTransition = (InClass = 'page-in', OutClass = 'page-out', dura
              * this.newContainerLoading is a Promise for the loading of the new container
              * (Barba.js also comes with an handy Promise polyfill!)
              */
-            const pageContainer = document.getElementById('page-container');
+            this.pageContainer      = document.getElementById('page-container');
+            this.overlay            = document.querySelector(`body`);
             //pageContainer.style.position = 'absolute';
 
             // As soon the loading is finished and the old page is faded out, let's fade the new page
@@ -32,6 +42,8 @@ export let GeneralTransition = (InClass = 'page-in', OutClass = 'page-out', dura
                     el.classList.remove(InClass);
                     el.classList.add(OutClass);
 
+                    this.overlay.classList.add(OutClass);
+
                     // hide scrollbar in transition
                     document.body.style['overflow-y'] = 'hidden';
                 })
@@ -54,13 +66,20 @@ export let GeneralTransition = (InClass = 'page-in', OutClass = 'page-out', dura
             el.style.visibility = 'visible';
             
             requestAnimationFrame(() => {
-                window.scroll(0,0);
+                scrollToTop();
                 el.classList.add(InClass);
+
+                this.overlay.classList.remove(OutClass);
+                this.overlay.classList.add(InClass);
             })
             setTimeout(() => {
                 // Scroll to top and show scrollbar
                 document.body.style['overflow-y'] = 'overlay';
-                
+
+                // Reset back to default position
+                this.overlay.classList.remove(InClass);
+                this.overlay.classList.add('default');
+
                 this.done();
             }, duration);
         },

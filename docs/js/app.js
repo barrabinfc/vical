@@ -61,9 +61,17 @@
 	var docStyle = document.documentElement.style;
 	var pointerClick = document.ontouchstart === undefined ? "click" : "touchstart";
 
-	var PAGE_LOAD_DURATION = 550;
+	var PAGE_LOAD_DURATION = 650;
 
 	function pageStart() {
+	  // Play all anims on pageStart
+	  requestAnimationFrame(function () {
+	    var els = document.querySelectorAll('.anim');
+	    els.forEach(function (el) {
+	      return el.classList.add(':play');
+	    });
+	  });
+
 	  requestIdleCallback(function () {
 	    window.unlockMail();
 	    fixHrefTarget(document);
@@ -72,9 +80,6 @@
 	    Array.from(tiltedElements).map(function (el) {
 	      if (!el.vanillaTilt) VanillaTilt.init(el);
 	    });
-
-	    /*bodyClasses.remove('page-loaded');
-	    bodyClasses.add('page-loaded');*/
 	  });
 	}
 
@@ -229,6 +234,15 @@
 	});
 	var Barba = __webpack_require__(3);
 
+	var doc = document.documentElement || document.body;
+	var scrollToTop = function scrollToTop() {
+	    var c = doc.scrollTop;
+	    if (c > 0) {
+	        window.requestAnimationFrame(scrollToTop);
+	        window.scrollTo(0, c - c / 4);
+	    }
+	};
+
 	var GeneralTransition = exports.GeneralTransition = function GeneralTransition() {
 	    var InClass = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'page-in';
 	    var OutClass = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'page-out';
@@ -240,7 +254,8 @@
 	             * this.newContainerLoading is a Promise for the loading of the new container
 	             * (Barba.js also comes with an handy Promise polyfill!)
 	             */
-	            var pageContainer = document.getElementById('page-container');
+	            this.pageContainer = document.getElementById('page-container');
+	            this.overlay = document.querySelector('body');
 	            //pageContainer.style.position = 'absolute';
 
 	            // As soon the loading is finished and the old page is faded out, let's fade the new page
@@ -253,6 +268,8 @@
 	        },
 
 	        pageOut: function pageOut() {
+	            var _this2 = this;
+
 	            /**
 	             * WHAAAT
 	             * this.oldContainer is the HTMLElement of the old Container
@@ -264,6 +281,8 @@
 	                    el.classList.remove(InClass);
 	                    el.classList.add(OutClass);
 
+	                    _this2.overlay.classList.add(OutClass);
+
 	                    // hide scrollbar in transition
 	                    document.body.style['overflow-y'] = 'hidden';
 	                });
@@ -274,7 +293,7 @@
 	        },
 
 	        pageIn: function pageIn() {
-	            var _this2 = this;
+	            var _this3 = this;
 
 	            /**
 	             * this.newContainer is the HTMLElement of the new Container
@@ -290,14 +309,21 @@
 	            el.style.visibility = 'visible';
 
 	            requestAnimationFrame(function () {
-	                window.scroll(0, 0);
+	                scrollToTop();
 	                el.classList.add(InClass);
+
+	                _this3.overlay.classList.remove(OutClass);
+	                _this3.overlay.classList.add(InClass);
 	            });
 	            setTimeout(function () {
 	                // Scroll to top and show scrollbar
 	                document.body.style['overflow-y'] = 'overlay';
 
-	                _this2.done();
+	                // Reset back to default position
+	                _this3.overlay.classList.remove(InClass);
+	                _this3.overlay.classList.add('default');
+
+	                _this3.done();
 	            }, duration);
 	        }
 

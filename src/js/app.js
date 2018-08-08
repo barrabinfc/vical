@@ -6,9 +6,15 @@ import {GeneralTransition} from './transitions/fade';
 const docStyle = document.documentElement.style;
 const pointerClick = (document.ontouchstart === undefined ? "click" : "touchstart")
 
-const PAGE_LOAD_DURATION = 550
+const PAGE_LOAD_DURATION = 650
 
 function pageStart(){
+  // Play all anims on pageStart
+  requestAnimationFrame( () => {
+    let els = document.querySelectorAll('.anim')
+    els.forEach( (el) => el.classList.add(':play') );
+  })
+
   requestIdleCallback( () => {
     window.unlockMail();
     fixHrefTarget(document);
@@ -18,8 +24,6 @@ function pageStart(){
       if(!el.vanillaTilt) VanillaTilt.init(el)
     })
 
-    /*bodyClasses.remove('page-loaded');
-    bodyClasses.add('page-loaded');*/
   })
 }
 
