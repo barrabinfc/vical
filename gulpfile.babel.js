@@ -9,8 +9,11 @@ import svgInline from "postcss-inline-svg";
 import BrowserSync from "browser-sync";
 import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
+import serve from 'webpack-serve';
 
-const browserSync = BrowserSync.create();
+import path from 'path';
+
+//const browserSync = BrowserSync.create();
 const hugoBin = "hugo";
 const defaultArgs = ["-d", "../docs",
   "-s", "site",
@@ -26,12 +29,12 @@ gulp.task("css", () => (
   gulp.src("./src/css/*.css")
     .pipe(sourcemaps.init())
     .pipe(postcss([
-      cssImport({from: "./src/css/main.css"}), 
-      cssPreset({stage: 0}),
+      cssImport({ from: "./src/css/main.css" }),
+      cssPreset({ stage: 0 }),
       svgInline()]))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("./docs/css"))
-    //.pipe(browserSync.stream())
+  //.pipe(browserSync.stream())
 ));
 
 gulp.task("vendor-js", () => {
@@ -53,12 +56,17 @@ gulp.task("js", (cb) => {
   });
 });
 
-gulp.task("server", ["hugo", "css", "vendor-js", "js"], () => {
-  browserSync.init({
-    server: {
-      baseDir: "./docs"
-    }
-  });
+gulp.task("server", ["hugo", "css", "vendor-js",], () => {
+  serve({}, {
+    hotClient: false,
+    config: Object.assign({}, webpackConfig),
+    content: path.resolve('./docs')
+  })
+    .then((server) => {
+      server.on('listening', ({ server, options }) => {
+        console.log('happy fun time');
+      });
+    })
   gulp.watch("./src/js/vendor/*.js", ["vendor-js"]);
   gulp.watch("./src/js/**/*.js", ["js"]);
   gulp.watch("./src/css/**/*.css", ["css"]);
@@ -68,7 +76,7 @@ gulp.task("server", ["hugo", "css", "vendor-js", "js"], () => {
 function buildSite(cb, options) {
   const args = options ? defaultArgs.concat(options) : defaultArgs;
 
-  return cp.spawn(hugoBin, args, {stdio: "inherit"}).on("close", (code) => {
+  return cp.spawn(hugoBin, args, { stdio: "inherit" }).on("close", (code) => {
     if (code === 0) {
       //browserSync.reload();
       cb();

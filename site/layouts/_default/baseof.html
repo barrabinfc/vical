@@ -11,19 +11,7 @@
     {{ end }}
   
     {{ partial "_instyle" .}}
-    
-    <!-- Load css asynchronously 
-    <script type="text/javascript">
-        ['/css/evil-icons.css','/css/typography.css'].map( function(url) {
-            var link = document.createElement('link');
-            link.rel = "stylesheet";
-            link.href = url;
-            document.head.appendChild(link);
-        });
-    </script>
-    -->
-    <link rel="stylesheet" href="/css/main.css">
-    
+        
   </head>  
   {{ $layout := .Params.layout | default "" }}
   <body class="{{ $layout }}">
@@ -41,6 +29,9 @@
     </main>
     <footer role="footer">{{ block "footer" .}}{{ end }}</footer>
 
+    <!--
+    <link rel="stylesheet" href="/css/main.css">
+    -->
     <script src="/js/app.js" defer></script>
     <script type="text/javascript" src="/js/vendor/vanilla-tilt.babel.min.js" defer></script> 
     <!--
