@@ -9,7 +9,7 @@ import svgInline from "postcss-inline-svg";
 import BrowserSync from "browser-sync";
 import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
-import serve from 'webpack-serve';
+//import serve from 'webpack-serve';
 
 import path from 'path';
 
