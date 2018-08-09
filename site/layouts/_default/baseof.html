@@ -17,7 +17,7 @@
   <body class="{{ $layout }}">
 
     {{ $menuModifier := .Params.menuModifier | default "" }}
-    <header class="{{ $menuModifier }}" id="menu">
+    <header class="grid :middle :between {{ $menuModifier }}" id="menu">
       {{ block "header" .}}{{ end }}
     </header>
 
@@ -27,7 +27,7 @@
         {{ block "main" .}}{{ end }}
       </div>
     </main>
-    <footer id="footer">{{ block "footer" .}}{{ end }}</footer>
+    <footer id="footer" class="grid :middle :between">{{ block "footer" .}}{{ end }}</footer>
 
     <!--
     <link rel="stylesheet" href="/css/main.css">

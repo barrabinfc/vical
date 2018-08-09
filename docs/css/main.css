@@ -1140,7 +1140,6 @@ footer#footer ul li {
     flex: 0.2;
   }
 footer#footer .title {
-    @apply --hero-font;
     font-weight: 100;
     font-size: calc( 0.8rem * calc(3/2));
     font-size: calc( 0.8rem * var(--perfect-fifth));
