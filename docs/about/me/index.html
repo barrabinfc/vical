@@ -94,9 +94,6 @@
     margin: 0 0 1.5rem 0;
   }
 
-
-  .container { padding: 0 var(--pad-margin); }
-  .container, .container-fluid { margin: 0 auto; }
               
   .grid { display: flex; flex-wrap: wrap; }
   .grid.\:vertical { flex-direction: column; }
@@ -189,7 +186,7 @@
     margin: 0; padding-left: 0;
   } 
   ul.clean li, ol.clean li { margin: 0; }
-  ul.clean li::before , ol.clean li {
+  ul.clean li::before , ol.clean li::before {
       content: '';
       display: none;
   }
@@ -281,9 +278,9 @@
     width: 100%;
   }
 
-  .page-container > section > article {
+  .page-container > section > article:first-child {
     height: 100%;
-    padding: 2em 0;  
+    padding-top: 2em;  
   }
   
   .js-tilt-glare { pointer-events: none; }
