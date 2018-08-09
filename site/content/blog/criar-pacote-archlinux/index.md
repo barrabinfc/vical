@@ -141,12 +141,13 @@ giflossy E: Dependency libx11 detected and not included (libraries ['usr/lib/lib
 depends=("libx11")
 ```
 
-### Instalando 
+E por fim, podemos instalar.
 
-1. 
-	Para instalar o pacote: `pacman -U <pacote>.tar.xz`
-2. 
-	Apagar: `pacman -R giflossy`
+Instalação
+: ```pacman -U <pacote>.tar.xz```
+
+Remoção
+: ```pacman -R giflossy```
 
 
 ***

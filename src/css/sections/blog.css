@@ -266,8 +266,11 @@
                 /**
                 * Adjacent spacement fixes
                 */
-                & p > code , 
-                & li > code {
+                & p + * {
+                    margin-top: 1.5rem;
+                }
+
+                & *:not(pre) > code {
                     font-size: 85%;
                     padding: var(--gutter);
                     background-color: var(--gray);
