@@ -114,6 +114,7 @@ ul.task-list {
 .align\:left { text-align: left !important; }
 .align\:right { text-align: right !important; }
 .align\:center { text-align: center !important; }
+.uppercase { text-transform: uppercase !important; }
 
 .w5  { max-width: 5%; }
 .w10 { max-width: 10%; }
@@ -143,8 +144,9 @@ ul.task-list {
 .bg\:primary{ background-color: color-mod( var(--primary) alpha(80%)) !important; }      
 .bg\:second { background-color: color-mod( var(--second) alpha(80%)) !important; }
 
-.color-high { color: var(--primary) !important; }
-.color-low { color: var(--second) !important; }
+.color\:primary { color: var(--primary) !important; }
+.color\:second { color: var(--second) !important; }
+.color\:third { color: var(--third) !important; }
 
 .nomargin { margin: 0 !important; padding: 0 !important; }
 .margin\:auto{ margin: 0 auto !important; }

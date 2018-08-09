@@ -63,7 +63,7 @@ h1,h2,h3,h4,h5,h6 {
   
   font-family: var(--hero-font);
   font-size: var(--size);    
-  line-height: var(--size);
+  line-height: calc( var(--size) + 0.75rem );
   margin: var(--size) 0;
 
   orphans: 2;

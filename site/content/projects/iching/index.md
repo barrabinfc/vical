@@ -1,10 +1,8 @@
 +++
 draft = false
 parent = "software"
-color = "#0f0f0f"
-bg_color = "#f8fbfb"
-dark_gray = "#f8f8f8"
 thumbnail = "/images/textures/cashmere-la.jpg"
+thumbscheme = "light"
 layout = "app"
 
 title = "I Ching"

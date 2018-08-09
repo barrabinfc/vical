@@ -32,12 +32,32 @@ body {
   background-color: var(--primary);
 }
 
+/**
+ * Frontpage
+ */
+.page-container.frontpage {
+  & .showcase {
+    width: 85%;
+    min-height: 50vh;
+    height: 50vh;
+    margin: 0 auto;
+
+    & .about {
+      margin-top: calc( 2 * var(--pad-big));
+      & > * { margin: 1rem 0; }
+    }
+    & .description {
+      & > * { font-weight: 300; margin-top: 1rem; } 
+    }
+  }
+}
+
 
 
 /**
  * App Single Page
  */
-.projects .project__info {
+.page-container.projects .project__info {
     text-align: center;
     
     & .project__logo {
@@ -59,120 +79,141 @@ body {
   
 }
 
-/** More list **/
+/** More projects list **/
 .more-list {
 
-  & .container { 
+  & > .container { 
     width: 100%;
+    
     background-color: var(--third);
-    color: var(--back); 
-  }
+    color: var(--back);
 
-  & .title {
-    font-family: var(--hero-font);
-    text-align: center;
-    font-weight: 100;
-    padding-top: calc(2*var(--pad-medium));
-
-    color: inherit;
-    margin: 0 auto;
+    & > .title {
+      font-family: var(--hero-font);
+      text-align: center;
+      font-weight: 100;
+      padding-top: calc(2*var(--pad-medium));
+  
+      color: inherit;
+      margin: 0 auto;
+    }    
   }
 
   /** 3 per row **/
-  & .list-cards {
-    padding: calc( 2* var(--pad-medium)) 0;    
-    animation-delay: 0.25s; 
-
-    & > .cell {
-      flex: 1 1 33%;
-    }
-  }
-
-  /**
-   * 
-   * ++++++++ (1)
-   * +++ ++++ (2) and (3)
-   * ++++++++
-   * ++++ +++
-   * -repeat-
-   */
-  & .list-isotope {
-    width: 75%;
-    margin: 0 auto;
-    padding: calc( 2* var(--pad-medium)) 0;    
-    animation-delay: 0.25s;
-    justify-content: space-between; 
-
-    & > .cell:nth-child(3n+1) {
-      flex: 1 1 100%;
-    }
-    & > .cell:nth-child(3n+2){
-      flex: 0 0 33%;
-    }
-    & > .cell:nth-child(3n+3){
-      flex: 0 0 60%;
-    }
-    /* Force last item to aways occupy 100% */
-    & > .cell:last-child {
-      flex: 1 1 100%;
-    }
-
-    & .card {
-      width: 100%;
-    }
-  }
-
-  & .card {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-
-      width: 50%;
-      height: 200px;
-      overflow: hidden;
-      color: inherit;
-      border-radius: 15px;
-      box-shadow: var(--shadow-card);
-      background-color: var(--second);
-
-      margin: 0 auto var(--pad-big) auto;
-      padding: 0rem;
-
-      & .listitem__title {
-        transform: translateZ(20px);
-        font-size: 2.0rem;
-        line-height: 2.0rem;
-
-        position: absolute;
-        text-shadow: var(--shadow-card);
-        width: 100%;
-        margin: 0;
-        text-align: center;
-        padding: 1rem;
-        color: inherit;
-      }
-
-      & .thumbnail {
-        height: 100%;
-        object-fit: cover;
-        opacity: 1;
-      }
-          
+  & > .list-cards {
+    padding: calc( 2* var(--pad-medium)) 0;
   }
 }
 
 /**
+  * 
+  * ++++++++ (1)
+  * +++ ++++ (2) and (3)
+  * ++++++++
+  * ++++ +++
+  * -repeat-
+  */
+.list-isotope {
+  width: 85%;
+  margin: 0 auto;
+  padding: calc( 2* var(--pad-medium)) 0;    
+  animation-delay: 0.25s;
+  justify-content: space-between; 
+
+  & > .cell:nth-child(3n+1) {
+    flex: 1 1 100%;
+  }
+  & > .cell:nth-child(3n+2){
+    flex: 0 0 33%;
+  }
+  & > .cell:nth-child(3n+3){
+    flex: 0 0 60%;
+  }
+  /* Force last item to aways occupy 100% */
+  & > .cell:last-child {
+    flex: 1 1 100%;
+  }
+
+  & .card {
+    width: 100%;
+  }
+}
+
+.app-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    width: 50%;
+    height: 200px;
+    overflow: hidden;
+    color: inherit;
+    border-radius: 15px;
+    box-shadow: var(--shadow-card);
+    background-color: var(--second);
+
+    margin: 0 auto var(--pad-big) auto;
+    padding: 0rem;
+
+    & .listitem__info {
+      position: absolute;
+      width: 100%;
+      margin: 0;
+      padding: 1rem 1rem 0rem 2rem;      
+      color: inherit;
+      bottom: 2rem;
+
+      & > .title {
+        font-weight: 300;
+        font-size: 2.0rem;
+        line-height: 2.0rem;  
+        margin-bottom: 1rem;
+      }
+      & > .subtitle {
+        font-weight: 300;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+      }
+    }
+
+    & .thumbnail {
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 0; right: 0;
+
+      & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 1;
+      }
+    }
+        
+    /** Colorscheme , invert text color **/
+    &.dark {
+      & .listitem__info {
+        color: var(--white);
+      }
+    }
+    &.light {
+      & .listitem__info {
+        color: var(--black);
+      }
+    }
+
+}
+
+
+/**
  * Work pages
  */
-.projects ,
-.about,
-.home {
+.page-container.projects > .projects {
 
   /* 2 columns */
-  & section.projects {
-    flex-direction: row;
-  }
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
 
   /* Image showcase */
   & .showcase {
@@ -212,15 +253,17 @@ body {
   
   /* Right info area */
   & .info {
+    align-self: flex-start;
     position: sticky;
-    top: calc( var(--header-height) * 0.5);
+    top: calc( var(--header-height) * 1);
     width: calc(100% - 392px);
     width: 392px;
+    height: auto;
     min-height: calc( 100vh - var(--header-height));
     padding: var(--pad-medium) var(--pad-big);
     
     /* Logo as image or text */
-    & picture.logo {       
+    & picture.logo {
       & img {
         display: block;
         max-height: 128px;

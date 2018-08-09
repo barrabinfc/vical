@@ -5,7 +5,7 @@ color = "#000"
 bg_color = "#f8fbfb"
 
 subtitle = ""
-description = "I'm Vitor Calejuri, i build apps and sites. For the last ten years, I've been working with all sorts of clients, helping them build apps and sites, using a disciplined vocabulary of computer programming and design."
+description = "I'm a <b>full stack software engineer</b> focused on the Web platform. I work on building delightful and effective user experience, using a disciplined vocabulary of <i>computer programming</i> and <i>design</i>."
 logo = "/images/uploads/myself-2-low.jpg"
 
 aliases = [

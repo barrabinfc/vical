@@ -30,12 +30,10 @@
 #page-trans-wrapper {
   perspective: var(--perspective);
   transform-style:  preserve-3d;
-  overflow: hidden;
 }
 .page-container  {
   background-color: var(--back);
   width: 100%;
-  backface-visibility: hidden;
   transform: translate3d(0,0,0);
 }
 

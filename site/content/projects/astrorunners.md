@@ -1,12 +1,10 @@
 +++
 draft = false
-color = "#000"
-bg_color = "rgba(255,255,255, 1.0)"
-high_color = "#f05553"
 title = "Astrorunners"
+subtitle = "Serious but not sober"
 thumbnail = "/images/astrorunners/showcase.jpg"
+thumbscheme = "dark"
 website = "www.astrorunners.com"
-subtitle = "Astrorunners"
 description = "<p><a href='http://astrorunners.com' class='default nomargin black underline' target='_blank'>Astrorunners</a> asked me to redesign their store for the new collection. The design uses a strong constrast of black and white to be consistent to the collection aesthetics.</p><p>The site uses responsive layout tecniques, and has a highly adaptable theme to let administradors tweak the layout without touching the code.</p>"
 logo = "/images/astrorunners/logo-black-final.png"
 +++

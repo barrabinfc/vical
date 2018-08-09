@@ -1,11 +1,10 @@
 +++
 draft = false
 color = "#000"
-bg_color = "rgba(255,255,255, 1.0)"
-high_color = "#f05553"
 date = "2018-06-03"
 title = "Portinari & Ligalight"
 thumbnail = "/images/uploads/portinari/portal.jpg"
+thumbscheme = "dark"
 thumb_position = "top"
 subtitle = "Portinari Cerâmica"
 description = "<p>Produzimos para o stand da portinari cerâmica um aplicativo customizado, baseado na idéia “faça vc mesmo”, permitindo que cada pessoa crie seu próprio desenho ou escrita digital nos panéis de entrada do stand através de um IPad.</p><p>Transformando paredes em panéis criativos, uma ferramenta digital que preserva a espontaneidade e interatividade.</p>"

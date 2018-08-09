@@ -11,12 +11,16 @@
 {{ define "main" }}
 <section>
   <article class="showcase">
-      <section class="about">{{ .Params.subtitle }}</section>
+      <section class="about color:second">{{ safeHTML .Params.subtitle }}</section>
+      <section class="description">{{ safeHTML .Params.description }}</section>
   </article>
   <article id="content-body" class="info grid :vertical">
-    {{ .Content }}
+      {{ $related := where .Site.RegularPages "Section" "projects" }}
+      {{ $class   := "list-isotope" }}
+      {{ partial "card_list" (dict "list" $related "title" false "class" $class "contained" false) }}      
   </article>
 </section>
+
 {{ end }}
 
 {{ define "footer" }}

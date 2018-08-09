@@ -1,30 +1,43 @@
+{{ $section := .contained | default true }}
+{{ if $section }}
 <section class="more-list">
     <article class="container w100">
+{{ end }}
 
-        <h1 class="title hero anim appearFromBottomCropped"><span>{{.title}}</span></h1>
+        {{ if .title }}
+            <h1 class="title hero anim appearFromBottomCropped"><span>{{.title}}</span></h1>
+        {{ end }}
 
         {{ $list_klass := .class | default "list-cards" }}
         {{ $hover_size := .hover_size | default "1.05"}}
-        <ul class="{{ $list_klass }} clean grid :horizontal :around anim appearItemsFromBottom ">
+        <ul class="{{ $list_klass }} clean grid :horizontal anim appearItemsFromBottom ">
             {{- range .list }}
                 <li class="cell">
-                    <a class="card app-card" 
+                    {{ $colorscheme := .Params.thumbscheme }}
+                    <a class="card app-card {{ $colorscheme }}" 
                        href="{{ .Permalink }}"
                        data-tilt data-tilt-max="5" 
                        data-tilt-speed="800" 
                        data-tilt-scale="{{ $hover_size }}" 
                        >
-                        <img class="thumbnail" 
-                        src="{{ .Params.thumbnail }}" 
-                        {{ if .Params.thumb_position }}
-                            style="object-position: {{ .Params.thumb_position }}; "
-                        {{ end }}
-                        />
-                        <h3 class="listitem__title">{{ .Title }}</h3>
+                        <div class="thumbnail">
+                            <img 
+                            src="{{ .Params.thumbnail }}" 
+                            {{ if .Params.thumb_position }}
+                                style="object-position: {{ .Params.thumb_position }}; "
+                            {{ end }}
+                            />
+                        </div>
+                        <div class="listitem__info">
+                            <h3 class="title">{{ .Title }}</h3>
+                            <p class="subtitle">{{ .Params.subtitle }}</p>
+                        </div>
                     </a>
                 </li>
             {{- end }}
         </ul>
 
+{{ if $section }}
     </article>
 </section>
+{{ end }}
