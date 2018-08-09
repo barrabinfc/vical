@@ -126,13 +126,13 @@ function hoverInOut(container, selector = "hoverable", timeout = 5000) {
  * Ceasar cryptography to avoid spammers reading my mail address
  *
  * Acts on:
- * Links with role['link-encrypted'] and data property
+ * Links with peculiarity['link-encrypted'] and data property
  * All elements with class [ .ceasar .says ]
  */
 function unlockMail() {
 
   /* Links */
-  const links = document.querySelectorAll('a[role="link-encrypted"]')
+  const links = document.querySelectorAll('a[peculiarity="link-encrypted"]')
   links.forEach((el) => {
     var mailEncrypted = el.getAttribute("data");
     var mailPlaintext = rot(mailEncrypted, -12);

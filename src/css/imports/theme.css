@@ -382,7 +382,7 @@ header#menu {
 }
 
 /** Footer */
-footer[role="footer"] {
+footer#footer {
   width: 100%;
   height: var(--header-height);
   margin: 0;

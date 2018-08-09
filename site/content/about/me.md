@@ -52,7 +52,7 @@ aliases = [
 </div>
 <div class="contact">
   <a href="" class="btn picture nomargin no-underline" data-tilt data-tilt-max="5" data-tilt-speed="800" data-tilt-scale="1.025" 
-  target="none" role="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">
+  target="none" peculiarity="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">
     <h3 class="label">
       <div>GET IN TOUCH</div>
     </h3>
