@@ -60,17 +60,6 @@ ul > li > *:not(:first-child) {
   } 
 }
 
-
-ul.clean , ol.clean {
-  list-style: none;
-  counter-reset: none;
-  & li { margin: 0; }
-  & li::before {
-    content: '';
-    display: none;
-  }
-}
-
 ul.horizontal {
   display: table;
   border-collapse: collapse;
@@ -107,29 +96,6 @@ ul.task-list {
   }
 }
 
-.float\:left { float: left !important; }
-.float\:right { float: right !important; }
-.pull\:left { margin-right: auto !important; }
-.pull\:right { margin-left: auto !important; }
-.align\:left { text-align: left !important; }
-.align\:right { text-align: right !important; }
-.align\:center { text-align: center !important; }
-.uppercase { text-transform: uppercase !important; }
-
-.w5  { max-width: 5%; }
-.w10 { max-width: 10%; }
-.w33 { max-width: 33%; }
-.w25 { max-width: 25%; }
-.w35 { max-width: 35%; }
-.w40 { max-width: 40%; }
-.w45 { max-width: 45%; }
-.w50 { max-width: 50%; }
-.w60 { max-width: 60%; }
-.w65 { max-width: 60%; }
-.w66 { max-width: 66%; }
-.w70 { max-width: 70%; }
-.w90 { max-width: 90%; }
-.w100 { max-width: 100%; width: 100%; }
 
 .txt\:mask { 
   -webkit-background-clip: text !important;
@@ -147,10 +113,6 @@ ul.task-list {
 .color\:primary { color: var(--primary) !important; }
 .color\:second { color: var(--second) !important; }
 .color\:third { color: var(--third) !important; }
-
-.nomargin { margin: 0 !important; padding: 0 !important; }
-.margin\:auto{ margin: 0 auto !important; }
-.rounded { border-radius: 2em !important; }
 
 .pad { padding: var(--pad); }
 .pad\:big { padding: var(--pad-big); }
@@ -408,27 +370,11 @@ footer#footer {
 /*
  * A block full page
  */
-.page-container > section {
-  position: relative;
-  width: 100%;
-  min-height: calc( 100vh - var(--header-height));
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  background-color: transparent;
-  justify-content: center;
-
-  &:first-child {
-    margin-top: var(--header-height);    
-  }
-    
+.page-container > section {    
   /*
    * Content of pages
    */
   & > article {
-    min-height: calc( 100vh - var(--header-height));
-    height: 100%;
-    padding: 2em 0; /* calc( 4 * var(--gutter)); */
 
     & > h1:first-child , & > h2:first-child, \
     & > h3:first-child , & > h4:first-child, \

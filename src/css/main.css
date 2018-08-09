@@ -1,6 +1,6 @@
 @import "imports/reset.css"; 
 @import "imports/variables.css";
-@import "imports/grid.css";
+/*@import "imports/grid.css";*/
 @import "imports/form.css";
 @import "imports/devices-mockup.min.css";
 @import "imports/theme.css";
@@ -14,18 +14,11 @@
 
 html {
   font-size: var(--base-fontsize, 16px);
-  line-height: var(--line-height, 16px);
-  
-  text-rendering: optimizeLegibility;
-  font-feature-settings: "kern" 1;
+  line-height: var(--line-height, 16px);  
 }
 
 body {
   font-family: var(--paragraph-font);
-  margin: 0;
-  overflow-wrap: break-word;
-  max-width: 100vw;
-  min-height: 100vh;  
 }
 
 ::selection {
@@ -37,10 +30,8 @@ body {
  */
 .page-container.frontpage {
   & .showcase {
-    width: 85%;
     min-height: 60vh;
     height: 60vh;
-    margin: 0 auto;
 
     & .about {
       margin-top: calc( 3 * var(--pad-big));
@@ -82,9 +73,7 @@ body {
 /** More projects list **/
 .more-list {
 
-  & > .container { 
-    width: 100%;
-    
+  & > .container {     
     & > .title {
       font-family: var(--hero-font);
       text-align: center;
@@ -103,24 +92,18 @@ body {
 
   /** colorscheme **/
   &.colorscheme\:default {
-    & > .container {
-      background-color: var(--back);
-      color: var(--front);  
-    }
+    background-color: var(--back);
+    color: var(--front);  
   }
 
   &.colorscheme\:dark {
-    & > .container {
-      background-color: var(--third);
-      color: var(--back);
-    }
+    background-color: var(--third);
+    color: var(--back);
   }
 
   &.colorscheme\:gray {
-    & > .container {
-      background-color: var(--gray);
-      color: var(--front);
-    }
+    background-color: var(--gray);
+    color: var(--front);
   }
 
 }
@@ -134,11 +117,14 @@ body {
   * -repeat-
   */
 .list-isotope {
-  width: 85%;
   margin: 0 auto;
   padding: calc( 2* var(--pad-medium)) 0;    
   animation-delay: 0.25s;
   justify-content: space-between; 
+  
+  & .cell + .cell {
+    margin-top:var(--pad-margin); 
+  }
 
   & > .cell:nth-child(3n+1) {
     flex: 1 1 100%;
@@ -153,28 +139,10 @@ body {
   & > .cell:last-child {
     flex: 1 1 100%;
   }
-
-  & .card {
-    width: 100%;
-  }
 }
 
-.app-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-
-    width: 50%;
-    height: 200px;
-    overflow: hidden;
-    color: inherit;
-    border-radius: 15px;
+.card {
     box-shadow: var(--shadow-card);
-    background-color: var(--second);
-
-    margin: 0 auto var(--pad-big) auto;
-    padding: 0rem;
 
     & .listitem__info {
       position: absolute;

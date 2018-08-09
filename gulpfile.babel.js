@@ -13,7 +13,7 @@ import serve from 'webpack-serve';
 
 import path from 'path';
 
-//const browserSync = BrowserSync.create();
+const browserSync = BrowserSync.create();
 const hugoBin = "hugo";
 const defaultArgs = ["-d", "../docs",
   "-s", "site",
@@ -51,12 +51,18 @@ gulp.task("js", (cb) => {
       colors: true,
       progress: true
     }));
-    //browserSync.reload();
+    browserSync.reload();
     cb();
   });
 });
 
-gulp.task("server", ["hugo", "css", "vendor-js",], () => {
+gulp.task("server", ["hugo", "css", "vendor-js", "js"], () => {
+  browserSync.init({
+    server: {
+      baseDir: './docs'
+    }
+  })
+  /*
   serve({}, {
     hotClient: false,
     config: Object.assign({}, webpackConfig),
@@ -67,6 +73,7 @@ gulp.task("server", ["hugo", "css", "vendor-js",], () => {
         console.log('happy fun time');
       });
     })
+    */
   gulp.watch("./src/js/vendor/*.js", ["vendor-js"]);
   gulp.watch("./src/js/**/*.js", ["js"]);
   gulp.watch("./src/css/**/*.css", ["css"]);
@@ -78,10 +85,10 @@ function buildSite(cb, options) {
 
   return cp.spawn(hugoBin, args, { stdio: "inherit" }).on("close", (code) => {
     if (code === 0) {
-      //browserSync.reload();
+      browserSync.reload();
       cb();
     } else {
-      //browserSync.notify("Hugo build failed :(");
+      browserSync.notify("Hugo build failed :(");
       cb("Hugo build failed");
     }
   });

@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Portinari &amp; Ligalight</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+      <meta name="description" content="&lt;p&gt;Produzimos um aplicativo &lt;b&gt;PWA&lt;/b&gt; customizado, baseado na idéia &lt;i&gt;“faça vc mesmo”&lt;/i&gt;, permitindo que cada pessoa crie seu próprio desenho nos panéis de entrada do stand através de um IPad.&lt;/p&gt;&lt;p&gt;Transformando paredes em panéis criativos, uma ferramenta digital que preserva a espontaneidade e interatividade.&lt;/p&gt;">
+    
+  
+    <style>
+  :root {
+    --header-height: 96px;
+    --front: #000;
+    --back:  #fff;
+    --gray:  #e9e9e9;
+    --primary:     #f05553;
+    --second:      #0098d8;
+    --third:       #0b3536;
+
+     
+    --gutter:     0.5em; 
+    --pad-margin:    calc( 8 * var(--gutter));
+
+    --perfect-fifth: calc(3/2); 
+    --major-third:   calc(5/4);
+  
+    --typoscale: var(--major-third);
+    --linescale: var(--major-third);
+  }
+
+   
+  @font-face {
+    font-family: system;
+    font-style: normal;
+    font-weight: 300;
+    src: local("-apple-system"), local("BlinkMacSystemFont"), local("Segoe UI"), local("Roboto"), local("Helvetica"), local("Arial"), local("sans-serif"), local("Apple Color Emoji"), local("Segoe UI Emoji"), local("Segoe UI Symbol");
+  }
+
+   
+  *, *::after , *::before { box-sizing: border-box; }
+  html,body { margin: 0; padding: 0; }
+  body { 
+    background-color: var(--back); 
+    color: var(--front); 
+    font-family: "system"; 
+    overflow-x: hidden;
+    overflow-y: overlay;
+    
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1;
+    overflow-wrap: break-word;
+    max-width: 100vw;
+    min-height: 100vh;  
+  }
+  iframe,embed,img,video,picture { max-width: 100%; object-fit: cover; }
+  
+  a,p,button { margin: 0; padding: 0; }
+  blockquote { width: 100%; margin: 1em auto; line-height: 1.0em; }
+  
+  a { text-decoration: none; color: var(--second); }
+  a:hover{ text-decoration: underline; }
+
+  h1,h2,h3,h4,h5,h6 { 
+    --size:  calc(1rem * 3.0 * var(--typoscale));
+    
+    font-family: system;
+    font-size: var(--size);    
+    line-height: calc( var(--size) + 0.75rem );
+    margin: var(--size) 0;
+
+    orphans: 2;
+    widows: 2
+  }
+
+  h2 {  --size:  calc(1rem * 2.00 * var(--typoscale)); }
+  h3 {  --size:  calc(1rem * 1.66 * var(--typoscale)); }
+  h4 {  --size:  calc(1rem * 1.33 * var(--typoscale)); }
+  h5 {  --size:  calc(1rem * 1.00 * var(--typoscale)); }
+  h6 {  --size:  calc(1rem * 0.66 * var(--typoscale)); }
+
+   
+  p { 
+    padding: 0;
+    margin: 0;
+    line-height: 1.625rem;
+
+    orphans: 2;
+    widows: 2;
+  }
+  p + p {
+    margin: 0 0 1.5rem 0;
+  }
+
+
+  .container { padding: 0 var(--pad-margin); }
+  .container, .container-fluid { margin: 0 auto; }
+              
+  .grid { display: flex; flex-wrap: wrap; }
+  .grid.\:vertical { flex-direction: column; }
+  .grid.\:middle { align-items: center; }
+  .grid.\:top { align-items: flex-start; }
+  .grid.\:bottom { align-items: flex-end; }
+  .grid.\:baseline { align-items: baseline; }
+
+  .grid.\:left  { justify-content: flex-start; }
+  .grid.\:center  { justify-content: center; }
+  .grid.\:right  { justify-content: flex-end; }
+  .grid.\:between { justify-content: space-between; }
+  .grid.\:around { justify-content: space-around; }
+
+  .cell { flex: 1; }
+  .cell.\:1of12 { flex: 0 0 8.33333%; }
+  .cell.\:2of12 { flex: 0 0 16.66667%; }
+  .cell.\:3of12 { flex: 0 0 25%; }
+  .cell.\:4of12 { flex: 0 0 33.33333%; }
+  .cell.\:5of12 { flex: 0 0 41.66667%; }
+  .cell.\:6of12 { flex: 0 0 50%; }
+  .cell.\:7of12 { flex: 0 0 58.33333%; }
+  .cell.\:8of12 { flex: 0 0 66.66667%; }
+  .cell.\:9of12 { flex: 0 0 75%; }
+  .cell.\:10of12 { flex: 0 0 83.33333%; }
+  .cell.\:11of12 { flex: 0 0 91.66667%; }
+  .cell.\:12of12 { flex: 0 0 100%; }
+
+  .nomargin { margin: 0 !important; padding: 0 !important; }
+  .margin\:auto{ margin: 0 auto !important; }
+  .margin-vertical\:padded { margin-top: var(--pad-margin); margin-bottom: var(--pad-margin);}
+
+  .float\:left { float: left !important; }
+  .float\:right { float: right !important; }
+
+  .pull\:left { margin-right: auto !important; }
+  .pull\:right { margin-left: auto !important; }
+  .align\:left { text-align: left !important; }
+  .align\:right { text-align: right !important; }
+  .align\:center { text-align: center !important; }
+
+  .uppercase { text-transform: uppercase !important; }
+  .rounded { border-radius: 2em !important; }
+
+  .w5  { max-width: 5%; width: 5%; }
+  .w10 { max-width: 10%; width: 10%;}
+  .w25 { max-width: 25%; width: 25%;}
+  .w33 { max-width: 33%; width: 33%;}
+  .w35 { max-width: 35%; width: 35%;}
+  .w40 { max-width: 40%; width: 40%;}
+  .w45 { max-width: 45%; width: 45%;}
+  .w50 { max-width: 50%; width: 60%;}
+  .w60 { max-width: 60%; width: 60%;}
+  .w65 { max-width: 60%; width: 65%;}
+  .w66 { max-width: 66%; width: 66%;}
+  .w70 { max-width: 70%; width: 70%;}
+  .w75 { max-width: 75%; width: 75%;}
+  .w80 { max-width: 80%; width: 80%;}
+  .w85 { max-width: 85%; width: 85%; }
+  .w90 { max-width: 90%; width: 90%;}
+  .w100 { max-width: 100%; width: 100%; }
+
+   
+  .intrinsic {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+  .intrinsic__item.\:square { width: 100%; height: 100%; }
+  .intrinsic__item.\:4x3 { width: 100%; height: calc( (100% / 4) * 3 ); }
+  .intrinsic__item.\:16x9 { width: 100%; height: calc( (100% / 16) * 9); }
+  .intrinsic > .intrinsic__item {
+    background: var(--gray);
+  } 
+
+
+  .img\:avatar {
+    width: 225px;
+    height: 225px;
+    margin: 0 auto; 
+    border-radius: 50%; overflow: hidden;
+    border: 1px solid var(--gray);
+    object-fit: cover ;
+  }
+
+   
+  ul.clean , ol.clean {
+    list-style: none;
+    counter-reset: none;
+    margin: 0; padding-left: 0;
+  } 
+  ul.clean li, ol.clean li { margin: 0; }
+  ul.clean li::before , ol.clean li {
+      content: '';
+      display: none;
+  }
+
+   
+  .icon {
+    display: inline-block;
+    width: 25px; height: 25px;
+    overflow: hidden; fill: currentColor;
+  }
+  .icon__cnt {
+    width: 100%; height: 100%;
+    background: inherit;
+    fill: inherit;
+    pointer-events: none; 
+    transform: translateX(0); 
+    -ms-transform: translate(0.5px, -0.3px);
+  }
+  .icon--m {
+    width: 50px;
+    height: 50px;
+    top: 18px;
+  }
+
+   
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    height: 200px;
+    overflow: hidden;
+    color: inherit;
+    border-radius: 15px;
+    background-color: var(--gray);
+
+    padding: 0rem;
+  }
+
+
+
+   
+  body > header {
+    width: 100%;
+    height: var(--header-height);
+    margin: 0;
+    padding: 0 var(--pad-margin);
+    border-bottom: 1px solid var(--gray);
+  }
+  body > header > .logo-container { flex: 0.2; }
+  body > header > .logo-container .logo { font-size: 2em; font-weight: bold; color: var(--front); }
+  body > header > .menu > .menu-header {
+    padding: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+   
+  #page-trans-wrapper {
+    perspective: var(--perspective);
+    transform-style:  preserve-3d;
+  }
+  .page-container  {
+    background-color: var(--back);
+    width: 100%;
+    transform: translate3d(0,0,0);
+  }
+
+   
+  body > footer {
+    width: 100%;
+    height: var(--header-height);
+    margin: 0;
+    padding: 0 var(--pad-margin);
+    border-top: 1px solid var(--gray);
+    color: var(--front );
+  }
+  body > footer > ul  { width: 100%; height: inherit; list-style: none; }
+  body > footer > ul li { flex: 0.2; }
+  body > footer a {
+    color: var(--third); 
+  }
+
+
+   
+  .page-container > section {  
+    position: relative; 
+    width: 100%;
+  }
+
+  .page-container > section > article {
+    height: 100%;
+    padding: 2em 0;  
+  }
+  
+  .js-tilt-glare { pointer-events: none; }
+</style>
+        
+  </head>  
+  
+  <body class="">
+
+    
+    <header class="grid :middle :between " id="menu">
+      
+  <div class="logo-container">
+    <a href="/" class="logo no-hover" id="logo">
+  vical
+</a>
+  </div>
+  
+
+<nav class="menu grid :end ">
+
+  
+    
+    
+
+    <a class="menu-header animated
+             selected"
+        href="/projects/"
+        id="menu-projects">
+        projects
+      </a>
+  
+    
+    
+
+    <a class="menu-header animated
+             "
+        href="/about/me"
+        id="menu-about">
+        About
+      </a>
+  
+    
+    
+
+    <a class="menu-header animated
+             "
+        href="/blog/"
+        id="menu-blog">
+        Blog
+      </a>
+  
+
+</nav>
+
+
+    </header>
+
+    
+    <main id="page-trans-wrapper">
+      <div id="page-container" class="page-container projects ">
+        
+  
+  <section class="projects grid colorscheme:default ">
+    <article class="showcase">
+      <div class="overlay">
+        
+      </div>
+      <div class="gallery">
+  <img src="/images/uploads/portinari/thumb.jpg" alt="Showcase" />
+
+  <!--
+  <img src="/images/astrorunners/produto.jpg" alt="Product page" />  
+  -->
+  <div class="container grid browser-mask">
+    <div class="cellphone margin:auto pad:big">
+      <div class="marvel-device ipad landscape">
+          <div class="camera"></div>
+          <div class="screen">
+              <img src="/images/uploads/portinari/screen.png" alt="Vector drawing app" />
+          </div>
+          <div class="home"></div>
+      </div>
+    </div>
+  </div>
+  <!--
+  <div class="browser-mask">
+    <div class="browser-screen appearFromBottom :play">
+      <img src="/images/uploads/portinari/admin.png" alt="Administration section" />
+    </div>
+  </div>
+  -->
+
+  <video poster="/images/uploads/portinari/tree_poster.jpg" preload="none" controls src="/images/uploads/portinari/tree.mp4" type="video/mp4"></video>
+
+  <div class="gallery-columns">
+    <div>
+        <video poster="/images/uploads/portinari/user_poster.jpg" preload="none" controls src="/images/uploads/portinari/user.mp4" type="video/mp4"></video>
+    </div>
+    <div>
+        <img src="/images/uploads/portinari/text.jpg" alt="Text panel" />
+        <img src="/images/uploads/portinari/t2.jpg" alt="Text panel" />
+    </div>
+  </div>
+</div>
+
+    </article>
+    <article id="content-body" class="info grid :vertical">
+      
+      <picture class="logo">
+        
+          <img src="/images/uploads/portinari/logoPortinariPT.jpg">
+        
+        
+      </picture>
+
+      <div class="description">
+        <p>Produzimos um aplicativo <b>PWA</b> customizado, baseado na idéia <i>“faça vc mesmo”</i>, permitindo que cada pessoa crie seu próprio desenho nos panéis de entrada do stand através de um IPad.</p><p>Transformando paredes em panéis criativos, uma ferramenta digital que preserva a espontaneidade e interatividade.</p>  
+      </div>
+
+      <div class="more">
+        
+        
+      </div>
+
+      
+    </article>    
+  </section>
+
+  
+  
+  
+  
+
+
+<section class="more-list colorscheme:gray">
+    <article class="container w85">
+
+
+        
+            <h1 class="title align:center anim appearFromBottomCropped"><span>More Projects</span></h1>
+        
+
+        
+        
+        <ul class="list-isotope clean grid :horizontal anim appearItemsFromBottom ">
+                <li class="cell">
+                    
+                    <a class="card dark" 
+                       href="/projects/portinari/portinari/"
+                       data-tilt data-tilt-max="5" 
+                       data-tilt-speed="800" 
+                       data-tilt-scale="1.05" 
+                       >
+                        <div class="thumbnail">
+                            <img 
+                            src="/images/uploads/portinari/portal.jpg" 
+                            lazyload
+                            
+                                style="object-position: top; "
+                            
+                            />
+                        </div>
+                        <div class="listitem__info">
+                            <h3 class="title">Portinari &amp; Ligalight</h3>
+                            <p class="subtitle">Cerâmicas Portinari</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="cell">
+                    
+                    <a class="card dark" 
+                       href="/projects/luizalian/"
+                       data-tilt data-tilt-max="5" 
+                       data-tilt-speed="800" 
+                       data-tilt-scale="1.05" 
+                       >
+                        <div class="thumbnail">
+                            <img 
+                            src="/images/luilian/oya-screenshot.jpeg" 
+                            lazyload
+                            
+                            />
+                        </div>
+                        <div class="listitem__info">
+                            <h3 class="title">Luiza Lian</h3>
+                            <p class="subtitle">Oya tempo</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="cell">
+                    
+                    <a class="card dark" 
+                       href="/projects/bmg/"
+                       data-tilt data-tilt-max="5" 
+                       data-tilt-speed="800" 
+                       data-tilt-scale="1.05" 
+                       >
+                        <div class="thumbnail">
+                            <img 
+                            src="/images/textures/couro-enguia.jpg" 
+                            lazyload
+                            
+                            />
+                        </div>
+                        <div class="listitem__info">
+                            <h3 class="title">BMG</h3>
+                            <p class="subtitle">Banco mundial da genitalia</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="cell">
+                    
+                    <a class="card dark" 
+                       href="/projects/astrorunners/"
+                       data-tilt data-tilt-max="5" 
+                       data-tilt-speed="800" 
+                       data-tilt-scale="1.05" 
+                       >
+                        <div class="thumbnail">
+                            <img 
+                            src="/images/astrorunners/showcase.jpg" 
+                            lazyload
+                            
+                            />
+                        </div>
+                        <div class="listitem__info">
+                            <h3 class="title">Astrorunners</h3>
+                            <p class="subtitle">Serious but not sober</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="cell">
+                    
+                    <a class="card light" 
+                       href="/projects/iching/"
+                       data-tilt data-tilt-max="5" 
+                       data-tilt-speed="800" 
+                       data-tilt-scale="1.05" 
+                       >
+                        <div class="thumbnail">
+                            <img 
+                            src="/images/textures/cashmere-la.jpg" 
+                            lazyload
+                            
+                            />
+                        </div>
+                        <div class="listitem__info">
+                            <h3 class="title">I Ching</h3>
+                            <p class="subtitle">The chinese book of changes</p>
+                        </div>
+                    </a>
+                </li>
+        </ul>
+
+
+    </article>
+</section>
+
+
+
+      </div>
+    </main>
+    <footer id="footer" class="grid :middle :between">
+  <ul class="grid :horizontal :middle clean">
+    <li>
+        <div class="title">Contact</div>
+        <a href="" peculiarity="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">
+            <span class="ceasar says">hufad.omvgxqdu@symux.oay</span>
+        </a>
+    </li>
+    <li>
+        <div class="title">Social</div>
+        <a href="http://github.com/barrabinfc">Github</a>
+    </li>
+    <li class="align:right pull:right">
+        <a href="http://github.com/barrabinfc" class="icon icon--m">
+            <svg class="icon__cnt"><use xlink:href="/images/_svgicons.svg#ei-sc-github-icon"></use></svg>
+            Github
+        </a>
+        <a href="" peculiarity="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay" class="icon icon--m">
+            <svg class="icon__cnt"><use xlink:href="/images/_svgicons.svg#ei-envelope-icon"></use></svg>
+            <span class="ceasar says">hufad.omvgxqdu@symux.oay</span>
+        </a>
+    </li>
+</ul>
+  <style>
+      
+</style>
+
+</footer>
+
+    <link rel="stylesheet" href="/css/main.css">
+
+    
+    
+  </body>
+</html>

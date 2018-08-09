@@ -27,15 +27,6 @@
 /**
  * General animations for page-in and page-out
  */
-#page-trans-wrapper {
-  perspective: var(--perspective);
-  transform-style:  preserve-3d;
-}
-.page-container  {
-  background-color: var(--back);
-  width: 100%;
-  transform: translate3d(0,0,0);
-}
 
 /** Overlay **/
 body {

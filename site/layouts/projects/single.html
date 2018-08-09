@@ -7,7 +7,7 @@
 
 {{ define "main" }}
   {{ $colorscheme := .Params.colorscheme | default "default" }}
-  <section class="projects colorscheme:{{ $colorscheme}} ">
+  <section class="projects grid colorscheme:{{ $colorscheme}} ">
     <article class="showcase">
       <div class="overlay">
         <!--
@@ -15,7 +15,7 @@
           <div>Scroll to see more</div>
           <svg class="icon"><use xlink:href="#ei-chevron-down-icon"></use></svg>
         </div>
-        -->
+        -->      
       </div>
       {{ .Content }}
     </article>

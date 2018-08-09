@@ -66,9 +66,6 @@
   
       & .more {
         & .summary {
-          width: 75%;
-          margin: 0 auto;
-  
           & .title { 
             text-transform: uppercase;
             padding: calc( 2 * var(--gutter) ) 0;
@@ -91,9 +88,6 @@
         /* Contact */
         & .contact {      
           perspective: var(--perspective);
-          padding: calc( 2* var(--pad-big)) 0;
-          width: 75%;
-          margin: 0 auto;
 
           & > a { 
             display: block; 
@@ -109,11 +103,8 @@
             cursor: pointer;
           }
                 
-          & .label {
-            @apply --hero-font;
-            font-size: 5em;
+          & h1 {
             font-weight: bold;
-            text-align: center;
             text-shadow: var(--shadow-card); /*0 0 50px #000;*/
   
             color: #fff;

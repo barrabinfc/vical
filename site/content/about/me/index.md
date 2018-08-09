@@ -50,11 +50,12 @@ logo = "/images/uploads/myself-2-low.jpg"
     </div>
   </div>
 </div>
-<div class="contact">
-  <a href="" class="btn picture nomargin no-underline" data-tilt data-tilt-max="5" data-tilt-speed="800" data-tilt-scale="1.025" 
-  target="none" peculiarity="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">
-    <h3 class="label">
+<div class="contact ">
+  <a href="" class="card w100 margin-vertical:padded" 
+      data-tilt data-tilt-max="5" data-tilt-speed="800" data-tilt-scale="1.025" 
+      target="none" peculiarity="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">
+    <h1 class="align:center">
       <div>GET IN TOUCH</div>
-    </h3>
+    </h1>
   </a>
 </div>

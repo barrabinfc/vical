@@ -32,8 +32,10 @@ pygmentsCodeFences = true
   rly-dark_gray = "hsl(0, 0%, 20%)"
   primary = "#f05553"
   second = "#0098d8"
-  third = "#0b3536"  
+  third = "#0b3536"
 
+[imaging]  
+  quality = 85
 
 [[menu.main]]
   name = "projects"

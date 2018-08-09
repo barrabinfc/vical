@@ -7,11 +7,13 @@
 
 {{ define "main" }}
 <section>
-  <article class="showcase">
+  <article class="showcase w85 margin:auto">
       <section class="about color:second">{{ safeHTML .Params.subtitle }}</section>
       <section class="description">{{ safeHTML .Params.description }}</section>
   </article>
-  <article id="content-body" class="info grid :vertical">
+</section>
+<section>
+  <article id="content-body" class="w85 margin:auto">
       {{ $related := where .Site.RegularPages "Section" "projects" }}
       {{ $class   := "list-isotope" }}
       {{ partial "card_list" (dict "list" $related "title" false "class" $class "contained" false) }}      

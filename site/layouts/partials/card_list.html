@@ -2,7 +2,7 @@
 {{ $colorscheme := .colorscheme | default "default" }}
 {{ if $section }}
 <section class="more-list colorscheme:{{ $colorscheme }}">
-    <article class="container w100">
+    <article class="container w85">
 {{ end }}
 
         {{ if .title }}
@@ -15,7 +15,7 @@
             {{- range .list }}
                 <li class="cell">
                     {{ $thumbscheme := .Params.thumbscheme }}
-                    <a class="card app-card {{ $thumbscheme }}" 
+                    <a class="card {{ $thumbscheme }}" 
                        href="{{ .Permalink }}"
                        data-tilt data-tilt-max="5" 
                        data-tilt-speed="800" 
