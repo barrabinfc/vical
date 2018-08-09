@@ -258,7 +258,7 @@ ul.task-list {
 /*
  * Top Menu
  */
-header[role="header"] {
+header#menu {
   width: 100%;
   height: var(--header-height);
   margin: 0;

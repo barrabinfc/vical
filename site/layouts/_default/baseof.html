@@ -17,7 +17,7 @@
   <body class="{{ $layout }}">
 
     {{ $menuModifier := .Params.menuModifier | default "" }}
-    <header role="header" class="{{ $menuModifier }}" id="menu">
+    <header class="{{ $menuModifier }}" id="menu">
       {{ block "header" .}}{{ end }}
     </header>
 

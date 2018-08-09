@@ -24,6 +24,7 @@
                         <div class="thumbnail">
                             <img 
                             src="{{ .Params.thumbnail }}" 
+                            lazyload
                             {{ if .Params.thumb_position }}
                                 style="object-position: {{ .Params.thumb_position }}; "
                             {{ end }}

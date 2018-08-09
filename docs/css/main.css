@@ -947,7 +947,7 @@ ul.task-list input[type="checkbox"] {
 /*
  * Top Menu
  */
-header[role="header"] {
+header#menu {
   width: 100%;
   height: 96px;
   height: var(--header-height);
@@ -984,11 +984,11 @@ header[role="header"] {
   /* Shrink menu*/
 
 }
-header[role="header"].shrink{ height: calc( 3/4 * 96px); height: calc( 3/4 * var(--header-height)); }
-header[role="header"] .logo-container {
+header#menu.shrink{ height: calc( 3/4 * 96px); height: calc( 3/4 * var(--header-height)); }
+header#menu .logo-container {
     flex: 0.2      
   }
-header[role="header"] .logo-container .logo {
+header#menu .logo-container .logo {
       font-size: 2.0rem;
       font-weight: bold;
 
@@ -999,13 +999,13 @@ header[role="header"] .logo-container .logo {
       padding-left: 0;    
       margin: 0;  
     }
-header[role="header"] .logo-container .menu-close { display: none; }
-header[role="header"] {
+header#menu .logo-container .menu-close { display: none; }
+header#menu {
   
   /* Navigation */
 
 }
-header[role="header"] .menu {
+header#menu .menu {
     flex: 0.5;
     
     display: flex;
@@ -1013,7 +1013,7 @@ header[role="header"] .menu {
   
     /* Menu */
   }
-header[role="header"] .menu .menu-header {
+header#menu .menu .menu-header {
       position: relative;
       background-color: transparent;
 
@@ -1036,26 +1036,26 @@ header[role="header"] .menu .menu-header {
           making it container alignment easier */
       
     }
-header[role="header"] .menu .menu-header:last-child { margin-right: 0; }
-header[role="header"] .menu .menu-header {
+header#menu .menu .menu-header:last-child { margin-right: 0; }
+header#menu .menu .menu-header {
       
       border: 0px solid transparent
 
       /** Icons */
       
     }
-header[role="header"] .menu .menu-header ::before {
+header#menu .menu .menu-header ::before {
         position: absolute;
         top: 1rem;
         left: 0.5rem;
         font-size: 2rem;
       }
-header[role="header"] .menu .menu-header {
+header#menu .menu .menu-header {
 
       /** Underscore decoration */
       
     }
-header[role="header"] .menu .menu-header::after {
+header#menu .menu .menu-header::after {
         position: absolute;
         content: ' ';
         
@@ -1094,21 +1094,21 @@ header[role="header"] .menu .menu-header::after {
                     width var(--trans-time) var(--trans-easing),
                     -webkit-transform var(--trans-time) var(--trans-easing);
       }
-header[role="header"] .menu .menu-header {
+header#menu .menu .menu-header {
 
 
       /** Selected/hover states **/
       
     }
-header[role="header"] .menu .menu-header.selected::after {
+header#menu .menu .menu-header.selected::after {
           width: 100%;
           background-color: #f05553;
           background-color: var(--primary);
         }
-header[role="header"] .menu .menu-header:hover {
+header#menu .menu .menu-header:hover {
         text-decoration: none
       }
-header[role="header"] .menu .menu-header:hover:not(.selected)::after {
+header#menu .menu .menu-header:hover:not(.selected)::after {
           width: 100%;
           background-color: hsl(181.39534883720933, 66.1538461538%, 60%);
           background-color: hsl(181.39534883720933, 66.1538461538%, 60%);
