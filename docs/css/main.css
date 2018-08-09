@@ -157,11 +157,6 @@ input:hover,
     -ms-grid-row-align: stretch;
     align-items: stretch
 }
-.grid.\:baseline {
-    -ms-flex-align: baseline;
-    -ms-grid-row-align: baseline;
-    align-items: baseline
-}
 .grid.\:left {
     justify-content: flex-start
 }
@@ -179,7 +174,6 @@ input:hover,
 }
 .cell {
     flex: 1;
-    box-sizing: border-box
 }
 @media screen and (min-width:768px) {
     .cell.\:1of12 {
@@ -1115,30 +1109,8 @@ header#menu .menu .menu-header:hover:not(.selected)::after {
         }
 /** Footer */
 footer#footer {
-  width: 100%;
-  height: 96px;
-  height: var(--header-height);
-  margin: 0;
-  padding: 0 calc( 2 * 48px);
-  padding: 0 calc( 2 * var(--pad-big));
-  z-index: 1000;
-
-  /* Invert colors */
-  border-top: 1px solid #e9e9e9;
-  border-top: 1px solid var(--gray);
-  background-color: #fff;
-  background-color: var(--back);
-  color: #000;
-  color: var(--front );
-    
-  display: flex;
-  align-items: center;
-  justify-content: space-between
+  z-index: 1000
 }
-footer#footer ul { width: 100%; height: inherit; list-style: none; }
-footer#footer ul li { 
-    flex: 0.2;
-  }
 footer#footer .title {
     font-weight: 100;
     font-size: calc( 0.8rem * calc(3/2));
@@ -1543,11 +1515,14 @@ h6 {  --size:  calc(1rem * 0.66 * calc(5/4));  --size:  calc(1rem * 0.66 * var(-
 /* Paragraphs and codes */
 p { 
   padding: 0;
-  margin: 0 0 1.5rem 0;
+  margin: 0;
   line-height: 1.625rem;
 
   orphans: 2;
   widows: 2;
+}
+p + p {
+  margin: 0 0 1.5rem 0;
 }
 pre {
   padding: calc( 2 * 0.5em);
@@ -1736,7 +1711,8 @@ table th:not(:last-child),table td:not(:last-child){
       /* Text */
     }
 .about section.about > .title { 
-        @apply --hero-font;
+        font-family: 'FuturaStd', sans-serif; 
+        font-family: var(--hero-font);
         font-weight: 100;
         padding-top: calc(2*24px);
         padding-top: calc(2*var(--pad-medium));
@@ -1765,17 +1741,17 @@ table th:not(:last-child),table td:not(:last-child){
           align-items: center
         }
 .about section.about .intro .intro_image > img { 
+            /*
             width: 225px;
             height: 225px;
             margin: 0 auto; 
             border-radius: 50%; overflow: hidden;
-            border: 1px solid #e9e9e9;
             border: 1px solid var(--gray);
-            -o-object-fit: cover ;
-               object-fit: cover ;
+            object-fit: cover ;
+            background-color: aqua;
+            */
             -o-object-position: -5px -60px;
                object-position: -5px -60px; 
-            background-color: aqua;
           }
 .about section.about .intro .intro_lead {
           flex: 0.7;

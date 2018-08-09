@@ -43,12 +43,6 @@
     align-items: stretch
 }
 
-.grid.\:baseline {
-    -ms-flex-align: baseline;
-    -ms-grid-row-align: baseline;
-    align-items: baseline
-}
-
 .grid.\:left {
     -ms-flex-pack: start;
     justify-content: flex-start
@@ -76,7 +70,6 @@
 
 .cell {
     flex: 1;
-    box-sizing: border-box
 }
 
 @media screen and (min-width:768px) {

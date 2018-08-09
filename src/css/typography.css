@@ -79,12 +79,16 @@ h6 {  --size:  calc(1rem * 0.66 * var(--typoscale)); }
 /* Paragraphs and codes */
 p { 
   padding: 0;
-  margin: 0 0 1.5rem 0;
+  margin: 0;
   line-height: 1.625rem;
 
   orphans: 2;
   widows: 2;
 }
+p + p {
+  margin: 0 0 1.5rem 0;
+}
+
 
 pre {
   padding: calc( 2 * var(--pad));

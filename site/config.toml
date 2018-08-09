@@ -42,48 +42,6 @@ pygmentsCodeFences = true
   url = "/projects/"
 
 [[menu.main]]
-  name = "Astrorunners"
-  parent = "projects"
-  identifier = "projects/astrorunners"
-  url = "/projects/astrorunners"
-
-[[menu.main]]
-  name = "Luiza Lian"
-  parent = "projects"
-  identifier = "projects/luizalian"
-  url = "/projects/luizalian"
-
-[[menu.main]]
-  name = "Bigud"
-  parent = "projects"
-  identifier = "projects/bigud"
-  url = "/projects/bigud"
-
-[[menu.main]]
-  name = "BMG"
-  parent = "projects"
-  identifier = "projects/bmg"
-  url = "/projects/bmg"
-
-#[[menu.main]]
-#  name = "apps"
-#  weight = 2
-#  identifier = "apps"
-#  url = "/apps/"
-  
-#[[menu.main]]
-#  name = "I Ching"
-#  parent = "apps"
-#  identifier = "apps/iching"
-#  url = "/apps/iching"
-  
-#[[menu.main]]
-#  name = "Piano Coach"
-#  parent = "apps"
-#  identifier = "apps/pianocoach"
-#  url = "/apps/piano-coach"
-
-[[menu.main]]
   name = "Blog"
   identifier = "blog"
   url = "/blog/"

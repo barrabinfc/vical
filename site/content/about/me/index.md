@@ -1,16 +1,16 @@
 +++
 title = "About me"
-
-color = "#000"
-bg_color = "#f8fbfb"
+parent = "about"
 
 subtitle = ""
 description = "I'm a <b>full stack software engineer</b> focused on the Web platform. I work on building delightful and effective user experience, using a disciplined vocabulary of <i>computer programming</i> and <i>design</i>."
 logo = "/images/uploads/myself-2-low.jpg"
 
-aliases = [
-  "/about/"
-]
+[[resources]]
+  name = "logo"
+  src = "images/myself-2-low.jpg"
+
+
 +++
 
 <div class="summary two-columns grid :horizontal :baseline :between">

@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <title>BMG</title>
     
@@ -23,6 +23,20 @@
      
     --gutter:     0.5em; 
     --pad-margin:    calc( 8 * var(--gutter));
+
+    --perfect-fifth: calc(3/2); 
+    --major-third:   calc(5/4);
+  
+    --typoscale: var(--major-third);
+    --linescale: var(--major-third);
+  }
+
+   
+  @font-face {
+    font-family: system;
+    font-style: normal;
+    font-weight: 300;
+    src: local("-apple-system"), local("BlinkMacSystemFont"), local("Segoe UI"), local("Roboto"), local("Helvetica"), local("Arial"), local("sans-serif"), local("Apple Color Emoji"), local("Segoe UI Emoji"), local("Segoe UI Symbol");
   }
 
    
@@ -31,7 +45,7 @@
   body { 
     background-color: var(--back); 
     color: var(--front); 
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; 
+    font-family: "system"; 
     overflow-x: hidden;
     overflow-y: overlay;
   }
@@ -39,8 +53,41 @@
   
   a,p,button { margin: 0; padding: 0; }
   blockquote { width: 100%; margin: 1em auto; line-height: 1.0em; }
+  
   a { text-decoration: none; color: var(--second); }
   a:hover{ text-decoration: underline; }
+
+  h1,h2,h3,h4,h5,h6 { 
+    --size:  calc(1rem * 3.0 * var(--typoscale));
+    
+    font-family: system;
+    font-size: var(--size);    
+    line-height: calc( var(--size) + 0.75rem );
+    margin: var(--size) 0;
+
+    orphans: 2;
+    widows: 2
+  }
+
+  h2 {  --size:  calc(1rem * 2.00 * var(--typoscale)); }
+  h3 {  --size:  calc(1rem * 1.66 * var(--typoscale)); }
+  h4 {  --size:  calc(1rem * 1.33 * var(--typoscale)); }
+  h5 {  --size:  calc(1rem * 1.00 * var(--typoscale)); }
+  h6 {  --size:  calc(1rem * 0.66 * var(--typoscale)); }
+
+   
+  p { 
+    padding: 0;
+    margin: 0;
+    line-height: 1.625rem;
+
+    orphans: 2;
+    widows: 2;
+  }
+  p + p {
+    margin: 0 0 1.5rem 0;
+  }
+
 
   .container { padding: 0 96px; }
   .container, .container-fluid { margin: 0 auto; }
@@ -48,10 +95,32 @@
   .grid { display: flex; flex-wrap: wrap; }
   .grid.\:vertical { flex-direction: column; }
   .grid.\:middle { align-items: center; }
+  .grid.\:top { align-items: flex-start; }
+  .grid.\:bottom { align-items: flex-end; }
+  .grid.\:baseline { align-items: baseline; }
+
+  .grid.\:left  { justify-content: flex-start; }
+  .grid.\:center  { justify-content: center; }
+  .grid.\:right  { justify-content: flex-end; }
   .grid.\:between { justify-content: space-between; }
   .grid.\:around { justify-content: space-around; }
-  .grid.\:end  { justify-content: end; }
+
+  .cell { flex: 1; }
+  .cell.\:1of12 { flex: 0 0 8.33333%; }
+  .cell.\:2of12 { flex: 0 0 16.66667%; }
+  .cell.\:3of12 { flex: 0 0 25%; }
+  .cell.\:4of12 { flex: 0 0 33.33333%; }
+  .cell.\:5of12 { flex: 0 0 41.66667%; }
+  .cell.\:6of12 { flex: 0 0 50%; }
+  .cell.\:7of12 { flex: 0 0 58.33333%; }
+  .cell.\:8of12 { flex: 0 0 66.66667%; }
+  .cell.\:9of12 { flex: 0 0 75%; }
+  .cell.\:10of12 { flex: 0 0 83.33333%; }
+  .cell.\:11of12 { flex: 0 0 91.66667%; }
+  .cell.\:12of12 { flex: 0 0 100%; }
+
   
+  .margin\:auto { margin: 0 auto; }
   .pull\:left { margin-right: auto !important; }
   .pull\:right { margin-left: auto !important; }
   .align\:left { text-align: left !important; }
@@ -71,10 +140,22 @@
   .w65 { max-width: 60%; }
   .w66 { max-width: 66%; }
   .w70 { max-width: 70%; }
+  .w75 { max-width: 75%; }
+  .w80 { max-width: 80%; }
   .w90 { max-width: 90%; }
   .w100 { max-width: 100%; width: 100%; }
 
-  
+  .img\:avatar {
+    width: 225px;
+    height: 225px;
+    margin: 0 auto; 
+    border-radius: 50%; overflow: hidden;
+    border: 1px solid var(--gray);
+    object-fit: cover ;
+    background-color: aqua;
+  }
+
+   
   ul.clean , ol.clean {
     list-style: none;
     counter-reset: none;
@@ -85,24 +166,24 @@
       display: none;
   }
 
+   
   .icon {
     display: inline-block;
     width: 25px; height: 25px;
     overflow: hidden; fill: currentColor;
   }
-
   .icon__cnt {
     width: 100%; height: 100%;
     background: inherit;
     fill: inherit;
-    pointer-events: none;  
-    transform: translateX(0);  
-    -ms-transform: translate(0.5px, -0.3px);  
+    pointer-events: none; 
+    transform: translateX(0); 
+    -ms-transform: translate(0.5px, -0.3px);
   }
   .icon--m {
     width: 50px;
     height: 50px;
-    top: 18px;  
+    top: 18px;
   }
 
 
@@ -130,31 +211,13 @@
     margin: 0;
     padding: 0 var(--pad-margin);
     border-top: 1px solid var(--gray);
+    color: var(--front );
   }
   body > footer > ul  { width: 100%; height: inherit; list-style: none; }
-  body > footer > ul li { 
-    flex: 0.2;
+  body > footer > ul li { flex: 0.2; }
+  body > footer a {
+    color: var(--third); 
   }
-
-  & .title {
-    @apply --hero-font;
-    font-weight: 100;
-    font-size: calc( 0.8rem * var(--perfect-fifth));
-    text-transform: capitalize;
-
-    font-weight: 100;
-    color: var(--rly-dark-gray);
-    margin: 0.5em 0;
-    padding: 0;
-  }
-
-  & a {
-    font-size: 14px;
-    color: var(--dark-gray); 
-    margin: 0;
-    padding: 0;
-  }
-
 
 
   main > section {  position: relative; width: 100%; min-height: 100vh; 
@@ -178,9 +241,6 @@
     <a href="/" class="logo no-hover" id="logo">
   vical
 </a>
-    <a href="#menu" class="menu-close">
-      <svg class="icon__cnt"><use xlink:href="#ei-close-icon"></use></svg>
-    </a>
   </div>
   
 
@@ -294,7 +354,7 @@
 
 
         
-            <h1 class="title hero anim appearFromBottomCropped"><span>More Projects</span></h1>
+            <h1 class="title align:center anim appearFromBottomCropped"><span>More Projects</span></h1>
         
 
         
@@ -432,9 +492,11 @@
     <li class="align:right pull:right">
         <a href="http://github.com/barrabinfc" class="icon icon--m">
             <svg class="icon__cnt"><use xlink:href="/images/_svgicons.svg#ei-sc-github-icon"></use></svg>
+            Github
         </a>
-        <a href="http://github.com/barrabinfc" class="icon icon--m">
+        <a href="" peculiarity="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay" class="icon icon--m">
             <svg class="icon__cnt"><use xlink:href="/images/_svgicons.svg#ei-envelope-icon"></use></svg>
+            <span class="ceasar says">hufad.omvgxqdu@symux.oay</span>
         </a>
     </li>
 </ul>
@@ -445,8 +507,6 @@
 </footer>
 
     
-    <script src="/js/app.js" defer></script>
-    <script type="text/javascript" src="/js/vendor/vanilla-tilt.babel.min.js" defer></script> 
     
   </body>
 </html>

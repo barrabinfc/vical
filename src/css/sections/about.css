@@ -14,7 +14,7 @@
       
       /* Text */
       & > .title { 
-        @apply --hero-font;
+        font-family: var(--hero-font);
         font-weight: 100;
         padding-top: calc(2*var(--pad-medium));
         padding-bottom: calc(2*var(--pad-medium));
@@ -40,14 +40,16 @@
           align-items: center;
   
           & > img { 
+            /*
             width: 225px;
             height: 225px;
             margin: 0 auto; 
             border-radius: 50%; overflow: hidden;
             border: 1px solid var(--gray);
             object-fit: cover ;
-            object-position: -5px -60px; 
             background-color: aqua;
+            */
+            object-position: -5px -60px; 
           }
         }
         & .intro_lead {

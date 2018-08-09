@@ -19,22 +19,25 @@ function pageStart(){
     window.unlockMail();
     fixHrefTarget(document);
 
-    let tiltedElements = document.querySelectorAll('[data-tilt]')
-    Array.from(tiltedElements).map( (el) => {
-      if(!el.vanillaTilt) VanillaTilt.init(el)
-    })
-
+    if(window.VanillaTilt) {
+      let tiltedElements = document.querySelectorAll('[data-tilt]')
+      Array.from(tiltedElements).map( (el) => {
+        if(!el.vanillaTilt) VanillaTilt.init(el)
+      })
+    }
   })
 }
 
 function pageDestroy(){
-  let tiltedElements = document.querySelectorAll('[data-tilt]')
+  if(window.VanillaTilt){
+    let tiltedElements = document.querySelectorAll('[data-tilt]')
 
-  requestIdleCallback( () => {
-    Array.from(tiltedElements).map( (el) => {
-      el.vanillaTilt.destroy()
+    requestIdleCallback( () => {
+      Array.from(tiltedElements).map( (el) => {
+        el.vanillaTilt.destroy()
+      })
     })
-  })
+  }
 }
 
 function boot() {

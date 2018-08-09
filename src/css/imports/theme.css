@@ -383,26 +383,8 @@ header#menu {
 
 /** Footer */
 footer#footer {
-  width: 100%;
-  height: var(--header-height);
-  margin: 0;
-  padding: 0 calc( 2 * var(--pad-big));
   z-index: 1000;
-
-  /* Invert colors */
-  border-top: 1px solid var(--gray);
-  background-color: var(--back);
-  color: var(--front );
-    
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   
-  & ul { width: 100%; height: inherit; list-style: none; }
-  & ul li { 
-    flex: 0.2;
-  }
-
   & .title {
     font-weight: 100;
     font-size: calc( 0.8rem * var(--perfect-fifth));
