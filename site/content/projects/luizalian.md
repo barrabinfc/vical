@@ -1,6 +1,8 @@
 +++
 draft = false
 title = "Luiza Lian"
+colorscheme = "dark"
+
 thumbnail = "/images/luilian/oya-screenshot.jpeg"
 thumbscheme = "dark"
 date = "2017-06-01"

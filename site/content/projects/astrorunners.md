@@ -2,10 +2,11 @@
 draft = false
 title = "Astrorunners"
 subtitle = "Serious but not sober"
+#colorscheme = "dark"
 thumbnail = "/images/astrorunners/showcase.jpg"
 thumbscheme = "dark"
 website = "www.astrorunners.com"
-description = "<p><a href='http://astrorunners.com' class='default nomargin black underline' target='_blank'>Astrorunners</a> asked me to redesign their store for the new collection. The design uses a strong constrast of black and white to be consistent to the collection aesthetics.</p><p>The site uses responsive layout tecniques, and has a highly adaptable theme to let administradors tweak the layout without touching the code.</p>"
+description = "<p><a href='http://astrorunners.com' class='default nomargin underline' target='_blank'>Astrorunners</a> asked me to redesign their store for the new collection. The design uses a strong constrast of black and white to be consistent to the collection aesthetics.</p><p>The site is built using <b>responsive layout</b>, and has a highly adaptable theme to let administradors tweak the layout without touching the code.</p>"
 logo = "/images/astrorunners/logo-black-final.png"
 +++
 

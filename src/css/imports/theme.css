@@ -263,6 +263,7 @@ header[role="header"] {
   height: var(--header-height);
   margin: 0;
   padding: 0 calc( 2 * var(--pad-big));
+  border-bottom: 1px solid var(--gray);
   z-index: 1000;
 
   /* Invert colors */

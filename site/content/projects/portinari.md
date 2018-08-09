@@ -6,8 +6,8 @@ title = "Portinari & Ligalight"
 thumbnail = "/images/uploads/portinari/portal.jpg"
 thumbscheme = "dark"
 thumb_position = "top"
-subtitle = "Portinari Cerâmica"
-description = "<p>Produzimos para o stand da portinari cerâmica um aplicativo customizado, baseado na idéia “faça vc mesmo”, permitindo que cada pessoa crie seu próprio desenho ou escrita digital nos panéis de entrada do stand através de um IPad.</p><p>Transformando paredes em panéis criativos, uma ferramenta digital que preserva a espontaneidade e interatividade.</p>"
+subtitle = "Cerâmicas Portinari"
+description = "<p>Produzimos um aplicativo <b>PWA</b> customizado, baseado na idéia <i>“faça vc mesmo”</i>, permitindo que cada pessoa crie seu próprio desenho ou escrita digital nos panéis de entrada do stand através de um IPad.</p><p>Transformando paredes em panéis criativos, uma ferramenta digital que preserva a espontaneidade e interatividade.</p>"
 logo = "/images/uploads/portinari/logoPortinariPT.jpg"
 +++
 

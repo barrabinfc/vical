@@ -198,14 +198,14 @@ a.no-hover:hover { text-decoration: none; }
 a.default {
   position: relative;
   cursor: pointer;
-  color: #fff;
-  color: var(--white);
+  color: #000;
+  color: var(--front);
   text-decoration: none
 }
 a.default:hover { text-decoration: underline; }
 a.black {
-  color: #000;
-  color: var(--black);
+  color: #fff;
+  color: var(--back);
 }
 a.no-underline:hover { text-decoration: none !important; }
 a.underline {

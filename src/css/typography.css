@@ -123,12 +123,12 @@ a.no-hover:hover { text-decoration: none; }
 a.default {
   position: relative;
   cursor: pointer;
-  color: var(--white);
+  color: var(--front);
   text-decoration: none;
   &:hover { text-decoration: underline; }
 }
 a.black {
-  color: var(--black);
+  color: var(--back);
 }
 a.no-underline {
   &:hover { text-decoration: none !important; }

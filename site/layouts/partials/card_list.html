@@ -1,6 +1,7 @@
 {{ $section := .contained | default true }}
+{{ $colorscheme := .colorscheme | default "default" }}
 {{ if $section }}
-<section class="more-list">
+<section class="more-list colorscheme:{{ $colorscheme }}">
     <article class="container w100">
 {{ end }}
 
@@ -13,8 +14,8 @@
         <ul class="{{ $list_klass }} clean grid :horizontal anim appearItemsFromBottom ">
             {{- range .list }}
                 <li class="cell">
-                    {{ $colorscheme := .Params.thumbscheme }}
-                    <a class="card app-card {{ $colorscheme }}" 
+                    {{ $thumbscheme := .Params.thumbscheme }}
+                    <a class="card app-card {{ $thumbscheme }}" 
                        href="{{ .Permalink }}"
                        data-tilt data-tilt-max="5" 
                        data-tilt-speed="800" 

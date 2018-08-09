@@ -38,12 +38,12 @@ body {
 .page-container.frontpage {
   & .showcase {
     width: 85%;
-    min-height: 50vh;
-    height: 50vh;
+    min-height: 60vh;
+    height: 60vh;
     margin: 0 auto;
 
     & .about {
-      margin-top: calc( 2 * var(--pad-big));
+      margin-top: calc( 3 * var(--pad-big));
       & > * { margin: 1rem 0; }
     }
     & .description {
@@ -85,9 +85,6 @@ body {
   & > .container { 
     width: 100%;
     
-    background-color: var(--third);
-    color: var(--back);
-
     & > .title {
       font-family: var(--hero-font);
       text-align: center;
@@ -103,6 +100,29 @@ body {
   & > .list-cards {
     padding: calc( 2* var(--pad-medium)) 0;
   }
+
+  /** colorscheme **/
+  &.colorscheme\:default {
+    & > .container {
+      background-color: var(--back);
+      color: var(--front);  
+    }
+  }
+
+  &.colorscheme\:dark {
+    & > .container {
+      background-color: var(--third);
+      color: var(--back);
+    }
+  }
+
+  &.colorscheme\:gray {
+    & > .container {
+      background-color: var(--gray);
+      color: var(--front);
+    }
+  }
+
 }
 
 /**
@@ -289,7 +309,25 @@ body {
     & .more {
       margin-top: auto;
       margin-bottom: 1rem;
-    }
-    
+    }    
   }
+
+  /** Colorscheme **/
+  &.colorscheme\:default {
+    background-color: var(--back);
+    color: var(--front);
+  }
+
+  &.colorscheme\:dark {
+    background-color: var(--front);
+    color: var(--back);
+
+    & .btn.\:href {
+      color: var(--front);
+      &:hover {
+        background-color: var(--back);
+      }
+    }
+  }
+  
 }
