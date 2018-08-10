@@ -262,20 +262,6 @@
     
             & > #post__body__content {
                 margin-top: 3em;
-
-                /**
-                * Adjacent spacement fixes
-                */
-                & p + * {
-                    margin-top: 1.5rem;
-                }
-
-                & *:not(pre) > code {
-                    font-size: 85%;
-                    padding: var(--gutter);
-                    background-color: var(--gray);
-                    border-radius: 3px;
-                }
                 
                 /**
                 * Header adjacement

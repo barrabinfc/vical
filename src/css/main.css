@@ -5,6 +5,7 @@
 @import "imports/devices-mockup.min.css";
 @import "imports/theme.css";
 @import "imports/animation.css";
+@import "imports/slideshow.css";
 
 @import "./typography.css";
 @import "./evil-icons.css";
@@ -73,13 +74,15 @@ body {
 /** More projects list **/
 .more-list {
 
-  & > .container {     
+  & > article {     
     & > .title {
       font-family: var(--hero-font);
       text-align: center;
       font-weight: 100;
       padding-top: calc(2*var(--pad-medium));
-  
+      font-size: 5.0rem;
+      line-height: 5rem;
+      
       color: inherit;
       margin: 0 auto;
     }    

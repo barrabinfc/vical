@@ -7,7 +7,7 @@
 {{ end }}
 {{ define "main" }}
   <section class="project__info">
-    <article class="container grid :vertical :middle :around">
+    <article class="margin:auto grid :vertical :middle :around">
       <picture class="project__logo">
         {{ $featured := .Page.Resources.GetMatch "featured" }}
         {{ if $featured }}
@@ -20,7 +20,8 @@
       <table class="project__meta clean">
         <thead>
           <tr>
-            <td>URL</td>
+            <td>Source Code</td>
+            <td>Site</td>
             <td>Created at</td>
             <td>Technology</td>
             <td>License</td>
@@ -28,7 +29,15 @@
         </thead>
         <tbody>
           <tr>
-            <td><a href="http://{{ .Params.website }}" class="clean value color-high">{{ .Params.website }}</a></td>
+            <td>
+                <a href="http://{{ .Params.sourcecode }}" class="icon icon--m black">
+                  <svg class="icon__cnt"><use xlink:href="/images/_svgicons.svg#ei-sc-github-icon"></use></svg>
+                  {{ .Params.sourcecode }}
+              </a>
+            </td>  
+            <td>
+              <a href="http://{{ .Params.website }}" class="clean value color-high">{{ .Params.website }}</a>
+            </td>
             <td>
                 <span class="value">{{ .Params.created_at}}</span>
             </td>
@@ -43,20 +52,29 @@
       </table>
       
       <div class="project__description font-big">
-        <p>{{ .Params.description }}</p>
+        {{ safeHTML .Params.description }}
       </div>
+      <hr/>
     </article>
   </section>
   <section class="project__body">
-    <article class="container grid">
+    <article class="margin:auto w70 grid :middle :between">
       {{ .Content }}
     </article>
+    {{ if .Params.website }}
+    <article class="margin:auto w25 grid :middle :between margin-vertical:padded">
+        <a href="http://{{.Params.website}}" alt="{{.Params.website}}" 
+          target="_blank" class="no-underline btn card :hero :primary :curved :card :href">
+          <span>VISIT: </span>
+        </a> 
+    </article>
+    {{ end }}
   </section>
 
   {{ $related := where .Site.RegularPages "Section" "projects" }}
   {{ $title   := "More projects" }}
   {{ $class   := "list-isotope" }}
-  {{ partial "card_list" (dict "list" $related "title" $title "class" $class) }}
+  {{ partial "card_list" (dict "list" $related "title" $title "colorscheme" "gray" "class" $class) }}
 {{ end }}
 
 

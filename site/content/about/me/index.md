@@ -51,7 +51,7 @@ logo = "/images/uploads/myself-2-low.jpg"
   </div>
 </div>
 <div class="contact ">
-  <a href="" class="card w100 margin-vertical:padded" 
+  <a href="" class="card w100 margin-vertical:padded nounderscore" 
       data-tilt data-tilt-max="5" data-tilt-speed="800" data-tilt-scale="1.025" 
       target="none" peculiarity="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">
     <h1 class="align:center">

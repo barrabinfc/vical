@@ -7,7 +7,7 @@ thumbnail = "/images/luilian/oya-screenshot.jpeg"
 thumbscheme = "dark"
 date = "2017-06-01"
 subtitle = "Oya tempo"
-description = "<p>O site, concebido pelo artista visual Dedos (Rafael Trabasso), é uma experiência estética para a escuta do álbum de luiza.</p><p>Desenvolvi um player especial integrado ao soundcloud em javascript, para seguir as regras estéticas da obra.</p>"
+description = "<p>O site, concebido pelo artista visual Dedos (Rafael Trabasso), é uma experiência estética para a escuta do álbum de luiza.</p><p>Desenvolvi um <b>player de audio</b> customizado, integrado ao <b>soundcloud</b>, seguindo as diretrizes estéticas da obra audiovisual, além de otimizações para dispositivos mobile.</p>"
 logo = "/images/luilian/luilian-oya.png"
 +++
 

@@ -445,7 +445,7 @@ footer#footer {
        position: relative;
        object-fit: cover;
        width: 100%;
-       top: 0;
+       top: 10px;
      }
    }
  }

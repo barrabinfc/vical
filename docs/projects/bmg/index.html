@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-      <meta name="description" content="&lt;p&gt;&lt;a href=&#39;http://genitalia.me&#39; class=&#39;default nomargin black underline&#39; target=&#39;_blank&#39;&gt;Genitalia.me&lt;/a&gt; is an adult art project, aimed at natural body positivity. A infinity anonymous gallery of genitals donated by everyone in the world.&lt;/p&gt;&lt;p&gt;The mosaic is developed using &lt;strong&gt;Javascript&lt;/strong&gt;, and the backend in &lt;strong&gt;Python&lt;/strong&gt; and &lt;strong&gt;Django&lt;/strong&gt;.&lt;/p&gt;">
-    
+    <meta name="description" content="Banco mundial da genitaliaGenitalia.me is an adult art project, aimed at natural body positivity. A infinity anonymous gallery of genitals donated by everyone in the world.
+The mosaic is built using vanilla HTML &amp; Javascript, while the backend in Python &amp; Django.
+">
   
     <style>
   :root {
@@ -90,11 +90,20 @@
     orphans: 2;
     widows: 2;
   }
-  p + p {
-    margin: 0 0 1.5rem 0;
+
+   
+  p + * {
+    margin-top: 1.5rem;
   }
 
-              
+   
+  *:not(pre) > code {
+    font-size: 85%;
+    padding: var(--gutter);
+    background-color: var(--gray);
+    border-radius: 3px;
+  }  
+  
   .grid { display: flex; flex-wrap: wrap; }
   .grid.\:vertical { flex-direction: column; }
   .grid.\:middle { align-items: center; }
@@ -123,7 +132,7 @@
   .cell.\:12of12 { flex: 0 0 100%; }
 
   .nomargin { margin: 0 !important; padding: 0 !important; }
-  .margin\:auto{ margin: 0 auto !important; }
+  .margin\:auto{ margin-left: auto !important; margin-right: auto !important; }
   .margin-vertical\:padded { margin-top: var(--pad-margin); margin-bottom: var(--pad-margin);}
 
   .float\:left { float: left !important; }
@@ -135,12 +144,14 @@
   .align\:right { text-align: right !important; }
   .align\:center { text-align: center !important; }
 
+  .nounderscore:hover { text-decoration: none; }
   .uppercase { text-transform: uppercase !important; }
   .rounded { border-radius: 2em !important; }
 
   .w5  { max-width: 5%; width: 5%; }
   .w10 { max-width: 10%; width: 10%;}
   .w25 { max-width: 25%; width: 25%;}
+  .w30 { max-width: 30%; width: 30%;}
   .w33 { max-width: 33%; width: 33%;}
   .w35 { max-width: 35%; width: 35%;}
   .w40 { max-width: 40%; width: 40%;}
@@ -251,7 +262,6 @@
     transform-style:  preserve-3d;
   }
   .page-container  {
-    background-color: var(--back);
     width: 100%;
     transform: translate3d(0,0,0);
   }
@@ -352,16 +362,15 @@
       <div class="gallery">
   <div class="browser-mask" style="background-color: #ffcc8c">
     <div class="browser-screen appearFromBottom :play">
-      <img src="/images/bmg/mosaic.jpg" alt="Mosaico" />
+      <img src="/images/bmg/masi.jpg" alt="Mosaico" />
     </div>
   </div>
-  <img src="/images/bmg/detail3.png" alt="Detalhe" />  
-  <img src="/images/bmg/upload.png" alt="Enviar" />  
+  <img src="/images/bmg/detail3.jpg" alt="Detalhe" />  
 </div>
 <div class="gallery container-fluid grid :horizontal">
   <div class="browser-mask pull:left w33">
     <div class="browser-screen">
-      <img src="/images/bmg/admin-login.png" alt="CMS" /> 
+      <img src="/images/bmg/admin-login.jpg" alt="CMS" /> 
     </div>
   </div>
   <div class="browser-mask pull:right w66">
@@ -383,7 +392,7 @@
       </picture>
 
       <div class="description">
-        <p><a href='http://genitalia.me' class='default nomargin black underline' target='_blank'>Genitalia.me</a> is an adult art project, aimed at natural body positivity. A infinity anonymous gallery of genitals donated by everyone in the world.</p><p>The mosaic is developed using <strong>Javascript</strong>, and the backend in <strong>Python</strong> and <strong>Django</strong>.</p>  
+        <p><a href='http://genitalia.me' class='default nomargin underline' target='_blank'>Genitalia.me</a> is an <b>adult</b> art project, aimed at natural body positivity. A infinity anonymous gallery of genitals donated by everyone in the world.</p><p>The mosaic is built using vanilla <code>HTML & Javascript</code>, while the backend in <code>Python & Django</code>.</p>  
       </div>
 
       <div class="more">
@@ -470,7 +479,7 @@
                        >
                         <div class="thumbnail">
                             <img 
-                            src="/images/textures/couro-enguia.jpg" 
+                            src="/images/bmg/masi.jpg" 
                             lazyload
                             
                             />

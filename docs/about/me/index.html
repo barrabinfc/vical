@@ -6,9 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-      <meta name="description" content="I&#39;m a &lt;b&gt;full stack software engineer&lt;/b&gt; focused on the Web platform. I work on building delightful and effective user experience, using a disciplined vocabulary of &lt;i&gt;computer programming&lt;/i&gt; and &lt;i&gt;design&lt;/i&gt;.">
-    
+    <meta name="description" content="I&#39;m a full stack software engineer focused on the Web platform. I work on building delightful and effective user experience, using a disciplined vocabulary of computer programming and design.">
   
     <style>
   :root {
@@ -90,11 +88,20 @@
     orphans: 2;
     widows: 2;
   }
-  p + p {
-    margin: 0 0 1.5rem 0;
+
+   
+  p + * {
+    margin-top: 1.5rem;
   }
 
-              
+   
+  *:not(pre) > code {
+    font-size: 85%;
+    padding: var(--gutter);
+    background-color: var(--gray);
+    border-radius: 3px;
+  }  
+  
   .grid { display: flex; flex-wrap: wrap; }
   .grid.\:vertical { flex-direction: column; }
   .grid.\:middle { align-items: center; }
@@ -123,7 +130,7 @@
   .cell.\:12of12 { flex: 0 0 100%; }
 
   .nomargin { margin: 0 !important; padding: 0 !important; }
-  .margin\:auto{ margin: 0 auto !important; }
+  .margin\:auto{ margin-left: auto !important; margin-right: auto !important; }
   .margin-vertical\:padded { margin-top: var(--pad-margin); margin-bottom: var(--pad-margin);}
 
   .float\:left { float: left !important; }
@@ -135,12 +142,14 @@
   .align\:right { text-align: right !important; }
   .align\:center { text-align: center !important; }
 
+  .nounderscore:hover { text-decoration: none; }
   .uppercase { text-transform: uppercase !important; }
   .rounded { border-radius: 2em !important; }
 
   .w5  { max-width: 5%; width: 5%; }
   .w10 { max-width: 10%; width: 10%;}
   .w25 { max-width: 25%; width: 25%;}
+  .w30 { max-width: 30%; width: 30%;}
   .w33 { max-width: 33%; width: 33%;}
   .w35 { max-width: 35%; width: 35%;}
   .w40 { max-width: 40%; width: 40%;}
@@ -251,7 +260,6 @@
     transform-style:  preserve-3d;
   }
   .page-container  {
-    background-color: var(--back);
     width: 100%;
     transform: translate3d(0,0,0);
   }
@@ -399,7 +407,7 @@
   </div>
 </div>
 <div class="contact ">
-  <a href="" class="card w100 margin-vertical:padded" 
+  <a href="" class="card w100 margin-vertical:padded nounderscore" 
       data-tilt data-tilt-max="5" data-tilt-speed="800" data-tilt-scale="1.025" 
       target="none" peculiarity="link-encrypted" data="ymuxfa:hufad.omvgxqdu@symux.oay">
     <h1 class="align:center">

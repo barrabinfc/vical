@@ -86,13 +86,12 @@ p {
   widows: 2;
 }
 p + p {
-  margin: 0 0 1.5rem 0;
+  margin-top: 1.5rem;
 }
 
 
 pre {
   padding: calc( 2 * var(--pad));
-  margin: 0 0 1.5rem 0;
   background-color: var(--light-gray);
   overflow: auto;
 }
@@ -107,7 +106,6 @@ code, pre, pre code {
 
 blockquote { 
   width: 100%; 
-  margin: 0 0 1.5rem 0;
   padding-left: calc(2 * var(--gutter));
   font-size: 1rem; 
   border-left: 4px solid var(--light-gray);
@@ -132,7 +130,7 @@ a.default {
   &:hover { text-decoration: underline; }
 }
 a.black {
-  color: var(--back);
+  color: var(--front);
 }
 a.no-underline {
   &:hover { text-decoration: none !important; }

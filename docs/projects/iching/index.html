@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-      <meta name="description" content="The I Ching, or Book of Changes, a common source for both Confucianist and Taoist philosophy, is one of the first efforts of the human mind to place itself within the universe. It has exerted a living influence in China for 3,000 years, and interest in it has been rapidly spreading in the West.">
-    
+    <meta name="description" content="The chinese book of changesThe I Ching ,also known as Book of Changes, is an ancient Chinese divination text and the oldest of the Chinese classics.
+A Progressive Web Application that is lightweight, open source and offline &amp; without ads, built using bleeding edge technologies like React, Service Workers and the styleguide of material-ui. Indistinguible from a native application and with a score of 90/100 in lighthouse performance benchmarks. 👌
+">
   
     <style>
   :root {
@@ -90,11 +90,20 @@
     orphans: 2;
     widows: 2;
   }
-  p + p {
-    margin: 0 0 1.5rem 0;
+
+   
+  p + * {
+    margin-top: 1.5rem;
   }
 
-              
+   
+  *:not(pre) > code {
+    font-size: 85%;
+    padding: var(--gutter);
+    background-color: var(--gray);
+    border-radius: 3px;
+  }  
+  
   .grid { display: flex; flex-wrap: wrap; }
   .grid.\:vertical { flex-direction: column; }
   .grid.\:middle { align-items: center; }
@@ -123,7 +132,7 @@
   .cell.\:12of12 { flex: 0 0 100%; }
 
   .nomargin { margin: 0 !important; padding: 0 !important; }
-  .margin\:auto{ margin: 0 auto !important; }
+  .margin\:auto{ margin-left: auto !important; margin-right: auto !important; }
   .margin-vertical\:padded { margin-top: var(--pad-margin); margin-bottom: var(--pad-margin);}
 
   .float\:left { float: left !important; }
@@ -135,12 +144,14 @@
   .align\:right { text-align: right !important; }
   .align\:center { text-align: center !important; }
 
+  .nounderscore:hover { text-decoration: none; }
   .uppercase { text-transform: uppercase !important; }
   .rounded { border-radius: 2em !important; }
 
   .w5  { max-width: 5%; width: 5%; }
   .w10 { max-width: 10%; width: 10%;}
   .w25 { max-width: 25%; width: 25%;}
+  .w30 { max-width: 30%; width: 30%;}
   .w33 { max-width: 33%; width: 33%;}
   .w35 { max-width: 35%; width: 35%;}
   .w40 { max-width: 40%; width: 40%;}
@@ -251,7 +262,6 @@
     transform-style:  preserve-3d;
   }
   .page-container  {
-    background-color: var(--back);
     width: 100%;
     transform: translate3d(0,0,0);
   }
@@ -345,7 +355,7 @@
       <div id="page-container" class="page-container projects app">
         
   <section class="project__info">
-    <article class="container grid :vertical :middle :around">
+    <article class="margin:auto grid :vertical :middle :around">
       <picture class="project__logo">
         
         
@@ -356,7 +366,8 @@
       <table class="project__meta clean">
         <thead>
           <tr>
-            <td>URL</td>
+            <td>Source Code</td>
+            <td>Site</td>
             <td>Created at</td>
             <td>Technology</td>
             <td>License</td>
@@ -364,7 +375,15 @@
         </thead>
         <tbody>
           <tr>
-            <td><a href="http://http://barrabinfc.github.io/iching/" class="clean value color-high">http://barrabinfc.github.io/iching/</a></td>
+            <td>
+                <a href="http://http://github.com/barrabinfc/iching/" class="icon icon--m black">
+                  <svg class="icon__cnt"><use xlink:href="/images/_svgicons.svg#ei-sc-github-icon"></use></svg>
+                  http://github.com/barrabinfc/iching/
+              </a>
+            </td>  
+            <td>
+              <a href="http://barrabinfc.github.io/iching/" class="clean value color-high">barrabinfc.github.io/iching/</a>
+            </td>
             <td>
                 <span class="value">06/2018</span>
             </td>
@@ -379,13 +398,14 @@
       </table>
       
       <div class="project__description font-big">
-        <p>The I Ching, or Book of Changes, a common source for both Confucianist and Taoist philosophy, is one of the first efforts of the human mind to place itself within the universe. It has exerted a living influence in China for 3,000 years, and interest in it has been rapidly spreading in the West.</p>
+        <p>The I Ching ,also known as <b>Book of Changes</b>, is an ancient Chinese divination text and the oldest of the Chinese classics.</p><p>A <b>Progressive Web Application</b> that is lightweight, <a href='http://github.com/barrabinfc/iching/'>open source</a> and <i>offline & without ads</i>, built using bleeding edge technologies like <code>React</code>, <code>Service Workers</code> and the styleguide of <code>material-ui</code>. Indistinguible from a native application and with a score of <b>90/100</b> in lighthouse performance benchmarks. 👌</p>
       </div>
+      <hr/>
     </article>
   </section>
   <section class="project__body">
-    <article class="container grid">
-      <div class="cellphone">
+    <article class="margin:auto w70 grid :middle :between">
+      <div class="cellphone margin:auto">
       <div class="marvel-device iphone5s black">
           <div class="top-bar"></div>
           <div class="sleep"></div>
@@ -395,7 +415,39 @@
           <div class="speaker"></div>
           <div class="screen">
               <!-- Content goes here -->
-              <iframe src="http://barrabinfc.github.io/iching/?media=small"></iframe>
+              <div class="slideshow" data-time="1500" data-animation="opacity">
+                
+
+
+
+    
+    <img src="/projects/iching/images/FRONTPAGE2.png" alt="Frontpage" />
+ 
+              </div>
+          </div>
+          <div class="home"></div>
+          <div class="bottom-bar"></div>
+      </div>
+</div>
+<div class="cellphone margin:auto">
+      <div class="marvel-device iphone5s black">
+          <div class="top-bar"></div>
+          <div class="sleep"></div>
+          <div class="volume"></div>
+          <div class="camera"></div>
+          <div class="sensor"></div>
+          <div class="speaker"></div>
+          <div class="screen">
+              <!-- Content goes here -->
+              <div class="slideshow" data-time="1500" data-animation="opacity">
+                
+
+
+
+    
+    <img src="/projects/iching/images/INTERPRETATION2.jpg" alt="Interpretation" />
+ 
+              </div>
           </div>
           <div class="home"></div>
           <div class="bottom-bar"></div>
@@ -403,6 +455,14 @@
 </div>
 
     </article>
+    
+    <article class="margin:auto w25 grid :middle :between margin-vertical:padded">
+        <a href="http://barrabinfc.github.io/iching/" alt="barrabinfc.github.io/iching/" 
+          target="_blank" class="no-underline btn card :hero :primary :curved :card :href">
+          <span>VISIT: </span>
+        </a> 
+    </article>
+    
   </section>
 
   
@@ -411,7 +471,7 @@
   
 
 
-<section class="more-list colorscheme:default">
+<section class="more-list colorscheme:gray">
     <article class="margin:auto w85">
 
 
@@ -476,7 +536,7 @@
                        >
                         <div class="thumbnail">
                             <img 
-                            src="/images/textures/couro-enguia.jpg" 
+                            src="/images/bmg/masi.jpg" 
                             lazyload
                             
                             />

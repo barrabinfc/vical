@@ -1065,7 +1065,7 @@ footer#footer a {
        -o-object-fit: cover;
           object-fit: cover;
        width: 100%;
-       top: 0;
+       top: 10px;
      }
 /**
   * 3 part gallery
@@ -1267,6 +1267,34 @@ body.page-in:after {
             animation-play-state: paused;
   }
 .appearFromBottomCropped.\:play > span { -webkit-animation-play-state: running; animation-play-state: running; }
+/**
+ * Slideshow
+ */
+.slideshow {
+    --time: 1500ms;
+    --easing: ease-out;
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover
+}
+.slideshow > img {
+        position: absolute; 
+        top: 0; bottom: 0;
+        left: 0; right: 0;
+        width: 100%;
+        height: 100%;
+
+        transition: all var(--time) var(--easing);
+
+        transition: all var(--time) var(--easing);
+        -webkit-transform: translate3d(0,0,0);
+                transform: translate3d(0,0,0);
+        opacity: 0
+    }
+.slideshow > img:first-child { opacity: 1; }
 /*
  * Typography futuristic themed.
  *  code: Source Code Pro
@@ -1350,12 +1378,11 @@ p {
   widows: 2;
 }
 p + p {
-  margin: 0 0 1.5rem 0;
+  margin-top: 1.5rem;
 }
 pre {
   padding: calc( 2 * 0.5em);
   padding: calc( 2 * var(--pad));
-  margin: 0 0 1.5rem 0;
   background-color: #E6ECF1;
   background-color: var(--light-gray);
   overflow: auto;
@@ -1370,8 +1397,7 @@ code, pre, pre code {
 }
 blockquote { 
   width: 100%; 
-  margin: 0 0 1.5rem 0;
-  padding-left: calc(2 * 0.5em);
+  padding-left: calc(2 * 0.5em); 
   padding-left: calc(2 * var(--gutter));
   font-size: 1rem; 
   border-left: 4px solid #E6ECF1; 
@@ -1394,8 +1420,8 @@ a.default {
 }
 a.default:hover { text-decoration: underline; }
 a.black {
-  color: #fff;
-  color: var(--back);
+  color: #000;
+  color: var(--front);
 }
 a.no-underline:hover { text-decoration: none !important; }
 a.underline {
@@ -1945,23 +1971,6 @@ table th:not(:last-child),table td:not(:last-child){
                     }
 .blog section.post > #post__body > #post__body__content {
                 margin-top: 3em
-
-                /**
-                * Adjacent spacement fixes
-                */
-            }
-.blog section.post > #post__body > #post__body__content p + * {
-                    margin-top: 1.5rem;
-                }
-.blog section.post > #post__body > #post__body__content *:not(pre) > code {
-                    font-size: 85%;
-                    padding: 0.5em;
-                    padding: var(--gutter);
-                    background-color: #e9e9e9;
-                    background-color: var(--gray);
-                    border-radius: 3px;
-                }
-.blog section.post > #post__body > #post__body__content {
                 
                 /**
                 * Header adjacement
@@ -2035,14 +2044,16 @@ body {
       width: 70%;
     }
 /** More projects list **/
-.more-list > .container > .title {
+.more-list > article > .title {
       font-family: 'FuturaStd', sans-serif;
       font-family: var(--hero-font);
       text-align: center;
       font-weight: 100;
       padding-top: calc(2*24px);
       padding-top: calc(2*var(--pad-medium));
-  
+      font-size: 5.0rem;
+      line-height: 5rem;
+      
       color: inherit;
       margin: 0 auto;
     }
