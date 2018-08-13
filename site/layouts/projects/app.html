@@ -30,13 +30,13 @@
         <tbody>
           <tr>
             <td>
-                <a href="http://{{ .Params.sourcecode }}" class="icon icon--m black">
+                <a href="http://{{ .Params.sourcecode }}" target="_blank" rel="noopener" class="icon icon--m black">
                   <svg class="icon__cnt"><use xlink:href="/images/_svgicons.svg#ei-sc-github-icon"></use></svg>
                   {{ .Params.sourcecode }}
               </a>
             </td>  
             <td>
-              <a href="http://{{ .Params.website }}" class="clean value color-high">{{ .Params.website }}</a>
+              <a href="http://{{ .Params.website }}" target="_blank" class="clean value color-high">{{ .Params.website }}</a>
             </td>
             <td>
                 <span class="value">{{ .Params.created_at}}</span>
