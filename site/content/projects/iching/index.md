@@ -7,7 +7,7 @@ layout = "app"
 
 title = "I Ching"
 sourcecode = "http://github.com/barrabinfc/iching/"
-website = "barrabinfc.github.io/iching/"
+website = "iching.netlify.com"
 subtitle = "The chinese book of changes"
 description = "<p>The I Ching ,also known as <b>Book of Changes</b>, is an ancient Chinese divination text and the oldest of the Chinese classics.</p><p>A <b>Progressive Web Application</b> that is lightweight, <a href='http://github.com/barrabinfc/iching/'>open source</a> and <i>offline & without ads</i>, built using bleeding edge technologies like <code>React</code>, <code>Service Workers</code> and the styleguide of <code>material-ui</code>. Indistinguible from a native application and with a score of <b>90/100</b> in lighthouse performance benchmarks. 👌</p>"
 tech = "React PWA"

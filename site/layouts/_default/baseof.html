@@ -27,6 +27,7 @@
     </main>
     <footer id="footer" class="grid :middle :between">{{ block "footer" .}}{{ end }}</footer>
 
+    <!-- this causes 2 renders, first unstyled, but display page faster -->
     <noscript id="deferred-styles">
       <link rel="stylesheet" type="text/css" href="/css/main.css"/>
     </noscript>

@@ -39,7 +39,7 @@ body {
       & > * { margin: 1rem 0; }
     }
     & .description {
-      & > * { font-weight: 300; margin-top: 1rem; } 
+      & > * { font-weight: bold; margin-top: 1rem; } 
     }
   }
 }
@@ -78,7 +78,7 @@ body {
     & > .title {
       font-family: var(--hero-font);
       text-align: center;
-      font-weight: 100;
+      font-weight: normal;
       padding-top: calc(2*var(--pad-medium));
       font-size: 5.0rem;
       line-height: 5rem;
@@ -156,13 +156,13 @@ body {
       bottom: 2rem;
 
       & > .title {
-        font-weight: 300;
+        font-weight: bold;
         font-size: 2.0rem;
         line-height: 2.0rem;  
         margin-bottom: 1rem;
       }
       & > .subtitle {
-        font-weight: 300;
+        font-weight: normal;
         font-size: 1.5rem;
         line-height: 1.5rem;
       }

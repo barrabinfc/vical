@@ -15,7 +15,7 @@
       /* Text */
       & > .title { 
         font-family: var(--hero-font);
-        font-weight: 100;
+        font-weight: normal;
         padding-top: calc(2*var(--pad-medium));
         padding-bottom: calc(2*var(--pad-medium));
   
@@ -55,7 +55,8 @@
         & .intro_lead {
           flex: 0.7;
           padding: 0; margin: 0;
-          font-weight: 100;
+          font-family: var(--hero-font);
+          font-weight: normal;
           font-size: 2rem;
           line-height: 2.7rem; 
   

@@ -8,7 +8,11 @@
 
     <meta name="description" content="I&#39;m a full stack software engineer focused on the Web platform. I work on building delightful and effective user experience, using a disciplined vocabulary of computer programming and design.">
   
-    <style>
+    <link rel="preload" as="image" type="image/svg+xml" href="images/_svgicons.svg" />
+<link rel="preload" as="font" type="" href="fonts/FuturaStd-Bold.woff2" crossorigin="anonymous"/>
+<link rel="preload" as="font" type="" href="fonts/FuturaStd-Book.woff2" crossorigin="anonymous"/>
+
+<style>
   :root {
     --header-height: 96px;
     --front: #000;
@@ -293,6 +297,8 @@
   
   .js-tilt-glare { pointer-events: none; }
 </style>
+
+
         
   </head>  
   
@@ -453,7 +459,23 @@
 
 </footer>
 
-    <link rel="stylesheet" href="/css/main.css">
+    
+    <noscript id="deferred-styles">
+      <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+    </noscript>
+    <script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+          window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
 
     
     <script src="/js/app.js" defer></script>

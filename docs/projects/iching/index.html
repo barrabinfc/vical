@@ -10,7 +10,11 @@
 A Progressive Web Application that is lightweight, open source and offline &amp; without ads, built using bleeding edge technologies like React, Service Workers and the styleguide of material-ui. Indistinguible from a native application and with a score of 90/100 in lighthouse performance benchmarks. 👌
 ">
   
-    <style>
+    <link rel="preload" as="image" type="image/svg+xml" href="images/_svgicons.svg" />
+<link rel="preload" as="font" type="" href="fonts/FuturaStd-Bold.woff2" crossorigin="anonymous"/>
+<link rel="preload" as="font" type="" href="fonts/FuturaStd-Book.woff2" crossorigin="anonymous"/>
+
+<style>
   :root {
     --header-height: 96px;
     --front: #000;
@@ -295,6 +299,8 @@ A Progressive Web Application that is lightweight, open source and offline &amp;
   
   .js-tilt-glare { pointer-events: none; }
 </style>
+
+
         
   </head>  
   
@@ -382,7 +388,7 @@ A Progressive Web Application that is lightweight, open source and offline &amp;
               </a>
             </td>  
             <td>
-              <a href="http://barrabinfc.github.io/iching/" class="clean value color-high">barrabinfc.github.io/iching/</a>
+              <a href="http://iching.netlify.com" class="clean value color-high">iching.netlify.com</a>
             </td>
             <td>
                 <span class="value">06/2018</span>
@@ -457,7 +463,7 @@ A Progressive Web Application that is lightweight, open source and offline &amp;
     </article>
     
     <article class="margin:auto w25 grid :middle :between margin-vertical:padded">
-        <a href="http://barrabinfc.github.io/iching/" alt="barrabinfc.github.io/iching/" 
+        <a href="http://iching.netlify.com" alt="iching.netlify.com" 
           target="_blank" class="no-underline btn card :hero :primary :curved :card :href">
           <span>VISIT: </span>
         </a> 
@@ -627,7 +633,23 @@ A Progressive Web Application that is lightweight, open source and offline &amp;
 
 </footer>
 
-    <link rel="stylesheet" href="/css/main.css">
+    
+    <noscript id="deferred-styles">
+      <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+    </noscript>
+    <script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+          window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
 
     
     <script src="/js/app.js" defer></script>

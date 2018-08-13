@@ -27,7 +27,7 @@
   /* typography scale */
   --hero-font: 'FuturaStd', sans-serif;
   --code-font: "Source Code Pro", Menlo, monospace;
-  --paragraph-font: system-ui;
+  --paragraph-font: system;
 
   --base-fontsize: 16px;
   --line-height:   calc( 1rem * calc(5/4) );

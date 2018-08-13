@@ -10,7 +10,11 @@
 The mosaic is built using vanilla HTML &amp; Javascript, while the backend in Python &amp; Django.
 ">
   
-    <style>
+    <link rel="preload" as="image" type="image/svg+xml" href="images/_svgicons.svg" />
+<link rel="preload" as="font" type="" href="fonts/FuturaStd-Bold.woff2" crossorigin="anonymous"/>
+<link rel="preload" as="font" type="" href="fonts/FuturaStd-Book.woff2" crossorigin="anonymous"/>
+
+<style>
   :root {
     --header-height: 96px;
     --front: #000;
@@ -295,6 +299,8 @@ The mosaic is built using vanilla HTML &amp; Javascript, while the backend in Py
   
   .js-tilt-glare { pointer-events: none; }
 </style>
+
+
         
   </head>  
   
@@ -571,7 +577,23 @@ The mosaic is built using vanilla HTML &amp; Javascript, while the backend in Py
 
 </footer>
 
-    <link rel="stylesheet" href="/css/main.css">
+    
+    <noscript id="deferred-styles">
+      <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+    </noscript>
+    <script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+          window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
 
     
     <script src="/js/app.js" defer></script>
