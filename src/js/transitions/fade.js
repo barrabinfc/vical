@@ -26,8 +26,8 @@ export let GeneralTransition = (InClass = 'page-in', OutClass = 'page-out', dura
             Promise
                 .all([this.newContainerLoading, this.pageOut.bind(this)()])
                 .then(this.pageIn.bind(this))
-                //.then( () => pageContainer.style.position = 'initial' )
                 .then( () => document.dispatchEvent(new Event('page-in')))
+                .then( () => window.updateNavState() )
         },
 
         pageOut: function() {
@@ -45,7 +45,7 @@ export let GeneralTransition = (InClass = 'page-in', OutClass = 'page-out', dura
                     this.overlay.classList.add(OutClass);
 
                     // hide scrollbar in transition
-                    document.body.style['overflow-y'] = 'hidden';
+                    //document.body.style['overflow-y'] = 'hidden';
                 })
                 setTimeout(() => (resolve()), duration);
             });
@@ -74,7 +74,7 @@ export let GeneralTransition = (InClass = 'page-in', OutClass = 'page-out', dura
             })
             setTimeout(() => {
                 // Scroll to top and show scrollbar
-                document.body.style['overflow-y'] = 'overlay';
+                document.body.style['overflow-y'] = 'scroll';
 
                 // Reset back to default position
                 this.overlay.classList.remove(InClass);

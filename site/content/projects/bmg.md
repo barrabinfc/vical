@@ -2,7 +2,7 @@
 draft = false
 date = "2016-07-01"
 title = "BMG"
-thumbnail = "/images/bmg/masi.jpg"
+thumbnail = "/images/bmg/masi-croped-1024.jpg"
 thumbscheme = "dark"
 website = "genitalia.me"
 subtitle = "Banco mundial da genitalia"
@@ -13,7 +13,7 @@ description = "<p><a href='http://genitalia.me' class='default nomargin underlin
 <div class="gallery">
   <div class="browser-mask" style="background-color: #ffcc8c">
     <div class="browser-screen appearFromBottom :play">
-      <img src="/images/bmg/masi.jpg" alt="Mosaico" />
+      <img src="/images/bmg/masi-croped-1280.jpg" alt="Mosaico" />
     </div>
   </div>
   <img src="/images/bmg/detail3.jpg" alt="Detalhe" />  

@@ -31,6 +31,7 @@
 /** Overlay **/
 body {
   &:after {
+    z-index: 100000;
     background-color: var(--front);
     width: 100%;
     height: 100vh;

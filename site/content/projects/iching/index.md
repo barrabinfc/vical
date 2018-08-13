@@ -33,7 +33,7 @@ created_at = "06/2018"
           <div class="screen">
               <!-- Content goes here -->
               <div class="slideshow" data-time="1500" data-animation="opacity">
-                {{% img path="images/FRONTPAGE2.png" alt="Frontpage" %}} 
+                {{% img path="images/frontpage_new.jpg" alt="Frontpage" %}} 
               </div>
           </div>
           <div class="home"></div>

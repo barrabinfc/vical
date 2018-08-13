@@ -10,9 +10,9 @@
 A Progressive Web Application that is lightweight, open source and offline &amp; without ads, built using bleeding edge technologies like React, Service Workers and the styleguide of material-ui. Indistinguible from a native application and with a score of 90/100 in lighthouse performance benchmarks. 👌
 ">
   
-    <link rel="preload" as="image" type="image/svg+xml" href="images/_svgicons.svg" />
-<link rel="preload" as="font" type="" href="fonts/FuturaStd-Bold.woff2" crossorigin="anonymous"/>
-<link rel="preload" as="font" type="" href="fonts/FuturaStd-Book.woff2" crossorigin="anonymous"/>
+    <link rel="preload" as="image" type="image/svg+xml" href="/images/_svgicons.svg" />
+<link rel="preload" as="font" type="" href="/fonts/FuturaStd-Bold.woff2" crossorigin="anonymous"/>
+<link rel="preload" as="font" type="" href="/fonts/FuturaStd-Book.woff2" crossorigin="anonymous"/>
 
 <style>
   :root {
@@ -51,7 +51,7 @@ A Progressive Web Application that is lightweight, open source and offline &amp;
     color: var(--front); 
     font-family: "system"; 
     overflow-x: hidden;
-    overflow-y: overlay;
+    overflow-y: scroll;
     
     text-rendering: optimizeLegibility;
     font-feature-settings: "kern" 1;
@@ -301,6 +301,7 @@ A Progressive Web Application that is lightweight, open source and offline &amp;
 </style>
 
 
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
         
   </head>  
   
@@ -427,7 +428,7 @@ A Progressive Web Application that is lightweight, open source and offline &amp;
 
 
     
-    <img src="/projects/iching/images/FRONTPAGE2.png" alt="Frontpage" />
+    <img src="/projects/iching/images/frontpage_new.jpg" alt="Frontpage" />
  
               </div>
           </div>
@@ -542,7 +543,7 @@ A Progressive Web Application that is lightweight, open source and offline &amp;
                        >
                         <div class="thumbnail">
                             <img 
-                            src="/images/bmg/masi.jpg" 
+                            src="/images/bmg/masi-croped-1024.jpg" 
                             lazyload
                             
                             />
@@ -634,24 +635,8 @@ A Progressive Web Application that is lightweight, open source and offline &amp;
 </footer>
 
     
-    <noscript id="deferred-styles">
-      <link rel="stylesheet" type="text/css" href="/css/main.css"/>
-    </noscript>
-    <script>
-      var loadDeferredStyles = function() {
-        var addStylesNode = document.getElementById("deferred-styles");
-        var replacement = document.createElement("div");
-        replacement.innerHTML = addStylesNode.textContent;
-        document.body.appendChild(replacement)
-        addStylesNode.parentElement.removeChild(addStylesNode);
-      };
-      var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-          window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
-      else window.addEventListener('load', loadDeferredStyles);
-    </script>
-
     
+
     <script src="/js/app.js" defer></script>
     <script type="text/javascript" src="/js/vendor/vanilla-tilt.babel.min.js" defer></script>  
     

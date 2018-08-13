@@ -40,6 +40,32 @@ function pageDestroy(){
   }
 }
 
+/**
+ * Update navigation menu to reflect URL
+ */
+const NavSelector = 'header > nav a'
+const SelectedClass = 'selected'
+const NavLinksElements = Array.from( document.querySelectorAll( NavSelector ) )
+const NavLinks = NavLinksElements.map( (el) => ({'el': el, 'url': el.getAttribute('href')} ))
+
+let NavSelected = document.querySelectorAll(`${NavSelector}.${SelectedClass}`)[0];
+
+window.updateNavState = function(){  
+  console.log("UpdateNavState")
+  const pagepath = location.pathname
+  const navMatched = NavLinks.filter( (nav) => (pagepath.match(nav.url)) )
+  if(navMatched.length > 0 ){
+    // change selected nav
+    requestIdleCallback( () => {
+      NavSelected.classList.remove(SelectedClass);
+      NavSelected = navMatched[0].el
+      NavSelected.classList.add(SelectedClass)
+    })
+  } else {
+    console.info(`No NAV for page ${pagepath}`)
+  }
+}
+
 function boot() {
   requestIdleCallback( () => {
     scrollListener()

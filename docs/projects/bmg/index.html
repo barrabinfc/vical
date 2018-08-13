@@ -10,9 +10,9 @@
 The mosaic is built using vanilla HTML &amp; Javascript, while the backend in Python &amp; Django.
 ">
   
-    <link rel="preload" as="image" type="image/svg+xml" href="images/_svgicons.svg" />
-<link rel="preload" as="font" type="" href="fonts/FuturaStd-Bold.woff2" crossorigin="anonymous"/>
-<link rel="preload" as="font" type="" href="fonts/FuturaStd-Book.woff2" crossorigin="anonymous"/>
+    <link rel="preload" as="image" type="image/svg+xml" href="/images/_svgicons.svg" />
+<link rel="preload" as="font" type="" href="/fonts/FuturaStd-Bold.woff2" crossorigin="anonymous"/>
+<link rel="preload" as="font" type="" href="/fonts/FuturaStd-Book.woff2" crossorigin="anonymous"/>
 
 <style>
   :root {
@@ -51,7 +51,7 @@ The mosaic is built using vanilla HTML &amp; Javascript, while the backend in Py
     color: var(--front); 
     font-family: "system"; 
     overflow-x: hidden;
-    overflow-y: overlay;
+    overflow-y: scroll;
     
     text-rendering: optimizeLegibility;
     font-feature-settings: "kern" 1;
@@ -301,6 +301,7 @@ The mosaic is built using vanilla HTML &amp; Javascript, while the backend in Py
 </style>
 
 
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
         
   </head>  
   
@@ -368,7 +369,7 @@ The mosaic is built using vanilla HTML &amp; Javascript, while the backend in Py
       <div class="gallery">
   <div class="browser-mask" style="background-color: #ffcc8c">
     <div class="browser-screen appearFromBottom :play">
-      <img src="/images/bmg/masi.jpg" alt="Mosaico" />
+      <img src="/images/bmg/masi-croped-1280.jpg" alt="Mosaico" />
     </div>
   </div>
   <img src="/images/bmg/detail3.jpg" alt="Detalhe" />  
@@ -485,7 +486,7 @@ The mosaic is built using vanilla HTML &amp; Javascript, while the backend in Py
                        >
                         <div class="thumbnail">
                             <img 
-                            src="/images/bmg/masi.jpg" 
+                            src="/images/bmg/masi-croped-1024.jpg" 
                             lazyload
                             
                             />
@@ -578,24 +579,8 @@ The mosaic is built using vanilla HTML &amp; Javascript, while the backend in Py
 </footer>
 
     
-    <noscript id="deferred-styles">
-      <link rel="stylesheet" type="text/css" href="/css/main.css"/>
-    </noscript>
-    <script>
-      var loadDeferredStyles = function() {
-        var addStylesNode = document.getElementById("deferred-styles");
-        var replacement = document.createElement("div");
-        replacement.innerHTML = addStylesNode.textContent;
-        document.body.appendChild(replacement)
-        addStylesNode.parentElement.removeChild(addStylesNode);
-      };
-      var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-          window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
-      else window.addEventListener('load', loadDeferredStyles);
-    </script>
-
     
+
     <script src="/js/app.js" defer></script>
     <script type="text/javascript" src="/js/vendor/vanilla-tilt.babel.min.js" defer></script>  
     
