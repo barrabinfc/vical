@@ -54,3 +54,9 @@ pygmentsCodeFences = true
   weight = 10
   identifier = "about"
   url = "/about/me"
+
+
+#[[menu.main]]
+#  name = "Laboratory"
+#  identifier = "labs"
+#  url = "/labs/"

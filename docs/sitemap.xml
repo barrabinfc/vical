@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/labs/</loc>
+    <lastmod>2018-08-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/projects/portinari/</loc>
     <lastmod>2018-08-09T19:43:29-03:00</lastmod>
   </url>
@@ -25,6 +30,10 @@
   <url>
     <loc>/projects/bmg/</loc>
     <lastmod>2018-08-12T23:08:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/labs/azul/</loc>
   </url>
   
   <url>
@@ -62,7 +71,7 @@
   
   <url>
     <loc>/projects/iching/</loc>
-    <lastmod>2018-08-12T23:08:54-03:00</lastmod>
+    <lastmod>2018-08-12T23:16:18-03:00</lastmod>
   </url>
   
   <url>

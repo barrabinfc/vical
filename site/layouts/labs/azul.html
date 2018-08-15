@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ .Title }}</title>
+
+    {{ partial "password" (dict "password" "azul") }}
+
+    {{ $fundo := .Page.Resources.GetMatch "fundo" }}
+    {{ $logo := .Page.Resources.GetMatch "logo" }}
+
+    <style>
+        * { box-sizing: border-box; }
+        :root {
+            --fg: #fff;
+            --bg: #000;
+
+            --blue-light: #305db3;
+            --blue-two: #0014ffd9;
+
+            --blur-start: 30px;
+            --blur-end: 0px;
+            --z-start: 150px;
+            --z-end: 0px;
+            --perspective: 500px;
+
+            --intro-time: 1300ms;
+            --intro-delay: 300ms;
+
+            --logo-time: 150ms;
+        }
+        .hidden { opacity: 0 !important; }
+        .visible { opacity: 1 !important; }
+
+        @keyframes focusIn {
+            from { filter: blur(var(--blur-start)); transform: translate3d(0,0,var(--z-start));}
+            to { filter: blur(var(--blur-end)); transform: translate3d(0,0,var(--z-end)); }
+        }
+        @keyframes focusOut {
+            from { filter: blur(var(--blur-end)); transform: translate3d(0,0,var(--z-end)); opacity: 1; }
+            to { filter: blur(var(--blur-start)); transform: translate3d(0,0,calc( -1 * var(--z-start))); opacity: 0; }
+            100% { visibility: hidden; }
+        }
+
+        html {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(90deg, #4753a9 30%, #32ab52 70%);
+            background-image: url('{{ $fundo.Permalink}}');
+            background: var(--bg);
+            background-size: cover;
+
+            margin: 0; padding: 0;
+        }
+        body { 
+            margin: 0; padding: 0;
+            color: var(--fg);
+        }
+
+        .theater {
+            margin: 0 auto;
+            height: 100vh;
+            /* top: 25%; */
+            /* position: relative; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            perspective: var(--perspective);
+            perspective-origin: 50% 50%;
+        }
+
+        #poster {
+            width: 50%;
+            height: 50vh;
+            overflow: hidden;
+            position: absolute;
+            background-color: var(--blue-light);
+            
+            animation: focusIn;
+            animation-iteration-count: 1;
+            animation-duration: var(--intro-time);
+            animation-fill-mode: both;
+            /*
+            animation-timing-function: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+            */
+            animation-timing-function: cubic-bezier(0.55, 0.06, 0.59, 0.83);
+            animation-play-state: paused;
+        }
+        #poster:hover {
+            transition: opacity var(--logo-time) ease-in-out;
+            transform: translate3d(0,0,-10px);
+        }
+        #poster video {
+            pointer-events: none; 
+            width: 100%; 
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+        }
+
+
+        .logo {
+            display: block;
+            color: transparent;
+            background-image: url('{{ $logo.Permalink}}');
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            mix-blend-mode: multiply;
+            margin: 0;
+            opacity: 1;
+            transform: translate3d(0,0,0);
+        }
+        a.logo.ready::after {
+            content: ' ';
+            opacity: 0;
+            position: absolute;
+            top: 0; left: 0;
+            bottom: 0; right: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(0deg, var(--blue-light) 30%, #b6fcff 70%);
+            mix-blend-mode: darken;
+            opacity: 0;
+            transition: opacity var(--logo-time) ease-in-out;
+        }
+        a.logo:hover::after { opacity: 1; }
+
+
+        /** Screen video clip */
+        #screen {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0; left: 0;
+            bottom:0; right: 0;
+            transition: opacity var(--intro-time) ease-in;
+        }
+        #screen > video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    {{ .Content }}
+
+    <script>
+        /** Css vars helpers **/
+        let computedStyles = {}
+        function preloadComputedStyles(docEl){
+            return getComputedStyle(docEl,null)
+        }
+        computedStyles = preloadComputedStyles(document.documentElement);
+        function getCSSVar(myvar){
+            return computedStyles.getPropertyValue(myvar);
+        }
+
+        /**
+         * Play/Resume listeners
+         */
+         function ClipPlayer( clip ) {
+            this.clipState = { 'playing': false , played: false }
+            
+            this.play = () => { clip.play(); this.clipState['playing'] = true; }
+            this.pause = () => { clip.pause(); this.clipState['playing'] = false; }
+            this.toggle = () => { (this.clipState['playing'] ? this.pause() : this.play() ); }
+
+            return this;
+        }
+
+
+        const style  = document.body.style;
+        const logo   = document.querySelector('a.logo');
+        const poster = document.getElementById('poster');
+        const screen = document.getElementById('screen');
+        const clipEl = screen.querySelector('video');
+        const player = new ClipPlayer( clipEl );
+
+        /* Intro animation */
+        function intro_setReady(){ logo.classList.add('ready'); }
+        function intro(){
+            poster.style['animation-play-state'] = 'running';
+            setTimeout( intro_setReady, getCSSVar('--intro-time'));
+        }
+
+        /* Out Animation */
+        function clip_setReady(){  
+            screen.classList.remove('hidden')
+            screen.classList.add('visible'); 
+            player.play();
+        }
+        function intro_finish(){
+            poster.style['animation-name'] = 'focusOut';
+        }
+
+        logo.addEventListener('pointerup', (ev) => {
+            ev.preventDefault();
+
+            requestAnimationFrame( intro_finish );
+            setTimeout( clip_setReady, getCSSVar('--intro-time'));
+
+            return false;
+        })
+
+        document.addEventListener('posterPreloaded', () => {
+            setTimeout( intro, getCSSVar('--intro-delay'));
+        });
+        
+        clipEl.addEventListener('pointerdown', player.toggle );
+    </script>
+
+</body>
+</html>
