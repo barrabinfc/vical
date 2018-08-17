@@ -49,7 +49,7 @@ video = "https://vimeo.com/281469399"
         <video autoplay playsinline muted loop preload
         onloadeddata="document.dispatchEvent(new Event('posterPreloaded'))"  poster='{{% resource_path path="text_poster" %}}'>
             <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ocean-small.webm"/>
-            <source src="http://thenewcode.com/assets/videos/ocean-small.mp4" />
+            <source src="https://thenewcode.com/assets/videos/ocean-small.mp4" />
 	    </video>
         <a href="#play" class="logo">AZUL<br/>moderno</a>
     </div>
