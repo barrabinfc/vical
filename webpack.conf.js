@@ -30,12 +30,14 @@ export default {
 
   context: path.join(__dirname, "src"),
   entry: {
-    app: ["./js/app"]
+    app: ["./js/_default/app"],
+    azul: ['./js/labs/azul/app']
   },
   output: {
     path: path.join(__dirname, "docs/js"),
     publicPath: "/js",
-    filename: "[name].js"
+    filename: "[name].js",
+    libraryTarget: 'umd'
   },
   externals:  [/^vendor\/.+\.js$/]
 };

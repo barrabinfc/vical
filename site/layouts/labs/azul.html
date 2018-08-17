@@ -31,8 +31,8 @@
 
             --logo-time: 150ms;
         }
-        .hidden { opacity: 0 !important; }
-        .visible { opacity: 1 !important; }
+        .hidden { opacity: 0 !important; pointer-events: none; }
+        .visible { opacity: 1 !important; pointer-events: all; }
 
         @keyframes focusIn {
             from { filter: blur(var(--blur-start)); transform: translate3d(0,0,var(--z-start));}
@@ -48,9 +48,11 @@
             width: 100%;
             height: 100vh;
             background: linear-gradient(90deg, #4753a9 30%, #32ab52 70%);
-            background-image: url('{{ $fundo.Permalink}}');
             background: var(--bg);
+            /*
+            background-image: url('{{ $fundo.Permalink}}');
             background-size: cover;
+            */
 
             margin: 0; padding: 0;
         }
@@ -79,15 +81,16 @@
             position: absolute;
             background-color: var(--blue-light);
             
-            animation: focusIn;
+            animation-name: focusIn;
             animation-iteration-count: 1;
-            animation-duration: var(--intro-time);
             animation-fill-mode: both;
+            animation-play-state: paused;
+            animation-duration: var(--intro-time);
+
             /*
             animation-timing-function: cubic-bezier(0.55, 0.06, 0.68, 0.19);
             */
             animation-timing-function: cubic-bezier(0.55, 0.06, 0.59, 0.83);
-            animation-play-state: paused;
         }
         #poster:hover {
             transition: opacity var(--logo-time) ease-in-out;
@@ -115,7 +118,7 @@
             opacity: 1;
             transform: translate3d(0,0,0);
         }
-        a.logo.ready::after {
+        a.logo.interactive::after {
             content: ' ';
             opacity: 0;
             position: absolute;
@@ -149,71 +152,14 @@
 </head>
 <body>
     {{ .Content }}
-
-    <script>
-        /** Css vars helpers **/
-        let computedStyles = {}
-        function preloadComputedStyles(docEl){
-            return getComputedStyle(docEl,null)
-        }
-        computedStyles = preloadComputedStyles(document.documentElement);
-        function getCSSVar(myvar){
-            return computedStyles.getPropertyValue(myvar);
-        }
-
-        /**
-         * Play/Resume listeners
-         */
-         function ClipPlayer( clip ) {
-            this.clipState = { 'playing': false , played: false }
-            
-            this.play = () => { clip.play(); this.clipState['playing'] = true; }
-            this.pause = () => { clip.pause(); this.clipState['playing'] = false; }
-            this.toggle = () => { (this.clipState['playing'] ? this.pause() : this.play() ); }
-
-            return this;
-        }
-
-
-        const style  = document.body.style;
-        const logo   = document.querySelector('a.logo');
-        const poster = document.getElementById('poster');
-        const screen = document.getElementById('screen');
-        const clipEl = screen.querySelector('video');
-        const player = new ClipPlayer( clipEl );
-
-        /* Intro animation */
-        function intro_setReady(){ logo.classList.add('ready'); }
-        function intro(){
-            poster.style['animation-play-state'] = 'running';
-            setTimeout( intro_setReady, getCSSVar('--intro-time'));
-        }
-
-        /* Out Animation */
-        function clip_setReady(){  
-            screen.classList.remove('hidden')
-            screen.classList.add('visible'); 
-            player.play();
-        }
-        function intro_finish(){
-            poster.style['animation-name'] = 'focusOut';
-        }
-
-        logo.addEventListener('pointerup', (ev) => {
-            ev.preventDefault();
-
-            requestAnimationFrame( intro_finish );
-            setTimeout( clip_setReady, getCSSVar('--intro-time'));
-
-            return false;
-        })
-
-        document.addEventListener('posterPreloaded', () => {
-            setTimeout( intro, getCSSVar('--intro-delay'));
+    <script src="/js/azul.js" defer></script>
+    <script defer>
+        console.log(`%c 
+ 🌊 Built by vical.me
+`, "font-size: 3em;");
+        document.addEventListener('DOMContentLoaded', () => {
+            window.azul = new window.Azul(document);
         });
-        
-        clipEl.addEventListener('pointerdown', player.toggle );
     </script>
-
 </body>
 </html>
