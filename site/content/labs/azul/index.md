@@ -22,7 +22,7 @@ video = "https://vimeo.com/281469399"
 
 [[resources]]
   name = "text_poster"
-  src = "images/poster7.png"
+  src = "images/poster7.jpg"
 
 [[resources]]
   name = "text_fundo"
