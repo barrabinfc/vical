@@ -56,7 +56,7 @@ pygmentsCodeFences = true
   url = "/about/me"
 
 
-#[[menu.main]]
-#  name = "Laboratory"
-#  identifier = "labs"
-#  url = "/labs/"
+[[menu.main]]
+  name = "Laboratory"
+  identifier = "labs"
+  url = "/labs/"
