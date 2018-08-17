@@ -155,6 +155,7 @@ class Azul {
 
     poster_click( ev ) { 
         ev.preventDefault();
+        ev.stopPropagation();
         this.stages.to(AzulStages.CLIP)
     }
 
