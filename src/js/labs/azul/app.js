@@ -26,16 +26,12 @@ class Azul {
             'poster': this.ctx.getElementById('poster'),
             'poster_video': this.ctx.querySelector('#poster > video'),
             'screen': this.ctx.getElementById('screen'),
-            'clip': this.ctx.querySelector('#screen > video'),
+            'clip': this.ctx.querySelector('#screen > #videoclip'),
         }
         this.listeners = {};
 
         this.stages = new GradualSteps(AzulStages.BLANK);
         
-        this.player = new ClipPlayer(this.dom.clip);
-        this.player.play  = spy( [this.player.play, this.player],   cronometer.tap.bind(cronometer,'PLAYER_PLAY'));
-        this.player.pause = spy( [this.player.pause, this.player],  cronometer.tap.bind(cronometer,'PLAYER_PAUSE'));
-
         this.init();
     }
 
@@ -51,16 +47,29 @@ class Azul {
         this.listeners['poster'] = new listen(this.dom.poster_video);
         this.listeners['poster'].when('loadeddata').do(this.poster_loaded.bind(this));
 
-        this.listeners['clip'] = new listen(this.dom.clip);
-        this.listeners['clip'].when('loadstart').do(this.clip_loadstart.bind(this));
-        this.listeners['clip'].when('loadedmetadata').do(this.clip_loadedmtdt.bind(this));
-        this.listeners['clip'].when('loadeddata').do(this.clip_loaded.bind(this));
-
         cronometer.tap('APP_READY'); 
 
         setTimeout( () => {
             cronometer.debug();
         },5000 )
+    }
+
+    loadClip( youtubeID ) {
+        cronometer.tap('YOUTUBE_READY');
+
+        this.player = new ClipPlayer(this.dom.clip, youtubeID);
+        this.player.play  = spy( [this.player.play, this.player],   cronometer.tap.bind(cronometer,'PLAYER_PLAY'));
+        this.player.pause = spy( [this.player.pause, this.player],  cronometer.tap.bind(cronometer,'PLAYER_PAUSE'));
+        this.player.ready = (ev) => {
+            console.log("videoclip ready...")
+            cronometer.tap('VIDEOCLIP_READY');
+            this.player.play();
+        }
+
+        this.listeners['clip'] = new listen(this.dom.clip);
+        this.listeners['clip'].when('loadstart').do(this.clip_loadstart.bind(this));
+        this.listeners['clip'].when('loadedmetadata').do(this.clip_loadedmtdt.bind(this));
+        this.listeners['clip'].when('loadeddata').do(this.clip_loaded.bind(this));
     }
 
     setupStepTransitions() {
@@ -85,6 +94,7 @@ class Azul {
     [AzulStages.INTRO + ":enter"](curr,next) {
         return new Promise((resolve, reject) => {
             this.dom.poster.style['animation-play-state'] = 'running';
+            document.body.style['overflow-y'] = 'hidden';
             setTimeout(() => {
                 this.dom.logo.classList.add('interactive');
                 this.listeners['logo'].when('click').do(this.poster_click.bind(this));
@@ -113,6 +123,8 @@ class Azul {
      */
     [AzulStages.CLIP + ":enter"](curr,next) {
         return new Promise((resolve, reject) => {
+            document.body.style['overflow-y'] = 'auto';
+
             this.dom.poster.classList.add('hidden');
             this.dom.screen.classList.remove('hidden');
             this.dom.screen.classList.add('visible');

@@ -155,3 +155,10 @@ export function parseQS(querystring) {
 
     return params
 }
+
+
+export function getMetaContent( metaName ) {
+    let el = document.querySelector(`meta[name="${metaName}"]`)
+    if(el) return el.getAttribute('content')
+    else return undefined
+}
