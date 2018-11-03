@@ -13,6 +13,8 @@
 @import "sections/about.css";
 @import "sections/blog.css";
 
+@import "imports/portrait.css";
+
 html {
   font-size: var(--base-fontsize, 16px);
   line-height: var(--line-height, 16px);  

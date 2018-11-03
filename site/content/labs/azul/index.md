@@ -55,6 +55,19 @@ buy_link  = "https://lianluiza.bandcamp.com/"
   name = "players_icon"
   src = "images/players.svg"
 
+[[resources]]
+  name = "soundcloud_icon"
+  src = "images/sc_icon.svg"
+
+[[resources]]
+  name = "youtube_icon"
+  src = "images/yt_icon.svg"
+
+[[resources]]
+  name = "spotify_icon"
+  src = "images/spot_icon.svg"
+
+
 +++
 
 
@@ -83,9 +96,13 @@ buy_link  = "https://lianluiza.bandcamp.com/"
         </picture>
         <div class="other">
           <div class="players_links">
-            hello
+            <a href="https://soundcloud.com/luizalian/sets/azul-moderno/s-MDVTV" class="player-icon sc-icon" alt="Soundcloud">Soundcloud</a>
+            <a href="https://soundcloud.com/luizalian/sets/azul-moderno/s-MDVTV" class="player-icon yt-icon" alt="Youtube">Youtube</a>
+            <a href="https://soundcloud.com/luizalian/sets/azul-moderno/s-MDVTV" class="player-icon spot-icon" alt="Spotify">Spotify</a>
           </div>
-          <button class="buy_link"><a href="">COMPRAR</a></button>
+          <!--
+            <button class="buy_link"><a href="">COMPRAR</a></button>
+          -->
         </div>
       </section>
       <section id="right">

@@ -1,0 +1,60 @@
+@media (max-width: 425px) and (orientation: portrait) {
+    :root {
+        --pad-big:    24px;
+        --pad-medium: 12px;
+    }
+
+    /**
+     * Hamburguer nav
+     */
+     header#menu {
+        & .label-toggle {  
+            background: linear-gradient(to bottom, 
+                                        var(--rly-dark-gray) 0%, 
+                                        var(--rly-dark-gray) 20%, 
+                                        transparent 20%, 
+                                        transparent 40%, 
+                                        var(--rly-dark-gray) 40%, 
+                                        var(--rly-dark-gray) 60%, 
+                                        transparent 60%, 
+                                        transparent 80%, 
+                                        var(--rly-dark-gray) 80%, 
+                                        var(--rly-dark-gray) 100%); 
+            cursor: pointer;
+            display: block;
+            float: right;
+            height: 36px;
+            width: 36px;
+        }
+      
+        & > .menu { display: none; }
+
+        & #menu-toggle:checked ~ .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* opacity: 1; */
+            height: calc( 0.5 * var(--header-height));
+            /* visibility: visible; */
+            flex-direction: column;
+            z-index: 1000;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: var(--header-height);
+            background-color: var(--third);
+            top: var(--header-height);
+            /* right: calc( 1 * var(--pad-big)); */
+            color: var(--white);            
+        }
+    }
+
+    /** Realign frontpage to have space for submenu **/
+    #page-container > section > article:first-child {
+        margin-top: 2em;
+        padding-top: 0;
+    }
+    #page-container.frontpage .showcase .about {
+        margin-top: calc( 2 * var(--pad-big));
+    }
+}

@@ -7,13 +7,33 @@
     <title>AZUL MODERNO</title>
 
 
+
+    
+    
+    
+
+    
+    
+    
+    
+
+
+    <meta property="og:title" content="Luiza Lian - Azul Moderno"/>
+    <meta property="og:description" content="Azul Moderno"/>
+    <meta property="og:image" content="/labs/azul/images/Album_Cover.png"/>
+    <meta property="og:url" content="https://www.luizalian.com.br"/>
+    <meta property="og:site_name" content="Luiza Lian"/>
+    <meta property="og:see_also" content="https://soundcloud.com/luizalian/sets/azul-moderno/"/>
+    
+    <meta name="twitter:card" content="summary"/>  
+    <meta name="twitter:site" content="luizalian.com.br"/>
+    <meta name="twitter:title" content="Azul Moderno">
+    <meta name="twitter:description" content="Azul Moderno"/>
+    <meta name="twitter:image:src" content="/labs/azul/images/Album_Cover.png"/>
+    <meta name="twitter:domain" content="https://www.luizalian.com.br"/> 
+
     <meta name="youtubeID" content=ii63fKLTSuU />
     <meta name="buy_link" content=https://lianluiza.bandcamp.com/ />
-
-    
-    
-
-    
 
     <style>
         * { box-sizing: border-box; }
@@ -24,8 +44,10 @@
             --black: #3E3E3E;
             --cashmere: #E8E8E8;
             --rosa: #dfd1b6;
+            --bege: #DE9A73;
+            --bege2: #C4958A;
 
-            --blue-white: #79a7ff;
+            --blue-white: #92B7FF;
             --blue-light: #305db3;
             --blue-two: #0014ffd9;
 
@@ -94,6 +116,28 @@
             color: var(--black);
         }
 
+         
+         .player-icon {
+            display: block;
+            text-indent: -99999px;
+            background-repeat: no-repeat;
+            background-size: 32px 32px;
+            width: 32px;
+            height: 32px;
+            fill: white;
+            color: white;
+         }
+        .sc-icon {
+            background-image: url('/labs/azul/images/sc_icon.svg');
+        }
+        .yt-icon {
+            background-image: url('/labs/azul/images/yt_icon.svg');            
+        }
+        .spot-icon {
+            background-image: url('/labs/azul/images/spot_icon.svg');            
+        }
+
+
         .theater {
             margin: 0 auto;
             height: 100vh;
@@ -120,7 +164,7 @@
             transition: transform 400ms cubic-bezier(.10,1.28,.17,1.41);
         }
         #poster:hover {
-            transform: translate3d(0,0,0) scale(1.05);
+            transform: translate3d(0,0,0) scale(1.005);
         }
         #poster video {
             pointer-events: none; 
@@ -158,9 +202,6 @@
             mix-blend-mode: hue;
             opacity: 0;
             transition: opacity var(--logo-time) ease-in-out;
-        }
-        a.logo:hover {
-            transform: scale(1.05);
         }
         a.logo:hover::before { opacity: 0.5; }
 
@@ -226,12 +267,24 @@
         #left .cover {
             display: block;
             margin: 0 auto;
+            max-height: 342px;
         }
         .cover > img {
             max-width: 100%;
             width: 100%;
-            box-shadow: 8px 12px 40px rgba(0, 0, 0, 0.3)
+            box-shadow: 8px 12px 40px rgba(0, 0, 0, 0.3);
+            height: 342px;
         }
+
+        .players_links {
+            display: flex;
+            justify-content: space-around;
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 4em;
+            transform: scale(1.5);            
+        }
+
 
         .buy_link {
             padding: 8px;
@@ -333,6 +386,7 @@
         .song-item.is-playing > .song-name {
             margin-left: calc( 10% - 16px );
         }
+   
     </style>
 </head>
 <body>
@@ -392,9 +446,13 @@
         </picture>
         <div class="other">
           <div class="players_links">
-            hello
+            <a href="https://soundcloud.com/luizalian/sets/azul-moderno/s-MDVTV" class="player-icon sc-icon" alt="Soundcloud">Soundcloud</a>
+            <a href="https://soundcloud.com/luizalian/sets/azul-moderno/s-MDVTV" class="player-icon yt-icon" alt="Youtube">Youtube</a>
+            <a href="https://soundcloud.com/luizalian/sets/azul-moderno/s-MDVTV" class="player-icon spot-icon" alt="Spotify">Spotify</a>
           </div>
-          <button class="buy_link"><a href="">COMPRAR</a></button>
+          <!--
+            <button class="buy_link"><a href="">COMPRAR</a></button>
+          -->
         </div>
       </section>
       <section id="right">
@@ -443,6 +501,14 @@
     </div>
 </div>
 
+    <footer>
+        <div class="footer_social_links">
+
+        </div>
+        <div class="selo">
+            <a href="">Selo Risco</a>
+        </div>
+    </footer>
     <script src="https://www.youtube.com/iframe_api" defer></script>
     <script type="text/javascript" src="/js/vendor/vanilla-tilt.babel.min.js" defer></script>
     <script src="/js/azul.js" defer></script>
