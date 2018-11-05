@@ -15,7 +15,9 @@
   <body class="{{ $layout }}">
 
     {{ $menuModifier := .Params.menuModifier | default "" }}
+    <input type="checkbox" id="menu-toggle">
     <header class="grid :middle :between {{ $menuModifier }}" id="menu">
+      <label for="menu-toggle" class="label-toggle"></label>
       {{ block "header" .}}{{ end }}
     </header>
 

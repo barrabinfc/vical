@@ -339,10 +339,10 @@ header#menu {
     }
   }
 
-  & #menu-toggle { display: none; }      
   & .label-toggle { display: none; }
 
 }
+#menu-toggle { display: none; }      
 
 /** Footer */
 footer#footer {

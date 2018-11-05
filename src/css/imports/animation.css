@@ -135,3 +135,9 @@ body {
     & > span { animation-play-state: running; }
   }
 }
+
+
+@keyframes appearFromTop {
+  0% { transform: translateY(-150px); }
+  100% { transform: translateY(0px); }
+}
