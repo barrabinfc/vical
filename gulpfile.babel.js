@@ -5,6 +5,7 @@ import sourcemaps from "gulp-sourcemaps";
 import postcss from "gulp-postcss";
 import cssImport from "postcss-import";
 import cssPreset from "postcss-preset-env";
+import postcssColorMod from 'postcss-color-mod-function';
 import svgInline from "postcss-inline-svg";
 import BrowserSync from "browser-sync";
 import webpack from "webpack";
@@ -31,6 +32,7 @@ gulp.task("css", () => (
     .pipe(postcss([
       cssImport({ from: "./src/css/main.css" }),
       cssPreset({ stage: 0 }),
+      postcssColorMod(),
       svgInline()]))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("./docs/css"))
