@@ -2,14 +2,19 @@
     :root {
         --pad-big:    24px;
         --pad-medium: 12px;
+        --gutter:     0.5em;
+        --pad:        var(--gutter);
+        --pad-margin:    calc( 4 * var(--gutter));
 
-        --base-fontsize: 12px;
+        --base-fontsize: 14px;
     }
 
     /**
      * Hamburguer nav
      */
      header#menu {
+        padding: 0 calc( 1 * var(--pad-big));
+
         & .label-toggle {  
             background: linear-gradient(to bottom, 
                                         var(--rly-dark-gray) 0%, 
@@ -28,41 +33,46 @@
             height: 36px;
             width: 36px;
         }
-      
-        & > .menu { 
-            display: none;
-        }
+              
     }
+
+    nav.menu { 
+        /** Display under header */
+        position: absolute;
+        z-index: 999;
+        left: 0;
+        top: 0;
+
+        justify-content: center;
+        align-items: center;
+        height: calc( 0.5 * var(--header-height));
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--third);
+        color: var(--white);
+        box-shadow: 0 -5px 30px rgb(0, 0, 0);
+
+        transition: top 0.55s var(--trans-easing);
+    }
+
 
     /**
      * Sub Menu 
      */
     #menu-toggle:checked ~ header {
+        box-shadow: none;
 
-        & > .menu {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: calc( 0.5 * var(--header-height));
-            /* visibility: visible; */
-            flex-direction: column;
-            z-index: 1000;
-            position: absolute;
-            width: 100%;
-            left: 0;
-            background-color: var(--third);
-            top: var(--header-height);
-            /* right: calc( 1 * var(--pad-big)); */
-            color: var(--white);
-
-            animation: appearFromTop 0.55s var(--trans-easing);
-            animation-fill-mode: both;  
-            animation-play-state: running;
-        }
+        & > .wrapper { width: 100%; }
     }
+    #menu-toggle:checked ~ nav.menu {
+        display: flex;
+        top: var(--header-height);
+    }
+
+    /* Give some space for nav.menu
     #menu-toggle:checked ~ #page-trans-wrapper {
         margin-top: calc( 0.5 * var(--header-height));
-    }
+    }*/
 
     /** Realign frontpage to have space for submenu 
     #page-container > section > article:first-child {
@@ -73,4 +83,25 @@
         margin-top: calc( 2 * var(--pad-big));
     }
     */
+
+    /**
+     * Footer 
+     */
+
+     /** Email should not overflow */
+     #footer > ul li > .title ~ a > span {
+        text-overflow: ellipsis;
+        max-width: 88px;
+        overflow: hidden;
+        /* width: 88px; */
+        display: block;
+        /* line-break: strict; */
+        white-space: nowrap;   
+     }
+ 
+
+     /** Icons side by side **/
+     #footer > ul li:last-child {
+         display: flex;
+     }
 }

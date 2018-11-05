@@ -43,7 +43,7 @@ function pageDestroy(){
 /**
  * Update navigation menu to reflect URL
  */
-const NavSelector = 'header > nav a'
+const NavSelector = 'nav.menu a'
 const SelectedClass = 'selected'
 const NavLinksElements = Array.from( document.querySelectorAll( NavSelector ) )
 const NavLinks = NavLinksElements.map( (el) => ({'el': el, 'url': el.getAttribute('href')} ))
@@ -62,7 +62,7 @@ window.updateNavState = function(){
       NavSelected.classList.add(SelectedClass)
     })
   } else {
-    console.info(`No NAV for page ${pagepath}`)
+    console.info(`No NAVigation for page ${pagepath}`)
   }
 }
 

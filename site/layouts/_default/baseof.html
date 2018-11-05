@@ -16,9 +16,12 @@
 
     {{ $menuModifier := .Params.menuModifier | default "" }}
     <input type="checkbox" id="menu-toggle">
+    {{ partial "nav" . }}
     <header class="grid :middle :between {{ $menuModifier }}" id="menu">
-      <label for="menu-toggle" class="label-toggle"></label>
-      {{ block "header" .}}{{ end }}
+      <div class="wrapper">
+        <label for="menu-toggle" class="label-toggle"></label>
+        {{ block "header" .}}{{ end }}
+      </div>
     </header>
 
     {{ $section := .Section | default "" }}

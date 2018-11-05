@@ -12,9 +12,10 @@
   background: inherit;
   fill: inherit;
   pointer-events: none; /* Do not catch pointer events */
-  -webkit-transform: translateX(0);
-          transform: translateX(0); /* Crisp fix for non-retina */
-  -ms-transform: translate(0.5px, -0.3px); /* Crisp fix for IE */
+  /*
+  transform: translateX(0); 
+  -ms-transform: translate(0.5px, -0.3px); 
+  */
 }
 .icon--m {
   width: 50px;

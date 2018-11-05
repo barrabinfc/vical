@@ -9,6 +9,11 @@ const scrollToTop = () => {
     }
 };
 
+const hideMenu = () => {
+    let menuToggleEl = document.querySelector('#menu-toggle')
+    menuToggleEl.checked = false;
+}
+
 export let GeneralTransition = (InClass = 'page-in', OutClass = 'page-out', duration = 1500) =>
     Barba.BaseTransition.extend({
         start: function () {
@@ -67,6 +72,7 @@ export let GeneralTransition = (InClass = 'page-in', OutClass = 'page-out', dura
             
             requestAnimationFrame(() => {
                 scrollToTop();
+                hideMenu();
                 el.classList.add(InClass);
 
                 this.overlay.classList.remove(OutClass);
