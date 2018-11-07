@@ -13,7 +13,10 @@
 @import "sections/about.css";
 @import "sections/blog.css";
 
-@import "imports/portrait.css";
+/** 
+ * Customization for phones/tablets
+ */
+@import "imports/theme.phones.css";
 
 html {
   font-size: var(--base-fontsize, 16px);
@@ -60,7 +63,7 @@ body {
     }
       
     & .project__meta {
-      max-width: 50%;
+      max-width: 65%;
       width: auto;
       margin: 0 auto var(--pad-big) auto; 
     }
@@ -70,10 +73,33 @@ body {
       text-align: left;
       width: 70%;
     }
-  
 }
 
-/** More projects list **/
+@media (--tablet-and-below) {  
+  /**
+   * Align project_meta table.
+   */
+  .page-container.projects .project__info .project__meta {
+    max-width: 90%;
+    height: 50vh;
+    /** 
+     * HACK: Exact height of icon.
+     * Gives impression of everything aligned as a table,
+     * even if is two independent flexboxes
+     */
+    & thead > tr > td:first-child {
+      height: 84px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+
+
+
+/** More projects 
+  * list **/
 .more-list {
 
   & > article {     
@@ -145,6 +171,21 @@ body {
     flex: 1 1 100%;
   }
 }
+
+/** List Isotope on portrait 
+ * is a simple gallery with 100% cells
+ */
+@media (--phones-portrait) {
+  .list-isotope {
+    & > .cell:nth-child(3n+2){
+      flex: 0 0 100%;
+    }
+    & > .cell:nth-child(3n+3){
+      flex: 0 0 100%;
+    }  
+  }
+}
+
 
 .card {
     box-shadow: var(--shadow-card);
@@ -303,4 +344,46 @@ body {
     }
   }
   
+}
+
+
+/**
+ * Mobile work gallery
+ */
+@media (--phones-portrait) {
+  .page-container.projects > .projects {
+
+    & .info {
+      order: 1;
+      width: 80%;
+      padding: 2em 0 2em 0;
+      height: auto;
+      min-height: auto;
+
+      position: relative;
+      top: 0;
+      margin: 0 auto;
+      display: block;  
+
+      & .more {
+        padding-top: 2em;
+      }
+    }
+
+    & .showcase {
+      margin: 0;
+      /* padding: 0; */
+      overflow: hidden;
+      order: 2;
+      width: 100%;
+    } 
+  }
+
+}
+
+/** Single Speficic fixes */
+@media (--laptop-and-below) {
+  #gallery_bmg_cmslogin {
+    max-width: 66%;
+  }
 }

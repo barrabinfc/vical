@@ -19,7 +19,7 @@ description = "<p><a href='http://genitalia.me' class='default nomargin underlin
   <img src="/images/bmg/detail3.jpg" alt="Detalhe" />  
 </div>
 <div class="gallery container-fluid grid :horizontal">
-  <div class="browser-mask pull:left w33">
+  <div class="browser-mask pull:left w33" id="gallery_bmg_cmslogin">
     <div class="browser-screen">
       <img src="/images/bmg/admin-login.jpg" alt="CMS" /> 
     </div>

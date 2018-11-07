@@ -115,10 +115,19 @@ input:hover,
 
   --trans-time:     0.25s;  
   --trans-time-slow: 0.85s;
-  
-  /* Reactive variables */
-  --scrolly: 1;
+
 }
+/**
+  * Devices breakpoints
+  *
+  --phone: 425px;
+  --tablet: 768px;
+  --laptop: 1024px;
+  --tv:     1440px;  
+*/
+/** 
+ * Media devices query
+ */
 /*@import "imports/grid.css";*/
 .form {
     width: 30rem
@@ -1468,7 +1477,6 @@ table {
   border-radius: 5px;
   border-radius: var(--curve-soft);
   overflow: hidden
-
 }
 table thead {
     background-color: #000;
@@ -1503,6 +1511,36 @@ table th:not(:last-child),table td:not(:last-child){
       border-right: 1px solid #e9e9e9;
       border-right: 1px solid var(--gray);
     }
+/**
+   * Transform table into a vertical table using flexbox.
+   */
+@media (max-width: 768px) {
+  table {
+    display: flex;
+    border: 1px solid #e9e9e9;
+    border: 1px solid var(--gray)
+  }
+
+    table thead, table tbody {
+      display: flex
+    }
+      table thead > tr, table tbody > tr {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+      }
+
+      table thead th, table thead td, table tbody th, table tbody td {
+        width: 100%;
+        border: none !important
+      }
+        table thead th:not(:last-child), table thead td:not(:last-child), table tbody th:not(:last-child), table tbody td:not(:last-child) {
+          border-bottom: 1px solid #e9e9e9 !important;
+          border-bottom: 1px solid var(--gray) !important;
+        }
+}
 /**
  * Tags
  */
@@ -1612,11 +1650,12 @@ table th:not(:last-child),table td:not(:last-child){
         display: flex;
         width: 80%;
         margin: 0 auto;
-        align-items: center
+        align-items: center;
+        justify-content: space-between
   
       }
 .about section.about .intro .intro_image {
-          flex: 0.3;
+          flex: 0.25;
           display: flex;
           align-items: center
         }
@@ -1634,13 +1673,15 @@ table th:not(:last-child),table td:not(:last-child){
                object-position: -5px -60px; 
           }
 .about section.about .intro .intro_lead {
-          flex: 0.7;
+          flex: 0.65;
           padding: 0; margin: 0;
           font-family: 'FuturaStd', sans-serif;
           font-family: var(--hero-font);
           font-weight: normal;
-          font-size: 2rem;
-          line-height: 2.7rem; 
+          font-size: calc( calc(3/2) * 16px);
+          font-size: calc( var(--perfect-fifth) * var(--base-fontsize)); /* 2.0em */
+          line-height: calc( calc(3/2) * calc( 1rem * calc(5/4) ));
+          line-height: calc( var(--perfect-fifth) * var(--line-height)); /* 2.7rem; */ 
   
           -webkit-animation-delay: 0.25s; 
   
@@ -1652,8 +1693,8 @@ table th:not(:last-child),table td:not(:last-child){
             padding: calc( 2 * var(--gutter) ) 0;
           }
 .about section.about .more .summary p { margin: 0; padding: 0; }
-.about section.about .more .summary .first-column { flex: 0.5; }
-.about section.about .more .summary .second-column { flex: 0.5; }
+.about section.about .more .summary .first-column { flex: 0.60; }
+.about section.about .more .summary .second-column { flex: 0.4; }
 .about section.about .more .summary .education .txt { line-height: 1.7em; }
 .about section.about .more .summary .education .subtitle { color: hsl(0, 0%, 50%); color: var(--dark-gray); }
 .about section.about .more .summary .education li {
@@ -1675,10 +1716,10 @@ table th:not(:last-child),table td:not(:last-child){
             height: 200px;
             box-shadow: 0 1px 0 rgba(0, 0, 0, .46), 0 2px 6px rgba(0, 0, 0, .47), 0 10px 20px rgba(0, 0, 0, .29);
             box-shadow: var(--shadow-card);
-            background-image: url(../images/old-computer.jpg);
+            background-image: url(/images/old-computer.jpg);
             background-size: cover;
             background-position: center;
-            background-position-y: -380px;
+            background-position-y: center;
             background-repeat: no-repeat;
             
             border-radius: 15px;
@@ -1701,6 +1742,43 @@ table th:not(:last-child),table td:not(:last-child){
             justify-content: space-around;
             align-items: stretch;
           }
+@media (max-width: 425px) and (orientation: portrait) {
+    .about section.about .more {
+      width: 90%;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+
+    /**
+     * Change method of ul>li numbering to avoid widowed lines
+     */
+    .about section.about .more .summary .skill .txt ul li::before {
+      position: absolute;
+    }
+    .about section.about .more .summary .skill .txt ul li > p:first-child {
+      padding-left: calc( 4 * 0.5em);
+      padding-left: calc( 4 * var(--gutter));
+    }
+
+    .about section.about .more .contact > a {
+      background-position-y: 0;
+    }
+    .about section.about .intro .intro_lead {
+      flex: 1;
+      margin-top: 48px;
+      margin-top: var(--pad-big);
+    }
+
+    .about section.about .more .summary.two-columns {
+      flex-direction: column;
+    }
+}
+@media (max-width: 768px) and (min-width: 426px ) {
+  .about section.about .more .summary p {
+    word-break: break-word;
+    white-space: pre;
+  }
+}
 .blog section.post-list {
         font-family: system;
         font-family: var(--paragraph-font);
@@ -2017,6 +2095,9 @@ table th:not(:last-child),table td:not(:last-child){
                 .blog section.post > #post__body > #post__body__content ol + p {
                     margin-top: 1.5rem;
                 }
+/** 
+ * Customization for phones/tablets
+ */
 @media (max-width: 425px) and (orientation: portrait) {
     :root {
         --pad-big:    24px;
@@ -2071,10 +2152,13 @@ table th:not(:last-child),table td:not(:last-child){
 
     nav.menu { 
         /** Display under header */
+        opacity: 0;
         position: absolute;
         z-index: 999;
         left: 0;
         top: 0;
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
 
         justify-content: center;
         align-items: center;
@@ -2088,9 +2172,9 @@ table th:not(:last-child),table td:not(:last-child){
         color: var(--white);
         box-shadow: 0 -5px 30px rgb(0, 0, 0);
 
-        transition: top 0.55s cubic-bezier(0.000, 1.000, 0.725, 1.000);
+        transition: all 0.55s cubic-bezier(0.000, 1.000, 0.725, 1.000);
 
-        transition: top 0.55s var(--trans-easing);
+        transition: all 0.55s var(--trans-easing);
     }
 
 
@@ -2103,25 +2187,14 @@ table th:not(:last-child),table td:not(:last-child){
 
         #menu-toggle:checked ~ header > .wrapper { width: 100%; }
     #menu-toggle:checked ~ nav.menu {
+        opacity: 1;
         display: flex;
-        top: 96px;
-        top: var(--header-height);
+        -webkit-transform: translateY(96px);
+                transform: translateY(96px);
+        -webkit-transform: translateY(var(--header-height));
+                transform: translateY(var(--header-height));
     }
 
-    /* Give some space for nav.menu
-    #menu-toggle:checked ~ #page-trans-wrapper {
-        margin-top: calc( 0.5 * var(--header-height));
-    }*/
-
-    /** Realign frontpage to have space for submenu 
-    #page-container > section > article:first-child {
-        margin-top: 2em;
-        padding-top: 0;
-    }
-    #page-container.frontpage .showcase .about {
-        margin-top: calc( 2 * var(--pad-big));
-    }
-    */
 
     /**
      * Footer 
@@ -2143,6 +2216,75 @@ table th:not(:last-child),table td:not(:last-child){
      #footer > ul li:last-child {
          display: flex;
      }
+}
+/**
+ * Gallery fixes for laptop and tablet
+ */
+@media (max-width: 1024px) {
+     /**
+      * Browser mask
+      */
+      .browser-mask {
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto
+    }
+
+        .browser-mask .browser-screen {
+            width: 100%;
+        }
+
+    /**
+     * Phones and ipads alignment
+     */
+    .cellphone, .notebook {
+      zoom: 0.5;
+    }
+
+    /**
+     * 3 gallery is 100% wrapped
+     */
+     .gallery-columns {
+         flex-direction: column;
+         flex-wrap: wrap;
+     }
+}
+/**
+ * Tablet alignment is super whaky
+ */
+@media (max-width: 2560px) and (min-width: 1441px) {
+    .marvel-device.ipad.landscape {
+        zoom: 1.7;
+    }
+}
+@media (max-width: 768px) and (min-width: 426px ) {
+    .marvel-device.ipad.landscape {
+        zoom: 0.7;
+        -webkit-transform: translateX(-85px);
+                transform: translateX(-85px);
+    }
+}
+@media (max-width: 425px) and (orientation: portrait) {
+    .marvel-device.ipad.landscape {
+        zoom: 0.7;
+        -webkit-transform: translateX(-10px);
+                transform: translateX(-10px);
+    }
+}
+@media (max-width: 375px) {
+    .marvel-device.ipad.landscape {
+        zoom: 0.7;
+        -webkit-transform: translateX(-55px);
+                transform: translateX(-55px);
+    }
+}
+@media (max-width: 320px) {
+    .marvel-device.ipad.landscape {
+        zoom: 0.65;
+        -webkit-transform: translateX(-108px);
+                transform: translateX(-108px);
+    }
 }
 html {
   font-size: 16px;
@@ -2182,14 +2324,13 @@ body {
  */
 .page-container.projects .project__info {
     text-align: center
-  
 }
 .page-container.projects .project__info .project__logo {
       margin: 0 auto
     }
 .page-container.projects .project__info .project__logo > img { width: 100%; }
 .page-container.projects .project__info .project__meta {
-      max-width: 50%;
+      max-width: 65%;
       width: auto;
       margin: 0 auto 48px auto;
       margin: 0 auto var(--pad-big) auto; 
@@ -2199,7 +2340,27 @@ body {
       text-align: left;
       width: 70%;
     }
-/** More projects list **/
+@media (max-width: 768px) {  
+  /**
+   * Align project_meta table.
+   */
+  .page-container.projects .project__info .project__meta {
+    max-width: 90%;
+    height: 50vh
+    /** 
+     * HACK: Exact height of icon.
+     * Gives impression of everything aligned as a table,
+     * even if is two independent flexboxes
+     */
+  }
+    .page-container.projects .project__info .project__meta thead > tr > td:first-child {
+      height: 84px;
+      display: flex;
+      align-items: center;
+    }
+}
+/** More projects 
+  * list **/
 .more-list > article > .title {
       font-family: 'FuturaStd', sans-serif;
       font-family: var(--hero-font);
@@ -2280,6 +2441,17 @@ body {
 .list-isotope > .cell:last-child {
     flex: 1 1 100%;
   }
+/** List Isotope on portrait 
+ * is a simple gallery with 100% cells
+ */
+@media (max-width: 425px) and (orientation: portrait) {
+    .list-isotope > .cell:nth-child(3n+2){
+      flex: 0 0 100%;
+    }
+    .list-isotope > .cell:nth-child(3n+3){
+      flex: 0 0 100%;
+    }
+}
 .card {
     box-shadow: 0 1px 0 rgba(0, 0, 0, .46), 0 2px 6px rgba(0, 0, 0, .47), 0 10px 20px rgba(0, 0, 0, .29);
     box-shadow: var(--shadow-card)
@@ -2450,4 +2622,41 @@ body {
         background-color: #fff;
         background-color: var(--back);
       }
+/**
+ * Mobile work gallery
+ */
+@media (max-width: 425px) and (orientation: portrait) {
+
+    .page-container.projects > .projects .info {
+      order: 1;
+      width: 80%;
+      padding: 2em 0 2em 0;
+      height: auto;
+      min-height: auto;
+
+      position: relative;
+      top: 0;
+      margin: 0 auto;
+      display: block
+    }  
+
+      .page-container.projects > .projects .info .more {
+        padding-top: 2em;
+      }
+
+    .page-container.projects > .projects .showcase {
+      margin: 0;
+      /* padding: 0; */
+      overflow: hidden;
+      order: 2;
+      width: 100%;
+    }
+
+}
+/** Single Speficic fixes */
+@media (max-width: 1024px) {
+  #gallery_bmg_cmslogin {
+    max-width: 66%;
+  }
+}
 /*# sourceMappingURL=main.css.map */

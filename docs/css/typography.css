@@ -76,10 +76,19 @@
 
   --trans-time:     0.25s;  
   --trans-time-slow: 0.85s;
-  
-  /* Reactive variables */
-  --scrolly: 1;
+
 }
+/**
+  * Devices breakpoints
+  *
+  --phone: 425px;
+  --tablet: 768px;
+  --laptop: 1024px;
+  --tv:     1440px;  
+*/
+/** 
+ * Media devices query
+ */
 /*
  * Typography futuristic themed.
  *  code: Source Code Pro
@@ -228,7 +237,6 @@ table {
   border-radius: 5px;
   border-radius: var(--curve-soft);
   overflow: hidden
-
 }
 table thead {
     background-color: #000;
@@ -263,6 +271,36 @@ table th:not(:last-child),table td:not(:last-child){
       border-right: 1px solid #e9e9e9;
       border-right: 1px solid var(--gray);
     }
+/**
+   * Transform table into a vertical table using flexbox.
+   */
+@media (max-width: 768px) {
+  table {
+    display: flex;
+    border: 1px solid #e9e9e9;
+    border: 1px solid var(--gray)
+  }
+
+    table thead, table tbody {
+      display: flex
+    }
+      table thead > tr, table tbody > tr {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+      }
+
+      table thead th, table thead td, table tbody th, table tbody td {
+        width: 100%;
+        border: none !important
+      }
+        table thead th:not(:last-child), table thead td:not(:last-child), table tbody th:not(:last-child), table tbody td:not(:last-child) {
+          border-bottom: 1px solid #e9e9e9 !important;
+          border-bottom: 1px solid var(--gray) !important;
+        }
+}
 /**
  * Tags
  */

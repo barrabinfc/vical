@@ -185,7 +185,35 @@ table {
       border-right: 1px solid var(--gray);
     }
   }
+}
 
+/**
+   * Transform table into a vertical table using flexbox.
+   */
+@media (--tablet-and-below) {
+  table {
+    display: flex;
+    border: 1px solid var(--gray);
+
+    & thead , & tbody {
+      display: flex;
+      & > tr {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+      }
+
+      & th, & td {
+        width: 100%;
+        border: none !important;
+        &:not(:last-child) {
+          border-bottom: 1px solid var(--gray) !important;
+        }
+      }
+    }
+  }
 }
 
 /**

@@ -62,7 +62,24 @@
 
   --trans-time:     0.25s;  
   --trans-time-slow: 0.85s;
-  
-  /* Reactive variables */
-  --scrolly: 1;
+
 }
+
+/**
+  * Devices breakpoints
+  *
+  --phone: 425px;
+  --tablet: 768px;
+  --laptop: 1024px;
+  --tv:     1440px;  
+*/
+
+/** 
+ * Media devices query
+ */
+@custom-media --phones-portrait (max-width: 425px) and (orientation: portrait);
+@custom-media --tablet-portrait (max-width: 768px) and (min-width: 426px );
+@custom-media --tablet-and-below (max-width: 768px);
+@custom-media --laptop-and-below (max-width: 1024px);
+@custom-media --laptop-only (max-width: 1024px) and (min-width: 769px);
+@custom-media --tv4k (max-width: 2560px) and (min-width: 1441px);

@@ -33,9 +33,10 @@
         width: 80%;
         margin: 0 auto;
         align-items: center;
+        justify-content: space-between;
   
         & .intro_image {
-          flex: 0.3;
+          flex: 0.25;
           display: flex;
           align-items: center;
   
@@ -53,12 +54,12 @@
           }
         }
         & .intro_lead {
-          flex: 0.7;
+          flex: 0.65;
           padding: 0; margin: 0;
           font-family: var(--hero-font);
           font-weight: normal;
-          font-size: 2rem;
-          line-height: 2.7rem; 
+          font-size: calc( var(--perfect-fifth) * var(--base-fontsize)); /* 2.0em */
+          line-height: calc( var(--perfect-fifth) * var(--line-height)); /* 2.7rem; */ 
   
           animation-delay: 0.25s;
         }
@@ -74,8 +75,8 @@
   
           & p { margin: 0; padding: 0; }
             
-          & .first-column { flex: 0.5; }
-          & .second-column { flex: 0.5; }
+          & .first-column { flex: 0.60; }
+          & .second-column { flex: 0.4; }
           
           & .education {
             & .txt { line-height: 1.7em; }
@@ -94,10 +95,10 @@
             display: block; 
             height: 200px;
             box-shadow: var(--shadow-card);
-            background-image: url(../images/old-computer.jpg);
+            background-image: url(/images/old-computer.jpg);
             background-size: cover;
             background-position: center;
-            background-position-y: -380px;
+            background-position-y: center;
             background-repeat: no-repeat;
             
             border-radius: var(--curve-big);
@@ -122,3 +123,41 @@
       }
     }
   }
+
+
+@media (--phones-portrait) {
+    .about section.about .more {
+      width: 90%;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+
+    /**
+     * Change method of ul>li numbering to avoid widowed lines
+     */
+    .about section.about .more .summary .skill .txt ul li::before {
+      position: absolute;
+    }
+    .about section.about .more .summary .skill .txt ul li > p:first-child {
+      padding-left: calc( 4 * var(--gutter));
+    }
+
+    .about section.about .more .contact > a {
+      background-position-y: 0;
+    }
+    .about section.about .intro .intro_lead {
+      flex: 1;
+      margin-top: var(--pad-big);
+    }
+
+    .about section.about .more .summary.two-columns {
+      flex-direction: column;
+    }
+}
+
+@media (--tablet-portrait) {
+  .about section.about .more .summary p {
+    word-break: break-word;
+    white-space: pre;
+  }
+}

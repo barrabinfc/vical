@@ -22,7 +22,7 @@ created_at = "06/2018"
 
 +++
 
-<div class="cellphone margin:auto">
+<div class="cellphone margin:auto margin-vertical:padded">
       <div class="marvel-device iphone5s black">
           <div class="top-bar"></div>
           <div class="sleep"></div>
@@ -40,7 +40,7 @@ created_at = "06/2018"
           <div class="bottom-bar"></div>
       </div>
 </div>
-<div class="cellphone margin:auto">
+<div class="cellphone margin:auto margin-vertical:padded">
       <div class="marvel-device iphone5s black">
           <div class="top-bar"></div>
           <div class="sleep"></div>

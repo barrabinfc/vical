@@ -36,7 +36,7 @@ gulp.task("css", () => (
       svgInline()]))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("./docs/css"))
-  //.pipe(browserSync.stream())
+    .pipe(browserSync.stream())
 ));
 
 gulp.task("vendor-js", () => {

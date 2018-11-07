@@ -18,14 +18,14 @@ logo = "/images/uploads/myself-2-low.jpg"
     <h6 class="title">Skills</h6>
     <div class="txt">
       <ul>
-        <li>Frontend development with modern HTML/CSS/SVG</li> 
-        <li><p>Javascript ES6 / Typescript and React/VueJS</p></li>
-        <li>Git/Webpack and others developer tools</p></li>
-        <li>Backend development with Django and nodeJS</li>
-        <li>Python and C/C++</li>
-        <li>SQL and noSQL databases</li>
-        <li>Linux/Unix servers</li>
-        <li>Test Driven development methodologies </li>
+        <li><p>Frontend development using <code>HTML/CSS/SVG</code></p></li> 
+        <li><p>Javascript ES6 / Typescript with React/VueJS</p></li>
+        <li><p>Test Driven development methodologies</p></li>
+        <li><p>Backend development with <code>Django</code> and <code>nodeJS</code></p></li>
+        <li><p>Python and C/C++</p></li>
+        <li><p>SQL and noSQL databases<p></li>
+        <li><p>Linux/Unix servers<p></li>
+        <li><p>Git/Webpack and others build tools</p></li>
       </ul>
     </div>
   </div>
