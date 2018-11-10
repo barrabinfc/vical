@@ -2120,6 +2120,10 @@ table th:not(:last-child),table td:not(:last-child){
               
     }
 
+        header#menu .wrapper {
+            flex-direction: row-reverse;
+        }
+
         header#menu .label-toggle {  
             background: linear-gradient(to bottom, 
                                         hsl(0, 0%, 20%) 0%, 

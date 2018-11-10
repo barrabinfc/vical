@@ -16,6 +16,10 @@
      header#menu {
         padding: 0 calc( 1 * var(--pad-big));
 
+        & .wrapper {
+            flex-direction: row-reverse;
+        }
+
         & .label-toggle {  
             background: linear-gradient(to bottom, 
                                         var(--rly-dark-gray) 0%, 
